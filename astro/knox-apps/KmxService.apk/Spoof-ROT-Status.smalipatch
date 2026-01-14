@@ -1,0 +1,120 @@
+AUTHOR Salvo Giangreco <giangrecosalvo9@gmail.com>
+
+
+FILE smali/com/samsung/android/kmxservice/common/util/RootOfTrust.smali
+
+REPLACE .method public getVerifiedBootState()I
+    .locals 1
+    
+    const/4 v0, 0x0
+    
+    return v0
+
+
+REPLACE .method public isDeviceLocked()Z
+    .locals 1
+    
+    const/4 v0, 0x1
+    
+    return v0
+
+
+
+END
+
+FILE smali/com/samsung/android/kmxservice/fabrickeystore/keystore/cert/RootOfTrust.smali
+
+REPLACE .method public getVerifiedBootState()I
+    .locals 1
+    
+    const/4 v0, 0x0
+    
+    return v0
+
+
+REPLACE .method public isDeviceLocked()Z
+    .locals 1
+    
+    const/4 v0, 0x1
+    
+    return v0
+
+
+
+END
+
+FILE smali/com/samsung/android/kmxservice/sdk/trustchain/util/RootOfTrust.smali
+
+REPLACE .method public getVerifiedBootState()I
+    .locals 1
+    
+    const/4 v0, 0x0
+    
+    return v0
+
+
+REPLACE .method public isDeviceLocked()Z
+    .locals 1
+    
+    const/4 v0, 0x1
+    
+    return v0
+
+    
+
+END
+
+FILE smali/com/samsung/android/kmxservice/common/util/IntegrityStatus.smali
+
+REPLACE .method public getStatus()I
+    .locals 1
+    
+    const/4 v0, 0x0
+    
+    return v0
+
+
+REPLACE .method public isNormal()Z
+    .locals 1
+    
+    const/4 v0, 0x1
+    
+    return v0
+
+
+END
+
+
+
+
+FILE smali/com/samsung/android/kmxservice/fabrickeystore/keystore/cert/IntegrityStatus.smali
+
+REPLACE .method public isNormal()Z
+    .locals 1
+    
+    const/4 v0, 0x1
+    
+    return v0
+    
+    
+END
+
+FILE smali/com/samsung/android/kmxservice/sdk/trustchain/util/IntegrityStatus.smali
+
+REPLACE .method public getStatus()I
+    .locals 1
+    
+    const/4 v0, 0x0
+    
+    return v0
+
+
+REPLACE .method public isNormal()Z
+    .locals 1
+    
+    const/4 v0, 0x1
+    
+    return v0
+
+
+END

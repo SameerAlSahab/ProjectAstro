@@ -1,0 +1,40 @@
+
+
+FILE smali/com/android/server/knox/dar/DarManagerService.smali
+REPLACE .method public final checkDeviceIntegrity([Ljava/security/cert/Certificate;)Z
+    .locals 0
+ 
+    const/4 p0, 0x1
+ 
+    return p0
+
+    
+
+REPLACE .method public final isDeviceRootKeyInstalled()Z
+    .locals 0
+ 
+    const/4 p0, 0x1
+ 
+    return p0
+
+    
+REPLACE .method public final isKnoxKeyInstallable()Z
+    .locals 0
+ 
+    const/4 p0, 0x1
+ 
+    return p0
+
+    
+END
+
+FILE smali/com/android/server/StorageManagerService.smali
+REPLACE .method public static isRootedDevice()Z
+    .locals 1
+ 
+    const/4 v0, 0x0
+ 
+    return v0
+
+END
+

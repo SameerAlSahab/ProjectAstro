@@ -1,0 +1,22 @@
+AUTHOR Salvo Giangreco <giangrecosalvo9@gmail.com>
+
+FILE smali_classes2/com/samsung/android/knoxguard/service/KnoxGuardSeService.smali
+REPLACE  .method public constructor <init>(Landroid/content/Context;)V
+    .locals 0
+ 
+	invoke-direct {p0}, Lcom/samsung/android/knoxguard/IKnoxGuardManager$Stub;-><init>()V
+ 
+    const/4 p1, 0x0
+ 
+    iput-object p1, p0, Lcom/samsung/android/knoxguard/service/KnoxGuardSeService;->mConnectivityManagerService:Landroid/net/ConnectivityManager;
+ 
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+ 
+    const-string p1, "KnoxGuard is disabled"
+ 
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+END
