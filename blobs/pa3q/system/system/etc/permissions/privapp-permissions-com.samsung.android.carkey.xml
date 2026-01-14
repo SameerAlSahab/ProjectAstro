@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+    <privapp-permissions package="com.samsung.android.carkey">
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+    </privapp-permissions>
+</permissions>

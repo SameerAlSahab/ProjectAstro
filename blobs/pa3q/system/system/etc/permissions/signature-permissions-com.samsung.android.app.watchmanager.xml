@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2016 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<!--
+This XML file declares which signature|privileged permissions should be granted to privileged
+applications that come with the platform
+-->
+<permissions>
+    <signature-permissions package="com.samsung.android.app.watchmanager">
+        <permission name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE"/>
+		<permission name="android.permission.ACCESS_NOTIFICATIONS"/>
+		<permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+		<permission name="android.permission.BLUETOOTH_STACK"/>
+		<permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"/>
+		<permission name="android.permission.CALL_PRIVILEGED"/>
+		<permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+		<permission name="android.permission.CONFIGURE_WIFI_DISPLAY"/>
+		<permission name="android.permission.CONTROL_INCALL_EXPERIENCE"/>
+		<permission name="android.permission.CONTROL_KEYGUARD"/>
+		<permission name="android.permission.DELETE_PACKAGES"/>
+		<permission name="android.permission.DEVICE_POWER"/>
+		<permission name="android.permission.DUMP"/>
+		<permission name="android.permission.FORCE_STOP_PACKAGES"/>
+		<permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+		<permission name="android.permission.GET_INTENT_SENDER_INTENT"/>
+		<permission name="android.permission.GRANT_RUNTIME_PERMISSIONS"/>
+		<permission name="android.permission.INJECT_EVENTS"/>
+		<permission name="android.permission.INSTALL_PACKAGES"/>
+		<permission name="android.permission.INTERACT_ACROSS_USERS"/>
+		<permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+		<permission name="android.permission.LOCAL_MAC_ADDRESS"/>
+		<permission name="android.permission.MANAGE_APP_OPS_MODES"/>
+		<permission name="android.permission.MANAGE_NOTIFICATIONS"/>
+		<permission name="android.permission.MANAGE_ONGOING_CALLS"/>
+		<permission name="android.permission.MANAGE_ROLE_HOLDERS"/>
+		<permission name="android.permission.MANAGE_USERS"/>
+		<permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+		<permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+		<permission name="android.permission.MODIFY_DEFAULT_AUDIO_EFFECTS"/>
+		<permission name="android.permission.MODIFY_PHONE_STATE"/>
+		<permission name="android.permission.NETWORK_SETTINGS"/>
+		<permission name="android.permission.PACKAGE_USAGE_STATS"/>
+		<permission name="android.permission.READ_DEVICE_CONFIG"/>
+		<permission name="android.permission.READ_LOGS"/>
+		<permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+		<permission name="android.permission.READ_WIFI_CREDENTIAL"/>
+		<permission name="android.permission.REAL_GET_TASKS"/>
+		<permission name="android.permission.REBOOT"/>
+		<permission name="android.permission.REMOVE_TASKS"/>
+		<permission name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+		<permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+		<permission name="android.permission.SEND_RESPOND_VIA_MESSAGE"/>
+		<permission name="android.permission.SET_ACTIVITY_WATCHER"/>
+		<permission name="android.permission.SET_PROCESS_LIMIT"/>
+		<permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+		<permission name="android.permission.STATUS_BAR_SERVICE"/>
+		<permission name="android.permission.STOP_APP_SWITCHES"/>
+		<permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE"/>
+		<permission name="android.permission.SUSPEND_APPS"/>
+		<permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+		<permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+		<permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+		<permission name="android.permission.WRITE_SETTINGS"/>
+		<permission name="com.samsung.android.permission.SEM_APP_RESTRICTION"/>
+		<permission name="com.samsung.android.permission.SEM_AUTO_BIND_NOTIFICATION_LISTENER_SERVICE"/>
+		<permission name="com.samsung.android.permission.SEM_BATTERY_INFO"/>
+		<permission name="com.samsung.android.permission.SEM_BATTERY_INFO_PROVIDER"/>
+		<permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+		<permission name="com.samsung.android.provider.indexing.permission.ACCESS_PROVIDER"/>
+		<permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+		<permission name="com.samsung.permission.PALM_MOTION"/>
+		<permission name="com.samsung.permission.READ_KNOX_NOTIFICATION"/>
+		<permission name="com.samsung.permission.WIFI_FACTORY_TEST"/>
+		<permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+		<permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>  
+    </signature-permissions>
+</permissions>

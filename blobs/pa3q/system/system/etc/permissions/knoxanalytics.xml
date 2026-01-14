@@ -1,0 +1,3 @@
+<permissions>
+    <library name="knoxanalyticssdk" file="/system/framework/knoxanalyticssdk.jar"/>
+</permissions>

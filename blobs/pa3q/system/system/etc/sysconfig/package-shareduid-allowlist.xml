@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2024 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+ -->
+
+<!--
+This XML defines an allowlist for packages that want to join a particular shared-uid.
+If a non-system package that is signed with platform signature, is trying to join a particular
+shared-uid, and not in this list, the installation will fail.
+
+- The "package" XML attribute refers to the app's package name.
+- The "shareduid" XML attribute refers to the shared uid name.
+
+Example usage
+    1. <allow-package-shareduid package="com.example.app" shareduid="android.uid.system"/>
+        Indicates that a package - com.example.app, will be able to join android.uid.system.
+    2. <allow-package-shareduid package="oem.example.app" shareduid="oem.uid.custom"/>
+        Indicates that a package - oem.example.app, will be able to join oem.uid.custom.
+-->
+
+<config>
+    <allow-package-shareduid package="com.salab.act" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.salab.ABRT" shareduid="android.uid.phone" />
+    <allow-package-shareduid package="com.sec.salab.ABRT" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.salab.act_agent" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.salab.voyager" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.salab.ward" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sidia.datathroughput" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.salab.confi" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sdet.fotaagent" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.stp.direwolf" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.salab.issuetracker" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.salab.spectro" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.dvfscontroller" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.sidia.app.omcparseragent" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.aig.rna" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.beaconmanager" shareduid="android.uid.bcmgr" />
+    <allow-package-shareduid package="com.samsung.android.mdx.kit" shareduid="android.uid.mdxkit" />
+    <allow-package-shareduid package="com.salab.issuetracker.security" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.catagent" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.jm.thehelper" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.android.app.tinym" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sti.labo" shareduid="android.uid.system" />
+	<allow-package-shareduid package="com.bps.ondevicebps" shareduid="android.uid.system" />
+	<allow-package-shareduid package="com.sec.sq.mesh" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.keystringmain" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.app.watchmanager" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.app.watchmanager2" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.sallysoft.android.plank" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.autosettingapk2" shareduid="android.uid.system" />    
+    <allow-package-shareduid package="com.sec.aecmonitor" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.bfat" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.example.user.apc_recognition" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.sea.mql.audioanalyzer" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.retail.innovative.screensaver" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.gpuwatchapp" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.cmhscanner" shareduid="android.uid.cmhservice" />
+    <allow-package-shareduid package="com.samsung.android.knox.efota" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.knox.core.efota" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.efotaagent" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.spayfw" shareduid="android.uid.spay" />
+    <allow-package-shareduid package="com.samsung.android.ringplugin" shareduid="com.samsung.android.ringplugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watchuniteplugin" shareduid="com.samsung.wearable.watchuniteplugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watch13plugin" shareduid="com.samsung.wearable.watch13plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watch12plugin" shareduid="com.samsung.wearable.watch12plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watch11plugin" shareduid="com.samsung.wearable.watch11plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watch10plugin" shareduid="com.samsung.wearable.watch10plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watch9plugin" shareduid="com.samsung.wearable.watch9plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watch8plugin" shareduid="com.samsung.wearable.watch8plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watch7plugin" shareduid="com.samsung.wearable.watch7plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.watch6plugin" shareduid="com.samsung.wearable.watch6plugin" />
+    <allow-package-shareduid package="com.samsung.android.heartplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.waterplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.gearnplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.gearrplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.gearpplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.geargplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.gearoplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.wearable.fit8plugin" shareduid="com.samsung.wearable.fit8plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.fit7plugin" shareduid="com.samsung.wearable.fit7plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.fit6plugin" shareduid="com.samsung.wearable.fit6plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.fit5plugin" shareduid="com.samsung.wearable.fit5plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.fit4plugin" shareduid="com.samsung.wearable.fit4plugin" />
+    <allow-package-shareduid package="com.samsung.wearable.fit3plugin" shareduid="com.samsung.wearable.fit3plugin" />
+    <allow-package-shareduid package="com.samsung.android.neatplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.modenplugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.gearfit2plugin" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.budsunitemgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.buds8mgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.buds7mgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.buds6mgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.buds5mgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.buds4mgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.gemstonemgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.pianomgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.ablemgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.paranmgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.jellymgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.pearlmgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.zenithmgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.berrymgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.atticmgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.neobeanmgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.popcornmgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.accessory.fridaymgr" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.scloud" shareduid="android.uid.samsungcloud" />
+    <allow-package-shareduid package="com.samsung.android.scpm" shareduid="android.uid.samsungcloud" />
+    <allow-package-shareduid package="com.samsung.SMT" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.app.routines" shareduid="android.uid.systemui" />
+    <allow-package-shareduid package="com.samsung.android.app.routineplus" shareduid="android.uid.systemui" />
+	<allow-package-shareduid package="com.samsung.android.keyscafe" shareduid="android.uid.honeyboard" />
+    <allow-package-shareduid package="com.samsung.android.samsungpay.gear" shareduid="uid.samsungpay.gear" />
+    <allow-package-shareduid package="com.samsung.android.knox.app.networkfilter" shareduid="android.uid.bluetooth" />
+    <allow-package-shareduid package="com.knox.vpn.proxyhandler" shareduid="android.uid.bluetooth" />
+    <allow-package-shareduid package="com.samsung.sVpn" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.ftat.client" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.ftat" shareduid="android.uid.system" />
+    <allow-package-shareduid package="sdet.irat" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.forest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.lool" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.sm_cn" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.android.emergencylauncher" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.accessory" shareduid="com.samsung.accessory.wmanager" />
+    <allow-package-shareduid package="com.samsung.android.statsd" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.appbooster" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.memoryguardian" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.app.mobiledoctor" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.app.repaircal" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.android.daemonapp" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.test.maliciousmsgtestapp" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.aasa.askschecker" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.keyverifier" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.android.app.vepreload" shareduid="android.uid.ve" />
+    <allow-package-shareduid package="com.sec.android.app.ve.vebgm" shareduid="android.uid.ve" />
+    <allow-package-shareduid package="com.sec.android.asc.test" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.ssd.wolfserver" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.android.mimage.photoretouching" shareduid="com.sec.android.mimage.uid.photoretouching" />
+    <allow-package-shareduid package="com.samsung.rtlassistant" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.smartthingshome" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.utagent" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.authfw" shareduid="android.uid.spass" />
+    <allow-package-shareduid package="com.sec.blocking" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.app.mobiledoctor.oqc" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.oqc.note" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.pje.ubis_agent" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.pje.ubis_agent2" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.app.mobiledoctor.ve" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.rms.retailagent.global" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.apnsettings" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sdet.fdmagent" shareduid="android.uid.phone" />
+    <allow-package-shareduid package="com.fdm.soomagent" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.sel.tps.videostreamingservice" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.sherlockloaddata" shareduid="android.uid.phone" />
+    <allow-package-shareduid package="com.sec.android.sherlockphonesetting" shareduid="android.uid.phone" />
+    <allow-package-shareduid package="com.sec.android.sherlocksetting" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.srv.smm" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.pushservice" shareduid="android.uid.system" />	
+    <allow-package-shareduid package="com.samsung.android.rubin.app" shareduid="android.uid.intelligenceservice" />	
+    <allow-package-shareduid package="com.samsung.hidden.china" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.messaging" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.email.provider" shareduid="com.samsung.android.email.provider" />
+    <allow-package-shareduid package="com.sec.dolbom" shareduid="android.uid.system" />
+	<allow-package-shareduid package="com.samsung.android.service.health" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.FactoryTestLauncher" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.sec.android.mimage.avatarstickers" shareduid="com.sec.android.mimage.avatarstickers" />
+    <allow-package-shareduid package="samsung.system.input.debugTool" shareduid="android.uid.system" />
+	<allow-package-shareduid package="com.samsung.ese.clear" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.samsung.android.inapptestmon" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.rajesh.bixbytest" shareduid="android.uid.system" />
+</config>

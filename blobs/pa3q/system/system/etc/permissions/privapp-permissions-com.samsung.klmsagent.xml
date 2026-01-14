@@ -1,0 +1,12 @@
+<permissions>
+    <privapp-permissions package="com.samsung.klmsagent" >
+        <permission name="android.permission.INTERACT_ACROSS_USERS" />
+        <permission name="android.permission.MANAGE_DEVICE_ADMINS" />
+        <permission name="android.permission.MANAGE_USERS" />
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+		<permission name="com.samsung.android.knox.permission.KNOX_INTERNAL_EXCEPTION" />
+    </privapp-permissions>
+</permissions>

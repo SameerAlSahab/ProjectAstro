@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+    <privapp-permissions package="com.sec.android.gallery3d">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.SUBSTITUTE_SHARE_TARGET_APP_NAME_AND_ICON"/>
+        <permission name="com.samsung.android.permission.SEM_WRITE_CAPTURED_URL"/>
+        <permission name="com.samsung.android.permission.SEC_MEDIA_CONTENTS"/>
+        <permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+        <permission name="android.permission.READ_SEARCH_INDEXABLES"/>
+        <permission name="com.samsung.android.provider.indexing.permission.ACCESS_PROVIDER"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,5 @@
+<permissions>
+    <privapp-permissions package="com.sec.android.app.popupcalculator">
+        <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+    </privapp-permissions>
+</permissions>

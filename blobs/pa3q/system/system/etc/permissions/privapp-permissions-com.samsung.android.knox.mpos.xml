@@ -1,0 +1,6 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.knox.mpos">
+        <permission name="com.samsung.android.knox.permission.KNOX_ANALYTICS_INTERNAL"/>
+        <permission name="com.samsung.android.security.permission.SAMSUNG_SECUREKEY_PERMISSION"/>
+    </privapp-permissions>
+</permissions>

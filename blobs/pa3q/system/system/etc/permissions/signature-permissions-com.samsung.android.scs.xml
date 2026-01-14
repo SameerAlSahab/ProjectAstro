@@ -1,0 +1,23 @@
+<!--
+  ~ This XML file declares which platform signature permissions to grant to
+  ~ platform signed nonsystem apps.
+  -->
+<permissions>
+    <signature-permissions package="com.samsung.android.scs">
+        <permission name="android.permission.SET_PROCESS_LIMIT"/>
+        <permission name="android.permission.MANAGE_ROLE_HOLDERS"/>  
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+        <permission name="com.android.voicemail.permission.READ_VOICEMAIL"/>
+        <permission name="com.samsung.android.app.notes.READ"/>
+        <permission name="com.sec.android.app.clockpackage.permission.READ_ALARM"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+        <permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+        <permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+    </signature-permissions>
+</permissions>

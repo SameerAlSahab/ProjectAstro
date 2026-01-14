@@ -1,0 +1,14 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.singletake.service">
+        <permission name="com.sec.face.provider.FaceProvider.data.READ" />
+        <permission name="com.sec.face.provider.FaceProvider.data.WRITE" />
+        <permission name="android.permission.FOREGROUND_SERVICE" />
+        <permission name="android.permission.WRITE_MEDIA_STORAGE" />
+        <permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.READ_MEDIA_AUDIO"/>
+        <permission name="android.permission.READ_MEDIA_VIDEO"/>
+        <permission name="android.permission.READ_MEDIA_IMAGES"/>		
+    </privapp-permissions>
+</permissions>

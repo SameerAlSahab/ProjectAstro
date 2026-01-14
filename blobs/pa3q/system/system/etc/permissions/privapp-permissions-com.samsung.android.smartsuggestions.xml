@@ -1,0 +1,119 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.smartsuggestions">
+		<permission name="com.samsung.android.weather.permission.READ_DANGEROUS_PROVIDER" />
+        <permission name="android.permission.BIND_TEXTCLASSIFIER_SERVICE" />
+        <permission name="android.permission.BIND_CONTENT_CAPTURE_SERVICE" />
+        <permission name="android.permission.BIND_AUGMENTED_AUTOFILL_SERVICE" />
+        <permission name="android.permission.BROADCAST_SMS" />
+        <permission name="android.permission.READ_SMS" />
+        <permission name="android.permission.RECEIVE_SMS" />
+        <permission name="com.samsung.android.scs.ai.text.permission.TEXT_PROVIDER" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.RECORD_AUDIO"/>
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.SET_PROCESS_LIMIT"/>
+        <permission name="com.android.voicemail.permission.READ_VOICEMAIL"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+        <permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+        <permission name="android.permission.LOG_COMPAT_CHANGE"/>
+        <permission name="android.permission.READ_COMPAT_CHANGE_CONFIG"/>
+		<permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+		<permission name="com.sec.android.provider.badge.permission.READ"/>
+		<permission name="com.sec.android.provider.badge.permission.WRITE"/>
+		<permission name="com.samsung.android.permission.SEND_SPLIT_STATE_CHANGED"/>
+		<!-- Added missing permission from control, Donation,extServices AndroidManifest.xml, -->
+        <permission name="com.samsung.android.rubin.context.permission.READ_CONTEXT_MANAGER"/>
+        <permission name="com.sec.android.daemonapp.ap.accuweather.ACCUWEATHER_DAEMON_ACCESS_PROVIDER"/>
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+        <permission name="android.permission.READ_CLIPBOARD_IN_BACKGROUND"/>
+        <permission name="android.permission.GET_INTENT_SENDER_INTENT"/>
+        <permission name="android.permission.MANAGE_NOTIFICATIONS"/>
+        <permission name="com.samsung.android.hostmanager.permission.ACCESS_UNIFIED_HOST_MANAGER"/>
+        <permission name="com.samsung.android.providers.media.READ"/>
+        <permission name="com.samsung.cmh.data.READ"/>
+        <permission name="com.samsung.android.email.permission.ACCESS_PROVIDER"/>
+        <permission name="com.samsung.android.app.tips.permission.USE_INTENT_SERVICE"/>	
+        <permission name="android.permission.READ_CONTACTS"/>
+        <permission name="android.permission.READ_CALENDAR"/>
+        <permission name="android.permission.READ_CALL_LOG"/>
+		<permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.QUERY_ALL_PACKAGES"/>
+        <permission name="android.permission.CALL_PHONE"/>
+		<!-- Added missing permission from extSerice/AndroidManifest.xml -->
+		<!-- TO DO :- check whther these two required or not -->
+		<permission name="com.samsung.android.permission.SMART_SUGGESTIONS_OTP"/>
+        <permission name="android.permission.SEND_SMS"/>
+		<!-- Added missing permission from Serice/AndroidManifest.xml -->
+		<!-- TO DO :- check whther this is really required or not -->
+        <permission name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+	<!-- Added missing permission to resolve CTS issue -->
+        <permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+        <permission name="android.permission.RETRIEVE_WINDOW_CONTENT"/>
+        <permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+		<permission name="android.permission.BLUETOOTH_CONNECT"/>
+		<permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<!-- Read Own Phone Number to exclude showing Call Action Suggestion -->
+		<permission name="android.permission.READ_PHONE_NUMBERS"/>
+	<!-- MusicPlayBackTrigger : to read musicplayback packagename by using clientuid -->
+		<permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+		<permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+	    <permission name="android.permission.BIND_APPWIDGET"/>
+        <permission name="android.permission.ACCESS_SHORTCUTS"/>
+        <!-- Allow to overlay dialog in settings -->
+        <permission name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
+		<!-- For auto hotspot of mde tips -->
+		<permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+		<!-- Added permission for read storage image to support SDK level 33 onwards (domain/AndroidManifest.xml)-->
+        <permission name="android.permission.READ_MEDIA_IMAGES"/>
+        <!-- Live translation -->
+	<permission name="android.permission.MANAGE_UI_TRANSLATION"/>
+	<permission name="android.permission.BIND_TRANSLATION_SERVICE"/>        
+	<permission name="com.samsung.sea.retailagent.permission.RETAILMODE"/>
+        <!-- bg-tagk -->
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+		
+		<!-- Added permission for PDC/MONETA : Voice Recorder STT -->
+        <permission name="com.sec.android.app.voicenote.data.VNAIProvider.READ_PERMISSION"/>
+		<!-- Added permission for PDC/MONETA : Rreminder -->
+        <permission name="com.samsung.android.app.reminder.permission.READ"/>
+        <!-- Added permission for PDC/MONETA : Smarttings -->
+		<permission name="com.samsung.android.oneconnect.permission.READ_DATA_LAYER_PROVIDER"/>
+        <!-- Added permission for PDC/MONETA : Bixby Text Call -->
+		<permission name="com.samsung.android.provider.screencallprovider.permission.READ_SCREEN_CALL_HISTORY"/>
+        <!-- Added permission for PDC/MONETA : Samsung Note -->
+		<permission name="com.samsung.android.app.notes.READ"/>
+		<!-- Added permission for PDC/MONETA : Samsung Weather -->
+        <permission name="com.samsung.android.weather.permission.READ_SYSTEM_PROVIDER"/>
+        <!-- Added permission for PDC/MONETA : Samsung Account -->
+		<permission name="com.samsung.android.samsungaccount.permission.PROFILE_PROVIDER"/>
+		<!-- Added permission for PDC/MONETA : My Days -->
+        <permission name="com.samsung.android.dp.provider.READ_DATABASE"/>
+        <!-- Added permission for PDC/MONETA : Samsung Browser -->
+		<permission name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+		<!-- Added permission for PDC/MONETA : Samsung Call(Call Assistant) -->
+        <permission name="com.samsung.android.callassistant.permission.READ_CALL_RECORDING_PROVIDER"/>
+		<!-- Added permission for PDC/MONETA : Samsung Pay / Wallet -->
+        <permission name="com.samsung.android.spay.permission.READ_PAYPLANNER"/>
+		<!-- Added permission for PDC/MONETA : Gallery - CMH -->
+        <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+		<!-- Added permission for PDC/MONETA : Samsung SLocation -->
+        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+		<permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+		<!-- Added permission for PDC/MONETA : PDC SDK -->
+        <permission name="com.samsung.android.moneta.datacollector.reception.permission.EXTERNAL_DATA"/>
+		<!-- P241126-08292 (Now Brief/PDC) -->
+		<permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+		<permission name="com.samsung.android.permission.SEM_BATTERY_INFO"/>
+		<permission name="android.permission.BATTERY_STATS"/>
+		<permission name="android.permission.ACCESS_NOTIFICATIONS"/>
+		<permission name="com.samsung.android.app.cocktailbarservice.permission.ACCESS_PANEL" />
+		<permission name="android.permission.READ_SEARCH_INDEXABLES" />
+        <permission name="android.permission.START_TASKS_FROM_RECENTS" />
+    </privapp-permissions>
+</permissions>

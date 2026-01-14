@@ -1,0 +1,19 @@
+ <permissions>
+    <privapp-permissions package="com.osp.app.signin">
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="com.samsung.android.bio.face.permission.USE_FACE"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+        <permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+        <permission name="android.permission.MANAGE_ACTIVITY_STACKS"/>
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+        <permission name="android.permission.READ_SEARCH_INDEXABLES" />
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+        <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
+        <permission name="android.permission.SET_BIOMETRIC_DIALOG_ADVANCED" />
+    </privapp-permissions>
+ </permissions>

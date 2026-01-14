@@ -1,0 +1,8 @@
+<config>
+    <install-in-user-type package="com.google.android.providers.media.module">
+        <install-in user-type="SYSTEM"/>
+        <install-in user-type="FULL"/>
+        <install-in user-type="PROFILE"/>
+        <do-not-install-in user-type="android.os.usertype.profile.CLONE"/>
+    </install-in-user-type>
+</config>

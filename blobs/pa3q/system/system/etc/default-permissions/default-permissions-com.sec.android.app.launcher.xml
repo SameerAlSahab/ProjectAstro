@@ -1,0 +1,9 @@
+<exceptions>
+	<exception package="com.sec.android.app.launcher">
+		<permission name="android.permission.READ_MEDIA_IMAGES" fixed="false"/>
+		<permission name="android.permission.READ_MEDIA_VIDEO" fixed="false"/>
+		<permission name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" fixed="false"/>
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+		<permission name="android.permission.BLUETOOTH_CONNECT" fixed="false"/>
+	</exception>
+</exceptions>

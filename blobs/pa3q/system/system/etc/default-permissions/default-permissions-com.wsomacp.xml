@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+ 
+  <exception package="com.wsomacp">
+    <permission name="android.permission.RECEIVE_SMS" fixed="false"/>
+	<permission name="android.permission.READ_SMS" fixed="false"/>
+	<permission name="android.permission.RECEIVE_WAP_PUSH" fixed="false"/>
+	<permission name="android.permission.RECEIVE_MMS" fixed="false"/>
+	<permission name="android.permission.READ_CELL_BROADCASTS" fixed="false"/>
+	<permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+  </exception>
+
+</exceptions>

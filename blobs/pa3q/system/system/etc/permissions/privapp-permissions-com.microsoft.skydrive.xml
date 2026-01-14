@@ -1,0 +1,5 @@
+<permissions>
+  <privapp-permissions package="com.microsoft.skydrive">
+    <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+  </privapp-permissions>
+</permissions>

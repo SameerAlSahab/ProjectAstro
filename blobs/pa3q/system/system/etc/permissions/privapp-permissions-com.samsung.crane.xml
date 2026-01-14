@@ -1,0 +1,6 @@
+<permissions>
+        <privapp-permissions package="com.samsung.crane">
+            <permission name="android.permission.STATUS_BAR"/>
+			<permission name="android.permission.CONTROL_INCALL_EXPERIENCE"/>
+        </privapp-permissions>
+</permissions>

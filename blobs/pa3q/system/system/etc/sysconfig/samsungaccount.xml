@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- These are the standard packages that are white-listed to always have internet access while in power save mode, even if they aren't in the foreground. -->
+    <!-- Samsung Account client must always have network access for provide service to Samsung applications. -->
+
+    <allow-in-power-save package="com.osp.app.signin" />
+    <allow-in-power-save-except-idle package="com.osp.app.signin" />
+    <allow-in-data-usage-save package="com.osp.app.signin" />
+    <app-link package="com.osp.app.signin" />
+</config>

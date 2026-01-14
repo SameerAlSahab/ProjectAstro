@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<permissions>
+ 
+  <signature-permissions package="com.rsupport.rs.activity.rsupport.aas2">
+     <permission name="android.permission.REAL_GET_TASKS"/>
+     <permission name="android.permission.WRITE_SETTINGS"/>
+     <permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+     <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+     <permission name="android.permission.BATTERY_STATS"/>
+     <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+     <permission name="android.permission.STATUS_BAR_SERVICE"/>
+     <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+     <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+     <permission name="android.permission.MANAGE_NETWORK_POLICY"/>
+     <permission name="android.permission.CAPTURE_VIDEO_OUTPUT"/>
+     <permission name="android.permission.READ_FRAME_BUFFER"/>
+     <permission name="android.permission.DUMP"/>
+     <permission name="com.samsung.permission.LAUNCH_SOFTWARE_UPDATE"/>
+     <permission name="android.permission.INJECT_EVENTS"/>
+     <permission name="android.permission.DELETE_PACKAGES"/>
+
+  </signature-permissions>
+
+</permissions>

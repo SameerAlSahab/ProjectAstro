@@ -1,0 +1,5 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.app.clipboardedge">
+        <permission name="android.permission.READ_CLIPBOARD_IN_BACKGROUND"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+  <privapp-permissions package="com.samsung.gpuwatchapp">
+    <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"/>
+    <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+  </privapp-permissions>
+</permissions>

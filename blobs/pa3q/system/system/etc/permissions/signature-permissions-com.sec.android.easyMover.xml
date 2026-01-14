@@ -1,0 +1,56 @@
+<!--
+
+  ~ This XML file declares which platform signature permissions to grant to
+
+  ~ platform signed nonsystem apps.
+
+  -->
+<permissions>
+    <signature-permissions package="com.sec.android.easyMover">
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="com.samsung.android.permission.SEM_VOLD_DATA_MOVE"/>
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+        <permission name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.MANAGE_WIFI_NETWORK_SELECTION"/>
+        <permission name="com.sec.permission.preconfig"/>
+        <permission name="android.permission.PEERS_MAC_ADDRESS"/>
+        <permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+        <permission name="android.permission.GET_INTENT_SENDER_INTENT"/>
+        <permission name="android.permission.UPDATE_DEVICE_STATS"/>
+        <permission name="android.permission.MANAGE_USB"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.TETHER_PRIVILEGED"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.USE_BIOMETRIC_INTERNAL"/>
+        <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
+        <permission name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.BACKUP"/>
+        <permission name="android.permission.LOCAL_MAC_ADDRESS"/>
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="com.samsung.android.permission.SEM_WRITE_CAPTURED_URL"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        <permission name="android.permission.SUSPEND_APPS"/>
+        <permission name="android.permission.CLEAR_APP_CACHE"/>
+        <permission name="com.sec.permission.OTG_CHARGE_BLOCK"/>
+        <permission name="android.permission.MANAGE_NETWORK_POLICY"/>
+        <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="com.samsung.android.permission.SSRM_NOTIFICATION_PERMISSION"/>
+        <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+        <permission name="android.permission.MANAGE_ACTIVITY_STACKS"/>
+        <permission name="android.permission.GET_RUNTIME_PERMISSIONS"/>
+        <permission name="android.permission.MANAGE_APP_OPS_MODES"/>
+        <permission name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+        <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+        <permission name="android.permission.RESTORE_RUNTIME_PERMISSIONS"/>
+        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
+        <permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+    </signature-permissions>
+</permissions>

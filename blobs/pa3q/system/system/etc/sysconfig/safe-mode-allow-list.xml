@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2023 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+ -->
+
+<!--
+PMRune.PM_SAFE_MODE_ALLOW_LIST
+This XML defines an list of packages that can run on safe mode
+-->
+
+<config>
+    <!--  This version must be the same as the version in SafeModeAllowListHelper.  -->
+    <!--  If fix this file, must also update the version.  -->
+    <version name="2025073001"/>
+    <!-- Package List For Booting -->
+    <package name="android"/>
+    <package name="com.android.settings"/>
+    <package name="com.android.providers.settings"/>
+    <package name="com.android.wifi.resources"/>
+    <package name="com.google.android.connectivity.resources"/>
+    <package name="com.android.location.fused"/>
+    <package name="com.android.systemui"/>
+    <package name="com.samsung.android.kgclient"/>
+    <package name="com.sec.android.app.launcher"/>
+    <package name="com.samsung.android.app.aodservice"/>
+    <package name="com.samsung.android.wallpaper.live"/>
+    <package name="com.samsung.android.dynamiclock"/>
+    <package name="com.google.android.permissioncontroller"/>
+    <package name="com.google.android.packageinstaller"/>
+    <package name="com.samsung.android.packageinstaller"/>
+    <package name="com.samsung.android.permissioncontroller"/>
+    <package name="com.android.settings.intelligence"/>
+
+    <!-- Package List For Samsung Account, Store, Cloud -->
+    <package name="com.osp.app.signin"/>
+    <package name="com.samsung.android.scloud"/>
+    <package name="com.samsung.android.scpm"/>
+    <package name="com.samsung.android.mcfserver"/>
+    <package name="com.sec.android.app.samsungapps"/> 
+
+    <!-- Package List For Google Account, Store -->
+    <package name="com.android.vending"/>
+    <package name="com.google.android.apps.restore"/>
+    <package name="com.google.android.gms"/>
+    <package name="com.google.android.webview"/>
+    <package name="com.google.android.googlequicksearchbox"/>
+
+    <!-- Package List For FOTA -->
+    <package name="com.wssyncmldm"/>
+    <package name="com.samsung.sdm.sdmviewer"/>
+    <package name="com.samsung.sdm"/>
+    <package name="com.ws.dm"/>
+
+    <!-- Package List For Connection -->
+    <package name="com.google.android.networkstack"/>
+    <package name="com.google.android.networkstack.tethering"/>
+    <package name="com.google.android.networkstack.tethering.overlay"/>
+    <package name="com.google.android.cellbroadcastservice"/>
+    <package name="com.android.bluetooth"/>
+
+    <!-- Package List For Smart Switch -->
+    <package name="com.sec.android.easyMover"/>
+    <package name="com.sec.android.app.sbrowser"/>
+    <package name="com.sec.android.gallery3d"/>
+    <package name="com.samsung.android.smartswitchassistant"/>
+    <package name="com.samsung.android.providers.media"/>
+    <package name="com.samsung.android.callassistant"/>
+    <package name="com.samsung.android.scs"/>
+    <package name="com.samsung.android.incallui"/>
+    <package name="com.samsung.android.incall.contentprovider"/>
+    <package name="com.samsung.android.rubin.app"/>
+    <package name="com.samsung.cmh"/>
+    <package name="com.samsung.mediasearch"/>
+    <package name="com.samsung.petservice"/>
+
+    <!-- Package List For Input Method -->
+    <package name="com.samsung.android.honeyboard"/>
+
+    <!-- Package List For MTP -->
+    <package name="com.android.mtp"/>
+    <package name="com.android.providers.downloads"/>
+    <package name="com.android.providers.downloads.ui"/>
+    <package name="com.android.providers.media"/>
+    <package name="com.google.android.providers.media.module"/>
+
+    <!-- Package List For SA Log -->
+    <package name="com.sec.android.diagmonagent"/>
+    <package name="com.samsung.android.dqagent"/>
+	
+    <!-- Package List For Biometrics -->
+    <package name="com.samsung.android.biometrics.app.setting"/>
+
+    <!-- Package List For KnoxCore -->
+    <package name="com.samsung.android.knox.containercore"/>
+
+    <!-- Package List For Telephony -->
+    <package name="com.samsung.android.app.telephonyui"/>
+
+    <!-- Package List For ThemeCenter -->
+    <package name="com.samsung.android.themecenter"/>
+
+    <!-- Package List For Phone -->
+    <package name="com.android.phone"/>
+    <package name="com.samsung.euicc"/>
+    <package name="com.android.keychain"/>
+
+    <!-- Package List For Backup -->
+    <package name="com.samsung.android.app.contacts"/>
+    <package name="com.samsung.android.providers.contacts"/>
+    <package name="com.samsung.android.callbgprovider"/>
+    <package name="com.samsung.android.dialer"/>
+    <package name="com.android.providers.telephony"/>
+
+    <!-- Package List For Log -->
+    <package name="com.sec.android.app.parser"/>
+    <package name="com.sec.android.app.servicemodeapp"/>
+    <package name="com.sec.modem.settings"/>
+
+    <!-- Package List For Digital Wellbeing -->
+    <package name="com.samsung.android.forest"/>
+
+    <!-- Package List For SD Card-->
+    <package name="com.samsung.android.container"/>
+
+    <!-- Package List For Softbank Request-->
+    <package name="jp.softbank.mb.parentalcontrols"/>
+
+    <!-- Package List For Call, Message -->
+    <package name="com.sec.imsservice"/>
+    <package name="com.ims.dm"/>
+    <package name="com.sec.sve"/>
+    <package name="com.google.android.apps.messaging"/>
+    <package name="com.samsung.android.messaging"/>
+
+    <!-- Package List For VoWiFi -->
+    <package name="com.sec.unifiedwfc"/>
+    <package name="com.sec.epdg"/>
+    <package name="com.verizon.mips.services"/>
+    <package name="com.tmobile.dm.ms.services"/>
+
+    <!-- Package List For KG Client-->
+    <package name="com.samsung.android.sia"/>
+
+    <!-- Package List For Knox Enrollment-->
+    <package name="com.sec.enterprise.knox.cloudmdm.smdms"/>
+</config>

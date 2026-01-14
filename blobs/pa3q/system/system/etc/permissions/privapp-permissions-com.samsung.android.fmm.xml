@@ -1,0 +1,21 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.fmm">
+		<permission name="android.permission.MANAGE_USERS"/>
+		<permission name="android.permission.MOUNT_FORMAT_FILESYSTEMS"/>
+		<permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+		<permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+		<permission name="android.permission.WRITE_SECURE_SETTINGS"/>		
+		<permission name="android.permission.MASTER_CLEAR"/>
+		<permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+		<permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+		<permission name="android.permission.READ_SEARCH_INDEXABLES"/>
+		<permission name="android.permission.INTERACT_ACROSS_USERS"/>
+		<permission name="com.samsung.android.permission.LOCK_SECURITY_MONITOR"/>
+		<permission name="android.permission.BLUETOOTH_ADVERTISE"/>
+		<permission name="android.permission.BLUETOOTH_CONNECT"/>
+		<permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+		<permission name="android.permission.BLUETOOTH_SCAN"/>
+		<permission name="android.permission.SCHEDULE_EXACT_ALARM"/>		
+		<permission name="android.permission.INSTALL_SELF_UPDATES"/>		
+	</privapp-permissions>
+</permissions>

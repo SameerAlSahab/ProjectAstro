@@ -1,0 +1,5 @@
+<permissions>
+        <privapp-permissions package="com.sec.android.mimage.autodoodle.service">
+    	      <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        </privapp-permissions>        
+</permissions>

@@ -1,0 +1,11 @@
+<!--
+  ~ This XML file declares which platform signature permissions to grant to
+  ~ platform signed nonsystem apps.
+  -->
+ 
+<permissions>
+    <signature-permissions package="com.samsung.android.visual.cloudcore">
+        <permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    </signature-permissions>
+</permissions>
+

@@ -1,0 +1,23 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.dialer">
+        <permission name="android.permission.CALL_PRIVILEGED"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.SEND_RESPOND_VIA_MESSAGE"/>        
+        <permission name="com.android.voicemail.permission.READ_VOICEMAIL"/>
+        <permission name="com.android.voicemail.permission.WRITE_VOICEMAIL"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+        <permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON_SURVEY"/>
+        <permission name="com.samsung.android.mdecservice.nms.SEM_CMC_PUSH"/>
+		<permission name="com.samsung.android.provider.indexing.permission.ACCESS_PROVIDER"/>
+		<permission name="android.permission.READ_SEARCH_INDEXABLES"/>
+		<permission name="android.permission.SATELLITE_COMMUNICATION"/>
+    </privapp-permissions>
+</permissions>

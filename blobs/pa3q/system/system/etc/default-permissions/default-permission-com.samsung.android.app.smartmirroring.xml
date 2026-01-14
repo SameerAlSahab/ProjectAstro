@@ -1,0 +1,9 @@
+<exceptions>
+<exception package="com.samsung.android.smartmirroring">
+<permission name="android.permission.NEARBY_WIFI_DEVICES" fixed="false"/>
+<permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false"/>
+<permission name="android.permission.BLUETOOTH_ADVERTISE" fixed="false"/>
+<permission name="android.permission.BLUETOOTH_CONNECT" fixed="false"/>
+<permission name="android.permission.BLUETOOTH_SCAN" fixed="false"/>
+</exception>
+</exceptions>

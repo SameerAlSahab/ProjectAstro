@@ -1,0 +1,3 @@
+https://android.googlesource.com/platform/prebuilts/sdk/+/5b140e4592aca34c03f6c3fdc8bbf71cb202f8e2/tools/lib/signapk.jar
+
+

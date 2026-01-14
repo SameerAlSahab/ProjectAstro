@@ -1,0 +1,19 @@
+<!--
+    This XML file declares which signature|privileged permissions should be granted to privileged
+    applications that come with the platform
+    -->
+<permissions>
+    <privapp-permissions package="com.samsung.android.wallpaper.live">
+        <permission name="com.samsung.permission.SSENSOR"/>
+        <permission name="android.permission.DEVICE_POWER"/>
+        <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
+        <permission name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE"/>
+        <permission name="android.permission.QUERY_USERS"/>
+        <permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE"/>
+    </privapp-permissions>
+</permissions>

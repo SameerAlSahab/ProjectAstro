@@ -1,0 +1,19 @@
+<permissions>
+  <privapp-permissions package="com.samsung.android.intellivoiceservice">
+    <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    <permission name="android.permission.MANAGE_USERS"/>
+    <permission name="android.permission.READ_PHONE_STATE"/>
+    <permission name="android.permission.RECORD_AUDIO"/>
+    <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <permission name="android.permission.REAL_GET_TASKS"/>
+    <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+    <permission name="android.permission.SET_PROCESS_LIMIT"/>
+    <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <permission name="com.android.voicemail.permission.READ_VOICEMAIL"/>
+    <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+    <permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+    <permission name="com.samsung.android.permission.READ_SSDID"/>
+    <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+  </privapp-permissions>
+</permissions>

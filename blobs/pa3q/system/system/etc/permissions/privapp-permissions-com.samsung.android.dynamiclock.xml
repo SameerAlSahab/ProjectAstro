@@ -1,0 +1,25 @@
+<!--
+    This XML file declares which signature|privileged permissions should be granted to privileged
+    applications that come with the platform
+    -->
+<permissions>
+    <privapp-permissions package="com.samsung.android.dynamiclock">
+        <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.DEVICE_POWER"/>
+        <permission name="android.permission.INSTALL_SELF_UPDATES"/>
+        <permission name="android.permission.MANAGE_ACTIVITY_STACKS" />
+        <permission name="android.permission.MODIFY_PHONE_STATE" />
+        <permission name="android.permission.BATTERY_STATS" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        <permission name="com.samsung.android.permission.MODIFY_THEME"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON" />
+        <permission name="com.samsung.systemui.permission.KEYGUARD_IMAGE" />
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND" />
+
+    </privapp-permissions>
+</permissions>

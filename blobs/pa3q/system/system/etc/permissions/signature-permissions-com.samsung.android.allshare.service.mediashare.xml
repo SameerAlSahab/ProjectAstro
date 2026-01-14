@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<permissions>
+
+    <signature-permissions package="com.samsung.android.allshare.service.mediashare">
+        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+        <permission name="android.permission.NEARBY_WIFI_DEVICES"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    </signature-permissions>
+
+</permissions>

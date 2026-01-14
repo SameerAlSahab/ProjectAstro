@@ -1,0 +1,42 @@
+<!--
+  ~ This XML file declares which platform signature permissions to grant to
+  ~ platform signed nonsystem apps.
+  -->
+
+<permissions>
+    <signature-permissions package="com.samsung.android.voc">
+        <permission name="android.permission.BLUETOOTH_STACK"/>
+        <permission name="android.permission.CAPTURE_VIDEO_OUTPUT"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.DUMP"/>
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
+        <permission name="android.permission.LOCATION_HARDWARE"/>
+        <permission name="android.permission.MANAGE_BIOMETRIC"/>
+        <permission name="android.permission.MANAGE_MEDIA_PROJECTION"/>
+        <permission name="android.permission.MANAGE_NETWORK_POLICY"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.PEERS_MAC_ADDRESS"/>
+        <permission name="android.permission.READ_FRAME_BUFFER"/>
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.READ_SEARCH_INDEXABLES"/>
+        <permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+        <permission name="android.permission.USE_BIOMETRIC_INTERNAL"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="com.samsung.android.bio.face.permission.USE_FACE"/>
+        <permission name="com.samsung.android.permission.ACCESS_MAINTENANCE_MODE"/>
+        <permission name="com.samsung.android.permission.BIOMETRICS_PRIVILEGED"/>
+        <permission name="com.samsung.android.permission.SEM_APP_RESTRICTION"/>
+        <permission name="com.samsung.android.permission.SSRM_NOTIFICATION_PERMISSION"/>
+        <permission name="com.samsung.permission.BARCODE_READ"/>
+        <permission name="com.samsung.permission.LAUNCH_SOFTWARE_UPDATE"/>
+        <permission name="com.samsung.permission.SSENSOR"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+        <permission name="com.samsung.android.provider.indexing.permission.ACCESS_PROVIDER"/>
+    </signature-permissions>
+</permissions>

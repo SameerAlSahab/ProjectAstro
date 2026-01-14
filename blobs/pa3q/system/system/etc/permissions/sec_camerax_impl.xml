@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="androidx.camera.extensions.impl" file="/system/framework/sec_camerax_impl.jar"/>
+</permissions>

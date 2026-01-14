@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Feature for devices with an eUICC. -->
+<permissions>
+    <privapp-permissions package="com.samsung.android.app.esimkeystring">
+        <permission name="android.permission.ACCESS_NETWORK_STATE" />
+        <permission name="android.permission.CAMERA" />
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+        <permission name="com.samsung.euicc.LPA_SERVICE_ACCESS" />
+        <permission name="com.samsung.euicc.permission.EVENT_ENTRY_DATA" />
+        <permission name="com.sec.phone.permission.SEC_FACTORY_PHONE" />
+        <permission name="com.sec.factory.permission.SIMDETEC" />
+    </privapp-permissions>
+</permissions>

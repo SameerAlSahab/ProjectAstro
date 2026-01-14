@@ -1,0 +1,11 @@
+FILE smali_classes4/com/samsung/android/settings/display/controller/SecEADPreferenceController.smali
+REPLACE .method public getAvailabilityStatus()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+
+END
+
+END

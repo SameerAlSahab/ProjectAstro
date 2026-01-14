@@ -1,0 +1,57 @@
+#MAGISK
+setdefault   import_addons        on
+setdefault   extraction_speed     default
+
+#AstroROM script starts here:
+ui_print ""
+ui_print "     e               d8"
+ui_print "    d8b      d88~\ _d88__ 888-~\  e88~-_  "
+ui_print "   /Y88b    C888    888   888    d888   i "
+ui_print "  /  Y88b    Y88b   888   888    8888   | "
+ui_print " /____Y88b    888D  888   888    Y888   ' "
+ui_print "/      Y88b \_88P   "88_/ 888     "88_-~  "
+ui_print " "
+ui_print "ASTRO ROM  __ROM_VERSION__  FOR __MODEL_NAME__  "
+ui_print ""
+ui_print "Build: __BUILD_DATE__"
+
+
+# Check device
+ui_print "Checking device ..."
+
+device_codename=$(getprop ro.product.vendor.device)
+if [ "$device_codename" != "__CODENAME__" ]; then
+    abort "Error: This ROM is for __MODEL_NAME__ (__CODENAME__ only). Detected: $device_codename"
+else
+    ui_print "Device is compatible."
+fi
+
+
+
+# Install
+   ui_print "Installing ROM... "
+   
+   update_zip super.img $(find_block super)
+
+
+
+# CSC Mods
+   try_mount -rw /optics
+   try_mount -rw /prism
+   try_mount -rw /omr
+   ui_print "Adding CSC features... "
+   cscfeature="$addons/omc/cscfeature.xml"
+   omc_decoder="$addons/omcdecoder"
+   . "$addons/omc_edit.sh"
+   
+   ui_print "AstroROM successfully installed."
+
+
+# Ending
+   ui_print " If you want to reboot to recovery, press vol + "
+   ui_print " If you want to close the installer, press vol - "
+   if $yes; then
+      run_program "$addons/reboot" recovery
+   else
+      end "Installer closed... "
+   fi

@@ -1,0 +1,16 @@
+<permissions>
+	<signature-permissions package="com.samsung.android.app.interpreter">
+		<permission name="android.permission.BIND_QUICK_SETTINGS_TILE"/>
+		<permission name="android.permission.STATUS_BAR"/>
+		<permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+		<permission name="android.permission.CONTROL_DEVICE_STATE"/>
+		<permission name="android.permission.DEVICE_POWER"/>
+		<permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+		<permission name="android.permission.WRITE_SETTINGS"/>
+		<permission name="android.permission.STATUS_BAR_SERVICE"/>
+		<permission name="com.samsung.permission.SSENSOR"/>
+		<permission name="android.permission.REAL_GET_TASKS"/>
+		<permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+		<permission name="com.samsung.systemui.permission.KEYGUARD_IMAGE"/>
+	</signature-permissions>
+</permissions>

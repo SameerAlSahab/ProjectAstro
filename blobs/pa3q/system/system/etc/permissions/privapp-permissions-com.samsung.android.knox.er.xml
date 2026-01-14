@@ -1,0 +1,6 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.knox.er">
+         <permission name="android.permission.REAL_GET_TASKS"/>
+         <permission name="com.samsung.android.knox.permission.KNOX_LICENSE_INTERNAL"/>
+    </privapp-permissions>
+</permissions>

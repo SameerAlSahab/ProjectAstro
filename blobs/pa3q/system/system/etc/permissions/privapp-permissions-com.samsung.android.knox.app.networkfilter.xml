@@ -1,0 +1,5 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.knox.app.networkfilter">
+        <permission name="android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,5 @@
+<permissions>
+    <privapp-permissions package="com.knox.vpn.proxyhandler">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+</permissions>

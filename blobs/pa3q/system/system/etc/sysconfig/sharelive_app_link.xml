@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+       <allow-in-power-save package="com.samsung.android.app.sharelive"/>
+       <allow-in-power-save-except-idle package="com.samsung.android.app.sharelive"/>
+       <app-link package="com.samsung.android.app.sharelive" />
+</config>

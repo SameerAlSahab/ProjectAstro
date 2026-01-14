@@ -1,0 +1,29 @@
+<!--
+
+  ~ This XML file declares which platform signature permissions to grant to
+
+  ~ platform signed nonsystem apps.
+
+  -->
+
+ 
+
+<permissions>
+
+    <signature-permissions package="com.samsung.android.rubin.app">
+
+        <permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+        <permission name="android.permission.SET_ACTIVITY_WATCHER"/>
+        <permission name="com.samsung.android.bixby.agent.permission.READ_LANGUAGE"/>
+        <permission name="sec.permission.RADIO_BASED_LOCATION"/>
+        <permission name="sec.permission.SAMSUNG_POSITIONING"/>
+        <permission name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+        <permission name="com.samsung.android.hostmanager.permission.CONTROL_WEARABLE_STATUS"/>
+        <permission name="com.sec.spp.permission.SEND"/>
+        <permission name="android.permission.GET_INTENT_SENDER_INTENT"/>
+        <permission name="com.samsung.permission.WRITE_SM_DATA"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+
+    </signature-permissions>
+
+</permissions>

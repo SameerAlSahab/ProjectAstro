@@ -1,0 +1,21 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.fast">
+        <permission name="android.permission.CONTROL_VPN"/>
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
+        <permission name="android.permission.MANAGE_ACTIVITY_STACKS"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        <permission name="android.permission.UNLIMITED_TOASTS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="com.osp.app.signin.BROADCAST_PERMISSION"/>
+		<permission name="com.samsung.android.app.tips.permission.USE_INTENT_SERVICE"/>
+        <permission name="com.samsung.android.fast.permission.BIND_SECURE_WIFI"/>
+		<permission name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+        <permission name="com.sec.spp.permission.TOKEN_0d8da71743454dd69556be575cee5daa4b88f2755144dda27c8f3a8834f67e7a916f7c079e3900cf59a14cae63c46178ecaad4097b6455278879a0432f0bf9bacfbb022076fbc5801fcc600379e96241751bfaec8b3793770425de87206d396ffed04c64d64726c8f6e531d3163eb9c7f72581f53d53cac5138fcfa8bff4dffb"/>
+		<permission name="com.wssnps.permission.COM_WSSNPS"/>
+    </privapp-permissions>
+</permissions>

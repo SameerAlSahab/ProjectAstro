@@ -1,0 +1,16 @@
+<!-- This file manages the privileged permissions. -->
+<permissions>
+    <privapp-permissions package="com.samsung.android.mcfserver">
+        <permission name="android.permission.INTERACT_ACROSS_USERS" />
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION" />
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED" />
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+        <permission name="android.permission.LOCAL_MAC_ADDRESS" />
+        <permission name="android.permission.BLUETOOTH_PRIVILEGED" />
+        <permission name="android.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS"/>
+        <permission name="android.permission.OVERRIDE_WIFI_CONFIG" />
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.UWB_PRIVILEGED" />
+        <permission name="android.permission.LOCATION_HARDWARE" />
+    </privapp-permissions>
+</permissions>

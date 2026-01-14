@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exceptions>
+  
+  <!-- Ignite b/242662883 -->
+  <exception package="com.dti.samsung">
+    <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+  </exception>
+  <!-- AppHub b/238047865 -->
+  <exception package="com.applovin.array.apphub.samsung">
+    <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+  </exception>
+  <!-- Aura b/237992875 -->
+  <exception package="com.aura.oobe.samsung.gl">
+    <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+  </exception>
+
+</exceptions>

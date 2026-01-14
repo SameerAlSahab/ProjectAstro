@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="manager_wrapper_compat" file="/system/framework/manager_wrapper_compat.jar" />
+    <feature name="com.samsung.android.camera.deviceinjector" version="4" />
+</permissions>

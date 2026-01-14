@@ -1,0 +1,25 @@
+<permissions>
+	<privapp-permissions package="com.sec.android.app.myfiles">
+		<permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+		<permission name="android.permission.MANAGE_USERS"/>
+		<permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+		<permission name="android.permission.DELETE_PACKAGES" />
+		<permission name="android.permission.REAL_GET_TASKS"/>
+		<permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+		<permission name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+		<permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+		<permission name="android.permission.INTERACT_ACROSS_USERS"/>
+		<permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+		<permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+		<permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+		<permission name="android.permission.MOUNT_FORMAT_FILESYSTEMS"/>
+		<permission name="android.permission.DELETE_CACHE_FILES"/>
+		<permission name="com.samsung.android.permission.MULTI_CONTROL_RECEIVER_PERMISSION"/>
+		<permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+		<permission name="com.samsung.android.sharelive.permission.READ_EXTERNAL_SETTINGS_PROVIDER"/>
+		<permission name="com.samsung.permission.CAPTURE"/>
+		<permission name="com.samsung.android.permission.ACCESS_MAINTENANCE_MODE" />
+		<permission name="android.permission.UPDATE_DEVICE_STATS"/>
+		<deny-permission name="android.permission.PACKAGE_USAGE_STATS"/>
+	</privapp-permissions>
+</permissions>

@@ -1,0 +1,19 @@
+<!--
+  ~ This XML file declares which platform signature permissions to grant to
+  ~ platform signed nonsystem apps.
+  -->
+
+<permissions>
+    <signature-permissions package="com.samsung.android.app.tips">
+        <permission name="com.samsung.android.permission.MULTI_CONTROL_RECEIVER_PERMISSION"/>
+        <permission name="com.samsung.android.permission.ACCESS_MAINTENANCE_MODE"/>
+        <permission name="com.samsung.permission.LAUNCH_SOFTWARE_UPDATE"/>
+        <permission name="android.permission.OPEN_ACCESSIBILITY_DETAILS_SETTINGS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.QUERY_ALL_PACKAGES"/>
+        <permission name="android.permission.POST_NOTIFICATIONS"/>
+    </signature-permissions>
+</permissions>

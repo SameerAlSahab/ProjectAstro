@@ -1,0 +1,24 @@
+<permissions>
+    <privapp-permissions package="com.android.phone">
+        <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+        <permission name="android.permission.LOOP_RADIO"/>
+        <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.TETHER_PRIVILEGED"/>
+        <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
+        <permission name="com.samsung.android.permission.SSRM_NOTIFICATION_PERMISSION"/>
+        <permission name="com.samsung.permission.HQM_NOTIFICATION_PERMISSION"/>
+        <permission name="com.samsung.permission.PALM_MOTION"/>
+        <permission name="com.samsung.permission.SSENSOR"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+        <permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON_SURVEY"/>
+        <permission name="com.sec.phone.permission.SEC_FACTORY_PHONE"/>
+        <permission name="diagandroid.phone.receiveBinaryData" />
+
+        <!-- MultiTimezonePopup -->
+        <permission name="android.permission.MANAGE_TIME_AND_ZONE_DETECTION"/>
+    </privapp-permissions>
+</permissions>

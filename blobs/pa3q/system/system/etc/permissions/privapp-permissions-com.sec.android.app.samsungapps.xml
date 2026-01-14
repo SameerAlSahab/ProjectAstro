@@ -1,0 +1,25 @@
+<permissions>
+    <privapp-permissions package="com.sec.android.app.samsungapps">
+		<permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>		
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.SET_PROCESS_LIMIT"/>
+        <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="com.sec.android.fota.permission.PUSH"/>
+		<permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+		<permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+		<permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+		<permission name="android.permission.SUBSTITUTE_SHARE_TARGET_APP_NAME_AND_ICON"/>
+		<permission name="com.samsung.kidshome.broadcast.DEFAULT_HOME_CHANGE_PERMISSION"/>
+		<permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+		<permission name="android.permission.READ_SEARCH_INDEXABLES"/>
+		<permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND"/>
+		<permission name="android.permission.ENFORCE_UPDATE_OWNERSHIP" />
+		<permission name="android.permission.QUERY_USERS" />
+		<permission name="com.samsung.android.permission.READ_SSDID" />
+    </privapp-permissions>
+</permissions>

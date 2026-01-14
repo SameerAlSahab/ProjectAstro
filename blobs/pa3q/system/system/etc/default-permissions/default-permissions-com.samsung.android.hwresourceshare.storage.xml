@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+    <exception package="com.samsung.android.hwresourceshare.storage">
+        <permission name="android.permission.READ_MEDIA_AUDIO" />
+        <permission name="android.permission.READ_MEDIA_IMAGES" />
+        <permission name="android.permission.READ_MEDIA_VIDEO" />
+    </exception>
+</exceptions>
+

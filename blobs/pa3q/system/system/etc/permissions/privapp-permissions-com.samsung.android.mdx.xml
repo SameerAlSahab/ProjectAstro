@@ -1,0 +1,29 @@
+<permissions>
+
+    <privapp-permissions package="com.samsung.android.mdx">
+        <permission name="android.permission.STOP_APP_SWITCHES"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+        <permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+        <permission name="android.permission.READ_SEARCH_INDEXABLES"/>
+        <permission name="android.permission.INJECT_EVENTS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.BLUETOOTH_STACK"/>
+        <permission name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
+        <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+        <permission name="android.permission.CAPTURE_MEDIA_OUTPUT"/>
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="com.sec.android.permission.USE_LINK_TO_WINDOWS_REMOTE_APP_MODE"/>
+        <permission name="com.samsung.android.mdx.permission.GET_INSTANT_HOTSPOT_EVENT"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="com.samsung.android.mdx.permission.ADD_RECENT_WEBSITES"/>
+        <permission name="android.permission.REQUEST_COMPANION_PROFILE_APP_STREAMING"/>
+        <permission name="android.permission.REQUEST_COMPANION_SELF_MANAGED"/>
+        <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+    </privapp-permissions>
+
+</permissions>

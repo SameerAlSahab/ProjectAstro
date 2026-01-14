@@ -1,0 +1,9 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.knox.knnr">
+     <!-- Crosscheck KNNR AndroidManifest permission with framework/base/core/res/AndroidManifest.xml 
+     If any new permissions had android:protectionLevel="privileged" then add it here-->
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION" />
+        <permission name="com.samsung.android.knox.permission.KPM_OPERATION_REQUEST_INFORM_ACTION_INTERNAL"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    </privapp-permissions>
+</permissions>

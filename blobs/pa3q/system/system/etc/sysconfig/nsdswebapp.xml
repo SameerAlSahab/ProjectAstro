@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- These are the standard packages that are white-listed to always have internet access while in power save mode, even if they aren't in the foreground. -->
+	<!-- nsdswebapp must run always for wifi calling servic. -->
+	<allow-in-power-save package="com.sec.vsim.ericssonnsds.webapp" />
+	<allow-in-power-save-except-idle package="com.sec.vsim.ericssonnsds.webapp" />
+</config>

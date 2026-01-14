@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2016 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<!--
+This XML file declares which signature|privileged permissions should be granted to privileged
+applications that come with the platform
+-->
+<permissions>
+    <privapp-permissions package="com.microsoft.appmanager">       
+       <permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+       <permission name="com.samsung.android.mdx.permission.GET_INSTANT_HOTSPOT_EVENT"/>
+       <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+       <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+       <permission name="android.permission.CAPTURE_MEDIA_OUTPUT"/>
+       <!-- Add at 2024. 04. 03. LTW R2.9 -->
+       <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
+	<!-- Add at 2024. 10. 08 LTW R2.31.01 -->
+       <permission name="android.permission.REQUEST_COMPANION_PROFILE_COMPUTER"/>
+       <permission name="android.permission.REQUEST_COMPANION_SELF_MANAGED"/>
+
+       <!-- remove at 2024. 04. 03. LTW R2.9 -->
+       <!--permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"/-->
+       <!-- remove at 2023. 05. 09. LTW R2.7 -->
+       <!--permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/-->
+    </privapp-permissions>
+</permissions>

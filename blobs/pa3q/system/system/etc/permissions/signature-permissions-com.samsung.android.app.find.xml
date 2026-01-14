@@ -1,0 +1,12 @@
+<!--
+  ~ This XML file declares which platform signature permissions to grant to
+  ~ platform signed nonsystem apps.
+  -->
+ 
+<permissions>
+    <signature-permissions package="com.samsung.android.app.find">
+        <permission name="android.permission.DEVICE_POWER"/>
+        <permission name="android.permission.WHITELIST_AUTO_REVOKE_PERMISSIONS"/>
+    </signature-permissions>
+</permissions>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <allow-in-power-save package="com.samsung.android.dbsc" />
+    <allow-in-power-save-except-idle package="com.samsung.android.dbsc" />
+    <allow-in-data-usage-save package="com.samsung.android.dbsc" />
+    <app-link package="com.samsung.android.dbsc" />
+</config>

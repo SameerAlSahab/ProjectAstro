@@ -1,0 +1,11 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.app.interpreter">
+		<permission name="android.permission.BIND_QUICK_SETTINGS_TILE"/>
+		<permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+		<permission name="android.permission.STATUS_BAR"/>
+		<permission name="android.permission.WRITE_SETTINGS"/>
+		<permission name="com.samsung.permission.SSENSOR"/>
+		<permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+		<permission name="android.permission.REAL_GET_TASKS"/>
+    </privapp-permissions>
+</permissions>

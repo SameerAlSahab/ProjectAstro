@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+ 
+  <exception package="com.samsung.android.app.routines">
+    <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="true"/>
+    <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="true"/>
+  </exception>
+
+</exceptions>

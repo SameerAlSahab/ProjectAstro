@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2016 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<!--
+This XML file declares which signature|privileged permissions should be granted to privileged
+applications that come with the platform
+-->
+<permissions>
+    <privapp-permissions package="com.sec.android.app.camera">
+       <permission name="android.permission.MANAGE_USERS"/>
+       <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+       <permission name="android.permission.SET_ANIMATION_SCALE"/>
+       <permission name="android.permission.STATUS_BAR"/>
+       <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+       <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+       <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+       <permission name="android.permission.CAPTURE_AUDIO_HOTWORD"/>
+       <permission name="android.permission.MODIFY_AUDIO_ROUTING" />
+       <permission name="com.samsung.android.permission.SSRM_NOTIFICATION_PERMISSION"/>
+       <permission name="com.samsung.permission.HRM_EXT"/>
+       <permission name="com.samsung.permission.SSENSOR"/>
+       <permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+       <permission name="com.sec.android.diagmonagent.permission.DIAGMON"/>
+       <permission name="com.sec.android.diagmonagent.permission.PROVIDER"/>
+       <permission name="android.permission.CHANGE_CONFIGURATION"/>
+       <permission name="com.samsung.android.permission.CHANGE_DISPLAY_COLOR"/>
+       <permission name="android.permission.MODIFY_PHONE_STATE"/>
+       <permission name="android.permission.READ_SEARCH_INDEXABLES"/>
+       <permission name="com.samsung.android.settings.intelligence.READ_SETTINGS_SEARCH_DATA_PROVIDER"/>
+       <permission name="android.permission.DELETE_PACKAGES" />
+       <permission name="android.permission.SYSTEM_CAMERA" />
+       <permission name="android.permission.READ_WALLPAPER_INTERNAL" />
+       <permission name="android.permission.BLUETOOTH_PRIVILEGED" />
+       <permission name="com.samsung.android.permission.ACCESS_SYSTEM_KEY_DISPATCHING" />
+	   <permission name="mediatek.permission.ACCESS_APU_SYS"/>
+    </privapp-permissions>
+</permissions>

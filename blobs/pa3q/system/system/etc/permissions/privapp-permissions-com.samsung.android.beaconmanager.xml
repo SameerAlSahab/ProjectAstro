@@ -1,0 +1,16 @@
+<permissions>
+        <privapp-permissions package="com.samsung.android.beaconmanager">
+            <permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+            <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+            <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+            <permission name="android.permission.LOCAL_MAC_ADDRESS"/>
+            <permission name="android.permission.MANAGE_USERS"/>
+            <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+            <permission name="android.permission.REAL_GET_TASKS"/>
+            <permission name="android.permission.SET_PROCESS_LIMIT"/>
+            <permission name="android.permission.UPDATE_DEVICE_STATS"/>
+            <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+            <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+            <permission name="android.permission.READ_WIFI_CREDENTIAL" />
+        </privapp-permissions>
+</permissions>

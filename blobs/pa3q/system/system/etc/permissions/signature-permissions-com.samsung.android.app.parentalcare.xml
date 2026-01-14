@@ -1,0 +1,18 @@
+<!-- 
+
+  ~ This XML file declares which platform signature permissions to grant to
+
+  ~ platform signed nonsystem apps.
+
+   -->
+<permissions>
+    <signature-permissions package="com.samsung.android.app.parentalcare">
+        <permission name="android.permission.MANAGE_ACTIVITY_TASKS"/>
+        <permission name="android.permission.MANAGE_ACTIVITY_STACKS"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.INJECT_EVENTS"/>
+        <permission name="android.permission.MANAGE_APP_OPS_MODES"/>
+        <permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    </signature-permissions>
+</permissions>

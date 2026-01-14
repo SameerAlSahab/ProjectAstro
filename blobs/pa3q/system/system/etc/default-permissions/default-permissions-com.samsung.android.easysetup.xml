@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+ 
+  <exception package="com.samsung.android.easysetup">
+    <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false"/>
+    <permission name="android.permission.BLUETOOTH_SCAN" fixed="false"/>
+  </exception>
+
+</exceptions>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="scamera_sdk_util" file="/system/framework/scamera_sdk_util.jar"/>
+</permissions>

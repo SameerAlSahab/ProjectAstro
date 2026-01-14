@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+        <privapp-permissions package="com.samsung.android.app.tips">
+            <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+            <permission name="android.permission.INTERNET"/>
+            <permission name="android.permission.FOREGROUND_SERVICE"/>
+            <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+            <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+            <permission name="com.samsung.android.provider.indexing.permission.ACCESS_PROVIDER"/>
+            <permission name="com.sec.android.inputmethod.permission.KEYBOARD_SETTING" />
+            <permission name="com.samsung.android.app.screenrecorder.permission.ACCESS_SCREEN_RECORDER_SVC"/>
+            <permission name="com.samsung.android.service.aircommand.permission.ACCESS_SPEN_SETTINGS"/>
+            <permission name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
+            <permission name="com.samsung.android.sharelive.permission.SHARE_LIVE_UPDATE"/>
+            <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+            <permission name="android.permission.INSTALL_PACKAGES"/>
+        </privapp-permissions>
+</permissions>

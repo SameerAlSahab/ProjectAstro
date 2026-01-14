@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- These are configurations that must exist on all Android devices. -->
+<config>
+
+    <!-- Broadcast actions that are currently exempted from O+ background
+         delivery restrictions. -->
+    <allow-implicit-broadcast action="android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED" />
+    <allow-implicit-broadcast action="android.intent.action.ACTION_DEFAULT_VOICE_SUBSCRIPTION_CHANGED" />
+    <allow-implicit-broadcast action="android.intent.action.DATA_SMS_RECEIVED" />
+    <allow-implicit-broadcast action="android.intent.action.MEDIA_SCANNER_SCAN_FILE" />
+    <allow-implicit-broadcast action="android.intent.action.PACKAGE_CHANGED" />
+    <allow-implicit-broadcast action="android.intent.action.SIM_STATE_CHANGED" />
+    <allow-implicit-broadcast action="android.media.action.CLOSE_AUDIO_EFFECT_CONTROL_SESSION" />
+    <allow-implicit-broadcast action="android.media.action.OPEN_AUDIO_EFFECT_CONTROL_SESSION" />
+    <allow-implicit-broadcast action="android.provider.Telephony.SECRET_CODE" />
+    <allow-implicit-broadcast action="android.provider.Telephony.SMS_CB_RECEIVED" />
+    <allow-implicit-broadcast action="android.provider.Telephony.SMS_DELIVER" />
+    <allow-implicit-broadcast action="android.provider.Telephony.SMS_RECEIVED" />
+    <allow-implicit-broadcast action="android.provider.Telephony.SMS_REJECTED" />
+    <allow-implicit-broadcast action="android.provider.Telephony.WAP_PUSH_DELIVER" />
+    <allow-implicit-broadcast action="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+    <allow-implicit-broadcast action="android.telephony.action.CARRIER_CONFIG_CHANGED" />
+    <allow-implicit-broadcast action="android.telephony.action.DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
+    <allow-implicit-broadcast action="android.telephony.action.DEFAULT_SUBSCRIPTION_CHANGED" />
+    <allow-implicit-broadcast action="android.telephony.action.MULTI_SIM_CONFIG_CHANGED" />
+    <allow-implicit-broadcast action="android.telephony.action.SECRET_CODE" />
+    <allow-implicit-broadcast action="android.telephony.action.SIM_APPLICATION_STATE_CHANGED" />
+    <allow-implicit-broadcast action="android.telephony.action.SIM_CARD_STATE_CHANGED" />
+    <allow-implicit-broadcast action="android.telephony.action.SIM_SLOT_STATUS_CHANGED" />
+    <!-- // SecProductFeature_KNOX.SEC_PRODUCT_FEATURE_KNOX_SUPPORT_MDM { -->
+    <!-- discussed with Google on b/66965143 -->
+    <allow-implicit-broadcast action="android.app.action.SYSTEM_UPDATE_POLICY_CHANGED" />
+    <!-- // SecProductFeature_KNOX.SEC_PRODUCT_FEATURE_KNOX_SUPPORT_MDM } -->
+
+
+    <!-- Whitelist of what components are permitted as backup data transports.  The
+         'service' attribute here is a flattened ComponentName string. -->
+    <backup-transport-whitelisted-service
+        service="com.android.localtransport/.LocalTransportService" />
+    <backup-transport-whitelisted-service
+        service="com.android.encryptedlocaltransport/.EncryptedLocalTransportService" />
+
+    <!-- Whitelist Shell to use the bugreport API -->
+    <bugreport-whitelisted package="com.android.shell" />
+
+    <!-- Whitelist of bundled applications which all handle URLs to their websites by default -->
+    <app-link package="com.android.carrierdefaultapp" />
+    
+    <!-- Samsung Knox Ernollment Service--> 
+    <allow-implicit-broadcast action="com.sec.enterprise.knox.intent.action.ENROLL"/> 
+    <allow-implicit-broadcast action="com.sec.enterprise.knox.intent.action.UNENROLL"/>
+
+    <!--  BadgeProvider badge count update intent  -->
+    <allow-implicit-broadcast action="com.sec.intent.action.BADGE_COUNT_UPDATE"/>
+    <allow-implicit-broadcast action="android.intent.action.BADGE_COUNT_UPDATE"/>
+	
+    <!-- Start whitelisting Unified Settings Service Verizon broadcasts -->
+    <allow-implicit-broadcast action="com.verizon.net.CONNECTIVITY_CHANGE" />
+    <allow-implicit-broadcast action="com.verizon.provider.Settings.PHONE_STATE_MODIFY" />
+    <allow-implicit-broadcast action="com.verizon.net.IMS_REGISTRATION" />
+    <allow-implicit-broadcast action="com.verizon.provider.ACTION_SETTING_CHANGED" />
+    <!-- End whitelisting Unified Settings Verizon broadcasts -->	
+
+    <!--  Blue light filter service -->
+    <allow-implicit-broadcast action="com.samsung.intent.action.EMERGENCY_STATE_CHANGED" />
+
+	<!-- SoundAlive broadcast -->
+    <allow-implicit-broadcast action="android.media.STREAM_DEVICES_CHANGED_ACTION" />
+    <allow-implicit-broadcast action="com.samsung.bluetooth.a2dp.intent.action.DUAL_PLAY_MODE_ENABLED" />
+    <allow-implicit-broadcast action="com.sec.android.app.soundalive.DUAL_BT_CONNECTION_CHANGED" />
+    <allow-implicit-broadcast action="com.sec.samsungsound.ACTION_SOUNDALIVE_CHANGED" />
+    <allow-implicit-broadcast action="com.samsung.intent.action.MEDIA_SERVER_REBOOTED" />
+    <allow-implicit-broadcast action="com.samsung.intent.action.ACTION_DOLBY_CONTENT_PLAYBACK_STATE_CHANGED" />
+    <allow-implicit-broadcast action="android.media.AUDIO_BECOMING_NOISY_SEC" />
+    <allow-implicit-broadcast action="android.media.audiofx.AudioEffect.ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION" />
+    <allow-implicit-broadcast action="android.media.audiofx.AudioEffect.ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION" />
+    <allow-implicit-broadcast action="android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED" />
+    <allow-implicit-broadcast action="com.samsung.intent.action.SETTINGS_SOFT_RESET" />
+    <allow-implicit-broadcast action="com.samsung.android.intent.karaoke" />
+    <allow-implicit-broadcast action="com.samsung.android.app.music.intent.action.MUSIC_LAUNCHED" />
+    <allow-implicit-broadcast action="com.sec.android.app.soundalive.cancel" />
+    <allow-implicit-broadcast action="android.intent.action.ACTION_SHUTDOWN" />
+    <allow-implicit-broadcast action="com.sec.android.app.soundalive.SET_ENGINE_STATE" />
+    <allow-implicit-broadcast action="com.sec.android.app.soundalive.SET_MUSIC_PARAM" />
+    <allow-implicit-broadcast action="com.sec.android.app.soundalive.SET_CALL_PARAM" />
+    <allow-implicit-broadcast action="com.sec.android.app.soundalive.SET_EFFECTS_SETTING" />
+    <allow-implicit-broadcast action="com.sec.hearingadjust.ACTION_CALL_STATE_OFFHOOK" />
+    
+	<!-- Samsung Account broadcast -->
+    <allow-implicit-broadcast action="com.samsung.account.SAMSUNGACCOUNT_SIGNIN_COMPLETED" />
+    <allow-implicit-broadcast action="com.samsung.account.SAMSUNGACCOUNT_SIGNOUT_COMPLETED" />
+    <allow-implicit-broadcast action="com.samsung.account.SAMSUNGACCOUNT_RESIGNIN_COMPLETED" />
+    <allow-implicit-broadcast action="com.samsung.account.SAMSUNGACCOUNT_RESIGNIN_VIEW" />
+    <allow-implicit-broadcast action="com.samsung.account.SAMSUNGACCOUNT_PROFILE_SETUP_COMPLETED" />
+    <allow-implicit-broadcast action="com.samsung.account.SIGNIN_CLICK_SAMSUNGACCOUNT" />
+    <allow-implicit-broadcast action="com.samsung.account.REGISTRATION_COMPLETED" />
+    <allow-implicit-broadcast action="com.samsung.account.REMOVE_SAMSUNGACCOUNT" />
+    <allow-implicit-broadcast action="com.osp.app.signin.action.EMAIL_VALIDATION_COMPLETED" />
+    <allow-implicit-broadcast action="osp.signin.SAMSUNG_ACCOUNT_SIGNOUT" />
+    <allow-implicit-broadcast action="com.samsung.account.SA_CUSTOMIZED_SERVICE_COLLECTION" />
+    <allow-implicit-broadcast action="com.samsung.account.DM_WIPEOUT_FAILED" />
+    <allow-implicit-broadcast action="com.samsung.account.DM_WIPEOUT_SUCCESS" />
+    <allow-implicit-broadcast action="com.samsung.account.SAMSUNG_ACCOUNT_SIGNOUT_FAILED" />
+    <allow-implicit-broadcast action="com.samsung.account.SAMSUNG_ACCOUNT_SIGNOUT_SUCCESS" />
+    <allow-implicit-broadcast action="com.samsung.account.REGISTRATION_CANCELED" />
+	
+	<!-- Bluetooth Vendor Specific Headset Event Broadcast -->
+    <allow-implicit-broadcast action="android.bluetooth.headset.action.VENDOR_SPECIFIC_HEADSET_EVENT" />
+</config>

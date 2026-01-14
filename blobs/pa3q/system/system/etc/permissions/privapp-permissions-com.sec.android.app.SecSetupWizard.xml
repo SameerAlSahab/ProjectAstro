@@ -1,0 +1,7 @@
+<permissions>
+    <privapp-permissions package="com.sec.android.app.SecSetupWizard">
+        <permission name="android.permission.INVOKE_CARRIER_SETUP"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
+</permissions>

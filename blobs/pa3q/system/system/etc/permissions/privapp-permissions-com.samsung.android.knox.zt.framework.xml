@@ -1,0 +1,8 @@
+ <permissions>
+        <privapp-permissions package="com.samsung.android.knox.zt.framework">
+            <permission name="android.permission.MANAGE_USERS" />
+            <permission name="android.permission.INTERACT_ACROSS_USERS" />
+            <permission name="com.samsung.android.knox.permission.KNOX_PROTECTED_KEYSTORE" />
+            <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION" />
+        </privapp-permissions>
+ </permissions>

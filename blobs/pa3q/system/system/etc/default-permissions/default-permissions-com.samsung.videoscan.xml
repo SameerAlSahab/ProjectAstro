@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+ 
+  <exception package="com.samsung.videoscan">
+    <permission name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" fixed="false"/>
+    <permission name="android.permission.READ_MEDIA_VIDEO" fixed="false"/>
+  </exception>
+
+</exceptions>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+        <privapp-permissions package="com.samsung.android.settingshelper">
+            <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+            <permission name="com.sec.phone.permission.SEC_FACTORY_PHONE" />
+            <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+            //<permission name="android.permission.SCHEDULE_EXACT_ALARM"/>//This permission is not needed because of 'Doze mode allowlist'
+        </privapp-permissions>
+</permissions>

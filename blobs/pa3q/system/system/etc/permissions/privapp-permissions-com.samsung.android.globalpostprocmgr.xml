@@ -1,0 +1,15 @@
+<permissions>
+        <privapp-permissions package="com.samsung.android.globalpostprocmgr">
+            <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+			<permission name="android.permission.INTERNET"/>
+            <permission name="com.samsung.android.providers.media.READ"/>
+            <permission name="com.samsung.android.providers.media.WRITE"/>
+            <permission name="com.samsung.android.camera.core2.processor.work.REQUEST_WORK"/>
+            <permission name="com.samsung.android.app.galaxyraw.core2.processor.work.REQUEST_WORK"/>
+			<permission name="android.permission.READ_MEDIA_IMAGES"/>
+			<permission name="android.permission.READ_MEDIA_VIDEO"/>
+			<permission name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED"/>
+			<permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>
+			<permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        </privapp-permissions>        
+</permissions>

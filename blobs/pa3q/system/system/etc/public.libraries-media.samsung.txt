@@ -1,0 +1,14 @@
+libheifcapture_jni.media.samsung.so
+libjpegsq.media.samsung.so
+libslljpeg.media.samsung.so
+libsemimagecrop_jni.media.samsung.so
+libsimba.media.samsung.so
+libsjpegxl.media.samsung.so
+libcontextanalyzer_jni.media.samsung.so
+libmotionphoto_jni.media.samsung.so
+libapex_motionphoto_utils_jni.media.samsung.so
+libmotionphoto_utils_jni.media.samsung.so
+libsume_mediabuffer_jni.media.samsung.so
+libsume_jni.media.samsung.so
+libamDNN.media.samsung.so
+libSlowShutter_jni.media.samsung.so

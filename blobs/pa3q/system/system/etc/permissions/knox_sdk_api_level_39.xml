@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<permissions>
+    <feature name="com.samsung.android.knox.knoxsdk.api.level.39"/>
+    <feature name="com.samsung.android.knox.knoxsdk.api.level.38"/>
+    <feature name="com.samsung.android.knox.knoxsdk.api.level.37"/>
+    <feature name="com.samsung.android.knox.knoxsdk.api.level.36"/>
+    <feature name="com.samsung.android.knox.knoxsdk.api.level.35"/>
+    <feature name="com.samsung.android.knox.knoxsdk.api.level.34"/>
+    <feature name="com.samsung.android.knox.knoxsdk.api.level.33"/>
+</permissions>

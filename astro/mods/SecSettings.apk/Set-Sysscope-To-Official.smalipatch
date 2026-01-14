@@ -1,0 +1,33 @@
+FILE smali_classes4/com/samsung/android/settings/deviceinfo/statusinfo/SysScopeStatusPreferenceController.smali
+
+REPLACE .method private changeSysScopeStatus(Landroidx/preference/Preference;)V
+    .locals 2
+
+    :try_start
+ 
+    iget-object v0, p0, Lcom/android/settingslib/core/AbstractPreferenceController;->mContext:Landroid/content/Context;
+
+    sget v1, Lcom/samsung/gtscell/R$string;->sysscope_normal:I
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move-result-object v0
+    
+    invoke-virtual {p1, v0}, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+
+    goto :after_set
+    :try_end
+    .catchall {:try_start .. :try_end} :catch_fallback
+
+    :catch_fallback
+    const-string v0, "Official"
+    invoke-virtual {p1, v0}, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+
+    :after_set
+ 
+    const/4 v0, 0x0
+    invoke-virtual {p1, v0}, Landroidx/preference/Preference;->setWidgetLayoutResource(I)V
+
+    return-void
+
+END
+

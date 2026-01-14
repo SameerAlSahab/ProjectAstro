@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- This file manages the pre-granted permissions. -->
+<exceptions>
+    <exception package="com.samsung.android.mcfserver">
+        <permission name="android.permission.READ_CONTACTS" fixed="false" />
+        <permission name="android.permission.BLUETOOTH_SCAN" fixed="false" />
+        <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false" />
+        <permission name="android.permission.BLUETOOTH_ADVERTISE" fixed="false" />
+        <permission name="android.permission.NEARBY_WIFI_DEVICES" fixed="false" />
+        <permission name="android.permission.UWB_RANGING" fixed="false" />
+    </exception>
+</exceptions>

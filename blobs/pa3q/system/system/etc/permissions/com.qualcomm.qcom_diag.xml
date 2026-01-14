@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<permissions>
+    <permission name="com.qualcomm.permission.QCOM_DIAG" >
+    <group gid="oem_2901" />
+    <group gid="oem_2902" />
+    <group gid="oem_2905" />
+    <group gid="diag" />
+    </permission>
+</permissions>

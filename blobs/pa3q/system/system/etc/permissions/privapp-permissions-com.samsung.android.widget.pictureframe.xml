@@ -1,0 +1,10 @@
+<!--
+    This XML file declares which signature|privileged permissions should be
+    granted to privileged applications that come with the platform
+    -->
+<permissions>
+    <privapp-permissions package="com.samsung.android.widget.pictureframe">
+        <permission name="com.samsung.android.permission.SEC_MEDIA_CONTENTS"/>
+        <permission name="com.samsung.android.permission.SEM_MEDIA_CONTENTS"/>		<permission name="android.permission.REAL_GET_TASKS"/>		<permission name="android.permission.INTERACT_ACROSS_USERS"/>		<permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,5 @@
+<permissions>
+    <privapp-permissions package="com.samsung.ssu">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+    </privapp-permissions>
+</permissions>

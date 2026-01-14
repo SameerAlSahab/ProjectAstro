@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception package="com.sec.enterprise.knox.cloudmdm.smdms">
+    <permission name="android.permission.CAMERA" fixed="false"/>
+    <permission name="android.permission.BLUETOOTH_SCAN" fixed="false"/>
+    <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false"/>
+    <permission name="android.permission.NEARBY_WIFI_DEVICES" fixed="false"/>
+  </exception>
+</exceptions>

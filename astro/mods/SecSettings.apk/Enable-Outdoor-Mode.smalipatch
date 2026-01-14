@@ -1,0 +1,14 @@
+# https://github.com/ShaDisNX255/NcX_Stock/commit/fa56e82d3d79d10a728a1e9fc0323eb53fb34dcd
+
+FILE smali_classes4/com/samsung/android/settings/display/controller/SecOutDoorModePreferenceController.smali
+REPLACE  .method public final isAvailable()Z
+    .locals 1
+
+    const/4 v0, 0x1    # TRUE
+    return v0
+     
+END
+
+END
+
+

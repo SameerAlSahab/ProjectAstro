@@ -1,0 +1,21 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.knox.kpecore">
+        <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+        <permission name="android.permission.ACCESS_WIFI_STATE"/>
+        <permission name="android.permission.INSTALL_SELF_UPDATES"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.SET_TIME"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_KPECORE_INTERNAL" />
+        <permission name="com.samsung.android.knox.permission.KNOX_ANALYTICS_INTERNAL" />
+        <permission name="com.samsung.android.knox.permission.KNOX_LICENSE_INTERNAL" />
+        <permission name="com.samsung.android.knox.permission.KNOX_DEVICE_CONFIGURATION"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_DATE_TIME"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_CUSTOM_SYSTEM"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_HW_CONTROL"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_SECURITY"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_CUSTOM_SETTING"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_WIFI"/>
+    </privapp-permissions>
+</permissions>

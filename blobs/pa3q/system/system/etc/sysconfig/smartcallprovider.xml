@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- These are the standard packages that are white-listed to always have internet access, even if they aren't in the foreground. -->
+	<!-- Smart Call Provider Application must always have network access for providing services. -->
+	<allow-in-data-usage-save package="com.samsung.android.smartcallprovider"/>
+</config>

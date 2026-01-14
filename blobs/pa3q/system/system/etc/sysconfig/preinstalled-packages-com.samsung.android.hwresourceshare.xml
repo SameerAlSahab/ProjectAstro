@@ -1,0 +1,8 @@
+<config>
+    <install-in-user-type package="com.samsung.android.hwresourceshare">
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+    <allow-in-power-save package="com.samsung.android.hwresourceshare" />
+	<allow-in-power-save-except-idle package="com.samsung.android.hwresourceshare" />
+	<allow-in-data-usage-save package="com.samsung.android.hwresourceshare" />
+</config>

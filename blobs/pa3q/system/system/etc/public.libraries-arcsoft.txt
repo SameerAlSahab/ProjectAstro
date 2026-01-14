@@ -1,0 +1,17 @@
+libhumantracking.arcsoft.so
+libface_recognition.arcsoft.so
+libpic_best.arcsoft.so
+libPortraitDistortionCorrection.arcsoft.so
+libPortraitDistortionCorrectionCali.arcsoft.so
+libface_landmark.arcsoft.so
+libFacialStickerEngine.arcsoft.so
+libfrtracking_engine.arcsoft.so
+libFaceRecognition.arcsoft.so
+libveengine.arcsoft.so
+lib_pet_detection.arcsoft.so
+libae_bracket_hdr.arcsoft.so
+libhybrid_high_dynamic_range.arcsoft.so
+libimage_enhancement.arcsoft.so
+libFacialAttributeDetection.arcsoft.so
+libobjectcapture_jni.arcsoft.so
+libobjectcapture.arcsoft.so

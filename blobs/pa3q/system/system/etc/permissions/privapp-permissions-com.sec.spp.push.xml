@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+        <privapp-permissions package="com.sec.spp.push">
+            //spp
+            <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+            <permission name="android.permission.REAL_GET_TASKS"/>
+            <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+            <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+            //<permission name="android.permission.SCHEDULE_EXACT_ALARM"/>//This permission is not needed because of 'Doze mode allowlist'
+            //runa
+            <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+            <permission name="android.permission.BLUETOOTH"/>//R OS or under
+            <permission name="com.samsung.android.launcher.permission.READ_SETTINGS"/>
+            <permission name="com.samsung.android.launcher.permission.WRITE_SETTINGS"/>
+        </privapp-permissions>
+</permissions>

@@ -1,0 +1,30 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.rubin.app">
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.READ_FRAME_BUFFER"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="com.samsung.android.rubin.inferenceengine.datalogging.LOG_WRITE"/>
+        <permission name="com.sec.android.diagmonagent.permission.DIAGMON" />
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.GET_INTENT_SENDER_INTENT"/>
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="com.samsung.android.provider.indexing.permission.ACCESS_PROVIDER"/>
+        <permission name="com.samsung.android.samsungaccount.permission.PROFILE_PROVIDER"/>
+        <permission name="com.samsung.android.mobileservice.profile.READ"/>
+        <permission name="com.samsung.cmh.SKIPHEAVY"/>
+        <permission name="com.samsung.cmh.START"/>
+        <permission name="com.samsung.cmh.data.READ"/>
+        <permission name="com.samsung.cmh.data.WRITE"/>
+        <permission name="com.samsung.android.providers.media.CMH"/>
+        <permission name="com.samsung.android.providers.media.READ"/>
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="com.samsung.android.oneconnect.permission.READ_CLOUD_LOCATION_PROVIDER"/>
+        <permission name="com.wssnps.permission.COM_WSSNPS"/>
+        <permission name="com.samsung.systemui.POPUP_UI_PERMISSION"/>        
+
+    </privapp-permissions>
+</permissions>

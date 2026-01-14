@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<permissions>
+ 
+  <signature-permissions package="com.samsung.android.aware.service">
+    <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+    <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <permission name="android.permission.READ_CONTACTS"/>
+    <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <permission name="android.permission.READ_MEDIA_IMAGES"/>
+    <permission name="android.permission.READ_MEDIA_AUDIO"/>
+    <permission name="android.permission.READ_MEDIA_VIDEO"/>
+    <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+    <permission name="android.permission.NEARBY_WIFI_DEVICES"/>
+    <permission name="android.permission.POST_NOTIFICATIONS"/>            
+  </signature-permissions>
+
+</permissions>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This XML file declares which platform signature permissions to grant to
+  ~ platform signed nonsystem apps.
+-->
+<permissions>
+    <signature-permissions package="com.sec.enterprise.knox.cloudmdm.smdms">
+        <permission name="android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS"/>
+        <permission name="android.permission.MANAGE_DEVICE_ADMINS"/>
+        <permission name="android.permission.BIND_DEVICE_ADMIN"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.SET_PROCESS_LIMIT"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.OEM_UNLOCK_STATE"/>
+        <permission name="android.permission.READ_OEM_UNLOCK_STATE"/>
+        <permission name="android.permission.ACCESS_PDB_STATE"/>
+        <permission name="android.permission.INVOKE_CARRIER_SETUP"/>
+        <permission name="android.permission.DISPATCH_PROVISIONING_MESSAGE"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.STATUS_BAR"/>
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND"/>
+        <permission name="android.permission.SET_PREFERRED_APPLICATIONS"/>
+        <permission name="android.permission.MASTER_CLEAR"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_ANALYTICS_INTERNAL"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_ENTERPRISE_DEVICE_ADMIN"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_DEX"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_DEVICE_CONFIGURATION"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_APP_MGMT"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_BLUETOOTH"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_INVENTORY"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_ROAMING"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_WIFI"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_SECURITY"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_HW_CONTROL"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_RESTRICTION_MGMT"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_LOCATION"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_PHONE_RESTRICTION"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_BROWSER_SETTINGS"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_DATE_TIME"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_KIOSK_MODE"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_CERTIFICATE"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_MULTI_USER_MGMT"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_CCM_KEYSTORE"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_TIMA_KEYSTORE"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_KES_INTERNAL"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_CERTIFICATE_ENROLLMENT"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_CUSTOM_SETTING"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_LICENSE_INTERNAL"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_DUAL_DAR_INTERNAL"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_INTERNAL_EXCEPTION"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_ENHANCED_ATTESTATION"/>
+        <permission name="com.samsung.android.knox.permission.KNOX_CUSTOM_SYSTEM"/>
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+        <permission name="com.samsung.android.knox.ppclient.permission.KNOX_PRIVACY_POLICY"/>
+        <permission name="com.sec.enterprise.knox.permission.KNOX_CCM"/>
+        <permission name="com.sec.enterprise.knox.permission.KNOX_ATTESTATION"/>
+        <permission name="com.sec.enterprise.knox.permission.KNOX_KEYSTORE"/>
+        <permission name="com.sec.enterprise.knox.permission.CUSTOM_SETTING"/>
+        <permission name="com.sec.enterprise.knox.permission.CUSTOM_SYSTEM"/>
+        <permission name="com.sec.enterprise.knox.permission.KNOX_DEACTIVATE_LICENSE"/>
+        <permission name="com.sec.enterprise.knox.permission.KNOX_CERTENROLL"/>
+        <permission name="com.samsung.android.knoxguard.STATUS"/>
+        <permission name="com.sec.android.SAMSUNG_AASASERVICE"/>
+        <permission name="com.samsung.permission.WIFI_FACTORY_TEST"/>
+        <permission name="com.sec.enterprise.knox.cloudmdm.smdms.provider.permission.WRITE"/>
+        <permission name="com.sec.enterprise.knox.cloudmdm.smdms.SUPPORT_PERMISSION"/>
+        <permission name="com.sec.enterprise.knox.cloudmdm.smdms.permission.SAMSUNG_MDM_SERVICE"/>
+        <permission name="com.sec.knox.kccc.agent.permission.ACCESS_KCCLIENT_PROVIDER"/>
+        <permission name="com.samsung.android.knox.efota.permission.ACCESS_EFOTA_PROVIDER"/>
+		<permission name="com.samsung.android.knox.permission.KNOX_UCM_INTERNAL"/>
+    </signature-permissions>
+</permissions>

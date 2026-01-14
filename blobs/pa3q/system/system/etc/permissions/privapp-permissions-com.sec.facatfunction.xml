@@ -1,0 +1,19 @@
+<permissions>
+    <privapp-permissions package="com.sec.facatfunction">
+        <permission name="android.permission.CALL_PRIVILEGED"/>
+        <permission name="android.permission.DUMP"/>
+        <permission name="android.permission.MASTER_CLEAR"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.RECORD_AUDIO"/>
+        <permission name="com.samsung.accessory.manager.permission.AUTHENTICATION_CONTROL"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="com.samsung.permission.PALM_MOTION"/>
+        <permission name="android.permission.MANAGE_SOUND_TRIGGER"/>
+        <permission name="android.permission.CAPTURE_AUDIO_HOTWORD"/>
+        <permission name="com.samsung.permission.UWB_SYSTEM_PROTECTION"/>
+        <permission name="android.permission.MANAGE_VOICE_KEYPHRASES"/>
+    </privapp-permissions>
+</permissions>

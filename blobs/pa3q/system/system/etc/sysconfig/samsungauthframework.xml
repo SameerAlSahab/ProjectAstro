@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- These are the standard packages that are white-listed to always have internet access while in power save mode, even if they aren't in the foreground. -->
+	<!-- Samsung AuthFramework must always have network access for providing client applications with services. -->
+	
+	<allow-in-power-save package="com.samsung.android.authfw" />
+</config>

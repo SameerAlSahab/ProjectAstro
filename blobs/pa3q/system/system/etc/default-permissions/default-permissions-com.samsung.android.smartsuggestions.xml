@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+ 
+  <exception package="com.samsung.android.smartsuggestions">  
+    <permission name="android.permission.READ_CONTACTS" fixed="false"/>
+	<permission name="android.permission.READ_CALENDAR" fixed="false"/>
+	<permission name="android.permission.READ_CALL_LOG" fixed="false"/>
+	<permission name="android.permission.READ_SMS" fixed="false"/>
+	<permission name="android.permission.RECEIVE_SMS" fixed="false"/>
+	<permission name="android.permission.BLUETOOTH_CONNECT" fixed="false"/>
+	<permission name="android.permission.READ_PHONE_NUMBERS" fixed="false"/>
+	<permission name="android.permission.READ_MEDIA_IMAGES" fixed="false"/>
+	
+	<!-- For Moneta/PDC/DataHarbor Collection Gallery, Location, VoiceRecoderSTT -->
+	<permission name="android.permission.ACCESS_MEDIA_LOCATION" fixed="false"/>
+	<permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="false"/>
+	<permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false"/>
+	<permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="false"/>
+  </exception>
+
+</exceptions>

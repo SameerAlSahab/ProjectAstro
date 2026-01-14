@@ -1,0 +1,19 @@
+<permissions>
+    <privapp-permissions package="com.sec.imsservice">
+        <permission name="android.permission.ACCESS_IMS_CALL_SERVICE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.MONITOR_DEFAULT_SMS_PACKAGE"/>
+        <permission name="android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        <permission name="com.att.iqi.permission.BIND_IQI_MANAGER"/>
+        <permission name="android.permission.INSTALL_SELF_UPDATES"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.REBOOT" />
+        <permission name="android.permission.LOCATION_BYPASS" />
+    </privapp-permissions>
+</permissions>

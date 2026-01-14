@@ -1,0 +1,12 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.knox.attestation">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.QUERY_ALL_PACKAGES"/>
+        <permission name="com.samsung.android.knox.permission.KPM_OPERATION_REQUEST_INFORM_ACTION_INTERNAL"/>
+        <permission name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+        <permission name="com.samsung.permission.WIFI_FACTORY_TEST"/>
+    </privapp-permissions>
+</permissions>

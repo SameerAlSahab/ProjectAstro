@@ -1,0 +1,23 @@
+<permissions>
+ <feature name="com.samsung.android.oneui.version.10000" />
+ <feature name="com.samsung.android.oneui.version.10100" />
+ <feature name="com.samsung.android.oneui.version.10200" />
+ <feature name="com.samsung.android.oneui.version.10500" />
+ <feature name="com.samsung.android.oneui.version.20000" />
+ <feature name="com.samsung.android.oneui.version.20100" />
+ <feature name="com.samsung.android.oneui.version.20500" />
+ <feature name="com.samsung.android.oneui.version.30000" />
+ <feature name="com.samsung.android.oneui.version.30100" />
+ <feature name="com.samsung.android.oneui.version.30101" />
+ <feature name="com.samsung.android.oneui.version.40000" />
+ <feature name="com.samsung.android.oneui.version.40100" />
+ <feature name="com.samsung.android.oneui.version.40101" />
+ <feature name="com.samsung.android.oneui.version.50000" />
+ <feature name="com.samsung.android.oneui.version.50100" />
+ <feature name="com.samsung.android.oneui.version.50101" />
+ <feature name="com.samsung.android.oneui.version.60000" />
+ <feature name="com.samsung.android.oneui.version.60100" /> 
+ <feature name="com.samsung.android.oneui.version.60101" /> 
+ <feature name="com.samsung.android.oneui.version.70000" />
+ <feature name="com.samsung.android.oneui.version.80000" /> 
+</permissions>

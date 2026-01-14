@@ -1,0 +1,5 @@
+<permissions>
+    <privapp-permissions package="com.samsung.android.providers.trash">
+        <permission name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    </privapp-permissions>
+</permissions>

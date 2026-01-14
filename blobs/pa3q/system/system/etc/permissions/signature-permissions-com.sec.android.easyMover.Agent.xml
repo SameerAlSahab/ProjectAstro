@@ -1,0 +1,36 @@
+<!--
+
+  ~ This XML file declares which platform signature permissions to grant to
+
+  ~ platform signed nonsystem apps.
+
+  -->
+<permissions>
+    <signature-permissions package="com.sec.android.easyMover.Agent">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE"/>
+        <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.LOCAL_MAC_ADDRESS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
+        <permission name="com.samsung.android.launcher.permission.WRITE_SETTINGS"/>
+        <permission name="com.samsung.android.oneconnect.permission.START_SERVICE"/>
+        <permission name="com.samsung.android.settings.wifi.permission.USE_WIFI_BNR_SERVICE"/>
+        <permission name="com.sec.android.easyMover.permission.RUN_AGENT"/>
+        <permission name="com.sec.android.easyMover.permission.SCLOUD_RESTORE"/>
+        <permission name="com.samsung.systemui.POPUP_UI_PERMISSION"/>
+        <permission name="com.sec.android.app.SecSetupWizard.permission.SHOW_SETUP_WIZARD"/>
+        <permission name="com.samsung.permission.READ_SM_DATA"/>
+        <permission name="com.wssnps.permission.COM_WSSNPS"/>
+    </signature-permissions>
+</permissions>

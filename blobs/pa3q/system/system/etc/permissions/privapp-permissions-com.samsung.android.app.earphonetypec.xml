@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+    <permissions>
+      <privapp-permissions package="com.samsung.android.app.earphonetypec">
+      <permission name="android.permission.MANAGE_USB"/>
+      <permission name="android.permission.MANAGE_USERS"/>      <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+</permissions>

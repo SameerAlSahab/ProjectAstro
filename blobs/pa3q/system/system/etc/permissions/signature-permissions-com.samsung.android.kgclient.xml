@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<permissions>
+    <signature-permissions package="com.samsung.android.kgclient">
+        <permission name="com.samsung.android.knox.permission.KNOX_APP_MGMT" />
+        <permission name="com.samsung.android.knox.permission.KNOX_SECURITY" />
+        <permission name="com.samsung.android.knox.permission.KNOX_RESTRICTION_MGMT" />
+        <permission name="com.samsung.android.knox.permission.KNOX_KIOSK_MODE" />
+        <permission name="com.samsung.android.knox.permission.KNOX_HW_CONTROL" />
+        <permission name="com.samsung.android.knox.permission.KNOX_LOCATION" />
+        <permission name="android.permission.BIND_DEVICE_ADMIN" />
+        <permission name="com.samsung.android.knox.permission.KNOX_CONTAINER" />
+        <permission name="com.samsung.android.knox.permission.KNOX_ENTERPRISE_DEVICE_ADMIN" />
+        <permission name="android.permission.MANAGE_DEVICE_ADMINS" />
+        <permission name="android.permission.DEVICE_POWER" />
+        <permission name="com.samsung.android.knox.permission.KNOX_PHONE_RESTRICTION" />
+        <permission name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE" />
+        <permission name="android.permission.MANAGE_NETWORK_POLICY" />
+        <permission name="com.samsung.android.knox.permission.KNOX_LICENSE_INTERNAL" />
+        <permission name="com.samsung.android.knox.permission.KNOX_CUSTOM_SETTING" />
+        <permission name="com.samsung.android.knox.permission.KNOX_DEX" />
+        <permission name="com.samsung.android.knox.permission.KNOX_SIM_RESTRICTION" />
+        <permission name="com.samsung.permission.LAUNCH_SOFTWARE_UPDATE" />
+        <permission name="android.permission.WRITE_SETTINGS" />
+    </signature-permissions>
+</permissions>

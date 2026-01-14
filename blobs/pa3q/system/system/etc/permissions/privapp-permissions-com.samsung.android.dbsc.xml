@@ -1,0 +1,5 @@
+ <permissions>
+    <privapp-permissions package="com.samsung.android.dbsc">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+ </permissions>
