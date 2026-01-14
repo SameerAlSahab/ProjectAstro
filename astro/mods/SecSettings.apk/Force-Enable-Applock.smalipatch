@@ -1,0 +1,24 @@
+FILE smali_classes3/com/samsung/android/settings/usefulfeature/applock/AppLockPreferenceController.smali
+REPLACE .method public getAvailabilityStatus()I
+    .locals 0
+
+    sget-object p0, Lcom/android/settings/Utils;->sBuilder:Ljava/lang/StringBuilder;
+
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x3
+
+    return p0
+   
+END
+
+END

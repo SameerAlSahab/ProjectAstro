@@ -1,0 +1,30 @@
+FILE smali_classes4/com/samsung/android/settings/display/SecDisplayUtils.smali
+REPLACE .method public static isInvalidFont(Landroid/content/Context;Ljava/lang/String;)Z
+    .locals 8
+
+    .line 1
+    const-string v0, "SecDisplayUtils"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "checkFont - "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2
+    const/4 v0, 0x0
+
+    .line 3
+    return v0
+    
+END
+
+END

@@ -1,0 +1,32 @@
+AUTHOR: Salvo Giangreco <giangrecosalvo9@gmail.com>
+
+FILE smali/com/samsung/android/secsoundpicker/util/PickerRune.smali
+REPLACE .method static constructor <clinit>()V
+    .locals 4
+
+    sget v0, Landroid/os/Build$VERSION;->SEM_PLATFORM_INT:I
+
+    const v1, 0x1d524
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    if-lt v0, v1, :cond_0
+
+    move v0, v3
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    :goto_0
+    sput-boolean v0, Lcom/samsung/android/secsoundpicker/util/PickerRune;->SUPPORT_SOUND_THEME_ONEUI31_EXTENSION:Z
+
+    sput-boolean v3, Lcom/samsung/android/secsoundpicker/util/PickerRune;->SUPPORT_SAMSUNG_BRAND_SOUND_ONEUI_7:Z
+
+    return-void
+
+    
+END
