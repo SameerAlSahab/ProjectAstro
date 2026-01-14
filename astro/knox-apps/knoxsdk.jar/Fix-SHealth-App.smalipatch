@@ -1,0 +1,10 @@
+FILE smali/com/samsung/android/knox/EdmUtils.smali
+REPLACE .method public static greylist getAPILevelForInternal()I
+  .locals 1
+  
+  const/16 v0, 0x13
+
+  return v0
+
+END
+
