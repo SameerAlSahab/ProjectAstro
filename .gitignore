@@ -21,7 +21,7 @@ __pycache__/
 *.pyc
 
 
-# WSL / Windows garbage shit
+# WSL / Windows garbage sh*t
 *Zone.Identifier*
 
 # Allow git internals

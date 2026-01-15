@@ -11,7 +11,7 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 
 <p align="center">
   <a href="https://github.com/SameerAlSahab/ProjectAstro/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SameerAlSahab/ProjectAstro?style=for-the-badge&logo=github"/></a>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/commits/sixteen"><img src="https://img.shields.io/github/last-commit/SameerAlSahab/ProjectAstro/main?style=for-the-badge"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectAstro/commits/sixteen"><img src="https://img.shields.io/github/last-commit/SameerAlSahab/ProjectAstro/sixteen?style=for-the-badge"/></a>
   <a href="https://github.com/SameerAlSahab/ProjectAstro/stargazers"><img src="https://img.shields.io/github/stars/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
   <a href="https://github.com/SameerAlSahab/ProjectAstro/network/members"><img src="https://img.shields.io/github/forks/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
   <br>
