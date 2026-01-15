@@ -11,11 +11,11 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 
 <p align="center">
   <a href="https://github.com/SameerAlSahab/ProjectAstro/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SameerAlSahab/ProjectAstro?style=for-the-badge&logo=github"/></a>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/commits/main"><img src="https://img.shields.io/github/last-commit/SameerAlSahab/ProjectAstro/main?style=for-the-badge"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectAstro/commits/sixteen"><img src="https://img.shields.io/github/last-commit/SameerAlSahab/ProjectAstro/main?style=for-the-badge"/></a>
   <a href="https://github.com/SameerAlSahab/ProjectAstro/stargazers"><img src="https://img.shields.io/github/stars/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
   <a href="https://github.com/SameerAlSahab/ProjectAstro/network/members"><img src="https://img.shields.io/github/forks/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
   <br>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/actions"><img src="https://img.shields.io/github/actions/workflow/status/SameerAlSahab/ProjectAstro/build.yml?style=for-the-badge"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectAstro/actions"><img src="https://img.shields.io/github/actions/workflow/status/SameerAlSahab/ProjectAstro/Build-AstroROM.yml?style=for-the-badge"/></a>
   <img src="https://img.shields.io/github/contributors/SameerAlSahab/ProjectAstro?style=for-the-badge"/>
   <img src="https://img.shields.io/github/issues/SameerAlSahab/ProjectAstro?style=for-the-badge"/>
   <a href="https://github.com/SameerAlSahab/ProjectAstro/watchers"><img src="https://img.shields.io/github/watchers/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
@@ -38,8 +38,7 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 - Official status in device information
 - Heavily debloated
 - Bluetooth library patched
-- Unlock higher FPS on games
-- Smart Manager CN 
+- Smart Manager China
 - Samsung encryption removed
 - Fixed Knox apps 
 - Disabled secure screenshot detection
@@ -56,25 +55,27 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 - Native call recording
 - And many more 
 
-### Google Spoof
+### Exclusive
 - Spoofed as Pixel 10 Pro XL to all Google apps
 - Pixel apps AI support
 - Google Photos with unlimited original quality storage
 - All Pixel-exclusive features available
 
-### Device Specific
+### Extras*
 - 4K/120FPS & log video
 - Zoom slider and flagship camera features 
 - Adaptive refresh rate etc.
-
+  
+* This features vary upon devices and platform.
+  
 ---
 
 ## Special Thanks
 
 This project wouldn't be possible without the incredible work of:
 
-- **[Salvo Giangreco](https://github.com/salvogiangri)** - The mind behind the **[UN1CA](https://github.com/salvogiangri/UN1CA)** project and a true leader in the Samsung community. The initial ideas and inspiration that made AstroROM possible. 
-- **[BlassGO](https://github.com/BlassGO)** - For the Dynamic Installer.
+- **[Salvo Giangreco](https://github.com/salvogiangri)** - The man behind the **[UN1CA](https://github.com/salvogiangri/UN1CA)** project and a true leader in the Samsung community. The initial ideas and inspiration that made AstroROM possible. 
+- **[BlassGO](https://github.com/BlassGO)** - For his Dynamic Installer.
 - **[Danda420](https://github.com/Danda420)** - For his genfscontexts.
 - **[jesec](https://github.com/jesec)** - For samfirm.js , which we use to download the latest firmwares.
 - **[3arthur6](https://github.com/3arthur6)** - For bluetooth library patcher.
