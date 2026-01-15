@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       device:
-        description: 'objective device'
+        description: 'Device Codename'
         required: true
         default: 'dm3q'
       upload_cloud:
         description: 'Upload ROM to cloud (PixelDrain)'
         required: false
-        default: 'false'
+        default: false
         type: boolean
 
 jobs:
@@ -66,8 +66,8 @@ jobs:
           tar -xvf pd.tar.gz
           chmod +x pd
           sudo mv pd /usr/local/bin/pd
-
-            - name: Upload ROM to PixelDrain
+          
+      - name: Upload ROM to PixelDrain
         if: ${{ inputs.upload_cloud }}
         env:
           PIXELDRAIN_API_KEY: ${{ secrets.PIXELDRAIN_API_KEY }}
@@ -76,9 +76,9 @@ jobs:
           ROM_FILE=$(ls *.zip | head -n 1)
 
           if [ -z "$ROM_FILE" ]; then
-            echo "No ROM zip found"
+            echo "No ROM zip found!"
             exit 1
           fi
 
           echo "Uploading $ROM_FILE to PixelDrain..."
-          pd --api-key "$PIXELDRAIN_API_KEY" upload "$ROM_FILE" 
+          pd --api-key "$PIXELDRAIN_API_KEY" upload "$ROM_FILE" | sed 's|api/file|u|g'
