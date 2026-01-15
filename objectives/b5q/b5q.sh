@@ -1,0 +1,28 @@
+# Flip Device props
+MODEL_NAME="Galaxy Z Flip5"
+SIOP_POLICY_NAME=siop_b5q_sm8550
+CODENAME="b5q"
+VNDK="33"
+STOCK_MODEL="SM-F731U1"
+STOCK_CSC="ATT"
+STOCK_IMEI="357459403943704"
+
+# The firmware to be used as source
+MODEL="SM-F731U1"
+CSC="ATT"
+IMEI="357459403943704"
+
+# Extra firmware which is optional
+EXTRA_MODEL=""
+EXTRA_CSC=""
+EXTRA_IMEI=""
+
+# External
+FILESYSTEM=erofs
+
+
+# Specs
+DEVICE_HAVE_SPEN_SUPPORT=false
+DEVICE_HAVE_QHD_PANEL=false
+DEVICE_HAVE_HIGH_REFRESH_RATE=true
+SUPPORT_HAPTIC_AUDIO_VIBRATOR=true
