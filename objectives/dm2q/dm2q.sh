@@ -1,0 +1,28 @@
+# Device props
+MODEL_NAME="Galaxy S23 Plus"
+SIOP_POLICY_NAME=siop_dm2q_sm8550
+CODENAME="dm2q"
+VNDK="33"
+STOCK_MODEL="SM-S916B"
+STOCK_CSC="EUX"
+STOCK_IMEI="356761461234566"
+
+# The firmware to be used as source 
+MODEL="SM-S916B"
+CSC="EUX"
+IMEI="356761461234566"
+
+# Extra firmware which is optional
+EXTRA_MODEL=""
+EXTRA_CSC=""
+EXTRA_IMEI=""
+
+# External
+FILESYSTEM=erofs
+
+
+# Specs
+DEVICE_HAVE_SPEN_SUPPORT=false
+DEVICE_HAVE_QHD_PANEL=false
+DEVICE_HAVE_HIGH_REFRESH_RATE=true
+SUPPORT_HAPTIC_AUDIO_VIBRATOR=true
