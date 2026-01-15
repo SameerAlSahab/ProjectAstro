@@ -1,0 +1,28 @@
+# Device props
+MODEL_NAME="Galaxy S23 Ultra"
+SIOP_POLICY_NAME=siop_dm3q_sm8550
+CODENAME="dm3q"
+VNDK="33"
+STOCK_MODEL="SM-S918B"
+STOCK_CSC="EUX"
+STOCK_IMEI="350196551234562"
+
+# The firmware to be used as source 
+MODEL="SM-S918B"
+CSC="EUX"
+IMEI="350196551234562"
+
+# Extra firmware which is optional
+EXTRA_MODEL=""
+EXTRA_CSC=""
+EXTRA_IMEI=""
+
+# External
+FILESYSTEM=erofs
+
+
+# Specs
+DEVICE_HAVE_SPEN_SUPPORT=true
+DEVICE_HAVE_QHD_PANEL=true
+DEVICE_HAVE_HIGH_REFRESH_RATE=true
+SUPPORT_HAPTIC_AUDIO_VIBRATOR=true
