@@ -7,10 +7,13 @@ FF "CONFIG_SIOP_POLICY_FILENAME" "$SIOP_POLICY_NAME"
 BPROP "system" "ro.factory.model" "$STOCK_MODEL"
 ##
 
+if [[ "$MODEL" == "$STOCK_MODEL" ]]; then
+    LOG_INFO "Source and objective are same. Skipping device feature patching..."
+else
 
 
-local FF_FILE="$WORKSPACE/system/system/etc/floating_feature.xml"
-local STOCK_FF_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
+FF_FILE="$WORKSPACE/system/system/etc/floating_feature.xml"
+STOCK_FF_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
 
 
 ## Camera
@@ -150,6 +153,8 @@ if [[ "$DEVICE_HAVE_HIGH_REFRESH_RATE" == "true" ]] && [[ "$FRAMERATE_OVERRIDE" 
     fi
 fi
 
+
+fi
 ##
 
 
