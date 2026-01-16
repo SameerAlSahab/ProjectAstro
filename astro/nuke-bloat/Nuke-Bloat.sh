@@ -4,7 +4,7 @@ declare -a BLOAT_TARGETS=(
 
     # System Bloat
     "AuthFramework" "BCService" "CIDManager" "DeviceKeystring" "DiagMonAgent91"
-    "DigitalKey" "FacAtFunction" "FactoryTestProvider" "FotaAgent" "KnoxGuard"
+    "DigitalKey" "FacAtFunction" "FactoryTestProvider" "FotaAgent" "KnoxGuard" "Rampart"
     "ModemServiceMode" "PaymentFramework" "SEMFactoryApp" "SOAgent7" "SamsungCarKeyFw"
     "SamsungPass" "SamsungPassAutofill_v1" "SilentLog" "SmartEpdgTestApp" "Ts43AuthService"
     "UnifiedTetheringProvision" "UnifiedVVM" "UsByod" "WebManual" "WlanTest" "wssyncmldm" "MyGalaxyService"
