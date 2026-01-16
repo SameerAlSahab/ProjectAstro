@@ -4,16 +4,12 @@ setdefault   extraction_speed     default
 
 #AstroROM script starts here:
 ui_print ""
-ui_print "     e               d8"
-ui_print "    d8b      d88~\ _d88__ 888-~\  e88~-_  "
-ui_print "   /Y88b    C888    888   888    d888   i "
-ui_print "  /  Y88b    Y88b   888   888    8888   | "
-ui_print " /____Y88b    888D  888   888    Y888   ' "
-ui_print "/      Y88b \_88P   "88_/ 888     "88_-~  "
-ui_print " "
+ui_print "Welcome to AstroROM Installer!"
+ui_print ""
 ui_print "ASTRO ROM  __ROM_VERSION__  FOR __MODEL_NAME__  "
 ui_print ""
 ui_print "Build: __BUILD_DATE__"
+
 
 
 # Check device
@@ -36,9 +32,8 @@ fi
 
 
 # CSC Mods
-   try_mount -rw /optics
-   try_mount -rw /prism
-   try_mount -rw /omr
+   try_mount /omr /optics /prism
+
    ui_print "Adding CSC features... "
    cscfeature="$addons/omc/cscfeature.xml"
    omc_decoder="$addons/omcdecoder"
