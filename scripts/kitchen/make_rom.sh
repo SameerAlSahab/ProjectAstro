@@ -18,7 +18,7 @@
 PEM_CERT="${PREBUILTS}/signapk/keys/aosp_testkey.x509.pem"
 PK8_KEY="${PREBUILTS}/signapk/keys/aosp_testkey.pk8"
 
-
+# https://github.com/HemanthJabalpuri/signapk/blob/main/shell/SignApk.sh
 SIGN_ROM_ZIP() {
     local IN_ZIP="$1"
     local OUT_ZIP="$2"
@@ -29,8 +29,8 @@ SIGN_ROM_ZIP() {
     [[ -f "$PK8_FILE" ]] || ERROR_EXIT "PK8 key not found"
     [[ -f "$PEM_FILE" ]] || ERROR_EXIT "PEM cert not found"
 
-    command -v openssl >/dev/null || ERROR_EXIT "openssl not found"
-    command -v od >/dev/null || ERROR_EXIT "od not found"
+    COMMAND_EXISTS openssl || ERROR_EXIT "openssl not found"
+    COMMAND_EXISTS od || ERROR_EXIT "od not found"
 
     local fsize
     fsize=$(stat -c "%s" "$IN_ZIP")
