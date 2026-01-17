@@ -137,7 +137,7 @@ done
 
 
 
-# Permissions
+
 declare -a PERM_TO_REMOVE=(
     # Digital Key / Wallet
     permissions/org.carconnectivity.android.digitalkey.rangingintent.xml
@@ -151,7 +151,7 @@ declare -a PERM_TO_REMOVE=(
     sysconfig/preinstalled-packages-com.samsung.android.dkey.xml
     sysconfig/preinstalled-packages-com.samsung.android.spayfw.xml
 
-    # Samsung Auth / Pass
+    # Samsung Auth/ Pass
     permissions/authfw.xml
     permissions/privapp-permissions-com.samsung.android.authfw.xml
     permissions/privapp-permissions-com.samsung.android.samsungpass.xml
@@ -160,7 +160,7 @@ declare -a PERM_TO_REMOVE=(
     sysconfig/samsungauthframework.xml
     sysconfig/samsungpassapp.xml
 
-    # AR / Emoji
+    #  AR / Emoji
     default-permissions/default-permissions-com.sec.android.mimage.avatarstickers.xml
     permissions/privapp-permissions-com.samsung.android.aremojieditor.xml
     permissions/privapp-permissions-com.sec.android.mimage.avatarstickers.xml
@@ -174,7 +174,7 @@ declare -a PERM_TO_REMOVE=(
     permissions/privapp-permissions-meta.xml
     sysconfig/meta-hiddenapi-package-allowlist.xml
 
-    # Update center
+    # Update center and etc
     sysconfig/feature-a11y-preload.xml
     permissions/privapp-permissions-com.samsung.android.app.updatecenter.xml
 
@@ -193,10 +193,8 @@ declare -a PERM_TO_REMOVE=(
     permissions/privapp-permissions-com.sec.facatfunction.xml
 )
 
-LOG_INFO "Removing perm files..."
-
 for file in "${PERM_TO_REMOVE[@]}"; do
-    REMOVE "system" "etc/$file" >/dev/null 2>&1
+    REMOVE "system" "etc/$file"
 done
 
 
