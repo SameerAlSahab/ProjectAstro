@@ -15,65 +15,9 @@
 #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 #
 
+
 PEM_CERT="${PREBUILTS}/signapk/keys/aosp_testkey.x509.pem"
 PK8_KEY="${PREBUILTS}/signapk/keys/aosp_testkey.pk8"
-
-# https://github.com/HemanthJabalpuri/signapk/blob/main/shell/SignApk.sh
-SIGN_ROM_ZIP() {
-    local IN_ZIP="$1"
-    local OUT_ZIP="$2"
-    local PK8_FILE="$3"
-    local PEM_FILE="$4"
-
-    [[ -f "$IN_ZIP" ]]  || ERROR_EXIT "zip file not found $IN_ZIP"
-    [[ -f "$PK8_FILE" ]] || ERROR_EXIT "PK8 key not found"
-    [[ -f "$PEM_FILE" ]] || ERROR_EXIT "PEM cert not found"
-
-    COMMAND_EXISTS openssl || ERROR_EXIT "openssl not found"
-    COMMAND_EXISTS od || ERROR_EXIT "od not found"
-
-    local fsize
-    fsize=$(stat -c "%s" "$IN_ZIP")
-    LOG_INFO "ZIP size: $fsize bytes"
-
-    getData() {
-        dd if="$IN_ZIP" status=none iflag=skip_bytes,count_bytes bs=4096 skip=$1 count=$2
-    }
-
-    getByte() {
-        getData "$1" 1 | od -A n -t x1 | tr -d " "
-    }
-
-    local b1 b2 b3
-    b1=$(getByte $((fsize-22)))
-    b2=$(getByte $((fsize-21)))
-    b3=$(getByte $((fsize-20)))
-
-    if [[ "$b1" != "50" || "$b2" != "4b" || "$b3" != "05" ]]; then
-        ERROR_EXIT "ZIP already signed or has a comment"
-    fi
-
-    getData 0 $((fsize - 2)) > "$OUT_ZIP"
-
-    local SIGNATURE
-    SIGNATURE=$(openssl dgst -sha1 -hex -sign "$PK8_FILE" "$OUT_ZIP" \
-        | cut -d= -f2 | tr -d ' ' | sed 's/../\\x&/g')
-
-    local CERT
-    CERT=$(openssl x509 -in "$PEM_FILE" -outform DER \
-        | od -A n -t x1 | tr -d ' \n' | sed 's/../\\x&/g')
-
-    {
-        printf '\xca\x06'
-        printf 'signed by AstroROM'
-        printf '\x00'
-        printf "$CERT"
-        printf "$SIGNATURE"
-        printf '\xb8\x06\xff\xff\xca\x06'
-    } >> "$OUT_ZIP"
-
-    LOG_INFO "Signed successfully"
-}
 
 
 
@@ -130,8 +74,12 @@ CREATE_FLASHABLE_ZIP() {
 
     LOG_INFO "Signing ZIP.."
 
-    SIGN_ROM_ZIP "$UNSIGNED_ZIP_PATH" "$SIGNED_ZIP_PATH" "$PK8_KEY" "$PEM_CERT" \
-        || ERROR_EXIT "ZIP signing failed"
+    java -jar "${PREBUILTS}/signapk/signapk.jar" -w \
+        "$PEM_CERT" \
+        "$PK8_KEY" \
+        "$UNSIGNED_ZIP_PATH" \
+        "$SIGNED_ZIP_PATH" \
+        || ERROR_EXIT "Java ZIP signing failed"
 
     rm -f "${UNSIGNED_ZIP_PATH}"
 
@@ -214,4 +162,62 @@ REPACK_ROM() {
         BUILD_SUPER_IMAGE
         CREATE_FLASHABLE_ZIP
     fi
+}
+
+# Very old method , work for under 4GB zips
+# https://github.com/HemanthJabalpuri/signapk/blob/main/shell/SignApk.sh
+SIGN_ROM_ZIP() {
+    local IN_ZIP="$1"
+    local OUT_ZIP="$2"
+    local PK8_FILE="$3"
+    local PEM_FILE="$4"
+
+    [[ -f "$IN_ZIP" ]]  || ERROR_EXIT "zip file not found $IN_ZIP"
+    [[ -f "$PK8_FILE" ]] || ERROR_EXIT "PK8 key not found"
+    [[ -f "$PEM_FILE" ]] || ERROR_EXIT "PEM cert not found"
+
+    COMMAND_EXISTS openssl || ERROR_EXIT "openssl not found"
+    COMMAND_EXISTS od || ERROR_EXIT "od not found"
+
+    local fsize
+    fsize=$(stat -c "%s" "$IN_ZIP")
+    LOG_INFO "ZIP size: $fsize bytes"
+
+    getData() {
+        dd if="$IN_ZIP" status=none iflag=skip_bytes,count_bytes bs=4096 skip=$1 count=$2
+    }
+
+    getByte() {
+        getData "$1" 1 | od -A n -t x1 | tr -d " "
+    }
+
+    local b1 b2 b3
+    b1=$(getByte $((fsize-22)))
+    b2=$(getByte $((fsize-21)))
+    b3=$(getByte $((fsize-20)))
+
+    if [[ "$b1" != "50" || "$b2" != "4b" || "$b3" != "05" ]]; then
+        ERROR_EXIT "ZIP already signed or has a comment"
+    fi
+
+    getData 0 $((fsize - 2)) > "$OUT_ZIP"
+
+    local SIGNATURE
+    SIGNATURE=$(openssl dgst -sha1 -hex -sign "$PK8_FILE" "$OUT_ZIP" \
+        | cut -d= -f2 | tr -d ' ' | sed 's/../\\x&/g')
+
+    local CERT
+    CERT=$(openssl x509 -in "$PEM_FILE" -outform DER \
+        | od -A n -t x1 | tr -d ' \n' | sed 's/../\\x&/g')
+
+    {
+        printf '\xca\x06'
+        printf 'signed by AstroROM'
+        printf '\x00'
+        printf "$CERT"
+        printf "$SIGNATURE"
+        printf '\xb8\x06\xff\xff\xca\x06'
+    } >> "$OUT_ZIP"
+
+    LOG_INFO "Signed successfully"
 }

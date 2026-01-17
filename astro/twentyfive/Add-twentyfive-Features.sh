@@ -108,11 +108,12 @@ ADD_FROM_FW "pa3q" "system" "priv-app/SamsungIntelliVoiceServices"
 ADD_FROM_FW "pa3q" "system" "priv-app/SamsungDialer" 
 
 # Screenshot and Keyboard etc
-ADD_FROM_FW "pa3q" "system" "app/HoneyBoard" 
+#ADD_FROM_FW "pa3q" "system" "app/HoneyBoard"
 ADD_FROM_FW "pa3q" "system" "app/SmartCapture" 
 ADD_FROM_FW "pa3q" "system" "app/VisualCloudCore" 
 
 # Ringtones ACH and bootanimation
+# TODO : determine a way to check device has ACH (Audio Coupled Haptics) support or not.
 ADD_FROM_FW "pa3q" "system" "media" 
 BPROP "vendor" "ro.config.ringtone" "ACH_Galaxy_Bells.ogg"
 BPROP "vendor" "ro.config.notification_sound" "ACH_Brightline.ogg"
