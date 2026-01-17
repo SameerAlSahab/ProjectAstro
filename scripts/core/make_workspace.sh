@@ -24,7 +24,7 @@ INIT_BUILD_ENV() {
     EXTRA_FW="${WORKDIR}/${EXTRA_MODEL}"
 
 
-    SUDO EXTRACT_ROM || ERROR_EXIT "Firmware extraction failed."
+    EXTRACT_ROM || ERROR_EXIT "Firmware extraction failed."
 
     LOG_BEGIN "Creating final workspace"
     CREATE_WORKSPACE
@@ -90,7 +90,7 @@ EOF
     local SYSTEM_EXT_PATH
     SYSTEM_EXT_PATH=$(GET_PARTITION_PATH "system_ext") || return 1
 
- 
+
     local VINTF_MANIFEST="${SYSTEM_EXT_PATH}/etc/vintf/VINTF_MANIFEST.xml"
 
     local CURRENT_VNDK=""
@@ -131,12 +131,12 @@ EOF
     local STOCK_EXT_PATH CURRENT_EXT_PATH
     local STOCK_LAYOUT="merged" CURRENT_LAYOUT="merged"
 
-   
+
     if STOCK_EXT_PATH=$(GET_PARTITION_PATH "system_ext" "stock" 2>/dev/null); then
         [[ "$STOCK_EXT_PATH" == *"/system_ext" ]] && [[ "$STOCK_EXT_PATH" != *"/system/system/system_ext" ]] && STOCK_LAYOUT="separate"
     fi
 
-    
+
     if CURRENT_EXT_PATH=$(GET_PARTITION_PATH "system_ext" 2>/dev/null); then
         [[ "$CURRENT_EXT_PATH" == *"/system_ext" ]] && [[ "$CURRENT_EXT_PATH" != *"/system/system/system_ext" ]] && CURRENT_LAYOUT="separate"
     else
@@ -145,41 +145,41 @@ EOF
 
     [[ "$CURRENT_LAYOUT" == "$STOCK_LAYOUT" ]] && return 0
 
-   
+
     local sys_config="${CONFIG_DIR}/system_fs_config"
     local sys_contexts="${CONFIG_DIR}/system_file_contexts"
-    
+
     if [[ "$STOCK_LAYOUT" == "merged" ]]; then
-      
+
         LOG_INFO "Merging system_ext into system..."
         local dest_dir="$WORKSPACE/system/system/system_ext"
-        
+
         mkdir -p "$dest_dir"
         rsync -a --delete "${CURRENT_EXT_PATH}/" "${dest_dir}/" || return 1
         rm -rf "$CURRENT_EXT_PATH"
-        
-        
+
+
         ln -sf "/system/system_ext" "$WORKSPACE/system/system_ext"
         echo "system/system_ext 0 0 755 capabilities=0x0" >> "$sys_config"
         echo "/system_ext u:object_r:system_file:s0" >> "$sys_contexts"
 
     else
-        
+
         LOG_INFO "Separating system_ext from system..."
         local dest_dir="$WORKSPACE/system_ext"
-        
+
         mkdir -p "$dest_dir"
         rsync -a --delete "${CURRENT_EXT_PATH}/" "${dest_dir}/" || return 1
         rm -rf "$CURRENT_EXT_PATH"
         [[ -L "$WORKSPACE/system/system_ext" ]] && rm -f "$WORKSPACE/system/system_ext"
 
-     
+
         echo "system_ext" > "${CONFIG_DIR}/system_ext_fs_config"
         sed -i '/^system\/system_ext/d' "$sys_config"
         sed -i '/^\/system\/system_ext/d' "$sys_contexts"
     fi
 
-  
+
     local target="$WORKSPACE/${STOCK_LAYOUT:0:6}_ext"
     [[ "$STOCK_LAYOUT" == "merged" ]] && target="$WORKSPACE/system/system/system_ext"
     [[ "$STOCK_LAYOUT" == "separate" ]] && target="$WORKSPACE/system_ext"
