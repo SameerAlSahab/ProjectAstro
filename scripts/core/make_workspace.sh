@@ -24,7 +24,7 @@ INIT_BUILD_ENV() {
     EXTRA_FW="${WORKDIR}/${EXTRA_MODEL}"
 
 
-    SUDO EXTRACT_ROM || ERROR_EXIT "Firmware extraction failed."
+    EXTRACT_ROM || ERROR_EXIT "Firmware extraction failed."
 
     LOG_BEGIN "Creating final workspace"
     CREATE_WORKSPACE
@@ -36,15 +36,15 @@ CREATE_WORKSPACE() {
     local CONFIG_DIRECTORY="$BUILD_DIRECTORY/config"
     local marker="$BUILD_DIRECTORY/.workspace"
 
-
-    local BUILD_DATE=$(GET_PROP "system" "ro.build.date" "main" 2>/dev/null || echo "unknown")
-    local BUILD_UTC=$(GET_PROP "system" "ro.build.date.utc" "main" 2>/dev/null || echo "0")
-    local BUILD_VERSION=$(GET_PROP "system" "ro.build.version.release" "main" 2>/dev/null || echo "unknown")
-
+    local BUILD_DATE BUILD_UTC BUILD_VERSION
+    BUILD_DATE=$(GET_PROP "system" "ro.build.date" "main" 2>/dev/null || echo "unknown")
+    BUILD_UTC=$(GET_PROP "system" "ro.build.date.utc" "main" 2>/dev/null || echo "0")
+    BUILD_VERSION=$(GET_PROP "system" "ro.build.version.release" "main" 2>/dev/null || echo "unknown")
 
     if [[ -f "$marker" ]]; then
-        local old_port=$(grep "^PORT_MODEL=" "$marker" | cut -d= -f2)
-        local old_date=$(grep "^BUILD_DATE=" "$marker" | cut -d= -f2)
+        local old_port old_date
+        old_port=$(grep "^PORT_MODEL=" "$marker" | cut -d= -f2)
+        old_date=$(grep "^BUILD_DATE=" "$marker" | cut -d= -f2)
         if [[ "$old_port" == "$MODEL" && "$old_date" == "$BUILD_DATE" ]]; then
             LOG_INFO "Workspace is already set. Skipping rebuild."
             WORKSPACE="$BUILD_DIRECTORY"
@@ -53,23 +53,23 @@ CREATE_WORKSPACE() {
         fi
     fi
 
-    rm -rf "$BUILD_DIRECTORY" && mkdir -p "$CONFIG_DIRECTORY"
-
+    rm -rf "$BUILD_DIRECTORY" || return 1
+    mkdir -p "$CONFIG_DIRECTORY" || return 1
 
     local oem_parts=("vendor" "odm" "vendor_dlkm" "odm_dlkm" "system_dlkm")
     local port_parts=("system" "product" "system_ext")
 
-
     if [[ "$MODEL" == "$STOCK_MODEL" || -z "$STOCK_MODEL" ]]; then
-        LINK_PARTITIONS "$SOURCE_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" "${port_parts[@]}" "${oem_parts[@]}"
+        LINK_PARTITIONS "$SOURCE_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" \
+            "${port_parts[@]}" "${oem_parts[@]}"
     else
-        LINK_PARTITIONS "$SOURCE_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" "${port_parts[@]}"
-        LINK_PARTITIONS "$STOCK_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" "${oem_parts[@]}"
+        LINK_PARTITIONS "$SOURCE_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" \
+            "${port_parts[@]}"
+        LINK_PARTITIONS "$STOCK_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" \
+            "${oem_parts[@]}"
     fi
 
-
-    chown -R -h "$SUDO_USER:$SUDO_USER" "$BUILD_DIRECTORY" 2>/dev/null
-
+    chown -R "$SUDO_USER:$SUDO_USER" "$BUILD_DIRECTORY" 2>/dev/null
 
     cat > "$marker" <<EOF
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
@@ -86,104 +86,109 @@ EOF
 
     LOG_INFO "Checking VNDK version..."
 
-    [[ -z "$VNDK" ]] && { ERROR_EXIT "VNDK version not defined."; return 1; }
+    [[ -z "$VNDK" ]] && ERROR_EXIT "VNDK version not defined."
+
     local SYSTEM_EXT_PATH
     SYSTEM_EXT_PATH=$(GET_PARTITION_PATH "system_ext") || return 1
 
- 
-    local VINTF_MANIFEST="${SYSTEM_EXT_PATH}/etc/vintf/VINTF_MANIFEST.xml"
-
+    local VINTF_MANIFEST="$SYSTEM_EXT_PATH/etc/vintf/manifest.xml"
     local CURRENT_VNDK=""
-
+    local VNDK_NEEDS_PATCH=true
 
     if [[ -f "$VINTF_MANIFEST" ]]; then
-        CURRENT_VNDK=$(grep -A2 -i "vendor-ndk" "$VINTF_MANIFEST" | grep -oP '<version>\K[0-9]+' | head -1)
-        [[ "$CURRENT_VNDK" == "$VNDK" ]] && { LOG_END "VNDK matches ($VNDK)."; return 0; }
-    fi
-
-    LOG_WARN "VNDK mismatch (Current: ${CURRENT_VNDK:-None} and Target: $VNDK). Patching..."
-
-    local APEX_PREFIX="com.android.vndk.v${VNDK}.apex"
-    local SOURCE_FILE="${BLOBS_DIR}/vndk/v${VNDK}/${APEX_PREFIX}"
-    local TARGET_APEX_PATH="apex/${APEX_PREFIX}"
+        CURRENT_VNDK=$(grep -A2 -i "<vendor-ndk>" "$VINTF_MANIFEST" \
+            | grep -oP '<version>\K[0-9]+' | head -1)
 
 
-    find "${SYSTEM_EXT_PATH}/apex" -name "com.android.vndk.v*.apex" -delete 2>/dev/null
-
-
-    if ! ADD "system_ext" "$SOURCE_FILE" "$TARGET_APEX_PATH" "VNDK v${VNDK} APEX"; then
-        ERROR_EXIT "Failed to install VNDK APEX."
-        return 1
-    fi
-
-    # Update Manifest
-    if [[ -f "$VINTF_MANIFEST" ]]; then
-        if grep -q "<vendor-ndk>" "$VINTF_MANIFEST"; then
-            sed -i "s|<version>[0-9]\+</version>|<version>${VNDK}</version>|g" "$VINTF_MANIFEST"
-        else
-            sed -i "s|</VINTF_MANIFEST>|    <vendor-ndk>\\n        <version>${VNDK}</version>\\n    </vendor-ndk>\\n</VINTF_MANIFEST>|" "$VINTF_MANIFEST"
+        if [[ "$CURRENT_VNDK" == "$VNDK" ]]; then
+            LOG_INFO "VNDK matches ($VNDK). Skipping VNDK patch."
+            VNDK_NEEDS_PATCH=false
         fi
-        LOG_INFO "Manifest updated."
     fi
 
-    LOG_END "VNDK patching completed."
+    if [[ "$VNDK_NEEDS_PATCH" == "true" ]]; then
+        LOG_WARN "VNDK mismatch (Current: ${CURRENT_VNDK:-None}, Target: $VNDK). Patching..."
+
+        local APEX_PREFIX="com.android.vndk.v${VNDK}.apex"
+        local SOURCE_FILE="$BLOBS_DIR/vndk/v${VNDK}/${APEX_PREFIX}"
+        local TARGET_APEX_PATH="apex/${APEX_PREFIX}"
+
+        find "$SYSTEM_EXT_PATH/apex" -name "com.android.vndk.v*.apex" -delete 2>/dev/null
+
+        ADD "system_ext" "$SOURCE_FILE" "$TARGET_APEX_PATH" "VNDK v${VNDK} APEX" \
+            || ERROR_EXIT "Failed to set correct vndk version"
+
+        LOG_END "VNDK patching completed."
+    fi
+
 
     local STOCK_EXT_PATH CURRENT_EXT_PATH
-    local STOCK_LAYOUT="merged" CURRENT_LAYOUT="merged"
+    local STOCK_LAYOUT="merged"
+    local CURRENT_LAYOUT="merged"
 
-   
     if STOCK_EXT_PATH=$(GET_PARTITION_PATH "system_ext" "stock" 2>/dev/null); then
-        [[ "$STOCK_EXT_PATH" == *"/system_ext" ]] && [[ "$STOCK_EXT_PATH" != *"/system/system/system_ext" ]] && STOCK_LAYOUT="separate"
+        [[ "$STOCK_EXT_PATH" == */system_ext && "$STOCK_EXT_PATH" != */system/system/system_ext ]] \
+            && STOCK_LAYOUT="separate"
     fi
 
-    
     if CURRENT_EXT_PATH=$(GET_PARTITION_PATH "system_ext" 2>/dev/null); then
-        [[ "$CURRENT_EXT_PATH" == *"/system_ext" ]] && [[ "$CURRENT_EXT_PATH" != *"/system/system/system_ext" ]] && CURRENT_LAYOUT="separate"
+        [[ "$CURRENT_EXT_PATH" == */system_ext && "$CURRENT_EXT_PATH" != */system/system/system_ext ]] \
+            && CURRENT_LAYOUT="separate"
     else
         return 0
     fi
 
-    [[ "$CURRENT_LAYOUT" == "$STOCK_LAYOUT" ]] && return 0
 
-   
-    local sys_config="${CONFIG_DIR}/system_fs_config"
-    local sys_contexts="${CONFIG_DIR}/system_file_contexts"
-    
-    if [[ "$STOCK_LAYOUT" == "merged" ]]; then
-      
-        LOG_INFO "Merging system_ext into system..."
-        local dest_dir="$WORKSPACE/system/system/system_ext"
-        
-        mkdir -p "$dest_dir"
-        rsync -a --delete "${CURRENT_EXT_PATH}/" "${dest_dir}/" || return 1
-        rm -rf "$CURRENT_EXT_PATH"
-        
-        
-        ln -sf "/system/system_ext" "$WORKSPACE/system/system_ext"
-        echo "system/system_ext 0 0 755 capabilities=0x0" >> "$sys_config"
-        echo "/system_ext u:object_r:system_file:s0" >> "$sys_contexts"
-
+    if [[ "$CURRENT_LAYOUT" == "$STOCK_LAYOUT" ]]; then
+        LOG_INFO "System_ext layout matches target ($CURRENT_LAYOUT). Skipping system_ext patches."
     else
-        
-        LOG_INFO "Separating system_ext from system..."
-        local dest_dir="$WORKSPACE/system_ext"
-        
-        mkdir -p "$dest_dir"
-        rsync -a --delete "${CURRENT_EXT_PATH}/" "${dest_dir}/" || return 1
-        rm -rf "$CURRENT_EXT_PATH"
-        [[ -L "$WORKSPACE/system/system_ext" ]] && rm -f "$WORKSPACE/system/system_ext"
+        local SYSTEM_EXT_CONFIG="$CONFIG_DIR/system_fs_config"
+        local SYSTEM_EXT_CONTEXTS="$CONFIG_DIR/system_file_contexts"
 
-     
-        echo "system_ext" > "${CONFIG_DIR}/system_ext_fs_config"
-        sed -i '/^system\/system_ext/d' "$sys_config"
-        sed -i '/^\/system\/system_ext/d' "$sys_contexts"
+        if [[ "$STOCK_LAYOUT" == "merged" ]]; then
+            LOG_INFO "Merging system_ext into system..."
+
+            local dest_dir="$WORKSPACE/system/system/system_ext"
+
+            rm -rf "$WORKSPACE/system_ext"
+            rm -f "$WORKSPACE/system/system_ext"
+
+            mkdir -p "$dest_dir"
+            rsync -a --delete "$CURRENT_EXT_PATH/" "$dest_dir/" || return 1
+            rm -rf "$CURRENT_EXT_PATH"
+
+            ln -sf "/system/system_ext" "$WORKSPACE/system/system_ext"
+
+            sed -i '/system_ext/d' "$SYSTEM_EXT_CONFIG"
+            sed -i '/system_ext/d' "$SYSTEM_EXT_CONTEXTS"
+
+            echo "/system_ext u:object_r:system_file:s0" >> "$SYSTEM_EXT_CONTEXTS"
+            echo "system_ext 0 0 644 capabilities=0x0" >> "$SYSTEM_EXT_CONFIG"
+            echo "system/system_ext 0 0 755 capabilities=0x0" >> "$SYSTEM_EXT_CONFIG"
+
+            [[ -f "$CONFIG_DIR/system_ext_file_contexts" ]] && \
+                sed 's|^/system_ext|/system/system_ext|g' \
+                    "$CONFIG_DIR/system_ext_file_contexts" >> "$SYSTEM_EXT_CONTEXTS"
+
+            [[ -f "$CONFIG_DIR/system_ext_fs_config" ]] && \
+                sed '1d;s|^system_ext|system/system_ext|g' \
+                    "$CONFIG_DIR/system_ext_fs_config" >> "$SYSTEM_EXT_CONFIG"
+
+        else
+            LOG_INFO "Separating system_ext from system..."
+
+            local dest_dir="$WORKSPACE/system_ext"
+
+            mkdir -p "$dest_dir"
+            rsync -a --delete "$CURRENT_EXT_PATH/" "$dest_dir/" || return 1
+            rm -rf "$CURRENT_EXT_PATH"
+
+            [[ -L "$WORKSPACE/system/system_ext" ]] && rm -f "$WORKSPACE/system/system_ext"
+
+            sed -i '/^system\/system_ext/d' "$SYSTEM_EXT_CONFIG"
+            sed -i '/^\/system\/system_ext/d' "$SYSTEM_EXT_CONTEXTS"
+        fi
     fi
-
-  
-    local target="$WORKSPACE/${STOCK_LAYOUT:0:6}_ext"
-    [[ "$STOCK_LAYOUT" == "merged" ]] && target="$WORKSPACE/system/system/system_ext"
-    [[ "$STOCK_LAYOUT" == "separate" ]] && target="$WORKSPACE/system_ext"
-
 
     LOG_END "Build environment ready at $BUILD_DIRECTORY"
 }

@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
 
+# App Package folders names only in app and priv-app
 
 declare -a BLOAT_TARGETS=(
     # Basic
@@ -137,7 +137,7 @@ done
 
 
 
-
+# Do not declare system/etc
 declare -a PERM_TO_REMOVE=(
     # Digital Key / Wallet
     permissions/org.carconnectivity.android.digitalkey.rangingintent.xml
@@ -193,8 +193,9 @@ declare -a PERM_TO_REMOVE=(
     permissions/privapp-permissions-com.sec.facatfunction.xml
 )
 
-for file in "${PERM_TO_REMOVE[@]}"; do
-    REMOVE "system" "etc/$file"
-done
+LOG_INFO "Removing permisson files..."
 
+for file in "${PERM_TO_REMOVE[@]}"; do
+    REMOVE "system" "etc/$file" >/dev/null 2>&1
+done
 
