@@ -28,5 +28,5 @@ DEVICE_HAVE_HIGH_REFRESH_RATE=true
 SUPPORT_HAPTIC_AUDIO_VIBRATOR=false
 
 # Custom props (If not used , it will use values from stock rom)
-#DEVICE_DISPLAY_HFR_MODE=""
-#DEVICE_DISPLAY_REFRESH_RATE_VALUES_HZ=""
+DEVICE_DISPLAY_HFR_MODE="2" # Supports adaptive refresh rate mode (60-120)
+DEVICE_DISPLAY_REFRESH_RATE_VALUES_HZ="60,120"
