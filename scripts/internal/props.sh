@@ -99,7 +99,7 @@ GET_FF_VAL() {
     fi
 
     local workspace_dir
-    workspace_dir=$(GET_PARTITION_PATH "$FW_TYPE") || return 1
+    workspace_dir=$(GET_FW_DIR "$FW_TYPE") || return 1
 
     local FF_XML_FILE="${workspace_dir}/system/system/etc/floating_feature.xml"
     [[ ! -f "$FF_XML_FILE" ]] && return 1
