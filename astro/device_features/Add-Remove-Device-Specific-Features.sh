@@ -18,7 +18,7 @@ STOCK_FF_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
 ## Camera
 # Other Device based camera fixes can be found on objectives and platform folder
 REMOVE "system" "cameradata/portrait_data"
-BPROP "system" "ro.product.system.name" "$CODENAME"
+BPROP_IF_DIFF "stock" "system" "ro.product.system.name"
 REMOVE "system" "cameradata/singletake"
 
 
