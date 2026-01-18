@@ -1,0 +1,28 @@
+# Exynos Device props
+MODEL_NAME="Galaxy S21 FE 5G"
+SIOP_POLICY_NAME=siop_r9s_exynos2100
+CODENAME="r9s"
+VNDK="30"
+STOCK_MODEL="SM-G990E"
+STOCK_CSC="THL"
+STOCK_IMEI="355798871234563"
+
+# The firmware to be used as source
+MODEL="SM-G990E"
+CSC="THL"
+IMEI="355798871234563"
+
+# Extra firmware which is optional
+EXTRA_MODEL=""
+EXTRA_CSC=""
+EXTRA_IMEI=""
+
+# External
+FILESYSTEM=erofs
+
+
+# Specs
+DEVICE_HAVE_SPEN_SUPPORT=false
+DEVICE_HAVE_QHD_PANEL=false
+DEVICE_HAVE_HIGH_REFRESH_RATE=true
+SUPPORT_HAPTIC_AUDIO_VIBRATOR=false

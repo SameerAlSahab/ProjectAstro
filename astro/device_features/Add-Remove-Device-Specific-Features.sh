@@ -127,7 +127,7 @@ fi
 
 
 ##
-
+fi
 
 # High Refresh rate displays
 # TODO: Edit SecSettings resolution string for actual hz 
@@ -154,7 +154,7 @@ if [[ "$DEVICE_HAVE_HIGH_REFRESH_RATE" == "true" ]] && [[ "$FRAMERATE_OVERRIDE" 
 fi
 
 
-fi
+
 ##
 
 
