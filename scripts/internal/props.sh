@@ -282,11 +282,11 @@ fi
 }
 
 #
-# Usage: DIFF_UPDATE_PROP <FW_TYPE> <SOURCE_PARTITION> <tag> <TARGET_PARTITION>
+# Usage: BPROP_IF_DIFF <FW_TYPE> <SOURCE_PARTITION> <tag> <TARGET_PARTITION>
 # Add property value from one firmware to another
 # If the property already exists in workspace, it will be updated.
 #
-DIFF_UPDATE_PROP() {
+BPROP_IF_DIFF() {
     local FW_TYPE="$1"
     local SOURCE_PARTITION="$2"
     local PROP_TAG="$3"
