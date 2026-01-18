@@ -194,8 +194,8 @@ BPROP() {
 
 
     if [[ -z "$prop_file" || ! -f "$prop_file" ]]; then
-        ERROR_EXIT "Cannot set property.No build.prop found for partition '$partition'."
-        return 1
+        LOG_INFO "Cannot set property.No build.prop found for partition '$partition' . Skipping ${tag}."
+        return 0
     fi
 
 
