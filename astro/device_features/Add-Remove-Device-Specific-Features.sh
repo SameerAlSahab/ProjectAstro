@@ -11,7 +11,6 @@ if [[ "$MODEL" == "$STOCK_MODEL" ]]; then
     LOG_INFO "Source and objective are same. Skipping device feature patching..."
 else
 
-
 FF_FILE="$WORKSPACE/system/system/etc/floating_feature.xml"
 STOCK_FF_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
 
@@ -22,7 +21,9 @@ REMOVE "system" "cameradata/portrait_data"
 BPROP "system" "ro.product.system.name" "$CODENAME"
 REMOVE "system" "cameradata/singletake"
 
-# Add from stock
+
+LOG_INFO "Adding stock camera properties.."
+
 ADD_FROM_FW "stock" "system" "cameradata"
 
 # Remove source camera props and add stock only
@@ -39,7 +40,7 @@ xmlstarlet sel -t \
     -v 'name()' -o '=' -v '.' -n \
     "$STOCK_FF_FILE" | while IFS='=' read -r tag value; do
         [[ -z "$tag" ]] && continue
-        FF "$tag" "$value"
+        SILENT FF "$tag" "$value"
     done
 ##
 
