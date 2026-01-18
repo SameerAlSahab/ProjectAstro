@@ -193,8 +193,8 @@ declare -a PERM_TO_REMOVE=(
     permissions/privapp-permissions-com.sec.facatfunction.xml
 )
 
-#LOG_INFO "Removing permisson files..."
+LOG_INFO "Removing permisson files..."
 
-#for file in "${PERM_TO_REMOVE[@]}"; do
+for file in "${PERM_TO_REMOVE[@]}"; do
     #SILENT REMOVE "system" "etc/$file"
-#done
+done
