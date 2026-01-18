@@ -3,11 +3,11 @@ setdefault   import_addons        on
 setdefault   extraction_speed     default
 
 #AstroROM script starts here:
-ui_print ""
+ui_print " "
 ui_print "Welcome to AstroROM Installer!"
-ui_print ""
-ui_print "ASTRO ROM  __ROM_VERSION__  FOR __MODEL_NAME__  "
-ui_print ""
+ui_print " "
+ui_print "AstroROM  __ROM_VERSION__  for __MODEL_NAME__  "
+ui_print " "
 ui_print "Build: __BUILD_DATE__"
 
 
@@ -25,7 +25,8 @@ fi
 
 
 # Install
-   ui_print "Installing ROM... "
+   ui_print "Installing ROM.... .It will take some time."
+   ui_print "Do not cancel or force reboot until installation is complete."
    
    update_zip super.img $(find_block super)
 
