@@ -373,18 +373,38 @@ esac
     sed -i -E 's/([][()+*.^$?\\|])/\\\1/g' "$FILE_CONTEXTS_FILE"
 
 
-while read -r line; do
-    path=$(echo "$line" | awk '{print $1}')
-    real_cap=$(_GET_CAPABILITIES_HEX "$path")
+
+    local CAPS_MAP_FILE=$(mktemp)
 
 
-    if [[ "$real_cap" != "0x0" ]]; then
+    while read -r raw_path; do
+        real_cap=$(_GET_CAPABILITIES_HEX "$raw_path")
 
-        escaped_path=$(echo "$path" | sed 's|/|\\/|g')
-        sed -i "s|^$escaped_path .*capabilities=0x0|$line capabilities=$real_cap|" "$FS_CONFIG_FILE"
+        if [[ "$real_cap" != "0x0" ]]; then
+
+            if [[ "$PART_NAME" == "system" ]] && [[ -d "$PART_DESTINATION/system" ]]; then
+                 config_path=${raw_path#$TMP_MOUNT_DIR/}
+                 [[ "$config_path" == "$raw_path" ]] && config_path=""
+            else
+                 config_path="$PART_NAME${raw_path#$TMP_MOUNT_DIR}"
+            fi
+
+            [[ "$config_path" != /* ]] && config_path="/$config_path"
+            [[ "$config_path" == "/" ]] && config_path="" # Root adjustment if needed
+
+
+            echo "$config_path $real_cap" >> "$CAPS_MAP_FILE"
+        fi
+    done < <(find "$TMP_MOUNT_DIR" -type f)
+
+
+    if [[ -s "$CAPS_MAP_FILE" ]]; then
+        awk 'NR==FNR {caps[$1]=$2; next}
+             ($1 in caps) { sub("capabilities=0x0", "capabilities=" caps[$1]); print; next }
+             {print}' "$CAPS_MAP_FILE" "$FS_CONFIG_FILE" > "${FS_CONFIG_FILE}.tmp" && mv "${FS_CONFIG_FILE}.tmp" "$FS_CONFIG_FILE"
     fi
 
-	done < <(find "$TMP_MOUNT_DIR" -type f)
+    rm -f "$CAPS_MAP_FILE"
 
 
     sed -i "/^PARTITIONS=/s/\"$/ $PART_NAME\"/" "$UNPACK_CONF"
@@ -401,39 +421,33 @@ while read -r line; do
 
 _GET_CAPABILITIES_HEX() {
     local FILE_PATH="$1"
-    local CAP_RAW CAP_HEX
+    local CAP_HEX
     local DEFAULT_CAP="0x0"
 
 
-    CAP_RAW=$(getfattr -n security.capability \
+    CAP_HEX=$(getfattr -n security.capability \
         --only-values -h --absolute-names \
-        "$FILE_PATH" 2>/dev/null)
+        "$FILE_PATH" 2>/dev/null | xxd -p | tr -d '\n')
 
-    [[ -z "$CAP_RAW" ]] && echo "$DEFAULT_CAP" && return
-
-    if [[ "$CAP_RAW" =~ ^[A-Za-z0-9+/=]+$ ]]; then
-        CAP_HEX=$(echo -n "$CAP_RAW" 2>/dev/null \
-            | base64 --decode 2>/dev/null \
-            | xxd -p -c 20 2>/dev/null \
-            | tr -d '\n')
-    else
-        CAP_HEX=$(echo -n "$CAP_RAW" 2>/dev/null \
-            | xxd -p -c 20 2>/dev/null \
-            | tr -d '\n')
-    fi
-
+    # If empty, return default
     [[ -z "$CAP_HEX" ]] && echo "$DEFAULT_CAP" && return
+
 
     local PERMITTED_HEX
     PERMITTED_HEX=$(echo "$CAP_HEX" | cut -c 9-16)
 
     [[ -z "$PERMITTED_HEX" ]] && echo "$DEFAULT_CAP" && return
 
+    # Convert Little Endian to Big Endian
     local BIG_ENDIAN
     BIG_ENDIAN=$(echo "$PERMITTED_HEX" | sed 's/\(..\)\(..\)\(..\)\(..\)/\4\3\2\1/')
 
+    # formatting: 0x + hex value
     local FINAL_CAP="0x$(echo "$BIG_ENDIAN" | sed 's/^0*//')"
+
+    # If the result is just "0x", make it "0x0"
     [[ "$FINAL_CAP" == "0x" ]] && FINAL_CAP="0x0"
 
     echo "$FINAL_CAP"
 }
+
