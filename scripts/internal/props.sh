@@ -81,6 +81,33 @@ _SEC_FF_PREFIX() {
 
 
 #
+# Usage: FF_IF_DIFF "fw_type" "TAG" "VALUE"
+# Sets floating feature only if value differs from existing one
+# If absent in the fw which we are comparing delete the line
+#
+
+FF_IF_DIFF() {
+    local SOURCE_TYPE="$1"
+    local TAG="$2"
+
+
+    local SOURCE_VAL
+    SOURCE_VAL=$(GET_FF_VAL "$SOURCE_TYPE" "$TAG")
+
+
+    local CURRENT_VAL
+    CURRENT_VAL=$(GET_FF_VAL "$TAG")
+
+
+    if [[ "$SOURCE_VAL" != "$CURRENT_VAL" ]]; then
+        FF "$TAG" "$SOURCE_VAL"
+    else
+        LOG_INFO "No changes needed for $TAG"
+    fi
+}
+
+
+#
 # Usage: GET_FF_VAL [source] "TAG_NAME"
 # Retrieves the value of a specified floating feature tag from the XML file.
 #
@@ -317,3 +344,7 @@ GET_PROP() {
 
     grep "^${prop_name}=" "$prop_file" | cut -d'=' -f2- | tr -d '\r'
 }
+
+
+
+
