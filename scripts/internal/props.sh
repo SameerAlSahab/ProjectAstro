@@ -290,7 +290,7 @@ BPROP_IF_DIFF() {
     local FW_TYPE="$1"
     local SOURCE_PARTITION="$2"
     local PROP_TAG="$3"
-    local TARGET_PARTITION="$4"
+    local TARGET_PARTITION="${4:-$SOURCE_PARTITION}"
 
     local source_fs_dir
     source_fs_dir=$(GET_PARTITION_PATH "$FW_TYPE") || return 1
