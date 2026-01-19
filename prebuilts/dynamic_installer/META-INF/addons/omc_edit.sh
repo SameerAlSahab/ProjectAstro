@@ -28,7 +28,28 @@ fi
 
 #Getting OMC PATH
 if defined newdevice; then
-     try_mount -rw -e /optics /prism || abort " CANT MOUNT: /optics or /prism "
+
+optics_ok=false
+prism_ok=false
+
+# Try mounting optics if block exists
+if exist "$(find_block -e optics)"; then
+    try_mount -rw -e /optics && optics_ok=true
+elif exist folder /optics; then
+    optics_ok=true
+fi
+
+# Try mounting prism if block exists
+if exist "$(find_block -e prism)"; then
+    try_mount -rw -e /prism && prism_ok=true
+elif exist folder /prism; then
+    prism_ok=true
+fi
+
+if ! $optics_ok && ! $prism_ok; then
+    abort "NO OPTICS / PRISM AVAILABLE"
+fi
+
      omc_path=/optics
 elif defined partdevice; then
      for omc in /product /odm; do

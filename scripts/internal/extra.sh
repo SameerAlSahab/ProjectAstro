@@ -138,3 +138,32 @@ EXTRACT_FROM_APEX_PAYLOAD() {
     rm -rf "$TMP_DIR"
     return 0
 }
+
+
+# REMOVE_SELINUX_ENTRY <filename> <entry1> [entry2 ...]
+REMOVE_SELINUX_ENTRY() {
+    local filename="$1"
+    shift
+
+    [ -z "$filename" ] && ERROR_EXIT "Usage: REMOVE_SELINUX_ENTRY <filename>"
+
+    local file=""
+    local base
+
+
+    if base="$(GET_PARTITION_PATH system_ext 2>/dev/null)"; then
+        file="$(find "$base" -type f -name "$filename" 2>/dev/null | head -n1)"
+    fi
+
+
+    if [ -z "$file" ]; then
+        ERROR_EXIT "SELinux file '$filename' not found in system_ext"
+    fi
+
+    local e
+    for e in "$@"; do
+        sed -i "/($e)/d" "$file"
+        sed -i "/genfscon.*$e/d" "$file"
+        sed -i "/$e/d" "$file"
+    done
+}
