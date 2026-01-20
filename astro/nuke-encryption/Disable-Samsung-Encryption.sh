@@ -15,7 +15,7 @@ LOG_BEGIN "Removing Samsung Encryption"
 
 
 
-BPROP "system" "ro.frp.pst" ""
+BPROP "vendor" "ro.frp.pst" ""
 BPROP "product" "ro.frp.pst" ""
 
 
