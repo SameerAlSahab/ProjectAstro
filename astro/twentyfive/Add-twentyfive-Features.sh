@@ -115,6 +115,8 @@ ADD_FROM_FW "pa3q" "system" "app/VisualCloudCore"
 # Ringtones ACH and bootanimation
 # TODO : determine a way to check device has ACH (Audio Coupled Haptics) support or not.
 ADD_FROM_FW "pa3q" "system" "media" 
+ADD_FROM_FW "pa3q" "system" "etc/ringtones_count_list.txt"
+
 BPROP "vendor" "ro.config.ringtone" "ACH_Galaxy_Bells.ogg"
 BPROP "vendor" "ro.config.notification_sound" "ACH_Brightline.ogg"
 BPROP "vendor" "ro.config.alarm_alert" "ACH_Morning_Xylophone.ogg"
