@@ -436,7 +436,7 @@ _APKTOOL_PATCH() {
     done
 
     if [[ ${#TARGETS[@]} -eq 0 ]]; then
-        LOG_INFO "No patch targets found"
+        LOG_INFO "No apk files to patch"
         BUILD_ALL
         return 0
     fi

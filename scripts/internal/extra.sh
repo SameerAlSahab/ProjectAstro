@@ -53,9 +53,9 @@ NUKE_BLOAT() {
 
                     if rm -rf "$folder" 2>/dev/null; then
                     _UPDATE_LOG \
-                        "Removed ${name}..."
+                        "Nuked ${name}..."
                     else
-                        ERROR_EXIT "Failed to remove package: ${name}"
+                        ERROR_EXIT "Failed to nuke ${name}"
                     fi
                 done
             done
@@ -86,7 +86,7 @@ EXTRACT_FROM_APEX_PAYLOAD() {
     fi
 
     if [[ ! -f "$APEX_FILE" ]]; then
-        ERROR_EXIT "APEX not found: $APEX_FILE"
+        ERROR_EXIT "apex file $APEX_FILE not found"
     fi
 
     LOG_INFO "Extracting $TARGET_FILE from ${APEX_FILE##*/}..."
