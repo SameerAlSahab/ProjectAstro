@@ -29,11 +29,6 @@ ADD_FROM_FW "stock" "system" "cameradata"
 # Remove source camera props and add stock only
 xmlstarlet ed -L -d '//*[starts-with(name(), "SEC_FLOATING_FEATURE_CAMERA")]' "$FF_FILE"
 
-if [[ ! -f "$STOCK_FF_FILE" ]]; then
-    ERROR_EXIT "Stock floating_feature.xml not found"
-    return 1
-fi
-
 
 xmlstarlet sel -t \
     -m '//*[starts-with(name(), "SEC_FLOATING_FEATURE_CAMERA")]' \

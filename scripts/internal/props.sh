@@ -204,7 +204,7 @@ BPROP() {
     local value="$3"
 
 
-    local ASTRO_MARKER="# Added by AstroROM [utils/props.sh]"
+    local ASTRO_MARKER="# Added by AstroROM [scripts/Internal/props.sh]"
     local END_MARKER="# end of file"
     local prop_file
 
@@ -293,7 +293,7 @@ BPROP_IF_DIFF() {
     local TARGET_PARTITION="${4:-$SOURCE_PARTITION}"
 
     local source_fs_dir
-    source_fs_dir=$(GET_PARTITION_PATH "$FW_TYPE") || return 1
+    source_fs_dir=$(GET_FW_DIR "$FW_TYPE") || return 1
 
     local src_prop_path
     src_prop_path=$(_RESOLVE_PROP_FILE "$source_fs_dir" "$SOURCE_PARTITION")
