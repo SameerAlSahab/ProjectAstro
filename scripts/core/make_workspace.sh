@@ -45,6 +45,7 @@ CREATE_WORKSPACE() {
         local old_port old_date
         old_port=$(grep "^PORT_MODEL=" "$marker" | cut -d= -f2)
         old_date=$(grep "^BUILD_DATE=" "$marker" | cut -d= -f2)
+
         if [[ "$old_port" == "$MODEL" && "$old_date" == "$BUILD_DATE" ]]; then
             LOG_INFO "Workspace is already set. Skipping rebuild."
             WORKSPACE="$BUILD_DIRECTORY"
@@ -74,7 +75,7 @@ CREATE_WORKSPACE() {
     cat > "$marker" <<EOF
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 PORT_MODEL=$MODEL
-STOCK_MODEL=${STOCK_MODEL}
+STOCK_MODEL=$STOCK_MODEL
 EXTRA_MODEL=${EXTRA_MODEL:-None}
 ANDROID_VERSION=$BUILD_VERSION
 BUILD_DATE=$BUILD_DATE
@@ -99,7 +100,6 @@ EOF
         CURRENT_VNDK=$(grep -A2 -i "<vendor-ndk>" "$VINTF_MANIFEST" \
             | grep -oP '<version>\K[0-9]+' | head -1)
 
-
         if [[ "$CURRENT_VNDK" == "$VNDK" ]]; then
             LOG_INFO "VNDK matches ($VNDK). Skipping VNDK patch."
             VNDK_NEEDS_PATCH=false
@@ -121,7 +121,6 @@ EOF
         LOG_END "VNDK patching completed."
     fi
 
-
     local STOCK_EXT_PATH CURRENT_EXT_PATH
     local STOCK_LAYOUT="merged"
     local CURRENT_LAYOUT="merged"
@@ -138,60 +137,76 @@ EOF
         return 0
     fi
 
+    local SYSTEM_EXT_CONFIG="$CONFIG_DIR/system_fs_config"
+    local SYSTEM_EXT_CONTEXTS="$CONFIG_DIR/system_file_contexts"
 
     if [[ "$CURRENT_LAYOUT" == "$STOCK_LAYOUT" ]]; then
-        LOG_INFO "System_ext layout matches target ($CURRENT_LAYOUT). Skipping system_ext patches."
+        LOG_INFO "System_ext layout matches target ($CURRENT_LAYOUT). Skipping layout patches."
     else
-        local SYSTEM_EXT_CONFIG="$CONFIG_DIR/system_fs_config"
-        local SYSTEM_EXT_CONTEXTS="$CONFIG_DIR/system_file_contexts"
-
         if [[ "$STOCK_LAYOUT" == "merged" ]]; then
             LOG_INFO "Merging system_ext into system..."
 
-            local dest_dir="$WORKSPACE/system/system/system_ext"
+            if [[ ! -d "$WORKSPACE/system/system/system_ext" ]]; then
+                rm -rf "$WORKSPACE/system/system_ext"
+                rm -f  "$WORKSPACE/system/system/system_ext"
 
-            rm -rf "$WORKSPACE/system_ext"
-            rm -f "$WORKSPACE/system/system_ext"
+                sed -i "/system_ext/d" "$SYSTEM_EXT_CONTEXTS"
+                sed -i "/system_ext/d" "$SYSTEM_EXT_CONFIG"
 
-            mkdir -p "$dest_dir"
-            rsync -a --delete "$CURRENT_EXT_PATH/" "$dest_dir/" || return 1
-            rm -rf "$CURRENT_EXT_PATH"
+                cp -a --preserve=all "$WORKSPACE/system_ext" "$WORKSPACE/system/system"
+                ln -sf "/system/system_ext" "$WORKSPACE/system/system_ext"
 
-            ln -sf "/system/system_ext" "$WORKSPACE/system/system_ext"
+                echo "/system_ext u:object_r:system_file:s0" >> "$SYSTEM_EXT_CONTEXTS"
+                echo "system_ext 0 0 644 capabilities=0x0" >> "$SYSTEM_EXT_CONFIG"
 
-            sed -i '/system_ext/d' "$SYSTEM_EXT_CONFIG"
-            sed -i '/system_ext/d' "$SYSTEM_EXT_CONTEXTS"
-
-            echo "/system_ext u:object_r:system_file:s0" >> "$SYSTEM_EXT_CONTEXTS"
-            echo "system_ext 0 0 644 capabilities=0x0" >> "$SYSTEM_EXT_CONFIG"
-            echo "system/system_ext 0 0 755 capabilities=0x0" >> "$SYSTEM_EXT_CONFIG"
-
-            [[ -f "$CONFIG_DIR/system_ext_file_contexts" ]] && \
-                sed 's|^/system_ext|/system/system_ext|g' \
+                sed "s|^/system_ext|/system/system_ext|g" \
                     "$CONFIG_DIR/system_ext_file_contexts" >> "$SYSTEM_EXT_CONTEXTS"
 
-            [[ -f "$CONFIG_DIR/system_ext_fs_config" ]] && \
-                sed '1d;s|^system_ext|system/system_ext|g' \
+                sed "1d; s|^system_ext|system/system_ext|g" \
                     "$CONFIG_DIR/system_ext_fs_config" >> "$SYSTEM_EXT_CONFIG"
 
+                rm -rf "$WORKSPACE/system_ext"
+            fi
         else
             LOG_INFO "Separating system_ext from system..."
 
-            local dest_dir="$WORKSPACE/system_ext"
+            local SYSTEM_EXT_FS_CONFIG="$CONFIG_DIR/system_ext_fs_config"
+            local SYSTEM_EXT_FILE_CONTEXTS="$CONFIG_DIR/system_ext_file_contexts"
 
-            mkdir -p "$dest_dir"
-            rsync -a --delete "$CURRENT_EXT_PATH/" "$dest_dir/" || return 1
-            rm -rf "$CURRENT_EXT_PATH"
+            rm -f  "$WORKSPACE/system/system_ext"
+            rm -rf "$WORKSPACE/system_ext"
 
-            [[ -L "$WORKSPACE/system/system_ext" ]] && rm -f "$WORKSPACE/system/system_ext"
+            mkdir -p "$WORKSPACE/system_ext"
+            mkdir -p "$WORKSPACE/system/system_ext"
 
-            sed -i '/^system\/system_ext/d' "$SYSTEM_EXT_CONFIG"
-            sed -i '/^\/system\/system_ext/d' "$SYSTEM_EXT_CONTEXTS"
+            cp -a --preserve=all \
+                "$WORKSPACE/system/system/system_ext/." \
+                "$WORKSPACE/system_ext/"
+
+            rm -rf "$WORKSPACE/system/system/system_ext"
+            ln -sf "/system_ext" "$WORKSPACE/system/system/system_ext"
+
+            : > "$SYSTEM_EXT_FS_CONFIG"
+            : > "$SYSTEM_EXT_FILE_CONTEXTS"
+
+            grep "^/system/system_ext" "$CONFIG_DIR/system_file_contexts" \
+                | sed "s|^/system/system_ext|/system_ext|" \
+                >> "$SYSTEM_EXT_FILE_CONTEXTS"
+
+            grep "^system/system_ext" "$CONFIG_DIR/system_fs_config" \
+                | sed "s|^system/system_ext|system_ext|" \
+                >> "$SYSTEM_EXT_FS_CONFIG"
+
+            sed -i "/^\/system\/system_ext/d" "$CONFIG_DIR/system_file_contexts"
+            sed -i "/^system\/system_ext/d" "$CONFIG_DIR/system_fs_config"
+
+            LOG_INFO "system_ext successfully separated from system."
         fi
     fi
 
     LOG_END "Build environment ready at $BUILD_DIRECTORY"
 }
+
 
 
 LINK_PARTITIONS() {
