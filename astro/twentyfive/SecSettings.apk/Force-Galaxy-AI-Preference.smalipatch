@@ -1,4 +1,4 @@
-FILE smali_classes4/com/samsung/android/settings/display/controller/SecEADPreferenceController.smali
+FILE smali_classes4/com/samsung/android/settings/homepage/TopLevelGalaxyAIPreferenceController.smali
 REPLACE .method public getAvailabilityStatus()I
     .locals 1
 

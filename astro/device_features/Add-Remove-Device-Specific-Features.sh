@@ -4,6 +4,8 @@
 # Basic 
 FF "SETTINGS_CONFIG_BRAND_NAME" "$MODEL_NAME"
 FF "CONFIG_SIOP_POLICY_FILENAME" "$SIOP_POLICY_NAME"
+
+# Edge lighting corner radius
 BPROP "system" "ro.factory.model" "$STOCK_MODEL"
 ##
 
@@ -18,7 +20,9 @@ STOCK_FF_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
 ## Camera
 # Other Device based camera fixes can be found on objectives and platform folder
 REMOVE "system" "cameradata/portrait_data"
-BPROP_IF_DIFF "stock" "system" "ro.product.system.name"
+
+#BPROP_IF_DIFF "stock" "system" "ro.product.system.name"
+
 REMOVE "system" "cameradata/singletake"
 
 
@@ -37,6 +41,17 @@ xmlstarlet sel -t \
         [[ -z "$tag" ]] && continue
         SILENT FF "$tag" "$value"
     done
+
+
+ASTRO_CODENAME="$(GET_PROP "system" "ro.product.system.name" "stock")"
+
+if [[ -n "$ASTRO_CODENAME" ]]; then
+    BPROP "system" "ro.astro.codename" "$ASTRO_CODENAME"
+fi
+
+LOG_INFO "Patching camera for portrait mode.."
+PATCH_CAMERA_LIBS
+
 ##
 
 # Display MDNIE
@@ -166,5 +181,28 @@ fi
 
 
 ##
+
+PATCH_CAMERA_LIBS() {
+    local SYSTEM="$WORKSPACE/system/system"
+    local LIB_DIRS=(
+        "$SYSTEM/lib"
+        "$SYSTEM/lib64"
+    )
+
+    local FILES
+
+    FILES=$(grep -Il "ro.product.name" \
+        $(find "${LIB_DIRS[@]}" -type f -iname "*.so" \
+            \( -iname "*camera*" -o -iname "*livefocus*" -o -iname "*bokeh*" \)) \
+        2>/dev/null
+    )
+
+    [[ -z "$FILES" ]] && return 0
+
+    while IFS= read -r FILE; do
+        sed -i "s/ro.product.name/ro.astro.codename/g" "$FILE"
+        LOG_INFO "Patched camera library ${FILE#$WORKSPACE/}"
+    done <<< "$FILES"
+}
 
 
