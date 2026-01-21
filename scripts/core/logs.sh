@@ -100,10 +100,6 @@ _PRINT_DIVIDER() {
 }
 
 
-# Check if running in GitHub Actions environment
-IS_GITHUB_ACTIONS() {
-    [[ "${GITHUB_ACTIONS}" == "true" || "${CI}" == "true" ]]
-}
 
 
 LOG_INFO() {
