@@ -24,9 +24,7 @@ EXTRACT_ROM() {
         "$MODEL:$CSC:main"
         "${STOCK_MODEL:-}:$STOCK_CSC:stock"
         "${EXTRA_MODEL:-}:$EXTRA_CSC:extra"
-
     )
-
 
     local processed=""
 
@@ -34,20 +32,25 @@ EXTRACT_ROM() {
         IFS=":" read -r m c type <<< "$entry"
         [[ -z "$m" || -z "$c" ]] && continue
 
-
-		DOWNLOAD_FW "$type"     || ERROR_EXIT "Firmware download failed"
+        DOWNLOAD_FW "$type" || ERROR_EXIT "Firmware download failed"
 
         local fw_id="${m}_${c}"
         if [[ "$processed" =~ "$fw_id" ]]; then
             continue
         fi
 
-        EXTRACT_FIRMWARE "$m" "$c" "$type" || return 1
+        if [[ "$type" == "main" && "$BETA_ASSERT" == "1" ]]; then
+            PATCH_BETA_FW "$m" "$c" || return 1
+        else
+            EXTRACT_FIRMWARE "$m" "$c" "$type" || return 1
+        fi
+
         processed+="$fw_id "
     done
 
     return 0
 }
+
 
 
 

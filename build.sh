@@ -25,6 +25,10 @@ export ASTROROM
 
 ROM_VERSION="2.0.6"
 
+BETA_ASSERT=0
+BETA_OTA_URL=""
+export BETA_ASSERT BETA_OTA_URL
+
 DEBUG_BUILD=false
 
 PREBUILTS=$ASTROROM/prebuilts
@@ -73,7 +77,7 @@ EXEC_SCRIPT() {
 
     export SCRPATH
     SCRPATH=$(cd "$(dirname "$script_file")" && pwd)
-    
+
     local rel_path="${script_file#$ASTROROM/}"
 
     local current_hash cached_hash
@@ -81,7 +85,7 @@ EXEC_SCRIPT() {
     [[ -z "$current_hash" ]] && ERROR_EXIT "Hash failed: $rel_path"
 
     cached_hash=$(grep -F "$script_file" "$marker" 2>/dev/null | awk '{print $2}')
-	
+
 	if [[ "$cached_hash" == "$current_hash" ]]; then
         LOG_INFO "Skipping already applied script: $rel_path"
         return 0
@@ -286,7 +290,7 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --debug|-d)
             DEBUG_BUILD=true
-            shift 
+            shift
             ;;
 		--build|-b)
 			if [[ -n "$2" && "$2" != -* ]]; then
@@ -297,7 +301,7 @@ while [[ $# -gt 0 ]]; do
 		    fi
             ;;
         --clean|-c)
-          
+
             cleanup_workspace "${@:2}"
             exit 0
             ;;
@@ -305,8 +309,16 @@ while [[ $# -gt 0 ]]; do
             show_usage
             exit 0
             ;;
+        --ota-url)
+            [[ -z "$2" || "$2" == -* ]] && ERROR_EXIT "--ota-url requires a direct link"
+            BETA_ASSERT=1
+            BETA_OTA_URL="$2"
+            export BETA_ASSERT BETA_OTA_URL
+            shift 2
+            ;;
+
         *)
-          
+
             if [[ -z "$device" ]]; then
                 device="$1"
             fi
