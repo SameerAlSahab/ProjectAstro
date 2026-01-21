@@ -1,0 +1,32 @@
+# Device props
+MODEL_NAME="Galaxy S21 FE 5G"
+SIOP_POLICY_NAME=siop_r9q_sm8350
+CODENAME="r9q2"
+VNDK="30"
+STOCK_MODEL="SM-G990B2"
+STOCK_CSC="EUX"
+STOCK_IMEI="350370851234560"
+
+# The firmware to be used as source
+MODEL="SM-G990B2"
+CSC="EUX"
+IMEI="350370851234560"
+
+# Extra firmware which is optional
+EXTRA_MODEL=""
+EXTRA_CSC=""
+EXTRA_IMEI=""
+
+# External
+FILESYSTEM=ext4
+
+
+# Specs
+DEVICE_HAVE_SPEN_SUPPORT=false
+DEVICE_HAVE_QHD_PANEL=false
+DEVICE_HAVE_HIGH_REFRESH_RATE=true
+SUPPORT_HAPTIC_AUDIO_VIBRATOR=false
+
+# Custom props (If not used , it will use values from stock rom)
+DEVICE_DISPLAY_HFR_MODE="2"
+DEVICE_DISPLAY_REFRESH_RATE_VALUES_HZ="60,120"
