@@ -15,6 +15,7 @@ workspace/
 Thumbs.db
 .vscode/
 .idea/
+*.kate-swp
 
 # Python 
 __pycache__/
