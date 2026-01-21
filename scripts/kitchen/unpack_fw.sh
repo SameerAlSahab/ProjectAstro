@@ -254,8 +254,7 @@ DETECT_FILESYSTEM() {
         return 0
     fi
 
-    # Samsung fallback (system/vendor/userdata etc.)
-    # If it's not erofs or ext4, treat it as f2fs
+    # F2FS left only lul
     echo "f2fs"
     return 0
 }
@@ -295,15 +294,25 @@ UNPACK_PARTITION() {
 
 
 case $FILESYSTEM_TYPE in
-    ext4|f2fs)
+    ext4)
             mount -o ro "$IMAGE_PATH" "$TMP_MOUNT_DIR" >/dev/null || {
-              ERROR_EXIT "EXT4 mount failed for $PART_NAME"
+              ERROR_EXIT "ext4 mount failed for $PART_NAME"
             return 1
         }
         ;;
     erofs)
             "$PREBUILTS/erofs-utils/fuse.erofs" "$IMAGE_PATH" "$TMP_MOUNT_DIR" 2> >(grep -v '^<W>' >&2) >/dev/null || {
-              ERROR_EXIT "EROFS mount failed for $PART_NAME"
+              ERROR_EXIT "erofs mount failed for $PART_NAME"
+            return 1
+        }
+        ;;
+    f2fs)
+            if IS_WSL; then
+              ERROR_EXIT "Cannot mount f2fs image on WSL environment as of now"
+            fi
+
+            mount -o ro "$IMAGE_PATH" "$TMP_MOUNT_DIR" >/dev/null || {
+              ERROR_EXIT "f2fs mount failed for $PART_NAME"
             return 1
         }
         ;;
@@ -312,7 +321,6 @@ case $FILESYSTEM_TYPE in
         return 1
         ;;
 esac
-
 
         cp -a -T "$TMP_MOUNT_DIR" "$PART_DESTINATION" || {
           ERROR_EXIT "Cannot copy files to unpack directory for $PART_NAME"
