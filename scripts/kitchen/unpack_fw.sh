@@ -239,37 +239,25 @@ fi
 
 DETECT_FILESYSTEM() {
     local IMAGE_PATH="$1"
-    [[ ! -f "$IMAGE_PATH" ]] && echo "unknown" && return 1
 
-    # EROFS magic number (offset 1024)
+    [[ ! -f "$IMAGE_PATH" ]] && ERROR_EXIT "Missing image: $IMAGE_PATH"
+
+    # EROFS magic (offset 1024)
     if [[ "$(xxd -p -l 4 -s 1024 "$IMAGE_PATH" 2>/dev/null)" == "e0f5e1e2" ]]; then
         echo "erofs"
         return 0
     fi
 
-    # F2FS magic number (offset 1024)
-    if [[ "$(xxd -p -l 4 -s 1024 "$IMAGE_PATH" 2>/dev/null)" == "1020f5f2" ]]; then
-        echo "f2fs"
-        return 0
-    fi
-
-    # EXT4 magic number (offset 1080)
+    # EXT4 magic (offset 1080)
     if [[ "$(xxd -p -l 2 -s 1080 "$IMAGE_PATH" 2>/dev/null)" == "53ef" ]]; then
         echo "ext4"
         return 0
     fi
 
-    # Fallback to blkid for other filesystems
-    local FILESYSTEM_TYPE
-    FILESYSTEM_TYPE=$(blkid -o value -s TYPE "$IMAGE_PATH" 2>/dev/null)
-    if [[ -n "$FILESYSTEM_TYPE" ]]; then
-        echo "$FILESYSTEM_TYPE"
-        return 0
-    fi
-
-    echo "unknown"
-    ERROR_EXIT "Unknown filesystem: $IMAGE_PATH"
-
+    # Samsung fallback (system/vendor/userdata etc.)
+    # If it's not erofs or ext4, treat it as f2fs
+    echo "f2fs"
+    return 0
 }
 
 
