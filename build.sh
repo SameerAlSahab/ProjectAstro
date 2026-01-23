@@ -163,11 +163,17 @@ fi
     fi
 
 
-    local layers=(
-        "$ASTROROM/platform/$PLATFORM"
-        "$PROJECT_DIR"
-        "$OBJECTIVE" #Idk but running device specific patches at last avoid conflicts
-    )
+local layers=()
+
+if [[ -n "$PLATFORM" ]]; then
+    layers+=("$ASTROROM/platform/$PLATFORM")
+fi
+
+layers+=(
+    "$PROJECT_DIR"
+    "$OBJECTIVE"
+)
+
 
     for layer in "${layers[@]}"; do
         [[ ! -d "$layer" ]] && continue
