@@ -127,19 +127,21 @@ if [[ "$DEVICE_HAVE_QHD_PANEL" == "true" ]]; then
     if grep -q "QHD" "$FF_FILE"; then
         LOG_INFO "Device and source both have QHD res. Ignoring..."
     else
-        LOG_INFO "Enabling QHD Support (Adding QHD Resolution support)..."
+        LOG_INFO "Enabling QHD resolution support ..."
         FF "SEC_FLOATING_FEATURE_COMMON_CONFIG_DYN_RESOLUTION_CONTROL" "WQHD,FHD,HD"
-
-        # Add high-res Settings app from pa3q
         ADD_FROM_FW "pa3q" "system" "priv-app/SecSettings"
     fi
 
 else
-    LOG_INFO "Device does not support QHD. Disabling QHD features..."
+    # Device does NOT support QHD
+    if ! grep -q "QHD" "$FF_FILE"; then
+        LOG_INFO "Device and source both do not support QHD res. Ignoring..."
+    else
+        LOG_INFO "Source has QHD but device does not. Removing QHD features..."
 
-    FF "SEC_FLOATING_FEATURE_COMMON_CONFIG_DYN_RESOLUTION_CONTROL" ""
-    # Replace Settings app with non-QHD version from dm1q
-    ADD_FROM_FW "dm1q" "system" "priv-app/SecSettings"
+        FF "SEC_FLOATING_FEATURE_COMMON_CONFIG_DYN_RESOLUTION_CONTROL" ""
+        ADD_FROM_FW "dm1q" "system" "priv-app/SecSettings"
+    fi
 fi
 
 
