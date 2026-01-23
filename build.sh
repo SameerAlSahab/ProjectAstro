@@ -247,6 +247,7 @@ COMMANDS:
                             If [device] is not given, a selection menu will appear.
   -c, --clean [option]      Cleanup build artifacts.
   -h, --help                Show usage.
+      --ota-url [link]      Build astrorom from a beta firmware source.
 
 CLEAN OPTIONS:
   -f, --firmware            Remove downloaded firmware files.
