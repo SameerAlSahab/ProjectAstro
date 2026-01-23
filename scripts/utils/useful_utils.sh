@@ -224,3 +224,14 @@ HEX_EDIT() {
     fi
 }
 
+
+IS_GITHUB_ACTIONS() {
+    [[ "${GITHUB_ACTIONS}" == "true" || "${CI}" == "true" ]]
+}
+
+
+# https://github.com/canonical/snapd/blob/ec7ea857712028b7e3be7a5f4448df575216dbfd/release/release.go#L169-L190
+IS_WSL() {
+    [ -e "/proc/sys/fs/binfmt_misc/WSLInterop" ] || [ -e "/run/WSL" ]
+}
+
