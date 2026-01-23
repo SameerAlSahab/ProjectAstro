@@ -23,6 +23,9 @@ INIT_BUILD_ENV() {
     STOCK_FW="${WORKDIR}/${STOCK_MODEL}"
     EXTRA_FW="${WORKDIR}/${EXTRA_MODEL}"
 
+    setfacl -R -m u:"${SUDO_USER:-$(whoami)}":rwx "$ASTROROM"
+
+    setfacl -R -d -m u:"${SUDO_USER:-$(whoami)}":rwx "$ASTROROM"
 
     EXTRACT_ROM || ERROR_EXIT "Firmware extraction failed."
 
@@ -236,8 +239,6 @@ LINK_PARTITIONS() {
             -name "*.prop" -o -name "*.xml" -o -name "*.conf" -o \
             -name "*.sh" -o -name "*.json" -o -name "*.rc" -o -size -1M \
         \) -exec sh -c 'cp --preserve=mode,timestamps "$1" "$1.tmp" && mv "$1.tmp" "$1"' _ {} \; 2>/dev/null
-
-        chmod -R u+w "$target_path" 2>/dev/null
 
 
         for cfg_type in "fs_config" "file_contexts"; do

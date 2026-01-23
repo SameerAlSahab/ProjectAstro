@@ -108,6 +108,7 @@ dependencies_config=(
 	"jq|jq|(For JQ)|true"
 	"ffmpeg|ffmpeg|(Video conversion)|true"
 	"webp|libwebp-utils|(WEBP conversion)|true"
+	"acl|acl|grants regular user permissions|true"
 )
 
 DISTRO_TYPE=""

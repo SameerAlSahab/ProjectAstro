@@ -251,11 +251,6 @@ if [[ -n "$csc_file" ]]; then
     touch "${CURRENT_MODEL}/.extraction_complete"
 
 
-if [[ -n "${SUDO_USER:-}" ]]; then
-    chown -R "$SUDO_USER:$SUDO_USER" "$WORKDIR"
-    chmod -R 755 "$WORKDIR"
-fi
-
     LOG_END "Unpacked $model firmware. ( Got $found_count partitions)"
 
     return 0
