@@ -40,17 +40,21 @@ BT_LIB_PATCH() {
                 && PATCH_APPLIED=true
             ;;
         36)
-            if xxd -p -c 0 "$WORKSPACE/$LIB_PATH" | grep -q "2897773948050037"; then
-                HEX_EDIT "$LIB_PATH" \
-                    "2897773948050037" \
-                    "289777392a000014" \
-                    && PATCH_APPLIED=true
-            elif xxd -p -c 0 "$WORKSPACE/$LIB_PATH" | grep -q "183a009048050037"; then
-                HEX_EDIT "$LIB_PATH" \
-                    "183a009048050037" \
-                    "183a00902a000014" \
-                    && PATCH_APPLIED=true
-            fi
+            local PATCHES=(
+            "00122a0140395f01086b00020054 00122a0140395f01086bde030014"
+            "2897773948050037 289777392a000014"
+            "183a009048050037 183a00902a000014"
+            "3a009048050037330080 3a00902a000014330080"
+            "f6713948050037330080 f671392a000014330080"
+        )
+
+    for p in "${PATCHES[@]}"; do
+        set -- $p
+        HEX_EDIT "$LIB_PATH" "$1" "$2" && {
+            PATCH_APPLIED=true
+            break
+        }
+    done
             ;;
         *)
             ERROR_EXIT "Unsupported SDK version: $SDK_VERSION"
