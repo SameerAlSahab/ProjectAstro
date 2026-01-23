@@ -10,7 +10,7 @@ V4A=$(curl -s ${GITHUB_TOKEN:+-H Authorization: token $GITHUB_TOKEN} \
     "https://api.github.com/repos/WSTxda/ViPERFX_RE/releases/latest" | \
     sed -n 's/.*"browser_download_url":[[:space:]]*"\([^"]*viper4android_module[^"]*\.zip\)".*/\1/p' | head -n1)
 
-wget -O "$TMP_DIR/viper.zip" "$V4A"
+SILENT wget -O "$TMP_DIR/viper.zip" "$V4A"
 
 mkdir -p "$WORKSPACE/vendor/lib/soundfx"
 mkdir -p "$WORKSPACE/vendor/lib64/soundfx"
@@ -53,14 +53,14 @@ V4A_APK=$(curl -s ${GITHUB_TOKEN:+-H Authorization: token $GITHUB_TOKEN} \
 
     mkdir -p "$WORKSPACE/system/system/preload/Viper4AndroidFX-RE/com.wstxda.viper4android=="
 
-    wget -O "$WORKSPACE/system/system/preload/Viper4AndroidFX-RE/com.wstxda.viper4android==/base.apk" "$V4A_APK"
+    SILENT wget -O "$WORKSPACE/system/system/preload/Viper4AndroidFX-RE/com.wstxda.viper4android==/base.apk" "$V4A_APK"
 
 while IFS= read -r i; do
     i="${i//$WORKSPACE\/system\//}"
 
     if [[ "$i" == *".apk" ]] && \
             ! grep -q "$i" "$WORKSPACE/system/system/etc/vpl_apks_count_list.txt"; then
-        LOG "- Adding \"$i\" to /system/system/etc/vpl_apks_count_list.txt"
+        LOG "Adding \"$i\" to /system/system/etc/vpl_apks_count_list.txt"
         echo "$i" >> "$WORKSPACE/system/system/etc/vpl_apks_count_list.txt"
     fi
 done <<< "$(find "$WORKSPACE/system/system/preload")"

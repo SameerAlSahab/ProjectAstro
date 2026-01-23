@@ -91,7 +91,7 @@ EXEC_SCRIPT() {
         return 0
     fi
 
-    LOG_INFO "Applying: $rel_path"
+    LOG_BEGIN "Applying: $rel_path"
 
     if ! source "$script_file"; then
         local rc=$?
@@ -360,8 +360,6 @@ done
 
 
 _BUILD_WORKFLOW
-
-sudo chmod -R 777 "$DIROUT"
 
 LOG_END "Completed everything" "Build finished for $device"
 
