@@ -76,8 +76,8 @@ CREATE_FLASHABLE_ZIP() {
         EXTRA_BLOCKS+=$'\nui_print "Installing DTBO...";\nupdate_zip dtbo.img $(find_block dtbo);'
     fi
 
-    if [[ -f "${ZIP_BUILD_DIR}/param.bin" ]]; then
-        EXTRA_BLOCKS+=$'\nui_print "Installing Param...";\nupdate_zip param.bin $(find_block up_param);'
+    if [[ -f "${ZIP_BUILD_DIR}/up_param.bin" ]]; then
+        EXTRA_BLOCKS+=$'\nui_print "Installing Param...";\nupdate_zip up_param.bin $(find_block up_param);'
     fi
 
 
@@ -166,11 +166,6 @@ BUILD_SUPER_IMAGE() {
 REPACK_ROM() {
     local TARGET_FILESYSTEM="$1"
 
-    if [[ -d "$DIROUT" ]]; then
-        rm -rf "$DIROUT"/*
-    else
-        mkdir -p "$DIROUT"
-    fi
 
     for part_dir in "$WORKSPACE"/*/; do
         local name=$(basename "$part_dir")
@@ -266,3 +261,5 @@ IS_DYNAMIC_PARTITION() {
             ;;
     esac
 }
+
+

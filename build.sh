@@ -108,6 +108,8 @@ EXEC_SCRIPT() {
 
 _BUILD_WORKFLOW() {
 
+    rm -rf "$DIROUT" && mkdir -p "$DIROUT"
+
     CHECK_ALL_DEPENDENCIES
     chmod +x -R "$PREBUILTS"
 
