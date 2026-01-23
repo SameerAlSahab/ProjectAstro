@@ -108,14 +108,14 @@ EXEC_SCRIPT() {
 
 _BUILD_WORKFLOW() {
 
-    rm -rf "$DIROUT" && mkdir -p "$DIROUT"
+    rm -rf "$ASTROROM/out" && mkdir -p "$ASTROROM/out"
 
     CHECK_ALL_DEPENDENCIES
     chmod +x -R "$PREBUILTS"
 
     if [[ -z "$device" ]]; then
         [[ ! -d "$OBJECTIVES_DIR" ]] && \
-            ERROR_EXIT "OBJECTIVES_DIR not found: $OBJECTIVES_DIR"
+            ERROR_EXIT "objective folder not found: $OBJECTIVES_DIR"
 
         local devices=()
         for d in "$OBJECTIVES_DIR"/*/; do
@@ -168,7 +168,8 @@ fi
 local layers=()
 
 if [[ -n "$PLATFORM" ]]; then
-    layers+=("$ASTROROM/platform/$PLATFORM")
+    PLATFORM_DIR="$ASTROROM/platform/$PLATFORM"
+    layers+=("$PLATFORM_DIR")
 fi
 
 layers+=(
