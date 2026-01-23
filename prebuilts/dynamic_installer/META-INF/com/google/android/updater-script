@@ -8,6 +8,8 @@ ui_print "Welcome to AstroROM Installer!"
 ui_print " "
 ui_print "AstroROM  __ROM_VERSION__  for __MODEL_NAME__  "
 ui_print " "
+ui_print "AstroROM is coded by @SameerAlSahab "
+ui_print " "
 ui_print "Build: __BUILD_DATE__"
 
 

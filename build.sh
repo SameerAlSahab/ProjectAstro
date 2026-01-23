@@ -165,7 +165,7 @@ fi
 
     local layers=(
         "$PROJECT_DIR"
-        "$PROJECT_DIR/platform/$PLATFORM"
+        "$ASTROROM/platform/$PLATFORM"
         "$OBJECTIVE" #Idk but running device specific patches at last avoid conflicts
     )
 
