@@ -1,3 +1,4 @@
+
 name: Build AstroROM
 
 on:
@@ -6,7 +7,7 @@ on:
       device:
         description: 'Device Codename'
         required: true
-        default: 'dm3q'
+        default: 'x1q'
       upload_cloud:
         description: 'Upload ROM to cloud (PixelDrain)'
         required: false
@@ -55,8 +56,11 @@ jobs:
         run: df -h /
 
       - name: Run AstroROM Build
+        env:
+          REAL_IMEI: ${{ secrets.MY_DEVICE_IMEI }}
         run: |
-          sudo bash build.sh --build ${{ inputs.device }}
+          sed -i "s/MY_DEVICE_IMEI/$REAL_IMEI/g" objectives/y2q/y2q.sh
+          yes "" | sudo bash build.sh --build ${{ inputs.device }}
 
 
       - name: Download PixelDrain CLI (pd)
