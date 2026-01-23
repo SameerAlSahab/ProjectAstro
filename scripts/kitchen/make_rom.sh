@@ -31,6 +31,8 @@ CREATE_FLASHABLE_ZIP() {
     local UPDATER_SCRIPT_PATH
     local COMPRESSION_LEVEL=3
 
+    local EXTRA_BLOCKS=""
+
     BUILD_DATE="$(date +%Y%m%d)"
     ZIP_NAME_PREFIX="AstroROM_${CODENAME}_v${ROM_VERSION}_${BUILD_DATE}"
 
@@ -44,8 +46,6 @@ CREATE_FLASHABLE_ZIP() {
     COMMAND_EXISTS "7z" || ERROR_EXIT "7z tool not found."
 
     [[ -f "${PREBUILTS}/signapk/signapk.jar" ]] || ERROR_EXIT "signapk.jar not found."
-    [[ -f "${PREBUILTS}/signapk/keys/aosp_testkey.x509.pem" ]] || ERROR_EXIT "X509 key not found."
-    [[ -f "${PREBUILTS}/signapk/keys/aosp_testkey.pk8" ]] || ERROR_EXIT "PK8 key not found."
 
     rm -rf "${ZIP_BUILD_DIR}"
     mkdir -p "${ZIP_BUILD_DIR}"
@@ -54,14 +54,42 @@ CREATE_FLASHABLE_ZIP() {
     mv "${SUPER_IMAGE_PATH}" "${ZIP_BUILD_DIR}/super.img"
 
 
+    cp "${DIROUT}"/*.img "${ZIP_BUILD_DIR}/" 2>/dev/null || true
+
+    [[ -f "${DIROUT}/param.bin" ]] && cp "${DIROUT}/param.bin" "${ZIP_BUILD_DIR}/"
+
     UPDATER_SCRIPT_PATH="${ZIP_BUILD_DIR}/META-INF/com/google/android/updater-script"
 
+    if [[ -f "${ZIP_BUILD_DIR}/boot.img" ]]; then
+        EXTRA_BLOCKS+=$'\nui_print "Installing Kernel...";\nupdate_zip boot.img $(find_block boot);'
+    fi
+
+    if [[ -f "${ZIP_BUILD_DIR}/optics.img" ]]; then
+        EXTRA_BLOCKS+=$'\nui_print "Installing Optics...";\nupdate_zip optics.img $(find_block optics);'
+    fi
+
+    if [[ -f "${ZIP_BUILD_DIR}/prism.img" ]]; then
+        EXTRA_BLOCKS+=$'\nui_print "Installing Prism...";\nupdate_zip prism.img $(find_block prism);'
+    fi
+
+    if [[ -f "${ZIP_BUILD_DIR}/dtbo.img" ]]; then
+        EXTRA_BLOCKS+=$'\nui_print "Installing DTBO...";\nupdate_zip dtbo.img $(find_block dtbo);'
+    fi
+
+    if [[ -f "${ZIP_BUILD_DIR}/param.bin" ]]; then
+        EXTRA_BLOCKS+=$'\nui_print "Installing Param...";\nupdate_zip param.bin $(find_block up_param);'
+    fi
+
+
     if [[ -f "${UPDATER_SCRIPT_PATH}" ]]; then
+        local ASSERT_BLOCKS="${EXTRA_BLOCKS//$'\n'/\\n}"
+
         sed -i \
             -e "s|__ROM_VERSION__|${ROM_VERSION}|g" \
             -e "s|__MODEL_NAME__|${MODEL_NAME}|g" \
             -e "s|__BUILD_DATE__|${BUILD_DATE}|g" \
             -e "s|__CODENAME__|${CODENAME}|g" \
+            -e "s|__EXTRA_ASSERTS__|${ASSERT_BLOCKS}|g" \
             "${UPDATER_SCRIPT_PATH}"
     fi
 
@@ -71,18 +99,15 @@ CREATE_FLASHABLE_ZIP() {
 
     rm -rf "${ZIP_BUILD_DIR}"
 
-
     LOG_INFO "Signing ZIP.."
-
     java -jar "${PREBUILTS}/signapk/signapk.jar" -w \
-        "$PEM_CERT" \
-        "$PK8_KEY" \
+        "${PREBUILTS}/signapk/keys/aosp_testkey.x509.pem" \
+        "${PREBUILTS}/signapk/keys/aosp_testkey.pk8" \
         "$UNSIGNED_ZIP_PATH" \
         "$SIGNED_ZIP_PATH" \
-        || ERROR_EXIT "Java ZIP signing failed"
+        || ERROR_EXIT "Signing failed"
 
     rm -f "${UNSIGNED_ZIP_PATH}"
-
     LOG_END "Flashable zip created at $(basename "${SIGNED_ZIP_PATH}")"
 }
 
@@ -104,7 +129,8 @@ BUILD_SUPER_IMAGE() {
 
     for part in $PARTITIONS; do
         local img="$DIROUT/${part}.img"
-        if [[ -f "$img" ]]; then
+
+        if [[ -f "$img" ]] && IS_DYNAMIC_PARTITION "$part"; then
             valid_partitions+=("$part")
             current_total_size=$(( current_total_size + $(stat -c%s "$img") ))
         fi
@@ -148,10 +174,15 @@ REPACK_ROM() {
 
     for part_dir in "$WORKSPACE"/*/; do
         local name=$(basename "$part_dir")
+        local TARGET_FS="$TARGET_FILESYSTEM"
 
         [[ "$name" =~ ^(config|lost\+found)$ ]] && continue
 
-        REPACK_PARTITION "$name" "$TARGET_FILESYSTEM" "$DIROUT" "$WORKSPACE"
+        if [[ "$name" == "optics" || "$name" == "prism" ]]; then
+            TARGET_FS="ext4"
+        fi
+
+        REPACK_PARTITION "$name" "$TARGET_FS" "$DIROUT" "$WORKSPACE"
     done
 
     # Check if we should create a full zip or just the unpacked images for debugging. For instance , fastboot or recovery flash.
@@ -212,7 +243,7 @@ SIGN_ROM_ZIP() {
 
     {
         printf '\xca\x06'
-        printf 'signed by AstroROM'
+        printf 'signed by signapk'
         printf '\x00'
         printf "$CERT"
         printf "$SIGNATURE"
@@ -220,4 +251,18 @@ SIGN_ROM_ZIP() {
     } >> "$OUT_ZIP"
 
     LOG_INFO "Signed successfully"
+}
+
+
+IS_DYNAMIC_PARTITION() {
+    local part_name="$1"
+    # List of common dynamic partitions
+    case "$part_name" in
+        system|vendor|product|system_ext|odm|vendor_dlkm|system_dlkm|odm_dlkm)
+            return 0
+            ;;
+        *)
+            return 1
+            ;;
+    esac
 }

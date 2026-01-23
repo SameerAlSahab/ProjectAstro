@@ -181,6 +181,23 @@ fi
             ! -path "*.jar/*" \
             -print0 | sort -z)
 
+
+        while IFS= read -r -d '' cfg; do
+            name="$(basename "$cfg")"
+            target="$CONFIG_DIR/$name"
+
+            if [[ ! -f "$target" ]]; then
+                cp "$cfg" "$target"
+            else
+                grep -Fvx -f "$target" "$cfg" >> "$target" || true
+            fi
+        done < <(
+            find "$layer" -type f \( \
+                -name "*_file_contexts" -o \
+                -name "*_fs_config" \
+            \) -print0
+        )
+
         # Sync partitions
         while IFS= read -r -d '' img; do
             part=$(basename "$img" .img)
@@ -337,6 +354,5 @@ _BUILD_WORKFLOW
 sudo chmod -R 777 "$DIROUT"
 
 LOG_END "Completed everything" "Build finished for $device"
-
 
 

@@ -39,6 +39,7 @@ EXTRACT_ROM() {
             continue
         fi
 
+
         if [[ "$type" == "main" && "$BETA_ASSERT" == "1" ]]; then
             PATCH_BETA_FW "$m" "$c" || return 1
         else
@@ -50,7 +51,6 @@ EXTRACT_ROM() {
 
     return 0
 }
-
 
 
 
@@ -71,11 +71,15 @@ EXTRACT_FIRMWARE() {
 
     mkdir -p "$CURRENT_MODEL"
 
-    local ap_file
+    local ap_file local csc_file
     ap_file=$(find "$ODIN_FOLDER" -maxdepth 1 \( -name "AP_*.tar.md5" -o -name "AP_*.tar" \) | head -1)
     [[ -z "$ap_file" ]] && { ERROR_EXIT "AP package missing for $model"; return 1; }
 
-    # Check if we need to extract or not
+    csc_file=$(find "$ODIN_FOLDER" -maxdepth 1 \( -name "CSC_*.tar.md5" -o -name "CSC_*.tar" -o -name "HOME_CSC_*.tar.md5" -o -name "HOME_CSC_*.tar" \) | head -1)
+    [[ -z "$csc_file" ]] && { ERROR_EXIT "CSC package missing for $model"; return 1; }
+
+
+	# Check if we need to extract or not
     local current_data
 
 	# Samsung saves the md5 at the last of the file , so it takes a lot of time in low end machines, instead i thought to use inode+mtime verify.
@@ -208,6 +212,35 @@ LOG_END "Partitions unpacked"
     # Remove empty B slots (Virtual A/B)
     find "$CURRENT_MODEL" -maxdepth 1 -type f -name "*_b.img" -delete
 
+if [[ -n "$csc_file" ]]; then
+        LOG_INFO "Processing CSC partitions.. $(basename "$csc_file")"
+
+        local csc_parts=("optics" "prism")
+
+        for part in "${csc_parts[@]}"; do
+            local img_path="${CURRENT_MODEL}/${part}.img"
+
+            # Extract .img from CSC
+            if FETCH_FILE "$csc_file" "${part}.img" "$CURRENT_MODEL" >/dev/null 2>&1; then
+
+
+                if file "$img_path" | grep -q "sparse"; then
+                    mv "$img_path" "${img_path}.sparse"
+                    "$PREBUILTS/android-tools/simg2img" "${img_path}.sparse" "$img_path"
+                    rm -f "${img_path}.sparse"
+                fi
+
+                UNPACK_PARTITION "$img_path" "$model"
+
+                rm -f "$img_path"
+                ((found_count++))
+            fi
+        done
+
+        if IS_GITHUB_ACTIONS; then rm -f "$csc_file"; fi
+    else
+        LOG_WARN "No CSC file found. Skipping optics and prism."
+    fi
     [[ $found_count -eq 0 ]] && {
         rm -f "$UNPACK_CONF" "${CURRENT_MODEL}/.extraction_complete"
         ERROR_EXIT "No valid partitions found for $model"
@@ -227,6 +260,7 @@ fi
 
     return 0
 }
+
 
 
 
@@ -331,11 +365,11 @@ esac
     }
 
 
-
 #https://source.android.com/docs/security/features/selinux/implement
 #https://source.android.com/docs/security/features/selinux
     LOG_INFO "Extracting links, modes & attrs from $PART_NAME"
     echo
+
 
     # Generate fs_config: UID, GID, permissions, capabilities
     # Format: <path> <uid> <gid> <mode> capabilities=<capability_mask>
@@ -350,6 +384,7 @@ esac
         ERROR_EXIT "Cannot generate file contexts for $PART_NAME"
         return 1
     }
+
 
 
 	sort -o "$FS_CONFIG_FILE" "$FS_CONFIG_FILE" 2>/dev/null
@@ -371,44 +406,8 @@ esac
     # Escape regex metacharacters
     sed -i -E 's/([][()+*.^$?\\|])/\\\1/g' "$FILE_CONTEXTS_FILE"
 
-
-
-    local CAPS_MAP_FILE=$(mktemp)
-
-
-    while read -r raw_path; do
-        real_cap=$(_GET_CAPABILITIES_HEX "$raw_path")
-
-        if [[ "$real_cap" != "0x0" ]]; then
-
-            if [[ "$PART_NAME" == "system" ]] && [[ -d "$PART_DESTINATION/system" ]]; then
-                 config_path=${raw_path#$TMP_MOUNT_DIR/}
-                 [[ "$config_path" == "$raw_path" ]] && config_path=""
-            else
-                 config_path="$PART_NAME${raw_path#$TMP_MOUNT_DIR}"
-            fi
-
-            [[ "$config_path" != /* ]] && config_path="/$config_path"
-            [[ "$config_path" == "/" ]] && config_path="" # Root adjustment if needed
-
-
-            echo "$config_path $real_cap" >> "$CAPS_MAP_FILE"
-        fi
-    done < <(find "$TMP_MOUNT_DIR" -type f)
-
-
-    if [[ -s "$CAPS_MAP_FILE" ]]; then
-        awk 'NR==FNR {caps[$1]=$2; next}
-             ($1 in caps) { sub("capabilities=0x0", "capabilities=" caps[$1]); print; next }
-             {print}' "$CAPS_MAP_FILE" "$FS_CONFIG_FILE" > "${FS_CONFIG_FILE}.tmp" && mv "${FS_CONFIG_FILE}.tmp" "$FS_CONFIG_FILE"
-    fi
-
-    rm -f "$CAPS_MAP_FILE"
-
-
     sed -i "/^PARTITIONS=/s/\"$/ $PART_NAME\"/" "$UNPACK_CONF"
     sed -i '/^PARTITIONS=/s/=" /="/' "$UNPACK_CONF"
-
 
     return 0
 }
@@ -418,7 +417,7 @@ esac
 # Extracts the security.capability xattr and converts it to the fs_config hex format.
 #
 
-_GET_CAPABILITIES_HEX() {
+_GET_CAPABILITIES() {
     local FILE_PATH="$1"
     local CAP_HEX
     local DEFAULT_CAP="0x0"
@@ -449,4 +448,3 @@ _GET_CAPABILITIES_HEX() {
 
     echo "$FINAL_CAP"
 }
-

@@ -1,9 +1,9 @@
 
 # NOTE This is not completed yet.
 
-# Basic 
+# Basic
 FF "SETTINGS_CONFIG_BRAND_NAME" "$MODEL_NAME"
-FF "CONFIG_SIOP_POLICY_FILENAME" "$SIOP_POLICY_NAME"
+FF "SYSTEM_CONFIG_SIOP_POLICY_FILENAME" "$SIOP_POLICY_NAME"
 
 # Edge lighting corner radius
 BPROP "system" "ro.factory.model" "$STOCK_MODEL"
@@ -47,10 +47,11 @@ ASTRO_CODENAME="$(GET_PROP "system" "ro.product.system.name" "stock")"
 
 if [[ -n "$ASTRO_CODENAME" ]]; then
     BPROP "system" "ro.astro.codename" "$ASTRO_CODENAME"
+ else
+    BPROP "system" "ro.astro.codename" "$CODENAME"
 fi
 
-LOG_INFO "Patching camera for portrait mode.."
-PATCH_CAMERA_LIBS
+
 
 ##
 
@@ -83,21 +84,21 @@ if [[ "$DEVICE_HAVE_SPEN_SUPPORT" == "true" ]] && EXISTS "system" "priv-app/AirC
 
 elif [[ "$DEVICE_HAVE_SPEN_SUPPORT" == "false" ]] && EXISTS "system" "priv-app/AirCommand"; then
     LOG_INFO "Device has no SPen but Source does. Removing bloat..."
-    
+
     # Remove Packages
     SILENT NUKE_BLOAT "${AIR_COMMAND_PKGS[@]}"
-    
+
     # Remove Permission Files and Sounds
     for file in "${AIR_COMMAND_FILES[@]}"; do
         REMOVE "system" "$file"
     done
-    
+
     FF "SUPPORT_EAGLE_EYE" ""
 
 elif [[ "$DEVICE_HAVE_SPEN_SUPPORT" == "true" ]] && ! EXISTS "system" "priv-app/AirCommand"; then
     LOG_INFO "Device has SPen but Source does not. Adding from Firmware..."
 
-  
+
     for pkg in "${AIR_COMMAND_PKGS[@]}"; do
         ADD_FROM_FW "pa3q" "system" "priv-app/$pkg"
     done
@@ -110,7 +111,7 @@ elif [[ "$DEVICE_HAVE_SPEN_SUPPORT" == "true" ]] && ! EXISTS "system" "priv-app/
     FF "SUPPORT_EAGLE_EYE" "TRUE"
 
 else
-    : 
+    :
 fi
 
 ##
@@ -119,28 +120,26 @@ fi
 
 # QHD and FHD displays
 # TODO: Modify HFR mode on SecSettings and framework otherwise refresh rate control will be broken
-# TODO: Add framework and surfaceflinger patches too in future 
+# TODO: Add framework and surfaceflinger patches too in future
 
 if [[ "$DEVICE_HAVE_QHD_PANEL" == "true" ]]; then
 
     if grep -q "QHD" "$FF_FILE"; then
         LOG_INFO "Device and source both have QHD res. Ignoring..."
     else
-        LOG_INFO "Enabling QHD resolution support ..."
+        LOG_INFO "Enabling QHD Support (Adding QHD Resolution support)..."
         FF "SEC_FLOATING_FEATURE_COMMON_CONFIG_DYN_RESOLUTION_CONTROL" "WQHD,FHD,HD"
+
+        # Add high-res Settings app from pa3q
         ADD_FROM_FW "pa3q" "system" "priv-app/SecSettings"
     fi
 
 else
-    # Device does NOT support QHD
-    if ! grep -q "QHD" "$FF_FILE"; then
-        LOG_INFO "Device and source both do not support QHD res. Ignoring..."
-    else
-        LOG_INFO "Source has QHD but device does not. Removing QHD features..."
+    LOG_INFO "Device does not support QHD. Disabling QHD features..."
 
-        FF "SEC_FLOATING_FEATURE_COMMON_CONFIG_DYN_RESOLUTION_CONTROL" ""
-        ADD_FROM_FW "dm1q" "system" "priv-app/SecSettings"
-    fi
+    FF "SEC_FLOATING_FEATURE_COMMON_CONFIG_DYN_RESOLUTION_CONTROL" ""
+    # Replace Settings app with non-QHD version from dm1q
+    ADD_FROM_FW "dm1q" "system" "priv-app/SecSettings"
 fi
 
 
@@ -148,7 +147,7 @@ fi
 fi
 
 # High Refresh rate displays
-# TODO: Edit SecSettings resolution string for actual hz 
+# TODO: Edit SecSettings resolution string for actual hz
 # TODO: Add  logic to remove high refresh rate option
 # TODO As timer ms can vary upon devices , i will move them to platform for specific numbers. As of now kept this.
 FRAMERATE_OVERRIDE=$(GET_PROP "vendor" "ro.surface_flinger.enable_frame_rate_override")
@@ -207,4 +206,8 @@ PATCH_CAMERA_LIBS() {
     done <<< "$FILES"
 }
 
+LOG_INFO "Patching camera for portrait mode.."
 
+BPROP "system" "ro.product.astro.model" "$STOCK_MODEL"
+
+PATCH_CAMERA_LIBS

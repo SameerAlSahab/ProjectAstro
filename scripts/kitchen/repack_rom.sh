@@ -28,22 +28,25 @@ REPACK_PARTITION() {
     }
 
     local UNPACK_CONF="$MODEL_FW_DIR/unpack.conf"
-    local HEADROOM_PERCENT=7
-    
+    local HEADROOM_PERCENT=9
+
     local FOLDERSIZE_IN_KB=$(du -s -k "$MODEL_FW_DIR/$PART_NAME" | awk '{print $1}')
     TARGET_SIZE_IN_KB=$((FOLDERSIZE_IN_KB + FOLDERSIZE_IN_KB * HEADROOM_PERCENT / 100))
+    MIN_RESIZE_KB=2048
 
-    if (( FOLDERSIZE_IN_KB < 15043 )); then
-        TARGET_SIZE_IN_KB=$((FOLDERSIZE_IN_KB + FOLDERSIZE_IN_KB * 35 / 100))
-    else
-        TARGET_SIZE_IN_KB=$((FOLDERSIZE_IN_KB + FOLDERSIZE_IN_KB * HEADROOM_PERCENT / 100))
-    fi
-    
+if [[ "$PART_NAME" == "optics" ]]; then
+    TARGET_SIZE_IN_KB=$((4 * 1024))
+elif (( FOLDERSIZE_IN_KB < 15043 )); then
+    TARGET_SIZE_IN_KB=$((FOLDERSIZE_IN_KB * 2))
+else
+    TARGET_SIZE_IN_KB=$((FOLDERSIZE_IN_KB + FOLDERSIZE_IN_KB * HEADROOM_PERCENT / 100))
+fi
+
     # System-as-root partitions use "/" as their mount point
     local MOUNT_POINT="/$PART_NAME"
     [[ "$PART_NAME" =~ ^system(_[ab])?$ ]] && MOUNT_POINT="/"
 
-  
+
     local config_path="$MODEL_FW_DIR/$PART_NAME"
     [[ "$PART_NAME" == "system" && -d "$MODEL_FW_DIR/system/system" ]] && config_path="$MODEL_FW_DIR/system/system"
 
@@ -62,12 +65,12 @@ REPACK_PARTITION() {
         ERROR_EXIT "Failed to generate missing contexts for $PART_NAME"
     }
 
-    # Remove duplicates and ensure known capabilities exist for consistency  
+    # Remove duplicates and ensure known capabilities exist for consistency
     for f in "$fs_config" "$file_contexts"; do
         awk '!seen[$0]++' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
         sed -i 's/\r//g; s/[^[:print:]]//g; /^$/d' "$f"
     done
-    
+
     sed -i '/^[a-zA-Z0-9\/]/ { /capabilities=/! s/$/ capabilities=0x0/ }' "$fs_config"
     sed -i 's/  */ /g' "$fs_config"
 
@@ -88,18 +91,20 @@ REPACK_PARTITION() {
 
             # Build ext4 image using mke2fs, populate with e2fsdroid, and then make size minimium as possible.
             # https://android.googlesource.com/platform/prebuilts/fullsdk-linux/platform-tools/+/83a183b4bced4377eb5817074db82885cfcae393/e2fsdroid
-            local build_cmd="
-                $PREBUILTS/android-tools/mke2fs.android -t ext4 -b 4096 -L '$MOUNT_POINT' -O ^has_journal '$OUT_DIR/$PART_NAME.img' $BLOCK_COUNT && \
-                $PREBUILTS/android-tools/e2fsdroid -e -T 1230735600 -C '$fs_config' -S '$file_contexts' -a '$MOUNT_POINT' -f '$MODEL_FW_DIR/$PART_NAME' '$OUT_DIR/$PART_NAME.img' && \
-                tune2fs -m 0 '$OUT_DIR/$PART_NAME.img' && \
-                e2fsck -fy '$OUT_DIR/$PART_NAME.img' && \
-                NEW_BLOCKS=\$(tune2fs -l '$OUT_DIR/$PART_NAME.img' | awk '/Block count:/ {total=\$3} /Free blocks:/ {free=\$3} END { used=total-free; printf \"%d\", used + (used*0.01) + 10 }') && \
-                resize2fs -f '$OUT_DIR/$PART_NAME.img' \$NEW_BLOCKS && \
-                truncate -s \$((NEW_BLOCKS * 4096)) '$OUT_DIR/$PART_NAME.img'
-            "
+            local build_cmd="$PREBUILTS/android-tools/mke2fs.android -t ext4 -b 4096 -L '$MOUNT_POINT' -O ^has_journal '$OUT_DIR/$PART_NAME.img' $BLOCK_COUNT"
+
+            build_cmd+=" && $PREBUILTS/android-tools/e2fsdroid -e -T 1230735600 -C '$fs_config' -S '$file_contexts' -a '$MOUNT_POINT' -f '$MODEL_FW_DIR/$PART_NAME' '$OUT_DIR/$PART_NAME.img'"
+
+            if (( TARGET_SIZE_IN_KB > 3072 )); then
+                build_cmd+=" && tune2fs -m 0 '$OUT_DIR/$PART_NAME.img'"
+                build_cmd+=" && e2fsck -fy '$OUT_DIR/$PART_NAME.img'"
+                build_cmd+=" && NEW_BLOCKS=\$(tune2fs -l '$OUT_DIR/$PART_NAME.img' | awk '/Block count:/ {total=\$3} /Free blocks:/ {free=\$3} END { used=total-free; printf \"%d\", used + (used*0.01) + 10 }')"
+                build_cmd+=" && resize2fs -f '$OUT_DIR/$PART_NAME.img' \$NEW_BLOCKS"
+                build_cmd+=" && truncate -s \$((NEW_BLOCKS * 4096)) '$OUT_DIR/$PART_NAME.img'"
+            fi
 
             RUN_CMD "Building ${PART_NAME} (ext4)" "$build_cmd" || return 1
-       
+
             ;;
 
         erofs)
@@ -136,6 +141,5 @@ REPACK_PARTITION() {
             ;;
     esac
 }
-
 
 

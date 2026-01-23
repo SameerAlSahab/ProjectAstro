@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomerData>
+  <GeneralInfo>
+    <CSCEdition>ED0001</CSCEdition>
+    <Country>KOREA</Country>
+    <CountryISO>KR</CountryISO>
+    <Region>KOR</Region>
+    <SalesCode>KOO</SalesCode>
+    <NbNetworkInfo>6</NbNetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>45005</MCCMNC>
+      <NetworkName>SK Telecom</NetworkName>
+      <NWID>NW01125</NWID>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>45005</MCCMNC>
+      <NetworkName>SK Telecom Roaming</NetworkName>
+      <NWID>NW01126</NWID>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>45008</MCCMNC>
+      <NetworkName>KT</NetworkName>
+      <NWID>NW00649</NWID>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>45008</MCCMNC>
+      <NetworkName>KT Roaming</NetworkName>
+      <NWID>NW00650</NWID>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>45006</MCCMNC>
+      <NetworkName>LG U+</NetworkName>
+      <NWID>NW00680</NWID>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>45006</MCCMNC>
+      <NetworkName>LG U+ Roaming</NetworkName>
+      <NWID>NW00681</NWID>
+    </NetworkInfo>
+  </GeneralInfo>
+  <Settings>
+    <Main>
+      <Security>
+        <OneSIMLock>none</OneSIMLock>
+      </Security>
+      <Network>
+        <NbFastDormancy>12</NbFastDormancy>
+        <FastDormancy>
+          <NetworkName>SK Telecom</NetworkName>
+          <FastDormancyEnableStatus>off</FastDormancyEnableStatus>
+          <TimeoutValue>0</TimeoutValue>
+          <LCDStatus>on</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>SK Telecom</NetworkName>
+          <FastDormancyEnableStatus>on</FastDormancyEnableStatus>
+          <TimeoutValue>5</TimeoutValue>
+          <LCDStatus>off</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>SK Telecom Roaming</NetworkName>
+          <FastDormancyEnableStatus>off</FastDormancyEnableStatus>
+          <TimeoutValue>0</TimeoutValue>
+          <LCDStatus>on</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>SK Telecom Roaming</NetworkName>
+          <FastDormancyEnableStatus>on</FastDormancyEnableStatus>
+          <TimeoutValue>5</TimeoutValue>
+          <LCDStatus>off</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>KT</NetworkName>
+          <FastDormancyEnableStatus>off</FastDormancyEnableStatus>
+          <TimeoutValue>0</TimeoutValue>
+          <LCDStatus>on</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>KT</NetworkName>
+          <FastDormancyEnableStatus>on</FastDormancyEnableStatus>
+          <TimeoutValue>10</TimeoutValue>
+          <LCDStatus>off</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>KT Roaming</NetworkName>
+          <FastDormancyEnableStatus>off</FastDormancyEnableStatus>
+          <TimeoutValue>0</TimeoutValue>
+          <LCDStatus>on</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>KT Roaming</NetworkName>
+          <FastDormancyEnableStatus>on</FastDormancyEnableStatus>
+          <TimeoutValue>10</TimeoutValue>
+          <LCDStatus>off</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>LG U+</NetworkName>
+          <FastDormancyEnableStatus>on</FastDormancyEnableStatus>
+          <TimeoutValue>90</TimeoutValue>
+          <LCDStatus>on</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>LG U+</NetworkName>
+          <FastDormancyEnableStatus>on</FastDormancyEnableStatus>
+          <TimeoutValue>90</TimeoutValue>
+          <LCDStatus>off</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>LG U+ Roaming</NetworkName>
+          <FastDormancyEnableStatus>off</FastDormancyEnableStatus>
+          <TimeoutValue>0</TimeoutValue>
+          <LCDStatus>on</LCDStatus>
+        </FastDormancy>
+        <FastDormancy>
+          <NetworkName>LG U+ Roaming</NetworkName>
+          <FastDormancyEnableStatus>on</FastDormancyEnableStatus>
+          <TimeoutValue>3</TimeoutValue>
+          <LCDStatus>off</LCDStatus>
+        </FastDormancy>
+        <NbSOSNumber>6</NbSOSNumber>
+        <SOSNumber>112</SOSNumber>
+        <SOSNumber>113</SOSNumber>
+        <SOSNumber>119</SOSNumber>
+        <SOSNumber>125</SOSNumber>
+        <SOSNumber>111</SOSNumber>
+        <SOSNumber>122</SOSNumber>
+        <AutoProfile>on</AutoProfile>
+        <AutoVoicemail>off</AutoVoicemail>
+        <AutoEmailAccount>off</AutoEmailAccount>
+        <AutoBookmark>off</AutoBookmark>
+        <AutoLink>off</AutoLink>
+        <AutoSyncML>off</AutoSyncML>
+        <AutoFastDormancy>on</AutoFastDormancy>
+        <AutoWbAmr>off</AutoWbAmr>
+        <AutoFOTA>off</AutoFOTA>
+      </Network>
+      <Sound>
+        <ExtraSound>
+          <ConnectTone>on</ConnectTone>
+          <CallEndTone>on</CallEndTone>
+        </ExtraSound>
+        <AMRVoiceCodec>on</AMRVoiceCodec>
+      </Sound>
+      <Phone>
+        <AlertOnCall>on</AlertOnCall>
+        <DefLanguage>korean</DefLanguage>
+        <DefLanguageNoSIM>korean</DefLanguageNoSIM>
+        <DateTimeFormat>
+          <DateFormat>yyyymmdd</DateFormat>
+          <TimeFormat>12h</TimeFormat>
+          <TimezoneUpdate>on</TimezoneUpdate>
+        </DateTimeFormat>
+      </Phone>
+    </Main>
+    <Messages>
+      <SMS>
+        <PageLimit>1</PageLimit>
+        <MsgTypeThreshold>
+          <ThresholdValue>1</ThresholdValue>
+          <ThresholdType>pagecount</ThresholdType>
+        </MsgTypeThreshold>
+        <MaxRecipient>25</MaxRecipient>
+        <DeleteOldMessage>off</DeleteOldMessage>
+        <DeleteOldMessageCntSms>500</DeleteOldMessageCntSms>
+        <DeleteOldMessageCntMms>200</DeleteOldMessageCntMms>
+        <PreviewMessage>on</PreviewMessage>
+        <PreviewMessageNoti>on</PreviewMessageNoti>
+        <MmsAlert>on</MmsAlert>
+      </SMS>
+      <MMS>
+        <MmsSending>
+          <MessageSize>1m</MessageSize>
+          <CreationMode>free</CreationMode>
+          <ImageResizeResolution>4vga</ImageResizeResolution>
+          <MaxRecipientMMS>25</MaxRecipientMMS>
+        </MmsSending>
+        <MmsReceiving>
+          <Roaming>auto</Roaming>
+        </MmsReceiving>
+        <NbMMSView>1</NbMMSView>
+        <MMSView>
+          <MessageUserAgent>Android-Mms/2.0</MessageUserAgent>
+          <MessageUaProfUrl>http://wap.samsungmobile.com/uaprof/SAMSUNGUAPROFA.xml</MessageUaProfUrl>
+        </MMSView>
+      </MMS>
+    </Messages>
+    <Multimedia>
+      <Camera>
+        <ShutterSound>on</ShutterSound>
+      </Camera>
+    </Multimedia>
+    <Browser>
+      <NbBookmark>6</NbBookmark>
+      <Bookmark>
+        <NetworkName>default</NetworkName>
+        <Index>1</Index>
+        <BookmarkName>Naver</BookmarkName>
+        <URL>http://m.naver.com/</URL>
+      </Bookmark>
+      <Bookmark>
+        <NetworkName>default</NetworkName>
+        <Index>2</Index>
+        <BookmarkName>Google</BookmarkName>
+        <URL>http://www.google.com/m?client={CID}&amp;source=android-home</URL>
+      </Bookmark>
+      <Bookmark>
+        <NetworkName>default</NetworkName>
+        <Index>3</Index>
+        <BookmarkName>Daum</BookmarkName>
+        <URL>http://m.daum.net/</URL>
+      </Bookmark>
+      <Bookmark>
+        <NetworkName>default</NetworkName>
+        <Index>4</Index>
+        <BookmarkName>삼성닷컴</BookmarkName>
+        <URL>http://m.samsung.com/sec/</URL>
+      </Bookmark>
+      <Bookmark>
+        <NetworkName>default</NetworkName>
+        <Index>5</Index>
+        <BookmarkName>삼성전자서비스</BookmarkName>
+        <URL>http://www.samsungsvc.co.kr/</URL>
+      </Bookmark>
+      <Bookmark>
+        <NetworkName>default</NetworkName>
+        <Editable>yes</Editable>
+        <Index>6</Index>
+        <BookmarkName>Galaxy Shop</BookmarkName>
+        <URL>https://www.samsung.com/sec/galaxy/home/?cid=sec_ow_app_s-internet_none_none_bookmark_bookmark_202008_none</URL>
+      </Bookmark>
+    </Browser>
+    <NbWifiProfile>8</NbWifiProfile>
+    <WifiProfile>
+      <NetworkName>SK Telecom</NetworkName>
+      <WifiSSID>T wifi zone_secure</WifiSSID>
+      <WifiKeyMgmt>WPA-EAP IEEE8021X</WifiKeyMgmt>
+      <WifiEAPMethod>aka</WifiEAPMethod>
+      <WifiPriority>1</WifiPriority>
+      <WifiHiddenSSID>1</WifiHiddenSSID>
+    </WifiProfile>
+    <WifiProfile>
+      <NetworkName>KT</NetworkName>
+      <WifiSSID>ollehWiFi</WifiSSID>
+      <WifiKeyMgmt>WPA-EAP IEEE8021X</WifiKeyMgmt>
+      <WifiEAPMethod>aka</WifiEAPMethod>
+      <WifiPriority>4</WifiPriority>
+      <WifiHiddenSSID>0</WifiHiddenSSID>
+    </WifiProfile>
+    <WifiProfile>
+      <NetworkName>KT</NetworkName>
+      <WifiSSID>olleh GiGA WiFi</WifiSSID>
+      <WifiKeyMgmt>WPA-EAP IEEE8021X</WifiKeyMgmt>
+      <WifiEAPMethod>aka</WifiEAPMethod>
+      <WifiPriority>3</WifiPriority>
+      <WifiHiddenSSID>0</WifiHiddenSSID>
+    </WifiProfile>
+    <WifiProfile>
+      <NetworkName>KT</NetworkName>
+      <WifiSSID>KT WiFi</WifiSSID>
+      <WifiKeyMgmt>WPA-EAP IEEE8021X</WifiKeyMgmt>
+      <WifiEAPMethod>aka</WifiEAPMethod>
+      <WifiPriority>2</WifiPriority>
+      <WifiHiddenSSID>0</WifiHiddenSSID>
+    </WifiProfile>
+    <WifiProfile>
+      <NetworkName>KT</NetworkName>
+      <WifiSSID>KT GiGA WiFi</WifiSSID>
+      <WifiKeyMgmt>WPA-EAP IEEE8021X</WifiKeyMgmt>
+      <WifiEAPMethod>aka</WifiEAPMethod>
+      <WifiPriority>1</WifiPriority>
+      <WifiHiddenSSID>0</WifiHiddenSSID>
+    </WifiProfile>
+    <WifiProfile>
+      <NetworkName>LG U+</NetworkName>
+      <WifiSSID>U+zone</WifiSSID>
+      <WifiKeyMgmt>WPA-EAP IEEE8021X</WifiKeyMgmt>
+      <WifiEAPMethod>aka</WifiEAPMethod>
+      <WifiPriority>1</WifiPriority>
+      <WifiHiddenSSID>0</WifiHiddenSSID>
+    </WifiProfile>
+    <WifiProfile>
+      <NetworkName>LG U+</NetworkName>
+      <WifiSSID>U+zone_5G</WifiSSID>
+      <WifiKeyMgmt>WPA-EAP IEEE8021X</WifiKeyMgmt>
+      <WifiEAPMethod>aka</WifiEAPMethod>
+      <WifiPriority>2</WifiPriority>
+      <WifiHiddenSSID>0</WifiHiddenSSID>
+    </WifiProfile>
+    <WifiProfile>
+      <NetworkName>LG U+</NetworkName>
+      <WifiSSID>5G_U+zone</WifiSSID>
+      <WifiKeyMgmt>WPA-EAP IEEE8021X</WifiKeyMgmt>
+      <WifiEAPMethod>aka</WifiEAPMethod>
+      <WifiPriority>3</WifiPriority>
+      <WifiHiddenSSID>0</WifiHiddenSSID>
+    </WifiProfile>
+    <Connections>
+      <NbProfileHandle>6</NbProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>5</NbNetProfile>
+        <NetworkName>SK Telecom</NetworkName>
+        <ProfBrowser>SK Telecom</ProfBrowser>
+        <ProfMMS>SK Telecom MMS</ProfMMS>
+        <ProfIntSharing>SK Telecom Tethering</ProfIntSharing>
+        <ProfRCS>SK Telecom</ProfRCS>
+        <ProfIMS>SK Telecom IMS</ProfIMS>
+        <ProfIA>SK Telecom IA</ProfIA>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>4</NbNetProfile>
+        <NetworkName>SK Telecom Roaming</NetworkName>
+        <ProfBrowser>SK Telecom Roaming</ProfBrowser>
+        <ProfMMS>SK Telecom Roaming MMS</ProfMMS>
+        <ProfIntSharing>SK Telecom Roaming Tethering</ProfIntSharing>
+        <ProfIMS>SK Telecom Roaming IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>5</NbNetProfile>
+        <NetworkName>KT</NetworkName>
+        <ProfBrowser>KT</ProfBrowser>
+        <ProfMMS>KT MMS</ProfMMS>
+        <ProfIntSharing>KT Tethering</ProfIntSharing>
+        <ProfRCS>KT</ProfRCS>
+        <ProfIMS>KT IMS</ProfIMS>
+        <ProfIA>KT IA</ProfIA>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>KT Roaming</NetworkName>
+        <ProfBrowser>KT Roaming</ProfBrowser>
+        <ProfMMS>KT Roaming MMS</ProfMMS>
+        <ProfIMS>KT Roaming IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>5</NbNetProfile>
+        <NetworkName>LG U+</NetworkName>
+        <ProfBrowser>LG U+</ProfBrowser>
+        <ProfMMS>LG U+ MMS</ProfMMS>
+        <ProfIntSharing>LG U+ Tethering</ProfIntSharing>
+        <ProfRCS>LG U+</ProfRCS>
+        <ProfIMS>LG U+ IMS</ProfIMS>
+        <ProfIA>LG U+ IA</ProfIA>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>4</NbNetProfile>
+        <NetworkName>LG U+ Roaming</NetworkName>
+        <ProfBrowser>LG U+ Roaming</ProfBrowser>
+        <ProfMMS>LG U+ Roaming MMS</ProfMMS>
+        <ProfIntSharing>LG U+ Roaming Tethering</ProfIntSharing>
+        <ProfIMS>LG U+ Roaming IMS</ProfIMS>
+      </ProfileHandle>
+      <NbProfile>26</NbProfile>
+      <Profile>
+        <NetworkName>SK Telecom</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <ProfileName>SK Telecom</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>5g.sktelecom.com</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SK Telecom</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>SK Telecom IA</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN />
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SK Telecom</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>SK Telecom IMS</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>ims</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SK Telecom</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>SK Telecom MMS</ProfileName>
+        <URL>http://omms.nate.com:9082/oma_mms</URL>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <Proxy>
+          <ServAddr>lteoma.nate.com</ServAddr>
+          <Port>9093</Port>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SK Telecom</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>SK Telecom Tethering</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>lte,5g</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>tethering.sktelecom.com</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SK Telecom Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>SK Telecom Roaming</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>5g.sktelecom.com</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SK Telecom Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>SK Telecom Roaming MMS</ProfileName>
+        <URL>http://omms.nate.com:9082/oma_mms</URL>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <Proxy>
+          <ServAddr>lteoma.nate.com</ServAddr>
+          <Port>9093</Port>
+        </Proxy>
+        <PSparam>
+          <APN>5g.sktelecom.com</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SK Telecom Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>SK Telecom Roaming IMS</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>lte</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>ims</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SK Telecom Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>SK Telecom Roaming Tethering</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>lte,5g</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1440</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>tethering.sktelecom.com</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KT</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <ProfileName>KT</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1450</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>internet</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KT</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>KT IA</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1450</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN />
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KT</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>KT MMS</ProfileName>
+        <URL>http://mmsc.ktfwing.com:9082</URL>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1450</MTUSize>
+        <Skip464XLAT>enable</Skip464XLAT>
+        <PSparam>
+          <APN>IMS</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KT</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>KT IMS</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1450</MTUSize>
+        <Skip464XLAT>enable</Skip464XLAT>
+        <PSparam>
+          <APN>IMS</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KT</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <ProfileName>KT Tethering</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1450</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>tethering</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KT Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>KT Roaming</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1450</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>internet</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KT Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>KT Roaming MMS</ProfileName>
+        <URL>http://mmsc.ktfwing.com:9082</URL>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1450</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>internet</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KT Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>KT Roaming IMS</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>lte</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1450</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>IMS</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <ProfileName>LG U+</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>internet.lguplus.co.kr</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>LG U+ IA</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN />
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>LG U+ MMS</ProfileName>
+        <URL>http://omammsc.uplus.co.kr:9084</URL>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>IMS</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>LG U+ IMS</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>IMS</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>enable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>LG U+ Tethering</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>tethering.lguplus.co.kr</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+ Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>LG U+ Roaming</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>internet.lguplus.co.kr</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+ Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>LG U+ Roaming MMS</ProfileName>
+        <URL>http://omammsc.uplus.co.kr:9084</URL>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>internet.lguplus.co.kr</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+ Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>LG U+ Roaming Tethering</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>tethering.lguplus.co.kr</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>LG U+ Roaming</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <EnableStatus>disable</EnableStatus>
+        <HiddenStatus>hidden</HiddenStatus>
+        <RoamingEnableStatus>enable</RoamingEnableStatus>
+        <ProfileName>LG U+ Roaming IMS</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>lte</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1428</MTUSize>
+        <Skip464XLAT>disable</Skip464XLAT>
+        <PSparam>
+          <APN>IMS</APN>
+          <TrafficClass>subscribed</TrafficClass>
+        </PSparam>
+      </Profile>
+    </Connections>
+    <IMSSetting>
+      <NbSetting>3</NbSetting>
+      <Setting>
+        <NetworkName>SK Telecom</NetworkName>
+        <Version>3.0</Version>
+        <EnableIMS>true</EnableIMS>
+        <VoLTE>
+          <EnableVoLTE>true</EnableVoLTE>
+          <EnableVoiceoverWIFI>false</EnableVoiceoverWIFI>
+          <EnableVideocall>true</EnableVideocall>
+          <EnableVoLTEindicator>true</EnableVoLTEindicator>
+          <Voice_Domain_Preference_EUTRAN>imspsvoicepreferred</Voice_Domain_Preference_EUTRAN>
+          <Emregencycall_Domain>ps</Emregencycall_Domain>
+          <SS_Domain_Preference>cs_always</SS_Domain_Preference>
+          <SS_PS_Control_Preference>xcap</SS_PS_Control_Preference>
+          <SS_CSFBwithIMSerror>false</SS_CSFBwithIMSerror>
+          <USSD_Domain_Preference>cs</USSD_Domain_Preference>
+          <EnableSMSoverIP>true</EnableSMSoverIP>
+        </VoLTE>
+        <RCS>
+          <EnableRCS>true</EnableRCS>
+          <EnableRCSchat>true</EnableRCSchat>
+        </RCS>
+      </Setting>
+      <Setting>
+        <NetworkName>KT</NetworkName>
+        <Version>3.0</Version>
+        <EnableIMS>true</EnableIMS>
+        <VoLTE>
+          <EnableVoLTE>true</EnableVoLTE>
+          <EnableVoiceoverWIFI>false</EnableVoiceoverWIFI>
+          <EnableVideocall>true</EnableVideocall>
+          <EnableVoLTEindicator>true</EnableVoLTEindicator>
+          <Voice_Domain_Preference_EUTRAN>imspsvoicepreferred</Voice_Domain_Preference_EUTRAN>
+          <Emregencycall_Domain>ps</Emregencycall_Domain>
+          <SS_Domain_Preference>cs_always</SS_Domain_Preference>
+          <SS_PS_Control_Preference>xcap</SS_PS_Control_Preference>
+          <SS_CSFBwithIMSerror>false</SS_CSFBwithIMSerror>
+          <USSD_Domain_Preference>cs</USSD_Domain_Preference>
+          <EnableSMSoverIP>true</EnableSMSoverIP>
+        </VoLTE>
+        <RCS>
+          <EnableRCS>true</EnableRCS>
+          <EnableRCSchat>true</EnableRCSchat>
+        </RCS>
+      </Setting>
+      <Setting>
+        <NetworkName>LG U+</NetworkName>
+        <Version>3.0</Version>
+        <EnableIMS>true</EnableIMS>
+        <VoLTE>
+          <EnableVoLTE>true</EnableVoLTE>
+          <EnableVoiceoverWIFI>false</EnableVoiceoverWIFI>
+          <EnableVideocall>true</EnableVideocall>
+          <EnableVoLTEindicator>true</EnableVoLTEindicator>
+          <Voice_Domain_Preference_EUTRAN>imspsvoicepreferred</Voice_Domain_Preference_EUTRAN>
+          <Emregencycall_Domain>ps</Emregencycall_Domain>
+          <SS_Domain_Preference>cs_always</SS_Domain_Preference>
+          <SS_PS_Control_Preference>xcap</SS_PS_Control_Preference>
+          <SS_CSFBwithIMSerror>false</SS_CSFBwithIMSerror>
+          <USSD_Domain_Preference>cs</USSD_Domain_Preference>
+          <EnableSMSoverIP>true</EnableSMSoverIP>
+        </VoLTE>
+        <RCS>
+          <EnableRCS>true</EnableRCS>
+          <EnableRCSchat>true</EnableRCSchat>
+        </RCS>
+      </Setting>
+    </IMSSetting>
+  </Settings>
+</CustomerData>

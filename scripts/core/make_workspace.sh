@@ -59,6 +59,7 @@ CREATE_WORKSPACE() {
 
     local oem_parts=("vendor" "odm" "vendor_dlkm" "odm_dlkm" "system_dlkm")
     local port_parts=("system" "product" "system_ext")
+    local csc_parts=("optics" "prism")
 
     if [[ "$MODEL" == "$STOCK_MODEL" || -z "$STOCK_MODEL" ]]; then
         LINK_PARTITIONS "$SOURCE_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" \
@@ -69,6 +70,9 @@ CREATE_WORKSPACE() {
         LINK_PARTITIONS "$STOCK_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" \
             "${oem_parts[@]}"
     fi
+
+        LINK_PARTITIONS "$STOCK_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" \
+            "${csc_parts[@]}"
 
     chown -R "$SUDO_USER:$SUDO_USER" "$BUILD_DIRECTORY" 2>/dev/null
 
@@ -204,6 +208,8 @@ EOF
         fi
     fi
 
+    PROCESS_OMC_PARTITION
+
     LOG_END "Build environment ready at $BUILD_DIRECTORY"
 }
 
@@ -316,13 +322,13 @@ FIND_SYSTEM_EXT() {
 
 GET_FW_DIR() {
     local source_firmware="$1"
-    
+
     case "$source_firmware" in
         "main")  echo "$WORKDIR/$MODEL" ;;
         "extra") echo "$WORKDIR/$EXTRA_MODEL" ;;
         "stock") echo "$WORKDIR/$STOCK_MODEL" ;;
         *)
-        
+
             local blob_source="$BLOBS_DIR/$source_firmware"
             if [[ -d "$blob_source" ]]; then
                 echo "$blob_source"
@@ -355,4 +361,3 @@ VALIDATE_WORKDIR() {
 
     return 0
 }
-

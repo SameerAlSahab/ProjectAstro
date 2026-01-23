@@ -57,6 +57,8 @@ ADD_CONTEXT() {
 
     local context_file="${CONFIG_DIR}/${partition}_file_contexts"
 
+    file_path="${file_path#/}"
+    local full_path="/${partition}/${file_path}"
 
     [[ "$file_path" != /* ]] && file_path="/$file_path"
 
@@ -109,30 +111,30 @@ ADD_CONTEXT() {
 REMOVE() {
     local partition="$1"
     local relative_path="$2"
-    
+
     if [[ -z "$partition" || -z "$relative_path" ]]; then
         ERROR_EXIT "Missing arguments. Usage: REMOVE <partition> <path>"
     fi
-    
+
     local base_dir
     base_dir=$(GET_PARTITION_PATH "$partition" 2>/dev/null)
     if [[ $? -ne 0 ]]; then
         ERROR_EXIT "Failed to get partition directory for '$partition'"
     fi
-    
+
     local clean_path
     clean_path=$(_SANITIZE_PATH "$relative_path")
 
-   
+
     local found_any=false
-    
-    
+
+
     for match in "${base_dir}"/$clean_path; do
-      
+
         [[ ! -e "$match" && ! -L "$match" ]] && continue
-        
+
         found_any=true
-        
+
         # Remove from Disk
         if ! rm -rf "$match" 2>/dev/null; then
             ERROR_EXIT "Failed to remove '$match'"
@@ -140,18 +142,18 @@ REMOVE() {
 
 
         local actual_rel_path="${match#$base_dir/}"
-        
-        
+
+
         local escaped_path
         escaped_path=$(printf '%s' "$actual_rel_path" | sed 's/[.[\*^$()+?{|]/\\&/g')
-        
+
         local fs_config_file="$WORKSPACE/config/${partition}_fs_config"
         local file_contexts_file="$WORKSPACE/config/${partition}_file_contexts"
-        
+
         if [[ -f "$fs_config_file" ]]; then
             sed -i "\|^${partition}/${escaped_path}\(/\|[[:space:]]\)|d" "$fs_config_file"
         fi
-        
+
         if [[ -f "$file_contexts_file" ]]; then
             sed -i "\|^/${partition}/${escaped_path}\(/\|[[:space:]]\)|d" "$file_contexts_file"
         fi
@@ -160,7 +162,7 @@ REMOVE() {
     if [[ "$found_any" = false ]]; then
         LOG_WARN "No files matching '${partition}/${clean_path}' found to remove."
     fi
-    
+
     return 0
 }
 
@@ -178,7 +180,7 @@ HEX_EDIT() {
     local to_hex="$3"
     local file="${WORKSPACE}/${rel_path}"
 
- 
+
     if [[ -z "$rel_path" ]] || [[ -z "$from_hex" ]] || [[ -z "$to_hex" ]]; then
         ERROR_EXIT "Usage: HEX_EDIT <relative-path> <old-hex> <new-hex>"
         return 1
@@ -205,8 +207,8 @@ HEX_EDIT() {
 
 
     if ! grep -q "$from_hex" <<< "$file_hex"; then
-        ERROR_EXIT "Pattern not found in file: $from_hex"
-        ERROR_EXIT "File: $rel_path"
+        LOG_WARN "Pattern not found in file: $from_hex"
+        LOG_WARN "File: $rel_path"
         return 1
     fi
 
@@ -222,12 +224,3 @@ HEX_EDIT() {
     fi
 }
 
-# https://github.com/canonical/snapd/blob/ec7ea857712028b7e3be7a5f4448df575216dbfd/release/release.go#L169-L190
-IS_WSL() {
-    [ -e "/proc/sys/fs/binfmt_misc/WSLInterop" ] || [ -e "/run/WSL" ]
-}
-
-# Check if running in GitHub Actions environment
-IS_GITHUB_ACTIONS() {
-    [[ "${GITHUB_ACTIONS}" == "true" || "${CI}" == "true" ]]
-}

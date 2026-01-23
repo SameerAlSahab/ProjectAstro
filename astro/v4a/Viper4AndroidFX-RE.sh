@@ -1,6 +1,9 @@
-LOG_BEGIN "- Adding Viper4AndroidFX-RE"
+LOG_BEGIN "Adding Viper4Android"
 
 local TMP_DIR="/tmp/viper"
+
+
+mkdir -p "$TMP_DIR"
 
 # https://github.com/WSTxda/ViPERFX_RE
 V4A=$(curl -s ${GITHUB_TOKEN:+-H Authorization: token $GITHUB_TOKEN} \
@@ -8,6 +11,10 @@ V4A=$(curl -s ${GITHUB_TOKEN:+-H Authorization: token $GITHUB_TOKEN} \
     sed -n 's/.*"browser_download_url":[[:space:]]*"\([^"]*viper4android_module[^"]*\.zip\)".*/\1/p' | head -n1)
 
 wget -O "$TMP_DIR/viper.zip" "$V4A"
+
+mkdir -p "$WORKSPACE/vendor/lib/soundfx"
+mkdir -p "$WORKSPACE/vendor/lib64/soundfx"
+
 
 for arch in armeabi-v7a arm64-v8a; do
     unzip -j "$TMP_DIR/viper.zip" "common/files/libv4a_re_${arch}.so" -d "$TMP_DIR"
@@ -19,7 +26,7 @@ for arch in armeabi-v7a arm64-v8a; do
     rm -f "$TMP_DIR/libv4a_re_${arch}.so"
 done
 
-rm -f "$TMP_DIR"
+rm -rf "$TMP_DIR"
 
 CFGS="$(find "$WORKSPACE/system" "$WORKSPACE/vendor" -type f -name "*audio_effects*.conf" -o -name "*audio_effects*.xml")"
 for f in ${CFGS}; do
@@ -44,7 +51,9 @@ V4A_APK=$(curl -s ${GITHUB_TOKEN:+-H Authorization: token $GITHUB_TOKEN} \
     "https://api.github.com/repos/WSTxda/ViperFX-RE-Releases/releases/latest" | \
     sed -n 's/.*"browser_download_url":[[:space:]]*"\([^"]*\)".*/\1/p' | grep -i 'viper.*\.apk' | head -n1)
 
-wget -O "$WORKSPACE/system/system/preload/Viper4AndroidFX-RE/com.wstxda.viper4android==/base.apk" "$V4A_APK"
+    mkdir -p "$WORKSPACE/system/system/preload/Viper4AndroidFX-RE/com.wstxda.viper4android=="
+
+    wget -O "$WORKSPACE/system/system/preload/Viper4AndroidFX-RE/com.wstxda.viper4android==/base.apk" "$V4A_APK"
 
 while IFS= read -r i; do
     i="${i//$WORKSPACE\/system\//}"
@@ -56,4 +65,4 @@ while IFS= read -r i; do
     fi
 done <<< "$(find "$WORKSPACE/system/system/preload")"
 
-LOG_END
+LOG_END "Installed Viper4Android"

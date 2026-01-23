@@ -1,0 +1,2899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomerData>
+  <GeneralInfo>
+    <CSCEdition>ED0003</CSCEdition>
+    <Country>SOUTH AFRICA</Country>
+    <CountryISO>ZA</CountryISO>
+    <Region>MEA</Region>
+    <SalesCode>XFA</SalesCode>
+    <NbNetworkInfo>79</NbNetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65501</MCCMNC>
+      <NetworkName>Vodacom</NetworkName>
+      <NWID>NW01455</NWID>
+      <CodeType>HEX</CodeType>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65502</MCCMNC>
+      <NetworkName>TelkomSA</NetworkName>
+      <NWID>NW01275</NWID>
+      <CodeType>HEX</CodeType>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65510</MCCMNC>
+      <NetworkName>MTN</NetworkName>
+      <NWID>NW00807</NWID>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65101</MCCMNC>
+      <NetworkName>Vodacom Lesotho</NetworkName>
+      <NWID>NW01472</NWID>
+      <CodeType>HEX</CodeType>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>Cell C</NetworkName>
+      <NWID>NW00198</NWID>
+      <CodeType>HEX</CodeType>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>Virgin</NetworkName>
+      <NWID>NW01433</NWID>
+      <CodeType>HEX</CodeType>
+      <SPCode>10</SPCode>
+      <SPName>Virgin Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>FNB</NetworkName>
+      <NWID>NW01803</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>FNB</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX ME and YOU</NetworkName>
+      <NWID>NW02420</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Me and You</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX Mobile</NetworkName>
+      <NWID>NW02421</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>MVNX Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX Mr P</NetworkName>
+      <NWID>NW02422</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Mr P</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX BokCel</NetworkName>
+      <NWID>NW02423</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>BokCel</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX VivaMobile</NetworkName>
+      <NWID>NW02424</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>VivaMobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX Xmobile</NetworkName>
+      <NWID>NW02425</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Xmobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX PSB</NetworkName>
+      <NWID>NW02426</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>PSB</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX OTM</NetworkName>
+      <NWID>NW02427</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>OTM</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX Standardbank Connect</NetworkName>
+      <NWID>NW02428</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Standardbank Connect</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX 1Mobile</NetworkName>
+      <NWID>NW02429</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>1Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX Next 360</NetworkName>
+      <NWID>NW02430</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Next 360</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX Trace Mobile</NetworkName>
+      <NWID>NW02431</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Trace Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX Pink Mobile</NetworkName>
+      <NWID>NW02432</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Pink Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>SAKENG</NetworkName>
+      <NWID>NW01883</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>SAKENG</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65573</MCCMNC>
+      <NetworkName>rain</NetworkName>
+      <NWID>NW02205</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>rain</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65538</MCCMNC>
+      <NetworkName>rain</NetworkName>
+      <NWID>NW02205</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>rain</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65574</MCCMNC>
+      <NetworkName>rain</NetworkName>
+      <NWID>NW02205</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>rain</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65102</MCCMNC>
+      <NetworkName>Econet Telecom Lesotho</NetworkName>
+      <NWID>NW02249</NWID>
+      <CodeType>HEX</CodeType>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65510</MCCMNC>
+      <NetworkName>Melon</NetworkName>
+      <NWID>NW02260</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Melon</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>64304</MCCMNC>
+      <NetworkName>VodaCom-MZ</NetworkName>
+      <NWID>NW01859</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65201</MCCMNC>
+      <NetworkName>Mascom</NetworkName>
+      <NWID>NW00707</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65202</MCCMNC>
+      <NetworkName>Orange</NetworkName>
+      <NWID>NW00958</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>64901</MCCMNC>
+      <NetworkName>MTC Namibia</NetworkName>
+      <NWID>NW00805</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65204</MCCMNC>
+      <NetworkName>BTC Mobile</NetworkName>
+      <NWID>NW01613</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>61710</MCCMNC>
+      <NetworkName>EMTEL</NetworkName>
+      <NWID>NW00435</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>64303</MCCMNC>
+      <NetworkName>MOVITEL</NetworkName>
+      <NWID>NW01935</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>61701</MCCMNC>
+      <NetworkName>my.t</NetworkName>
+      <NWID>NW02014</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>64501</MCCMNC>
+      <NetworkName>Airtel Zambia</NetworkName>
+      <NWID>NW02277</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>63102</MCCMNC>
+      <NetworkName>Unitel</NetworkName>
+      <NWID>NW01402</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>Cell C</NetworkName>
+      <NWID>NW00198</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65001</MCCMNC>
+      <NetworkName>TNM</NetworkName>
+      <NWID>NW02348</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>64502</MCCMNC>
+      <NetworkName>MTN Zambia</NetworkName>
+      <NWID>NW00820</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>64503</MCCMNC>
+      <NetworkName>Zamtel</NetworkName>
+      <NWID>NW01584</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>64084</MCCMNC>
+      <NetworkName>Econet Wireless Zimbabwe</NetworkName>
+      <NWID>NW02388</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65302</MCCMNC>
+      <NetworkName>Eswatini Mobile Ltd</NetworkName>
+      <NWID>NW02403</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>61703</MCCMNC>
+      <NetworkName>MTML</NetworkName>
+      <NWID>NW02382</NWID>
+      <SkipCscSelection>false</SkipCscSelection>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>C CONNECT</NetworkName>
+      <NWID>NW02433</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>C CONNECT</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>CAPITEC</NetworkName>
+      <NWID>NW02434</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>CAPITEC</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>FREI Old Mutual Connect</NetworkName>
+      <NWID>NW02435</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Old Mutual Connect</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>FREI One Digital</NetworkName>
+      <NWID>NW02436</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>One Digital</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX Clientele</NetworkName>
+      <NWID>NW02437</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Clientele</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX UCONNECT</NetworkName>
+      <NWID>NW02438</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>UCONNECT</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX LIME MOBILE</NetworkName>
+      <NWID>NW02416</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>LIME MOBILE</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>MVNX iSmart</NetworkName>
+      <NWID>NW02417</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>iSmart</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>1912</NetworkName>
+      <NWID>NW02418</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>1912</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65507</MCCMNC>
+      <NetworkName>KNECT</NetworkName>
+      <NWID>NW02419</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>KNECT</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>FNB</NetworkName>
+      <NWID>NW01803</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>FNB</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX ME and YOU</NetworkName>
+      <NWID>NW02420</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Me and You</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX Mobile</NetworkName>
+      <NWID>NW02421</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>MVNX Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX Mr P</NetworkName>
+      <NWID>NW02422</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Mr P</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX BokCel</NetworkName>
+      <NWID>NW02423</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>BokCel</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX VivaMobile</NetworkName>
+      <NWID>NW02424</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>VivaMobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX Xmobile</NetworkName>
+      <NWID>NW02425</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Xmobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX PSB</NetworkName>
+      <NWID>NW02426</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>PSB</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX OTM</NetworkName>
+      <NWID>NW02427</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>OTM</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX Standardbank Connect</NetworkName>
+      <NWID>NW02428</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Standardbank Connect</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX 1Mobile</NetworkName>
+      <NWID>NW02429</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>1Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX Next 360</NetworkName>
+      <NWID>NW02430</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Next 360</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX Trace Mobile</NetworkName>
+      <NWID>NW02431</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Trace Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX Pink Mobile</NetworkName>
+      <NWID>NW02432</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Pink Mobile</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>SAKENG</NetworkName>
+      <NWID>NW01883</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>SAKENG</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>C CONNECT</NetworkName>
+      <NWID>NW02433</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>C CONNECT</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>CAPITEC</NetworkName>
+      <NWID>NW02434</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>CAPITEC</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>FREI Old Mutual Connect</NetworkName>
+      <NWID>NW02435</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Old Mutual Connect</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>FREI One Digital</NetworkName>
+      <NWID>NW02436</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>One Digital</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX Clientele</NetworkName>
+      <NWID>NW02437</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>Clientele</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX UCONNECT</NetworkName>
+      <NWID>NW02438</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>UCONNECT</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX LIME MOBILE</NetworkName>
+      <NWID>NW02416</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>LIME MOBILE</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>MVNX iSmart</NetworkName>
+      <NWID>NW02417</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>iSmart</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>1912</NetworkName>
+      <NWID>NW02418</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>1912</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>65508</MCCMNC>
+      <NetworkName>KNECT</NetworkName>
+      <NWID>NW02419</NWID>
+      <CodeType>HEX</CodeType>
+      <SPName>KNECT</SPName>
+    </NetworkInfo>
+    <NetworkInfo>
+      <MCCMNC>64904</MCCMNC>
+      <NetworkName>Paratus Namibia</NetworkName>
+      <NWID>NW02443</NWID>
+      <CodeType>HEX</CodeType>
+    </NetworkInfo>
+  </GeneralInfo>
+  <Settings>
+    <Main>
+      <Security>
+        <OneSIMLock>none</OneSIMLock>
+        <SeparateLock>none</SeparateLock>
+      </Security>
+      <Network>
+        <NbWbAmr>4</NbWbAmr>
+        <WbAmr>
+          <NetworkName>MTN</NetworkName>
+          <WbAmrCodec>on</WbAmrCodec>
+        </WbAmr>
+        <WbAmr>
+          <NetworkName>Vodacom</NetworkName>
+          <WbAmrCodec>on</WbAmrCodec>
+        </WbAmr>
+        <WbAmr>
+          <NetworkName>rain</NetworkName>
+          <WbAmrCodec>on</WbAmrCodec>
+        </WbAmr>
+        <WbAmr>
+          <NetworkName>Mascom</NetworkName>
+          <WbAmrCodec>on</WbAmrCodec>
+        </WbAmr>
+        <AutoProfile>on</AutoProfile>
+        <AutoVoicemail>on</AutoVoicemail>
+        <AutoEmailAccount>off</AutoEmailAccount>
+        <AutoBookmark>on</AutoBookmark>
+        <AutoLink>off</AutoLink>
+        <AutoSyncML>off</AutoSyncML>
+        <AutoFastDormancy>off</AutoFastDormancy>
+        <AutoWbAmr>on</AutoWbAmr>
+        <AutoFOTA>off</AutoFOTA>
+      </Network>
+      <Sound>
+        <RngToneAlertType>melody</RngToneAlertType>
+        <ExtraSound>
+          <ConnectTone>on</ConnectTone>
+          <CallEndTone>off</CallEndTone>
+        </ExtraSound>
+        <AMRVoiceCodec>on</AMRVoiceCodec>
+      </Sound>
+      <Phone>
+        <DefLanguage>en_ZA</DefLanguage>
+        <DefLanguageNoSIM>en_ZA</DefLanguageNoSIM>
+        <T9Enabling>enable</T9Enabling>
+        <DateTimeFormat>
+          <DateFormat>ddmmyyyy</DateFormat>
+          <TimeFormat>24h</TimeFormat>
+        </DateTimeFormat>
+      </Phone>
+    </Main>
+    <Calendar>
+      <StartDay>monday</StartDay>
+    </Calendar>
+    <Messages>
+      <NbVoicemail>6</NbVoicemail>
+      <Voicemail>
+        <NetworkName>Vodacom</NetworkName>
+        <VoicemailName>Voicemail</VoicemailName>
+        <TelNum>132</TelNum>
+      </Voicemail>
+      <Voicemail>
+        <NetworkName>TelkomSA</NetworkName>
+        <VoicemailName>Voicemail</VoicemailName>
+        <TelNum>181</TelNum>
+      </Voicemail>
+      <Voicemail>
+        <NetworkName>MTN</NetworkName>
+        <VoicemailName>Voicemail</VoicemailName>
+        <TelNum>132</TelNum>
+      </Voicemail>
+      <Voicemail>
+        <NetworkName>Cell C</NetworkName>
+        <VoicemailName>Voicemail</VoicemailName>
+        <TelNum>132</TelNum>
+      </Voicemail>
+      <Voicemail>
+        <NetworkName>Virgin</NetworkName>
+        <VoicemailName>Voicemail</VoicemailName>
+        <TelNum>121</TelNum>
+      </Voicemail>
+      <Voicemail>
+        <NetworkName>Vodacom Lesotho</NetworkName>
+        <VoicemailName>Voicemail</VoicemailName>
+        <TelNum>121</TelNum>
+      </Voicemail>
+      <SMS>
+        <DeliveryReport>off</DeliveryReport>
+        <MsgTypeThreshold>
+          <ThresholdValue>5</ThresholdValue>
+          <ThresholdType>pagecount</ThresholdType>
+        </MsgTypeThreshold>
+        <CharSupport>gsmalpha</CharSupport>
+      </SMS>
+      <MMS>
+        <MmsSending>
+          <ReqDeliveryRep>off</ReqDeliveryRep>
+          <ReqReadRep>off</ReqReadRep>
+          <MessageSize>300</MessageSize>
+        </MmsSending>
+        <MmsReceiving>
+          <Home>auto</Home>
+          <Roaming>manual</Roaming>
+        </MmsReceiving>
+      </MMS>
+    </Messages>
+    <Multimedia>
+      <Camera>
+        <Quality>high</Quality>
+      </Camera>
+      <Video>
+        <Quality>high</Quality>
+      </Video>
+    </Multimedia>
+    <Browser>
+      <NbBookmark>3</NbBookmark>
+      <Bookmark>
+        <NetworkName>MTN</NetworkName>
+        <Editable>no</Editable>
+        <BookmarkName>MTN Play</BookmarkName>
+        <URL>http://www.mtnplay.co.za/portal/defaultx.aspx</URL>
+      </Bookmark>
+      <Bookmark>
+        <NetworkName>default</NetworkName>
+        <Editable>yes</Editable>
+        <BookmarkName>Google</BookmarkName>
+        <URL>http://www.google.com/m?client={CID}&amp;source=android-home</URL>
+      </Bookmark>
+      <Bookmark>
+        <NetworkName>default</NetworkName>
+        <Editable>yes</Editable>
+        <Index>25</Index>
+        <BookmarkName>Galaxy Shop</BookmarkName>
+        <URL>https://www.samsung.com/za/mobile/?cid=za_ow_app_s-internet_none_none_bookmark_bookmark_202008_none</URL>
+      </Bookmark>
+      <eManual>
+        <URL>http://www.samsung.com/m-manual/common</URL>
+      </eManual>
+    </Browser>
+    <Connections>
+      <NbProfileHandle>50</NbProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>4</NbNetProfile>
+        <NetworkName>Vodacom</NetworkName>
+        <ProfBrowser>LTE.Vodacom</ProfBrowser>
+        <ProfMMS>MMS.Vodacom</ProfMMS>
+        <ProfIMS>IMS</ProfIMS>
+        <ProfXCAP>XCAP</ProfXCAP>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>Vodacom Lesotho</NetworkName>
+        <ProfBrowser>VCL Internet GPRS</ProfBrowser>
+        <ProfMMS>VCL MMS GPRS</ProfMMS>
+        <ProfIMS>IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>Cell C</NetworkName>
+        <ProfBrowser>Smartdata</ProfBrowser>
+        <ProfMMS>Cell C MMS</ProfMMS>
+        <ProfIMS>Cell C IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>5</NbNetProfile>
+        <NetworkName>MTN</NetworkName>
+        <ProfBrowser>MTN Data</ProfBrowser>
+        <ProfMMS>MTN MMS</ProfMMS>
+        <ProfIMS>MTN IMS</ProfIMS>
+        <ProfXCAP>MTN XCAP</ProfXCAP>
+        <ProfEmergencyIMSCall>MTN SOS</ProfEmergencyIMSCall>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>Virgin</NetworkName>
+        <ProfBrowser>virgin_internet</ProfBrowser>
+        <ProfMMS>virgin_mms</ProfMMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>4</NbNetProfile>
+        <NetworkName>TelkomSA</NetworkName>
+        <ProfBrowser>TelkomSA internet</ProfBrowser>
+        <ProfMMS>TelkomSA mms</ProfMMS>
+        <ProfIMS>IMS</ProfIMS>
+        <ProfXCAP>XCAP</ProfXCAP>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>FNB</NetworkName>
+        <ProfBrowser>FNB Internet</ProfBrowser>
+        <ProfMMS>FNB MMS</ProfMMS>
+        <ProfIMS>FNB IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX ME and YOU</NetworkName>
+        <ProfBrowser>ME and YOU Internet</ProfBrowser>
+        <ProfMMS>ME and YOU MMS</ProfMMS>
+        <ProfIMS>ME and YOU IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX Mobile</NetworkName>
+        <ProfBrowser>Mobile Internet</ProfBrowser>
+        <ProfMMS>Mobile MMS</ProfMMS>
+        <ProfIMS>Mobile IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX BokCel</NetworkName>
+        <ProfBrowser>BokCel Internet</ProfBrowser>
+        <ProfMMS>BokCel MMS</ProfMMS>
+        <ProfIMS>BokCel IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX VivaMobile</NetworkName>
+        <ProfBrowser>VivaMobile Internet</ProfBrowser>
+        <ProfMMS>VivaMobile MMS</ProfMMS>
+        <ProfIMS>VivaMobile IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX Xmobile</NetworkName>
+        <ProfBrowser>Xmobile Internet</ProfBrowser>
+        <ProfMMS>Xmobile MMS</ProfMMS>
+        <ProfIMS>Xmobile IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX PSB</NetworkName>
+        <ProfBrowser>PSB Internet</ProfBrowser>
+        <ProfMMS>PSB MMS</ProfMMS>
+        <ProfIMS>PSB IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX OTM</NetworkName>
+        <ProfBrowser>OTM Internet</ProfBrowser>
+        <ProfMMS>OTM MMS</ProfMMS>
+        <ProfIMS>OTM IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX Standardbank Connect</NetworkName>
+        <ProfBrowser>Standardbank Internet</ProfBrowser>
+        <ProfMMS>Standardbank MMS</ProfMMS>
+        <ProfIMS>Standardbank IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX 1Mobile</NetworkName>
+        <ProfBrowser>1Mobile Internet</ProfBrowser>
+        <ProfMMS>1Mobile MMS</ProfMMS>
+        <ProfIMS>1Mobile IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX Next 360</NetworkName>
+        <ProfBrowser>Next 360 Internet</ProfBrowser>
+        <ProfMMS>Next 360 MMS</ProfMMS>
+        <ProfIMS>Next 360 IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX Trace Mobile</NetworkName>
+        <ProfBrowser>Trace Mobile Internet</ProfBrowser>
+        <ProfMMS>Trace Mobile MMS</ProfMMS>
+        <ProfIMS>Trace Mobile IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX Pink Mobile</NetworkName>
+        <ProfBrowser>Pink Mobile Internet</ProfBrowser>
+        <ProfMMS>Pink Mobile MMS</ProfMMS>
+        <ProfIMS>Pink Mobile IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>SAKENG</NetworkName>
+        <ProfBrowser>SAKENG Internet</ProfBrowser>
+        <ProfMMS>SAKENG MMS</ProfMMS>
+        <ProfIMS>SAKENG IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX Mr P</NetworkName>
+        <ProfBrowser>Mr P Internet</ProfBrowser>
+        <ProfMMS>Mr P MMS</ProfMMS>
+        <ProfIMS>Mr P IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>rain</NetworkName>
+        <ProfBrowser>rain internet</ProfBrowser>
+        <ProfIMS>rainims</ProfIMS>
+        <ProfXCAP>XCAP</ProfXCAP>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>1</NbNetProfile>
+        <NetworkName>Econet Telecom Lesotho</NetworkName>
+        <ProfBrowser>ETL</ProfBrowser>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>1</NbNetProfile>
+        <NetworkName>Melon</NetworkName>
+        <ProfBrowser>Melon</ProfBrowser>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>VodaCom-MZ</NetworkName>
+        <ProfBrowser>VM Internet</ProfBrowser>
+        <ProfIMS>ims</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>Mascom</NetworkName>
+        <ProfBrowser>Mascom_Internet</ProfBrowser>
+        <ProfIMS>IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>1</NbNetProfile>
+        <NetworkName>Orange</NetworkName>
+        <ProfBrowser>Internet.orange.co.bw</ProfBrowser>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>MTC Namibia</NetworkName>
+        <ProfBrowser>MTC Internet</ProfBrowser>
+        <ProfMMS>MTC MMS</ProfMMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>1</NbNetProfile>
+        <NetworkName>BTC Mobile</NetworkName>
+        <ProfBrowser>internet.be</ProfBrowser>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>EMTEL</NetworkName>
+        <ProfBrowser>EMTEL Web</ProfBrowser>
+        <ProfIMS>IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>MOVITEL</NetworkName>
+        <ProfBrowser>MOVITEL</ProfBrowser>
+        <ProfIMS>IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>my.t</NetworkName>
+        <ProfBrowser>my.t</ProfBrowser>
+        <ProfIMS>IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>Airtel Zambia</NetworkName>
+        <ProfBrowser>Internet</ProfBrowser>
+        <ProfIMS>IMS</ProfIMS>
+        <ProfXCAP>Internet</ProfXCAP>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>Unitel</NetworkName>
+        <ProfBrowser>Unitel Internet</ProfBrowser>
+        <ProfIMS>ims.unitel.co.ao</ProfIMS>
+        <ProfXCAP>xcap.unitel.co.ao</ProfXCAP>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>1</NbNetProfile>
+        <NetworkName>TNM</NetworkName>
+        <ProfBrowser>TNM INTERNET</ProfBrowser>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>2</NbNetProfile>
+        <NetworkName>MTN Zambia</NetworkName>
+        <ProfBrowser>Internet</ProfBrowser>
+        <ProfIMS>IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>1</NbNetProfile>
+        <NetworkName>Zamtel</NetworkName>
+        <ProfBrowser>zamtel</ProfBrowser>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>1</NbNetProfile>
+        <NetworkName>Econet Wireless Zimbabwe</NetworkName>
+        <ProfBrowser>Econet Internet</ProfBrowser>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>1</NbNetProfile>
+        <NetworkName>Eswatini Mobile Ltd</NetworkName>
+        <ProfBrowser>Eswatini Mobile</ProfBrowser>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>C CONNECT</NetworkName>
+        <ProfBrowser>C CONNECT Internet</ProfBrowser>
+        <ProfMMS>C CONNECT MMS</ProfMMS>
+        <ProfIMS>C CONNECT IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>CAPITEC</NetworkName>
+        <ProfBrowser>CAPITEC Internet</ProfBrowser>
+        <ProfMMS>CAPITEC MMS</ProfMMS>
+        <ProfIMS>CAPITEC IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>FREI Old Mutual Connect</NetworkName>
+        <ProfBrowser>Old Mutual Internet</ProfBrowser>
+        <ProfMMS>Old Mutual MMS</ProfMMS>
+        <ProfIMS>Old Mutual IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>FREI One Digital</NetworkName>
+        <ProfBrowser>One Digital Internet</ProfBrowser>
+        <ProfMMS>One Digital MMS</ProfMMS>
+        <ProfIMS>One Digital IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX Clientele</NetworkName>
+        <ProfBrowser>Clientele Internet</ProfBrowser>
+        <ProfMMS>Clientele MMS</ProfMMS>
+        <ProfIMS>Clientele IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX UCONNECT</NetworkName>
+        <ProfBrowser>UCONNECT Internet</ProfBrowser>
+        <ProfMMS>UCONNECT MMS</ProfMMS>
+        <ProfIMS>UCONNECT IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX LIME MOBILE</NetworkName>
+        <ProfBrowser>LIME MOBILE Internet</ProfBrowser>
+        <ProfMMS>LIME MOBILE MMS</ProfMMS>
+        <ProfIMS>LIME MOBILE IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>MVNX iSmart</NetworkName>
+        <ProfBrowser>iSmart Internet</ProfBrowser>
+        <ProfMMS>iSmart MMS</ProfMMS>
+        <ProfIMS>iSmart IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>1912</NetworkName>
+        <ProfBrowser>1912 Internet</ProfBrowser>
+        <ProfMMS>1912 MMS</ProfMMS>
+        <ProfIMS>1912 IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>KNECT</NetworkName>
+        <ProfBrowser>KNECT Internet</ProfBrowser>
+        <ProfMMS>KNECT MMS</ProfMMS>
+        <ProfIMS>KNECT IMS</ProfIMS>
+      </ProfileHandle>
+      <ProfileHandle>
+        <NbNetProfile>3</NbNetProfile>
+        <NetworkName>Paratus Namibia</NetworkName>
+        <ProfBrowser>Internet</ProfBrowser>
+        <ProfIMS>IMS</ProfIMS>
+        <ProfXCAP>XCAP</ProfXCAP>
+      </ProfileHandle>
+      <NbProfile>129</NbProfile>
+      <Profile>
+        <NetworkName>Vodacom</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>LTE.Vodacom</ProfileName>
+        <URL>https://www.thefuse.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>lte.vodacom.za</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Vodacom</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>IMS</ProfileName>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Vodacom</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>MMS.Vodacom</ProfileName>
+        <URL>http://mmsc.vodacom4me.co.za/</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.006.128.013</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>lte.vodacom.za</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Vodacom Lesotho</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>VCL Internet GPRS</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Vodacom Lesotho</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <ProfileName>VCL MMS GPRS</ProfileName>
+        <URL>http://mmsc.vodacom4me.co.za/</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>10.113.063.012</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Cell C</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Smartdata</ProfileName>
+        <URL>http://www.cellc.co.za/wap</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Cell C</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Cell C MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTN</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>MTN Data</ProfileName>
+        <URL>http://www.mtn.co.za</URL>
+        <Auth>none</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>myMTN</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTN</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>MTN MMS</ProfileName>
+        <URL>http://mms.mtn.co.za/mms/wapenc</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.11.240.241</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>myMTN</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Virgin</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>virgin_internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>vdata</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Virgin</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>virgin_mms</ProfileName>
+        <URL>http://mms.virginmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.031.116.242</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>vmms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>TelkomSA</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>TelkomSA internet</ProfileName>
+        <URL>https://www.telkom.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>TelkomSA</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>TelkomSA mms</ProfileName>
+        <URL>http://mms.8ta.com:38090/was</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>41.151.254.162</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Cell C</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Cell C IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>TelkomSA</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1300</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>TelkomSA</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>XCAP</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1300</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ut</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTN</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>no</Editable>
+        <ProfileName>MTN IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1500</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTN</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>MTN XCAP</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1500</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>hos</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Vodacom</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>XCAP</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>xcap</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FNB</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>FNB Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FNB</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>FNB MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX ME and YOU</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>ME and YOU Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX ME and YOU</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>ME and YOU MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Mobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Mobile Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Mobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Mobile MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX BokCel</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>BokCel Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX BokCel</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>BokCel MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX VivaMobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>VivaMobile Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX VivaMobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>VivaMobile MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Xmobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Xmobile Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Xmobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Xmobile MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX PSB</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>PSB Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX PSB</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>PSB MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX OTM</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>OTM Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX OTM</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>OTM MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Standardbank Connect</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Standardbank Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Standardbank Connect</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Standardbank MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX 1Mobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>1Mobile Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX 1Mobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>1Mobile MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Next 360</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Next 360 Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Next 360</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Next 360 MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Trace Mobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Trace Mobile Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Trace Mobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Trace Mobile MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Pink Mobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Pink Mobile Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Pink Mobile</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Pink Mobile MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SAKENG</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>SAKENG Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SAKENG</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>SAKENG MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Mr P</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Mr P Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>Internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Mr P</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Mr P MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>rain</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>rain internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>rain</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>rain</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>XCAP</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>xcap</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>rain</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>rainims</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Econet Telecom Lesotho</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>ETL</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Melon</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <Editable>yes</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Melon</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ws.melon.mvno</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTN</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>MTN SOS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1500</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>sos</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>VodaCom-MZ</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>VM Internet</ProfileName>
+        <URL>https://www.facebook.com/Vodacom.mz</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+        <CSparam>
+          <TelNum>SUBSCRIBED</TelNum>
+        </CSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Mascom</NetworkName>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Mascom_Internet</ProfileName>
+        <URL>http://mascom.bw</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet.mascom</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Orange</NetworkName>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Internet.orange.co.bw</ProfileName>
+        <URL>http://orange.co.bw</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>Internet.orange.co.bw</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>BTC Mobile</NetworkName>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>internet.be</ProfileName>
+        <URL>http://www.btc.bw</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet.be</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>EMTEL</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <ProfileName>EMTEL Web</ProfileName>
+        <URL>https://www.emtel.com/</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>web</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MOVITEL</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>MOVITEL</ProfileName>
+        <URL>https://movitel.co.mz</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1500</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>m-internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>my.t</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>my.t</ProfileName>
+        <URL>www.my.t.mu</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <MTUSize>1500</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>my.t</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Mascom</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1500</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTC Namibia</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>MTC Internet</ProfileName>
+        <URL>http://www.mtcmobile.com.na/</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTC Namibia</NetworkName>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>MTC MMS</ProfileName>
+        <URL>http://www.mtcmobile.com.na/</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>mms</APN>
+          <UserId>mmsc</UserId>
+          <Password>mmsc</Password>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Airtel Zambia</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Airtel Zambia</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>IMS</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>VodaCom-MZ</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>ims</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Vodacom Lesotho</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>IMS</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MOVITEL</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>IMS</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Unitel</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Unitel Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet.unitel.co.ao</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Unitel</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>ims.unitel.co.ao</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims.unitel.co.ao</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Unitel</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>xcap.unitel.co.ao</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <MTUSize>1300</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>xcap.unitel.co.ao</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>EMTEL</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>yes</Editable>
+        <ProfileName>IMS</ProfileName>
+        <Auth>normal</Auth>
+        <MTUSize>1300</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>my.t</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>yes</Editable>
+        <ProfileName>IMS</ProfileName>
+        <Auth>normal</Auth>
+        <MTUSize>1300</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>TNM</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>yes</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>TNM INTERNET</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTN Zambia</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Zamtel</NetworkName>
+        <IpVersion>ipv4</IpVersion>
+        <RoamingIpVersion>ipv4</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>zamtel</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MTN Zambia</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <ProfileName>IMS</ProfileName>
+        <Auth>normal</Auth>
+        <MTUSize>1300</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Econet Wireless Zimbabwe</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Econet Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>econet.net</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Eswatini Mobile Ltd</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>yes</Editable>
+        <ProfileName>Eswatini Mobile</ProfileName>
+        <Auth>normal</Auth>
+        <MTUSize>1300</MTUSize>
+        <Proxy>
+          <EnableFlag>off</EnableFlag>
+        </Proxy>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>C CONNECT</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>C CONNECT Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>C CONNECT</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>C CONNECT MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>CAPITEC</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>CAPITEC Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>CAPITEC</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>CAPITEC MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FREI Old Mutual Connect</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Old Mutual Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FREI Old Mutual Connect</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Old Mutual MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FREI One Digital</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>One Digital Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FREI One Digital</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>One Digital MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Clientele</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Clientele Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Clientele</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Clientele MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX UCONNECT</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>UCONNECT Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX UCONNECT</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>UCONNECT MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX LIME MOBILE</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>LIME MOBILE Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX LIME MOBILE</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>LIME MOBILE MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX iSmart</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>iSmart Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX iSmart</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>iSmart MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>1912</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>1912 Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>1912</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>1912 MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KNECT</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>KNECT Internet</ProfileName>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KNECT</NetworkName>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>KNECT MMS</ProfileName>
+        <URL>http://mms.cmobile.co.za</URL>
+        <Auth>normal</Auth>
+        <Bearer>ps</Bearer>
+        <Protocol>http</Protocol>
+        <Proxy>
+          <EnableFlag>on</EnableFlag>
+          <ServAddr>196.31.116.250</ServAddr>
+          <Port>8080</Port>
+        </Proxy>
+        <PSparam>
+          <APN>mms</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX ME and YOU</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>ME and YOU IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Mobile</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Mobile IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Mr P</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Mr P IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FNB</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>FNB IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX BokCel</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>BokCel IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX VivaMobile</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>VivaMobile IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Xmobile</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Xmobile IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX PSB</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>PSB IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX OTM</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>OTM IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Standardbank Connect</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Standardbank IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX 1Mobile</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>1Mobile IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Next 360</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Next 360 IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Trace Mobile</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Trace Mobile IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Pink Mobile</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Pink Mobile IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>SAKENG</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>SAKENG IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>C CONNECT</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>C CONNECT IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>CAPITEC</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>CAPITEC IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FREI Old Mutual Connect</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Old Mutual IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>FREI One Digital</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>One Digital IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX Clientele</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>Clientele IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX UCONNECT</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>UCONNECT IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX LIME MOBILE</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>LIME MOBILE IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>MVNX iSmart</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>iSmart IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>1912</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>1912 IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>KNECT</NetworkName>
+        <Editable>yes</Editable>
+        <HiddenStatus>hidden</HiddenStatus>
+        <ProfileName>KNECT IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>IMS</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Paratus Namibia</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>yes</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>Internet</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>internet</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Paratus Namibia</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>IMS</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>ims</APN>
+        </PSparam>
+      </Profile>
+      <Profile>
+        <NetworkName>Paratus Namibia</NetworkName>
+        <IpVersion>ipv4v6</IpVersion>
+        <RoamingIpVersion>ipv4v6</RoamingIpVersion>
+        <Editable>no</Editable>
+        <HiddenStatus>show</HiddenStatus>
+        <ProfileName>XCAP</ProfileName>
+        <Auth>none</Auth>
+        <Protocol>http</Protocol>
+        <PSparam>
+          <APN>xcap</APN>
+        </PSparam>
+      </Profile>
+    </Connections>
+  </Settings>
+</CustomerData>

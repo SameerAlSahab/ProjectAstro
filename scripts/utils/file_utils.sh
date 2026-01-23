@@ -64,14 +64,14 @@ FETCH_FILE() {
     local file_list
     file_list="$(7z l "$container" 2>/dev/null)" || return 1
 
-    
+
     if echo "$file_list" | awk '{print $NF}' | grep -Fxq "$target_file"; then
         7z x "$container" "$target_file" -so 2>/dev/null > "$out_path"
         [[ -s "$out_path" ]] && return 0
         rm -f "$out_path"
     fi
 
-   
+
     if echo "$file_list" | awk '{print $NF}' | grep -Fxq "$target_file.lz4"; then
         if 7z x "$container" "$target_file.lz4" -so 2>/dev/null \
             | lz4 -d -c > "$out_path"; then
@@ -80,7 +80,7 @@ FETCH_FILE() {
         rm -f "$out_path"
     fi
 
-  
+
     echo "$file_list" | awk '{print $NF}' \
         | grep -E '\.(tar(\.md5)?|zip|lz4|bin|img|7z|xz|gz)$' \
         | while read -r node; do
@@ -202,27 +202,20 @@ ADD_FROM_FW() {
     full_src="$src_dir/$clean_path"
     full_dst="$dst_dir/$clean_path"
 
-
     if [[ -d "$full_src" ]]; then
         if MERGE_SPLITS "$full_src" "$full_dst" "DIR_CONTENTS"; then
             return 0
         fi
-    fi
 
+        mkdir -p "$full_dst"
 
-    if [[ -d "$full_src" ]]; then
-        mkdir -p "$(dirname "$full_dst")"
-
-        if [[ -d "$full_dst" ]]; then
-            LOG "Updating folder $clean_path"
-        else
-            LOG "Adding folder $clean_path from $source"
-        fi
+        LOG "Adding folder $clean_path from $source"
 
 
         rsync -a --no-owner --no-group "$full_src/" "$full_dst/" || \
             ERROR_EXIT "Failed to copy folder $clean_path"
         return 0
+
     fi
 
 
@@ -240,6 +233,7 @@ ADD_FROM_FW() {
 
     LOG_WARN "Path not found in source: $clean_path"
 }
+
 
 #
 # Usage: ADD "partition_name" "source_path" "relative_dest_path" [log_label]
@@ -292,4 +286,3 @@ ADD() {
 
     ERROR_EXIT "Source not found: $src_path"
 }
-

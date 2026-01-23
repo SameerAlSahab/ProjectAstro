@@ -6,8 +6,6 @@ setdefault   extraction_speed     default
 ui_print " "
 ui_print "Welcome to AstroROM Installer!"
 ui_print " "
-ui_print "AstroROM is coded by @SameerAlSahab "
-ui_print " "
 ui_print "AstroROM  __ROM_VERSION__  for __MODEL_NAME__  "
 ui_print " "
 ui_print "Build: __BUILD_DATE__"
@@ -29,18 +27,10 @@ fi
 # Install
    ui_print "Installing ROM.... .It will take some time."
    ui_print "Do not cancel or force reboot until installation is complete."
-   
+
    update_zip super.img $(find_block super)
 
-
-
-# CSC Mods
-   try_mount /omr /optics /prism
-
-   ui_print "Adding CSC features... "
-   cscfeature="$addons/omc/cscfeature.xml"
-   omc_decoder="$addons/omcdecoder"
-   . "$addons/omc_edit.sh"
+__EXTRA_ASSERTS__
 
    ui_print "AstroROM successfully installed."
 

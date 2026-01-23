@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<omcInfo>
+  <contentType>0</contentType>
+  <version>SAOMC_SM-S938B_OXM_BNG_16_0003</version>
+  <model>
+    <name>SM-S938B</name>
+  </model>
+  <catalog>
+    <customer>yes</customer>
+    <customerEdition>ED0003</customerEdition>
+    <carrierListVersion>160021</carrierListVersion>
+    <cscfeature>yes</cscfeature>
+    <cscfeatureVersion>ED00002</cscfeatureVersion>
+    <carrierfeature>yes</carrierfeature>
+    <carrierfeatureVersion>2</carrierfeatureVersion>
+    <cp>no</cp>
+    <imsupdate>no</imsupdate>
+  </catalog>
+  <carrierList>
+    <carrierCount>5</carrierCount>
+    <carrier>
+      <mcc>470</mcc>
+      <mnc>01</mnc>
+      <networkName>Grameenphone</networkName>
+    </carrier>
+    <carrier>
+      <mcc>470</mcc>
+      <mnc>02</mnc>
+      <networkName>Robi</networkName>
+    </carrier>
+    <carrier>
+      <mcc>470</mcc>
+      <mnc>03</mnc>
+      <networkName>Banglalink</networkName>
+    </carrier>
+    <carrier>
+      <mcc>470</mcc>
+      <mnc>04</mnc>
+      <networkName>Teletalk</networkName>
+    </carrier>
+    <carrier>
+      <mcc>470</mcc>
+      <mnc>07</mnc>
+      <networkName>Airtel</networkName>
+    </carrier>
+  </carrierList>
+</omcInfo>

@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<omcInfo>
+  <contentType>0</contentType>
+  <version>SAOMC_SM-S938B_OXM_XFA_16_0004</version>
+  <model>
+    <name>SM-S938B</name>
+  </model>
+  <catalog>
+    <customer>yes</customer>
+    <customerEdition>ED0003</customerEdition>
+    <carrierListVersion>160025</carrierListVersion>
+    <cscfeature>yes</cscfeature>
+    <cscfeatureVersion>ED00002</cscfeatureVersion>
+    <carrierfeature>yes</carrierfeature>
+    <carrierfeatureVersion>2</carrierfeatureVersion>
+    <cp>no</cp>
+    <imsupdate>no</imsupdate>
+  </catalog>
+  <carrierList>
+    <carrierCount>79</carrierCount>
+    <carrier>
+      <mcc>617</mcc>
+      <mnc>01</mnc>
+      <networkName>my.t</networkName>
+    </carrier>
+    <carrier>
+      <mcc>617</mcc>
+      <mnc>03</mnc>
+      <networkName>MTML</networkName>
+    </carrier>
+    <carrier>
+      <mcc>617</mcc>
+      <mnc>10</mnc>
+      <networkName>EMTEL</networkName>
+    </carrier>
+    <carrier>
+      <mcc>631</mcc>
+      <mnc>02</mnc>
+      <networkName>Unitel</networkName>
+    </carrier>
+    <carrier>
+      <mcc>640</mcc>
+      <mnc>84</mnc>
+      <networkName>Econet Wireless Zimbabwe</networkName>
+    </carrier>
+    <carrier>
+      <mcc>643</mcc>
+      <mnc>03</mnc>
+      <networkName>MOVITEL</networkName>
+    </carrier>
+    <carrier>
+      <mcc>643</mcc>
+      <mnc>04</mnc>
+      <networkName>VodaCom-MZ</networkName>
+    </carrier>
+    <carrier>
+      <mcc>645</mcc>
+      <mnc>01</mnc>
+      <networkName>Airtel Zambia</networkName>
+    </carrier>
+    <carrier>
+      <mcc>645</mcc>
+      <mnc>02</mnc>
+      <networkName>MTN Zambia</networkName>
+    </carrier>
+    <carrier>
+      <mcc>645</mcc>
+      <mnc>03</mnc>
+      <networkName>Zamtel</networkName>
+    </carrier>
+    <carrier>
+      <mcc>649</mcc>
+      <mnc>01</mnc>
+      <networkName>MTC Namibia</networkName>
+    </carrier>
+    <carrier>
+      <mcc>649</mcc>
+      <mnc>04</mnc>
+      <codeType>HEX</codeType>
+      <networkName>Paratus Namibia</networkName>
+    </carrier>
+    <carrier>
+      <mcc>650</mcc>
+      <mnc>01</mnc>
+      <networkName>TNM</networkName>
+    </carrier>
+    <carrier>
+      <mcc>651</mcc>
+      <mnc>01</mnc>
+      <codeType>HEX</codeType>
+      <networkName>Vodacom Lesotho</networkName>
+    </carrier>
+    <carrier>
+      <mcc>651</mcc>
+      <mnc>02</mnc>
+      <codeType>HEX</codeType>
+      <networkName>Econet Telecom Lesotho</networkName>
+    </carrier>
+    <carrier>
+      <mcc>652</mcc>
+      <mnc>01</mnc>
+      <networkName>Mascom</networkName>
+    </carrier>
+    <carrier>
+      <mcc>652</mcc>
+      <mnc>02</mnc>
+      <networkName>Orange</networkName>
+    </carrier>
+    <carrier>
+      <mcc>652</mcc>
+      <mnc>04</mnc>
+      <networkName>BTC Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>653</mcc>
+      <mnc>02</mnc>
+      <networkName>Eswatini Mobile Ltd</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>01</mnc>
+      <codeType>HEX</codeType>
+      <networkName>Vodacom</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>02</mnc>
+      <codeType>HEX</codeType>
+      <networkName>TelkomSA</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <codeType>HEX</codeType>
+      <networkName>Cell C</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>1912</spn>
+      <codeType>HEX</codeType>
+      <networkName>1912</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>1Mobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX 1Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>BokCel</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX BokCel</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>C CONNECT</spn>
+      <codeType>HEX</codeType>
+      <networkName>C CONNECT</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>CAPITEC</spn>
+      <codeType>HEX</codeType>
+      <networkName>CAPITEC</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Clientele</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Clientele</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>FNB</spn>
+      <codeType>HEX</codeType>
+      <networkName>FNB</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>KNECT</spn>
+      <codeType>HEX</codeType>
+      <networkName>KNECT</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>LIME MOBILE</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX LIME MOBILE</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>MVNX Mobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Me and You</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX ME and YOU</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Mr P</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Mr P</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Next 360</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Next 360</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>OTM</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX OTM</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Old Mutual Connect</spn>
+      <codeType>HEX</codeType>
+      <networkName>FREI Old Mutual Connect</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>One Digital</spn>
+      <codeType>HEX</codeType>
+      <networkName>FREI One Digital</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>PSB</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX PSB</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Pink Mobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Pink Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>SAKENG</spn>
+      <codeType>HEX</codeType>
+      <networkName>SAKENG</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Standardbank Connect</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Standardbank Connect</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Trace Mobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Trace Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>UCONNECT</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX UCONNECT</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Virgin Mobile</spn>
+      <subsetCode>10</subsetCode>
+      <codeType>HEX</codeType>
+      <networkName>Virgin</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>VivaMobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX VivaMobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>Xmobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Xmobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>07</mnc>
+      <spn>iSmart</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX iSmart</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <networkName>Cell C</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>1912</spn>
+      <codeType>HEX</codeType>
+      <networkName>1912</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>1Mobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX 1Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>BokCel</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX BokCel</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>C CONNECT</spn>
+      <codeType>HEX</codeType>
+      <networkName>C CONNECT</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>CAPITEC</spn>
+      <codeType>HEX</codeType>
+      <networkName>CAPITEC</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Clientele</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Clientele</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>FNB</spn>
+      <codeType>HEX</codeType>
+      <networkName>FNB</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>KNECT</spn>
+      <codeType>HEX</codeType>
+      <networkName>KNECT</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>LIME MOBILE</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX LIME MOBILE</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>MVNX Mobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Me and You</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX ME and YOU</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Mr P</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Mr P</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Next 360</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Next 360</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>OTM</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX OTM</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Old Mutual Connect</spn>
+      <codeType>HEX</codeType>
+      <networkName>FREI Old Mutual Connect</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>One Digital</spn>
+      <codeType>HEX</codeType>
+      <networkName>FREI One Digital</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>PSB</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX PSB</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Pink Mobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Pink Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>SAKENG</spn>
+      <codeType>HEX</codeType>
+      <networkName>SAKENG</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Standardbank Connect</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Standardbank Connect</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Trace Mobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Trace Mobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>UCONNECT</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX UCONNECT</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>VivaMobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX VivaMobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>Xmobile</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX Xmobile</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>08</mnc>
+      <spn>iSmart</spn>
+      <codeType>HEX</codeType>
+      <networkName>MVNX iSmart</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>10</mnc>
+      <networkName>MTN</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>10</mnc>
+      <spn>Melon</spn>
+      <codeType>HEX</codeType>
+      <networkName>Melon</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>38</mnc>
+      <spn>rain</spn>
+      <codeType>HEX</codeType>
+      <networkName>rain</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>73</mnc>
+      <spn>rain</spn>
+      <codeType>HEX</codeType>
+      <networkName>rain</networkName>
+    </carrier>
+    <carrier>
+      <mcc>655</mcc>
+      <mnc>74</mnc>
+      <spn>rain</spn>
+      <codeType>HEX</codeType>
+      <networkName>rain</networkName>
+    </carrier>
+  </carrierList>
+</omcInfo>
