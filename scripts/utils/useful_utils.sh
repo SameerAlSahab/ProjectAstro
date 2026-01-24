@@ -49,59 +49,55 @@ GET_FEAT_STATUS() {
 # Adds/updates a unique entry to file_contexts
 #
 ADD_CONTEXT() {
-    local partition="$1"
-    local file_path="$2"
-    local type="$3"
+    local PARTITION="$1"
+    local FILE_PATH="$2"
+    local TYPE="$3"
 
-    [[ $# -lt 3 ]] && ERROR_EXIT "Usage: ADD_CONTEXT <partition> <file_path> <type>"
+    (( $# < 3 )) && ERROR_EXIT "USAGE: ADD_CONTEXT <PARTITION> <FILE_PATH> <TYPE>"
 
-    local context_file="${CONFIG_DIR}/${partition}_file_contexts"
+    local CONTEXT_FILE="${CONFIG_DIR}/${PARTITION}_file_contexts"
 
-    file_path="${file_path#/}"
-    local full_path="/${partition}/${file_path}"
+    FILE_PATH="${FILE_PATH#/}"
 
-    [[ "$file_path" != /* ]] && file_path="/$file_path"
+    local FULL_PATH="/${PARTITION}/${FILE_PATH}"
 
-    type="${type%%:s0}"
-    local context="u:object_r:${type}:s0"
+    TYPE="${TYPE%%:s0}"
+    local CONTEXT="u:object_r:${TYPE}:s0"
 
-    # Escape dots for regex
-    local escaped_path
-    escaped_path=$(printf '%s\n' "$file_path" | sed 's/\./\\./g')
+    # Escape dots for file_contexts regex
+    local ESCAPED_PATH
+    ESCAPED_PATH="$(printf '%s\n' "$FULL_PATH" | sed 's/\./\\./g')"
 
-    mkdir -p "$(dirname "$context_file")"
-    touch "$context_file"
+    local EXACT_ENTRY="${ESCAPED_PATH} ${CONTEXT}"
 
-    local exact_entry="${escaped_path} ${context}"
+    mkdir -p -- "$(dirname -- "$CONTEXT_FILE")"
+    touch -- "$CONTEXT_FILE"
 
+    grep -qxF -- "$EXACT_ENTRY" "$CONTEXT_FILE" && return 0
 
-    if grep -qxF "$exact_entry" "$context_file"; then
-        return 0
-    fi
+    local TMP_FILE
+    TMP_FILE="$(mktemp)"
 
-    local tmp
-    tmp=$(mktemp)
+    local REPLACED=0
+    local LINE
 
-    local replaced=0
-    while IFS= read -r line || [[ -n "$line" ]]; do
-
-        if [[ "$line" =~ ^${escaped_path}[[:space:]] ]]; then
-            if [[ $replaced -eq 0 ]]; then
-                echo "$exact_entry" >> "$tmp"
-                replaced=1
+    while IFS= read -r LINE || [[ -n "$LINE" ]]; do
+        if [[ "$LINE" =~ ^${ESCAPED_PATH}[[:space:]] ]]; then
+            if (( ! REPLACED )); then
+                printf '%s\n' "$EXACT_ENTRY" >> "$TMP_FILE"
+                REPLACED=1
             fi
             continue
         fi
-        echo "$line" >> "$tmp"
-    done < "$context_file"
 
+        printf '%s\n' "$LINE" >> "$TMP_FILE"
+    done < "$CONTEXT_FILE"
 
-    [[ $replaced -eq 0 ]] && echo "$exact_entry" >> "$tmp"
+    (( ! REPLACED )) && printf '%s\n' "$EXACT_ENTRY" >> "$TMP_FILE"
 
-    mv "$tmp" "$context_file"
-
-    return 0
+    mv -- "$TMP_FILE" "$CONTEXT_FILE"
 }
+
 
 #
 # Removes file frorm workspace
