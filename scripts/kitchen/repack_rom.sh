@@ -35,7 +35,7 @@ REPACK_PARTITION() {
     MIN_RESIZE_KB=2048
 
 if [[ "$PART_NAME" == "optics" ]]; then
-    TARGET_SIZE_IN_KB=$((4 * 1024))
+    TARGET_SIZE_IN_KB=$((FOLDERSIZE_IN_KB + 5 * 1024))
 elif (( FOLDERSIZE_IN_KB < 15043 )); then
     TARGET_SIZE_IN_KB=$((FOLDERSIZE_IN_KB * 2))
 else
@@ -95,7 +95,8 @@ fi
 
             build_cmd+=" && $PREBUILTS/android-tools/e2fsdroid -e -T 1230735600 -C '$fs_config' -S '$file_contexts' -a '$MOUNT_POINT' -f '$MODEL_FW_DIR/$PART_NAME' '$OUT_DIR/$PART_NAME.img'"
 
-            if (( TARGET_SIZE_IN_KB > 3072 )); then
+
+            if [[ "$PART_NAME" != "optics" ]]; then
                 build_cmd+=" && tune2fs -m 0 '$OUT_DIR/$PART_NAME.img'"
                 build_cmd+=" && e2fsck -fy '$OUT_DIR/$PART_NAME.img'"
                 build_cmd+=" && NEW_BLOCKS=\$(tune2fs -l '$OUT_DIR/$PART_NAME.img' | awk '/Block count:/ {total=\$3} /Free blocks:/ {free=\$3} END { used=total-free; printf \"%d\", used + (used*0.01) + 10 }')"
@@ -121,6 +122,7 @@ fi
             local F2FS_OVERHEAD
             local MARGIN_IN_PERCENT
             # TODO: Try make it minimium , as of now 56MB overhead+7% headroom
+            # TODO: f2fs is incomplete
                 F2FS_OVERHEAD=$((56 * 1024 * 1024))
                 MARGIN_IN_PERCENT=107
 
