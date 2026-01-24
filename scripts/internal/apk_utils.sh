@@ -564,32 +564,39 @@ _APKTOOL_PATCH() {
 ADD_PATCH()
 {
     local TARGET="$1"
-    local SOURCE_DIR="$2"
+    local SOURCE="$2"
 
-    [[ -z "$TARGET" || -z "$SOURCE_DIR" ]] && \
-        ERROR_EXIT "Usage: ADD_PATCH <apk|jar> <patch_dir>"
+    [[ -z "$TARGET" || -z "$SOURCE" ]] && \
+        ERROR_EXIT "Usage: ADD_PATCH <apk|jar> <patch_dir_or_file>"
 
-    [[ ! -d "$SOURCE_DIR" ]] && \
-        ERROR_EXIT "Source patch dir not found: $SOURCE_DIR"
+    [[ ! -e "$SOURCE" ]] && \
+        ERROR_EXIT "Source not found: $SOURCE"
 
     local DEST="$WORKSPACE/patches/$TARGET"
     mkdir -p "$DEST"
 
-    LOG_INFO "Staging patches for $TARGET from $(basename "$SOURCE_DIR")"
+    if [[ -f "$SOURCE" ]]; then
 
-    rsync -a \
-        --include="*/" \
-        --include="*.patch" \
-        --include="*.smalipatch" \
-        --include="*.sh" \
-        --include="res/**" \
-        --include="smali/**" \
-        --include="smali_classes*/**" \
-        --include="assets/**" \
-        --include="lib/**" \
-        --exclude="*" \
-        "$SOURCE_DIR/" "$DEST/"
+        case "$SOURCE" in
+            *.patch|*.smalipatch)
+                cp -f "$SOURCE" "$DEST/"
+                ;;
+        esac
+    else
 
-    find "$DEST" -type d -empty -delete
+        rsync -a \
+            --include="*/" \
+            --include="*.patch" \
+            --include="*.smalipatch" \
+            --include="res/**" \
+            --include="smali/**" \
+            --include="smali_classes*/**" \
+            --include="assets/**" \
+            --include="lib/**" \
+            --exclude="*" \
+            "$SOURCE/" "$DEST/"
+
+
+        find "$DEST" -type d -empty -delete
+    fi
 }
-
