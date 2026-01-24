@@ -421,7 +421,12 @@ _APKTOOL_PATCH() {
 
     _LOAD_MARKERS
 
-    local SEARCH_PATHS=("$OBJECTIVES_DIR/$CODENAME" "$PROJECT_DIR")
+    local SEARCH_PATHS=(
+    "$OBJECTIVES_DIR/$CODENAME"
+    "$PROJECT_DIR"
+    "$WORKSPACE/patches"
+)
+
     local TARGETS=()
     declare -A TARGET_MAP
 
@@ -553,5 +558,38 @@ _APKTOOL_PATCH() {
     done
 
     BUILD_ALL
+}
+
+
+ADD_PATCH()
+{
+    local TARGET="$1"
+    local SOURCE_DIR="$2"
+
+    [[ -z "$TARGET" || -z "$SOURCE_DIR" ]] && \
+        ERROR_EXIT "Usage: ADD_PATCH <apk|jar> <patch_dir>"
+
+    [[ ! -d "$SOURCE_DIR" ]] && \
+        ERROR_EXIT "Source patch dir not found: $SOURCE_DIR"
+
+    local DEST="$WORKSPACE/patches/$TARGET"
+    mkdir -p "$DEST"
+
+    LOG_INFO "Staging patches for $TARGET from $(basename "$SOURCE_DIR")"
+
+    rsync -a \
+        --include="*/" \
+        --include="*.patch" \
+        --include="*.smalipatch" \
+        --include="*.sh" \
+        --include="res/**" \
+        --include="smali/**" \
+        --include="smali_classes*/**" \
+        --include="assets/**" \
+        --include="lib/**" \
+        --exclude="*" \
+        "$SOURCE_DIR/" "$DEST/"
+
+    find "$DEST" -type d -empty -delete
 }
 

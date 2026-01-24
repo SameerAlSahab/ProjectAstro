@@ -5,9 +5,20 @@
 FF "SETTINGS_CONFIG_BRAND_NAME" "$MODEL_NAME"
 FF "SYSTEM_CONFIG_SIOP_POLICY_FILENAME" "$SIOP_POLICY_NAME"
 
+BPROP "system" "ro.product.astro.model" "$STOCK_MODEL"
+
 # Edge lighting corner radius
 BPROP "system" "ro.factory.model" "$STOCK_MODEL"
 ##
+
+ASTRO_CODENAME="$(GET_PROP "system" "ro.product.system.name" "stock")"
+
+if [[ -n "$ASTRO_CODENAME" ]]; then
+    BPROP "system" "ro.astro.codename" "$ASTRO_CODENAME"
+ else
+    BPROP "system" "ro.astro.codename" "$CODENAME"
+fi
+
 
 if [[ "$MODEL" == "$STOCK_MODEL" ]] || [[ "${DEVICE_HAVE_DONOR_SOURCE,,}" == "true" ]]; then
     LOG_INFO "Ignoring device feature patching..."
@@ -43,15 +54,33 @@ xmlstarlet sel -t \
     done
 
 
-ASTRO_CODENAME="$(GET_PROP "system" "ro.product.system.name" "stock")"
 
-if [[ -n "$ASTRO_CODENAME" ]]; then
-    BPROP "system" "ro.astro.codename" "$ASTRO_CODENAME"
- else
-    BPROP "system" "ro.astro.codename" "$CODENAME"
-fi
+PATCH_CAMERA_LIBS() {
+    local SYSTEM="$WORKSPACE/system/system"
+    local LIB_DIRS=(
+        "$SYSTEM/lib"
+        "$SYSTEM/lib64"
+    )
 
+    local FILES
 
+    FILES=$(grep -Il "ro.product.name" \
+        $(find "${LIB_DIRS[@]}" -type f -iname "*.so" \
+            \( -iname "*camera*" -o -iname "*livefocus*" -o -iname "*bokeh*" \)) \
+        2>/dev/null
+    )
+
+    [[ -z "$FILES" ]] && return 0
+
+    while IFS= read -r FILE; do
+        sed -i "s/ro.product.name/ro.astro.codename/g" "$FILE"
+        LOG_INFO "Patched camera library ${FILE#$WORKSPACE/}"
+    done <<< "$FILES"
+}
+
+LOG_INFO "Patching camera for portrait mode.."
+
+PATCH_CAMERA_LIBS
 
 ##
 
@@ -185,31 +214,4 @@ fi
 
 ##
 
-PATCH_CAMERA_LIBS() {
-    local SYSTEM="$WORKSPACE/system/system"
-    local LIB_DIRS=(
-        "$SYSTEM/lib"
-        "$SYSTEM/lib64"
-    )
 
-    local FILES
-
-    FILES=$(grep -Il "ro.product.name" \
-        $(find "${LIB_DIRS[@]}" -type f -iname "*.so" \
-            \( -iname "*camera*" -o -iname "*livefocus*" -o -iname "*bokeh*" \)) \
-        2>/dev/null
-    )
-
-    [[ -z "$FILES" ]] && return 0
-
-    while IFS= read -r FILE; do
-        sed -i "s/ro.product.name/ro.astro.codename/g" "$FILE"
-        LOG_INFO "Patched camera library ${FILE#$WORKSPACE/}"
-    done <<< "$FILES"
-}
-
-LOG_INFO "Patching camera for portrait mode.."
-
-BPROP "system" "ro.product.astro.model" "$STOCK_MODEL"
-
-PATCH_CAMERA_LIBS

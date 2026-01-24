@@ -171,7 +171,7 @@ REPACK_ROM() {
         local name=$(basename "$part_dir")
         local TARGET_FS="$TARGET_FILESYSTEM"
 
-        [[ "$name" =~ ^(config|lost\+found)$ ]] && continue
+        [[ "$name" =~ ^(config|lost\+found|patches)$ ]] && continue
 
         if [[ "$name" == "optics" || "$name" == "prism" ]]; then
             TARGET_FS="ext4"
