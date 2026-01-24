@@ -124,6 +124,9 @@ BUILD_SUPER_IMAGE() {
 
     source "$CONFIG_FILE"
 
+    [[ -n "${DEVICE_SUPER_PARTITION_SIZE:-}" ]] && SUPER_SIZE="$DEVICE_SUPER_PARTITION_SIZE"
+    [[ -n "${DEVICE_SUPER_GROUP_BASIC_SIZE:-}" ]] && GROUP_SIZE="$DEVICE_SUPER_GROUP_BASIC_SIZE"
+
     local valid_partitions=()
     local current_total_size=0
 

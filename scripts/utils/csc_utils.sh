@@ -108,7 +108,7 @@ PROCESS_OMC_PARTITION() {
 
     LOG_INFO "Patching CSC features..."
 
-    REMOVE "optics" "configs/carriers"
+    #REMOVE "optics" "configs/carriers"
 
     ADD_FROM_FW "pa3q" "optics" "configs/carriers"
 
