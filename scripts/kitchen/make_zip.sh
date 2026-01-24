@@ -169,6 +169,7 @@ BUILD_SUPER_IMAGE() {
 REPACK_ROM() {
     local TARGET_FILESYSTEM="$1"
 
+    mkdir -p "$ASTROROM/out"
 
     for part_dir in "$WORKSPACE"/*/; do
         local name=$(basename "$part_dir")
