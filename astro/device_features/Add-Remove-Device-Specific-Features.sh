@@ -9,10 +9,10 @@ FF "SYSTEM_CONFIG_SIOP_POLICY_FILENAME" "$SIOP_POLICY_NAME"
 BPROP "system" "ro.factory.model" "$STOCK_MODEL"
 ##
 
-if [[ "$MODEL" == "$STOCK_MODEL" ]]; then
-    LOG_INFO "Source and objective are same. Skipping device feature patching..."
-else
+if [[ "$MODEL" == "$STOCK_MODEL" ]] || [[ "${DEVICE_HAVE_DONOR_SOURCE,,}" == "true" ]]; then
+    LOG_INFO "Ignoring device feature patching..."
 
+else
 FF_FILE="$WORKSPACE/system/system/etc/floating_feature.xml"
 STOCK_FF_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
 
