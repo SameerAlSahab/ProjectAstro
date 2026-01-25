@@ -158,10 +158,8 @@ MERGE_SPLITS() {
             base_name=$(basename "$first" | sed -E 's/\.(part[0-9]+|[0-9]{2,}|[a-z]{2})$//')
             parts=($(ls "$src_base/$base_name."* "$src_base/${base_name}_part"* 2>/dev/null | sort))
 
-
-            if [[ -d "$dest_file" ]]; then
-                dest_file="$dest_file/$base_name"
-            fi
+            mkdir -p "$dest_file"
+            dest_file="$dest_file/$base_name"
         fi
 
     elif [[ "$search_mode" == "FILE_SUFFIX" ]]; then
