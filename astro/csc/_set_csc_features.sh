@@ -1,4 +1,7 @@
+# Thanks to @BlassGO for the idea he used in his dynamic installer csc addons.
 
+# Features to add/modify
+# FORMAT: "CSC TAG|VALUE"
 CSC_FEATURES=(
 "CscFeature_Common_ConfigAllowedPackagesDuringDataSaving|com.samsung.android.smartcallprovider"
 "CscFeature_Common_ConfigSvcProviderForUnknownNumber|whitepages,off"

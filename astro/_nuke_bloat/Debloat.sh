@@ -236,3 +236,7 @@ REMOVE "system" "lib64/libssu_keystore2.so"
 
 
 NUKE_BLOAT "${BLOAT_TARGETS[@]}"
+
+
+
+LOG_END "Debloated successfully"

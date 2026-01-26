@@ -388,6 +388,5 @@ done
 
 _BUILD_ROM
 
-LOG_END "Completed everything" "Build finished for $device"
 
 
