@@ -215,6 +215,12 @@ EOF
     [ -f "$WORKSPACE/product/overlay/product_overlay.apk" ] || \
     (mv "$WORKSPACE/product/overlay"/framework-res*.apk "$WORKSPACE/product/overlay/product_overlay.apk" || ABORT "Cannot process rro product overlay.")
 
+    DEVICE_HAVE_DONOR_SOURCE=${DEVICE_HAVE_DONOR_SOURCE:-false}
+
+    if ! GET_FEATURE DEVICE_HAVE_DONOR_SOURCE; then
+        GENERATE_CONFIG
+    fi
+
     LOG_END "Build environment ready at $BUILD_DIRECTORY"
 }
 

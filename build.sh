@@ -158,7 +158,6 @@ fi
         LOG_INFO "Initializing device environment for $device"
 
         SETUP_DEVICE_ENV || ERROR_EXIT "environment setup failed"
-        GENERATE_CONFIG
 
         mkdir -p "$(dirname "$MARKER_FILE")"
         sed -i "/^$meta_tag /d" "$MARKER_FILE" 2>/dev/null || true

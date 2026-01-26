@@ -1,3 +1,15 @@
+#
+# The following environment variables are automatically generated or
+# consumed during device configuration generation.
+#
+# These variables describe hardware capabilities and firmware properties
+# of the TARGET (stock) device.
+#
+# Unless explicitly overridden by a device configuration file, all values
+# are detected automatically from the stock firmware and the given source firmware.
+# If variables are already declared in config file , it will not overwrite them.
+#
+
 GENERATE_CONFIG() {
     # Format: "XML_TAG_NAME" or "XML_TAG_NAME:CUSTOM_VAR_SUFFIX"
     local CONFIG_FEATURES=(
@@ -158,3 +170,117 @@ done
 
 
 }
+
+
+#
+# ----------------------------------------------------------------------
+#
+#   DEVICE_DISPLAY_HFR_MODE
+#     Integer describing the display High Frame Rate (HFR) mode supported
+#     by the device panel.
+#
+#     A value greater than zero indicates that the display supports refresh
+#     rates higher than 60Hz (e.g. 90Hz, 120Hz, or adaptive).
+#
+#     This value is usually read from floating_feature.xml and serves as the
+#     base indicator for high refresh rate capability.
+#
+#
+#   DEVICE_HAVE_HIGH_REFRESH_RATE
+#     Boolean flag derived from DEVICE_DISPLAY_HFR_MODE.
+#
+#     Set to true when DEVICE_DISPLAY_HFR_MODE is greater than zero,
+#     indicating that the device supports smooth / high refresh rate modes.
+#
+#     This variable is commonly used to enable or disable display-related
+#     features such as adaptive refresh rate, smooth animations.
+#
+#   DEVICE_DISPLAY_REFRESH_RATE_VALUES_HZ
+#     String containing a comma-separated list of refresh rates (in Hz)
+#     supported by the device display.
+#
+#
+#
+#   DEVICE_DEFAULT_REFRESH_RATE
+#     Integer specifying the default refresh rate (in Hz) selected by the
+#     system at boot or after a factory reset.
+#
+#     This value does not restrict the maximum refresh rate but defines the
+#     initial operating mode of the display.
+#
+#
+#   DEVICE_HAVE_QHD_PANEL
+#     Boolean flag indicating whether the device uses a QHD (1440p) display
+#     panel.
+#
+#     The value is determined by scanning the stock floating_feature.xml
+#     for QHD-related configuration entries.
+#
+#     This variable is used to adjust rendering scale, performance profiles,
+#     and resolution-dependent system behavior.
+#
+#
+#   DEVICE_HAVE_AMOLED_DISPLAY
+#     Boolean flag indicating whether the device is equipped with an AMOLED
+#     or OLED display panel.
+#
+#     This flag affects display color calibration, power optimizations, and
+#     feature availability such as Always-On Display.
+#
+#
+#   DEVICE_HAVE_DUAL_SPEAKER
+#     Boolean flag describing the audio speaker configuration of the device.
+#
+#     Set to true when the device features a dual-speaker (stereo) setup,
+#     otherwise false for single-speaker (mono) configurations.
+#
+#     Used by audio services and sound effect frameworks.
+#
+#
+#   DEVICE_AUTO_BRIGHTNESS_LEVEL
+#     Integer or enumerated value describing the auto-brightness control
+#     behavior supported by the device.
+#
+#     This variable influences how the system reacts to ambient light
+#     changes via sensor-based brightness adjustment.
+#
+#
+#   DEVICE_HAVE_SPEN_SUPPORT
+#     Boolean flag indicating Samsung S-Pen support.
+#
+#     Detection is based on the presence of the AirCommand system application
+#     in the stock firmware.
+#
+#     When set to true, stylus-related frameworks and features are enabled.
+#
+#
+#   DEVICE_HAVE_ESIM_SUPPORT
+#     Boolean flag indicating embedded SIM (eSIM) support on the device.
+#
+#     Detection is based on the presence of eSIM-related system components
+#     in the stock firmware.
+#
+#     When false, the device is assumed to support physical SIM cards only.
+#
+#
+#   DEVICE_ANDROID_VERSION
+#     String containing the Android version of the stock device firmware.
+#
+#
+#
+#   DEVICE_SDK_VERSION
+#     Integer containing the Android SDK (API) level of the stock firmware.
+#
+#
+#
+#
+#   DEVICE_VNDK_VERSION
+#     Integer or string identifying the Vendor Native Development Kit (VNDK)
+#     version used by the stock firmware.
+#
+#     This value is critical for maintaining compatibility between system
+#     and vendor partitions under Project Treble.
+#
+# ----------------------------------------------------------------------
+
+
