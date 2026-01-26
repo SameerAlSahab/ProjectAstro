@@ -33,7 +33,7 @@ if [[ -n "$ASTRO_CODENAME" ]]; then
 fi
 
 
-if [[ "$MODEL" == "$STOCK_MODEL" ]] || [[ "${DEVICE_HAVE_DONOR_SOURCE,,}" == "true" ]]; then
+if [[ "$MODEL" == "$STOCK_MODEL" ]]; then
     LOG_INFO "Ignoring device feature patching..."
 else
     for f in */*.sh; do [ -f "$f" ] && source "$f"; done
