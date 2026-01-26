@@ -39,6 +39,15 @@ BLOAT_TARGETS+=(
     "MAPSAgent"
     "AppUpdateCenter"
     "BCService"
+    "UnifiedVVM"
+    "UnifiedTetheringProvision"
+    "UsByod"
+    "WebManual"
+    "DictDiotekForSec"
+    "MoccaMobile"
+    "Scone"
+    "Upday"
+    "VzCloud"
 )
 
 REMOVE "system" "etc/permissions/privapp-permissions-com.samsung.android.app.updatecenter.xml"
@@ -76,6 +85,8 @@ BLOAT_TARGETS+=(
     "WlanTest"
     "FacAtFunction"
     "FactoryTestProvider"
+    "AutomationTest_FB"
+    "DRParser"
 )
 
 REMOVE "system" "etc/default-permissions/default-permissions-com.sec.factory.cameralyzer.xml"
@@ -125,6 +136,7 @@ BLOAT_TARGETS+=(
     "DsmsAPK"
     "DeviceQualityAgent36"
     "DiagMonAgent95"
+    "DiagMonAgent91"
     "SOAgent76"
 )
 
@@ -155,6 +167,8 @@ BLOAT_TARGETS+=(
     "SamsungMessages"
     "SmartReminder"
     "OfflineLanguageModel_stub"
+    "Notes40"
+    "SBrowser"
 )
 
 REMOVE "system" "etc/permissions/signature-permissions-com.samsung.android.offline.languagemodel.xml"
@@ -185,6 +199,8 @@ BLOAT_TARGETS+=(
     "DigitalKey"
     "PaymentFramework"
     "SamsungCarKeyFw"
+    "SamsungWallet"
+    "BlockchainBasicKit"
 )
 
 REMOVE "system" "etc/permissions/privapp-permissions-com.samsung.android.ipsgeofence.xml"
@@ -213,6 +229,7 @@ BLOAT_TARGETS+=(
     "FotaAgent"          # Software Update
     "SVCAgent"
     "SVoiceIME"
+    "wssyncmldm"
 )
 
 REMOVE "system" "etc/permissions/privapp-permissions-com.samsung.android.settingshelper.xml"
