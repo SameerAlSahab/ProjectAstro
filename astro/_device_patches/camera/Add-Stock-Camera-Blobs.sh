@@ -16,6 +16,7 @@
 #
 
 
+if ! find "$OBJECTIVE" -type f -name "camera-feature*.xml" | grep -q .; then
 FF_FILE="$WORKSPACE/system/system/etc/floating_feature.xml"
 STOCK_FF_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
 
@@ -41,6 +42,7 @@ xmlstarlet sel -t \
 
 
 BPROP_IF_DIFF "stock" "system" "ro.build.flavor" "system"
+fi
 
 PATCH_CAMERA_LIBS() {
     local SYSTEM="$WORKSPACE/system/system"

@@ -54,26 +54,18 @@ SETUP_DEVICE_ENV() {
         LOG_WARN "Failed to validate device environment variables."
         return 1
     fi
-    
-    # Only export variables that are actually set
-    local vars_to_export=(CODENAME MODEL STOCK_MODEL VNDK FILESYSTEM PLATFORM EXTRA_MODEL)
-    for var in "${vars_to_export[@]}"; do
-        if [[ -n "${!var}" ]]; then
-            export "$var"
-        fi
-    done
+
 
     echo -e "  ${BLUE}DEVICE INFO:${NC}"
     echo -e "    -> Device:               ${BOLD}${MODEL_NAME}${NC}"
     echo -e "    -> Codename:             ${BOLD}${CODENAME}${NC}"
     echo -e "    -> Stock Model:          ${BOLD}${STOCK_MODEL}${NC}"
-
-    echo -e ""
-    echo -e "  ${BLUE}BUILD PARAMETERS:${NC}"
+    echo -e
     echo -e "    -> Source Model:         ${BOLD}${MODEL}${NC}"
     echo -e "    -> Extra Model:          ${EXTRA_MODEL:-[None]}"
+    echo -e
+    echo -e "  ${BLUE}BUILD PARAMETERS:${NC}"
     echo -e "    -> Target Filesystem:    ${FILESYSTEM}"
-    echo -e "    -> VNDK Version:         ${VNDK:-[Not given]}"
     echo -e "    -> Debug Mode:           ${DEBUG_BUILD}"
     
     # TODO : Add more if possible in future.

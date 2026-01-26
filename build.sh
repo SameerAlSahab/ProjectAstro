@@ -174,8 +174,8 @@ if [[ -n "$PLATFORM" ]]; then
 fi
 
 layers+=(
-    "$PROJECT_DIR"
     "$OBJECTIVE"
+    "$PROJECT_DIR"
 )
 
 

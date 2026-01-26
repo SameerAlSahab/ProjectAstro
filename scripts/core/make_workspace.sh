@@ -74,7 +74,7 @@ CREATE_WORKSPACE() {
             "${oem_parts[@]}"
     fi
 
-        LINK_PARTITIONS "$STOCK_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" \
+        LINK_PARTITIONS "$SOURCE_FW" "$BUILD_DIRECTORY" "$CONFIG_DIRECTORY" \
             "${csc_parts[@]}"
 
     chown -R "$SUDO_USER:$SUDO_USER" "$BUILD_DIRECTORY" 2>/dev/null
@@ -94,7 +94,7 @@ EOF
 
     LOG_INFO "Checking VNDK version..."
 
-    [[ -z "$VNDK" ]] && ERROR_EXIT "VNDK version not defined."
+    [[ -z "$DEVICE_VNDK_VERSION" ]] && ERROR_EXIT "VNDK version not defined."
 
     local SYSTEM_EXT_PATH
     SYSTEM_EXT_PATH=$(GET_PARTITION_PATH "system_ext") || return 1
@@ -107,22 +107,22 @@ EOF
         CURRENT_VNDK=$(grep -A2 -i "<vendor-ndk>" "$VINTF_MANIFEST" \
             | grep -oP '<version>\K[0-9]+' | head -1)
 
-        if [[ "$CURRENT_VNDK" == "$VNDK" ]]; then
-            LOG_INFO "VNDK matches ($VNDK). Skipping VNDK patch."
+        if [[ "$CURRENT_VNDK" == "$DEVICE_VNDK_VERSION" ]]; then
+            LOG_INFO "VNDK matches ($CURRENT_VNDK). Skipping VNDK patch."
             VNDK_NEEDS_PATCH=false
         fi
     fi
 
     if [[ "$VNDK_NEEDS_PATCH" == "true" ]]; then
-        LOG_WARN "VNDK mismatch (Current: ${CURRENT_VNDK:-None}, Target: $VNDK). Patching..."
+        LOG_WARN "VNDK mismatch (Current: ${CURRENT_VNDK:-None}, Target: $DEVICE_VNDK_VERSION). Patching..."
 
-        local APEX_PREFIX="com.android.vndk.v${VNDK}.apex"
-        local SOURCE_FILE="$BLOBS_DIR/vndk/v${VNDK}/${APEX_PREFIX}"
+        local APEX_PREFIX="com.android.vndk.v${DEVICE_VNDK_VERSION}.apex"
+        local SOURCE_FILE="$BLOBS_DIR/vndk/v${DEVICE_VNDK_VERSION}/${APEX_PREFIX}"
         local TARGET_APEX_PATH="apex/${APEX_PREFIX}"
 
         find "$SYSTEM_EXT_PATH/apex" -name "com.android.vndk.v*.apex" -delete 2>/dev/null
 
-        ADD "system_ext" "$SOURCE_FILE" "$TARGET_APEX_PATH" "VNDK v${VNDK} APEX" \
+        ADD "system_ext" "$SOURCE_FILE" "$TARGET_APEX_PATH" "VNDK v${DEVICE_VNDK_VERSION} APEX" \
             || ERROR_EXIT "Failed to set correct vndk version"
 
         LOG_END "VNDK patching completed."

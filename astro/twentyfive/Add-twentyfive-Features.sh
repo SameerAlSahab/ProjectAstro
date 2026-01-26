@@ -46,6 +46,13 @@ ADD_FROM_FW "pa3q" "system" "app/WifiAiService"
 # Sketchbook (edge panel)
 ADD_FROM_FW "pa3q" "system" "app/SketchBook" 
 
+
+# Enable AI support
+FF "COMMON_SUPPORT_AI_AGENT" "TRUE"
+FF "COMMON_CONFIG_AI_VERSION" "20253"
+FF "COMMON_CONFIG_AWESOME_INTELLIGENCE" "202501"
+
+
 # Wallpapers
 ADD_FROM_FW "pa3q" "product" "priv-app/AICore" 
 ADD_FROM_FW "pa3q" "product" "priv-app/AiWallpaper" 
