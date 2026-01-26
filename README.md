@@ -1,7 +1,7 @@
 
 ## About AstroROM
 
-AstroROM is an independent ROM project designed with a unique approach to firmware modification. Unlike traditional ROM projects, AstroROM automatically adapts and patches any Samsung ROM, regardless of device model or firmware version. Simply match the GitHub branch to your Android version, and AstroROM handles the rest.
+AstroROM is an independent ROM project designed with a unique approach to firmware modification. Unlike traditional ROM projects, AstroROM automatically adapts and patches any Samsung ROM, regardless of device model or firmware version. Simply match the GitHub branch to your ui version, and AstroROM handles the rest.
 
 ### Project Aim
 
@@ -11,7 +11,7 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 
 <p align="center">
   <a href="https://github.com/SameerAlSahab/ProjectAstro/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SameerAlSahab/ProjectAstro?style=for-the-badge&logo=github"/></a>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/commits/sixteen"><img src="https://img.shields.io/github/last-commit/SameerAlSahab/ProjectAstro/sixteen?style=for-the-badge"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectAstro/commits/ui-8.0"><img src="https://img.shields.io/github/last-commit/SameerAlSahab/ProjectAstro/ui-8.0?style=for-the-badge"/></a>
   <a href="https://github.com/SameerAlSahab/ProjectAstro/stargazers"><img src="https://img.shields.io/github/stars/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
   <a href="https://github.com/SameerAlSahab/ProjectAstro/network/members"><img src="https://img.shields.io/github/forks/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
   <br>
@@ -107,6 +107,6 @@ This is an independent project and is not affiliated with or endorsed by Samsung
 
 <div align="center">
 
-*If this project helped you, consider giving it a star⭐*
+*If this project helped you, consider giving it a star*
 
 </div>
