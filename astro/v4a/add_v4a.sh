@@ -1,20 +1,14 @@
 LOG_BEGIN "Adding Viper4Android"
 
 local TMP_DIR="/tmp/viper"
-
-
 mkdir -p "$TMP_DIR"
 
 # https://github.com/WSTxda/ViPERFX_RE
-V4A=$(curl -s ${GITHUB_TOKEN:+-H Authorization: token $GITHUB_TOKEN} \
+V4A_MODULE=$(curl -s ${GITHUB_TOKEN:+-H Authorization: token $GITHUB_TOKEN} \
     "https://api.github.com/repos/WSTxda/ViPERFX_RE/releases/latest" | \
     sed -n 's/.*"browser_download_url":[[:space:]]*"\([^"]*viper4android_module[^"]*\.zip\)".*/\1/p' | head -n1)
 
-SILENT wget -O "$TMP_DIR/viper.zip" "$V4A"
-
-mkdir -p "$WORKSPACE/vendor/lib/soundfx"
-mkdir -p "$WORKSPACE/vendor/lib64/soundfx"
-
+SILENT wget -O "$TMP_DIR/viper.zip" "$V4A_MODULE"
 
 for arch in armeabi-v7a arm64-v8a; do
     unzip -j "$TMP_DIR/viper.zip" "common/files/libv4a_re_${arch}.so" -d "$TMP_DIR"
@@ -51,18 +45,7 @@ V4A_APK=$(curl -s ${GITHUB_TOKEN:+-H Authorization: token $GITHUB_TOKEN} \
     "https://api.github.com/repos/WSTxda/ViperFX-RE-Releases/releases/latest" | \
     sed -n 's/.*"browser_download_url":[[:space:]]*"\([^"]*\)".*/\1/p' | grep -i 'viper.*\.apk' | head -n1)
 
-    mkdir -p "$WORKSPACE/system/system/preload/Viper4AndroidFX-RE/com.wstxda.viper4android=="
-
-    SILENT wget -O "$WORKSPACE/system/system/preload/Viper4AndroidFX-RE/com.wstxda.viper4android==/base.apk" "$V4A_APK"
-
-while IFS= read -r i; do
-    i="${i//$WORKSPACE\/system\//}"
-
-    if [[ "$i" == *".apk" ]] && \
-            ! grep -q "$i" "$WORKSPACE/system/system/etc/vpl_apks_count_list.txt"; then
-        LOG "Adding \"$i\" to /system/system/etc/vpl_apks_count_list.txt"
-        echo "$i" >> "$WORKSPACE/system/system/etc/vpl_apks_count_list.txt"
-    fi
-done <<< "$(find "$WORKSPACE/system/system/preload")"
+    mkdir -p "$WORKSPACE/system/system/app/Viper4AndroidFX-RE"
+    SILENT wget -O "$WORKSPACE/system/system/app/Viper4AndroidFX-RE/Viper4AndroidFX.apk" "$V4A_APK"
 
 LOG_END "Installed Viper4Android"
