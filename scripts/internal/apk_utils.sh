@@ -34,12 +34,13 @@ DO_SIGN_APK="false"  # coz disabled apk signature verification on framework.jar 
 CERT_PEM=""
 CERT_PK8=""
 
-DECOMPILE_RES=false
+DECOMPILE_RES=true
 
 APK_TO_DECOMPILE_RES=(
-     wallpaper-res.apk
-	 SecSettings.apk
-	 SystemUI.apk
+     product_overlay.apk
+     #wallpaper-res.apk
+	 #SecSettings.apk
+	 #SystemUI.apk
 )
 
 

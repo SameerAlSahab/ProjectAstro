@@ -211,6 +211,9 @@ EOF
         fi
     fi
 
+    # Overlay rro
+    [ -f "$WORKSPACE/product/overlay/product_overlay.apk" ] || \
+    (mv "$WORKSPACE/product/overlay"/framework-res*.apk "$WORKSPACE/product/overlay/product_overlay.apk" || ABORT "Cannot process rro product overlay.")
 
     LOG_END "Build environment ready at $BUILD_DIRECTORY"
 }
