@@ -16,9 +16,7 @@
 #
 
 
-if ! find "$OBJECTIVE" -type f -name "camera-feature*.xml" | grep -q .; then
-FF_FILE="$WORKSPACE/system/system/etc/floating_feature.xml"
-STOCK_FF_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
+if ! find "$OBJECTIVE" -type f -name "camera-feature.xml" | grep -q .; then
 
 
 # Other Device based camera fixes can be found on objectives and platform folder
@@ -28,21 +26,24 @@ REMOVE "system" "cameradata/singletake"
 LOG_INFO "Adding stock camera properties.."
 ADD_FROM_FW "stock" "system" "cameradata"
 
+
+fi
+
 # Remove source camera props and add stock only
-xmlstarlet ed -L -d '//*[starts-with(name(), "SEC_FLOATING_FEATURE_CAMERA")]' "$FF_FILE"
+if ! find "$OBJECTIVE" -type f -name "floating_feature.xml" | grep -q .; then
+xmlstarlet ed -L -d '//*[starts-with(name(), "SEC_FLOATING_FEATURE_CAMERA")]' "$SEC_FLOATING_FEATURE_FILE"
 
 
 xmlstarlet sel -t \
     -m '//*[starts-with(name(), "SEC_FLOATING_FEATURE_CAMERA")]' \
     -v 'name()' -o '=' -v '.' -n \
-    "$STOCK_FF_FILE" | while IFS='=' read -r tag value; do
+    "$STOCK_SEC_FLOATING_FEATURE_FILE" | while IFS='=' read -r tag value; do
         [[ -z "$tag" ]] && continue
         SILENT FF "$tag" "$value"
     done
-
+fi
 
 BPROP_IF_DIFF "stock" "system" "ro.build.flavor" "system"
-fi
 
 PATCH_CAMERA_LIBS() {
     local SYSTEM="$WORKSPACE/system/system"
@@ -67,6 +68,6 @@ PATCH_CAMERA_LIBS() {
     done <<< "$FILES"
 }
 
-LOG_INFO "Patching camera for portrait mode.."
+LOG_BEGIN "Patching camera for portrait mode.."
 
 PATCH_CAMERA_LIBS

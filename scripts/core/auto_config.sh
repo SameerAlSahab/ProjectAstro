@@ -17,12 +17,12 @@ GENERATE_CONFIG() {
         "vendor:ro.vendor.build.version.release:ANDROID_VERSION"
         "vendor:ro.vendor.build.version.sdk:SDK_VERSION"
         "vendor:ro.vndk.version:VNDK_VERSION"
-        "system:ro.build.version.release:SYSTEM_ANDROID_VERSION"
     )
 
    # Format: "partition:path/to/file:CUSTOM_VAR_SUFFIX"
     local CONFIG_FILES=(
         "system:priv-app/AirCommand:HAVE_SPEN_SUPPORT"
+        "system:priv-app/EsimKeyString:HAVE_ESIM_SUPPORT"
     )
 
 
@@ -119,4 +119,42 @@ done
     if [[ -n "$DEVICE_ACTUAL_MODEL" ]]; then
         STOCK_MODEL="$DEVICE_ACTUAL_MODEL"
     fi
+
+export SEC_FLOATING_FEATURE_FILE="$WORKSPACE/system/system/etc/floating_feature.xml"
+export STOCK_SEC_FLOATING_FEATURE_FILE="$STOCK_FW/system/system/etc/floating_feature.xml"
+
+
+if [[ -z "${SOURCE_HAVE_QHD_PANEL+x}" ]]; then
+    if grep -q "QHD" "$SEC_FLOATING_FEATURE_FILE"; then
+        SOURCE_HAVE_QHD_PANEL=true
+    else
+        SOURCE_HAVE_QHD_PANEL=false
+    fi
+fi
+
+
+if [[ -z "${DEVICE_HAVE_QHD_PANEL+x}" ]]; then
+    if grep -q "QHD" "$STOCK_SEC_FLOATING_FEATURE_FILE"; then
+        DEVICE_HAVE_QHD_PANEL=true
+    else
+        DEVICE_HAVE_QHD_PANEL=false
+    fi
+fi
+
+
+if [[ -z "${DEVICE_HAVE_HIGH_REFRESH_RATE+x}" ]]; then
+    if (( ${DEVICE_DISPLAY_HFR_MODE:-0} > 0 )); then
+        DEVICE_HAVE_HIGH_REFRESH_RATE=true
+    else
+        DEVICE_HAVE_HIGH_REFRESH_RATE=false
+    fi
+fi
+
+LOG_INFO "Automatic generated config-"
+
+for var in $(compgen -v DEVICE_ | sort); do
+    printf '  %s=%s\n' "$var" "${!var}"
+done
+
+
 }

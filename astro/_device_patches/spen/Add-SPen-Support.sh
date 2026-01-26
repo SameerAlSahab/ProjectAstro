@@ -33,42 +33,34 @@ AIR_COMMAND_FILES=(
     "media/audio/pensounds"
 )
 
-SOURCE_HAS_SPEN=false
-GET_FEATURE SOURCE_HAVE_SPEN_SUPPORT && SOURCE_HAS_SPEN=true
+if GET_FEATURE SOURCE_HAVE_SPEN_SUPPORT; then
+    if GET_FEATURE DEVICE_HAVE_SPEN_SUPPORT; then
+        LOG_INFO "Device and source both support SPen. Ignoring.."
+    else
+        LOG_INFO "Removing SPen components..."
 
-DEVICE_HAS_SPEN=false
-GET_FEATURE DEVICE_HAVE_SPEN_SUPPORT && DEVICE_HAS_SPEN=true
+        NUKE_BLOAT "${AIR_COMMAND_PKGS[@]}"
 
+        for file in "${AIR_COMMAND_FILES[@]}"; do
+            REMOVE "system" "$file"
+        done
 
-
-if $DEVICE_HAS_SPEN && $SOURCE_HAS_SPEN; then
-    LOG_INFO "Device and source both support SPen. Ignoring.."
-
-elif ! $DEVICE_HAS_SPEN && $SOURCE_HAS_SPEN; then
-    LOG_INFO "Removing SPen components..."
-
-    NUKE_BLOAT "${AIR_COMMAND_PKGS[@]}"
-
-    for file in "${AIR_COMMAND_FILES[@]}"; do
-        REMOVE "system" "$file"
-    done
-
-    FF "SUPPORT_EAGLE_EYE" ""
-
-elif $DEVICE_HAS_SPEN && ! $SOURCE_HAS_SPEN; then
-    LOG_INFO "Device supports SPen, source does not. Adding..."
-
-    for pkg in "${AIR_COMMAND_PKGS[@]}"; do
-        ADD_FROM_FW "pa3q" "system" "priv-app/$pkg"
-    done
-
-    for file in "${AIR_COMMAND_FILES[@]}"; do
-        ADD_FROM_FW "pa3q" "system" "$file"
-    done
-
-
-    FF "SUPPORT_EAGLE_EYE" "TRUE"
-
+        FF "SUPPORT_EAGLE_EYE" ""
+    fi
 else
-    LOG_INFO "Device and source both lack SPen support. Nothing to do."
+    if GET_FEATURE DEVICE_HAVE_SPEN_SUPPORT; then
+        LOG_INFO "Device supports SPen, source does not. Adding..."
+
+        for pkg in "${AIR_COMMAND_PKGS[@]}"; do
+            ADD_FROM_FW "pa3q" "system" "priv-app/$pkg"
+        done
+
+        for file in "${AIR_COMMAND_FILES[@]}"; do
+            ADD_FROM_FW "pa3q" "system" "$file"
+        done
+
+        FF "SUPPORT_EAGLE_EYE" "TRUE"
+    else
+        LOG_INFO "Device and source both lack SPen support. Nothing to do."
+    fi
 fi
