@@ -1,33 +1,35 @@
 # https://github.com/salvogiangri/UN1CA/blob/sixteen/unica/patches/nfc/customize.sh
 
-LOG_BEGIN "- Patching NFC using @salvogiangri's UN1CA patchset"
+LOG_BEGIN "Patching NFC..."
+LOG "Author: Salvo Giangreco"
 
 if [ -f "$STOCK_FW/system/system/etc/libnfc-nci.conf" ]; then
-    ADD_FROM_FW "stock" "system" "etc/libnfc-nci.conf" 0 0 644 "u:object_r:system_file:s0"
+    ADD_FROM_FW "stock" "system" "etc/libnfc-nci.conf" 
+    ADD_CONTEXT "system" "etc/libnfc-nci.conf" "system_file"
 else
     REMOVE "system" "etc/libnfc-nci.conf"
 fi
 if [ -f "$STOCK_FW/system/system/etc/libnfc-nci_temp.conf" ]; then
-    ADD_FROM_FW "stock" "system" "etc/libnfc-nci_temp.conf" 0 0 644 "u:object_r:system_file:s0"
+    ADD_FROM_FW "stock" "system" "etc/libnfc-nci_temp.conf" 
 else
     REMOVE "system" "etc/libnfc-nci_temp.conf"
 fi
 if [ -f "$STOCK_FW/system/system/etc/libnfc-nci-NXP_SN100U.conf" ]; then
-    ADD_FROM_FW "stock" "system" "etc/libnfc-nci-NXP_SN100U.conf" 0 0 644 "u:object_r:system_file:s0"
+    ADD_FROM_FW "stock" "system" "etc/libnfc-nci-NXP_SN100U.conf"
 fi
 if [ -f "$STOCK_FW/system/system/etc/libnfc-nci-NXP_PN553.conf" ]; then
-    ADD_FROM_FW "stock" "system" "etc/libnfc-nci-NXP_PN553.conf" 0 0 644 "u:object_r:system_file:s0"
+    ADD_FROM_FW "stock" "system" "etc/libnfc-nci-NXP_PN553.conf" 
 fi
 if [ -f "$STOCK_FW/system/system/etc/libnfc-nci-SLSI.conf" ]; then
-    ADD_FROM_FW "stock" "system" "etc/libnfc-nci-SLSI.conf" 0 0 644 "u:object_r:system_file:s0"
+    ADD_FROM_FW "stock" "system" "etc/libnfc-nci-SLSI.conf" 
 fi
 if [ -f "$STOCK_FW/system/system/etc/libnfc-nci-STM_ST21.conf" ]; then
-    ADD_FROM_FW "stock" "system" "etc/libnfc-nci-STM_ST21.conf" 0 0 644 "u:object_r:system_file:s0"
+    ADD_FROM_FW "stock" "system" "etc/libnfc-nci-STM_ST21.conf" 
 fi
 
 if [ "$(GET_PROP "vendor" "ro.vendor.nfc.feature.chipname")" ] && \
         ! [[ "$(GET_PROP "vendor" "ro.vendor.nfc.feature.chipname")" =~ NXP_SN100U|SLSI|STM_ST21 ]]; then
-    ABORT "Unknown NFC chip name: $(GET_PROP "vendor" "ro.vendor.nfc.feature.chipname")"
+    ERROR_EXIT "Unknown NFC chip name: $(GET_PROP "vendor" "ro.vendor.nfc.feature.chipname")"
 fi
 
 # SEC_PRODUCT_FEATURE_NFC_CHIP_NAME:=NXP_SN100U
@@ -46,7 +48,7 @@ elif [ -f "$STOCK_FW/system/system/lib/libnfc_nci_jni.so" ]; then
      ADD_FROM_FW "stock" "system" "lib/libnfc_vendor_extn.so"
 elif [ -f "$STOCK_FW/system/system/lib64/libnfc_nxpsn_jni.so" ]; then
     # TODO
-    ABORT "Missing prebuilt blobs for NXP_SN100U NFC chip"
+    ERROR_EXIT "Missing prebuilt blobs for NXP_SN100U NFC chip"
 fi
 if [ -f "$WORKSPACE/system/system/lib64/libnfc_nci_jni.so" ]; then
     if [ ! -f "$STOCK_FW/system/system/lib64/libnfc_nci_jni.so" ] && \
@@ -61,7 +63,7 @@ elif [ -f "$STOCK_FW/system/system/lib64/libnfc_nci_jni.so" ]; then
      ADD_FROM_FW "stock" "system" "lib64/libnfc_vendor_extn.so"
 elif [ -f "$STOCK_FW/system/system/lib64/libnfc_nxpsn_jni.so" ]; then
     # TODO
-    ABORT "Missing prebuilt blobs for NXP_SN100U NFC chip"
+    ERROR_EXIT "Missing prebuilt blobs for NXP_SN100U NFC chip"
 fi
 
 # SEC_PRODUCT_FEATURE_NFC_CHIP_NAME:=STM_ST21
@@ -121,4 +123,4 @@ elif [ -f "$STOCK_FW/system/system/lib64/libnfc_sec_jni.so" ]; then
     fi
 fi
 
-LOG_END
+LOG_END "Patched NFC"
