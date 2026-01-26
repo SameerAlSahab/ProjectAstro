@@ -1,6 +1,6 @@
 GENERATE_CONFIG() {
-    # Usage: "XML_TAG_NAME" or "XML_TAG_NAME:CUSTOM_VARIABLE_SUFFIX"
-    local FLOATING_FEATURE_VALUES=(
+    # Format: "XML_TAG_NAME" or "XML_TAG_NAME:CUSTOM_VAR_SUFFIX"
+    local CONFIG_FEATURES=(
         "LCD_CONFIG_HFR_MODE:DISPLAY_HFR_MODE"
         "COMMON_CONFIG_EMBEDDED_SIM_SLOTSWITCH"
         "COMMON_CONFIG_MDNIE_MODE:MDNIE_MODE"
@@ -11,64 +11,112 @@ GENERATE_CONFIG() {
         "LCD_CONFIG_HFR_DEFAULT_REFRESH_RATE:DEFAULT_REFRESH_RATE"
     )
 
-    local entry
-    local tag
-    local custom_suffix
-    local val_source
-    local val_device
-    local var_name_source
-    local var_name_device
 
-    for entry in "${FLOATING_FEATURE_VALUES[@]}"; do
-        # Split string by ':' delimiter.
-        tag="${entry%%:*}"
+    # Format: "partition:property_name:CUSTOM_VAR_SUFFIX"
+    local CONFIG_PROPS=(
+        "vendor:ro.vendor.build.version.release:ANDROID_VERSION"
+        "vendor:ro.vendor.build.version.sdk:SDK_VERSION"
+        "vendor:ro.vndk.version:VNDK_VERSION"
+        "system:ro.build.version.release:SYSTEM_ANDROID_VERSION"
+    )
 
-        if [[ "$entry" == *":"* ]]; then
-            custom_suffix="${entry#*:}"
-        else
-            custom_suffix="$tag"
+   # Format: "partition:path/to/file:CUSTOM_VAR_SUFFIX"
+    local CONFIG_FILES=(
+        "system:priv-app/AirCommand:HAVE_SPEN_SUPPORT"
+    )
+
+
+
+    local entry part key suffix
+    local var_source var_device val_source val_device
+    local src_dir stock_dir
+
+    for entry in "${CONFIG_FEATURES[@]}"; do
+        key="${entry%%:*}"
+        suffix="${entry#*:}"
+        [[ "$entry" != *":"* ]] && suffix="$key"
+
+        var_source="SOURCE_${suffix}"
+        var_device="DEVICE_${suffix}"
+
+        if [[ -z "${!var_source}" ]]; then
+            val_source=$(GET_FF_VAL "main" "$key")
+            # Convert Booleans
+            [[ "$val_source" == "TRUE" ]] && val_source="true"
+            [[ "$val_source" == "FALSE" ]] && val_source="false"
+            declare -g "$var_source"="$val_source"
         fi
 
 
-        var_name_source="SOURCE_${custom_suffix}"
-        var_name_device="DEVICE_${custom_suffix}"
-
-
-        if [[ -n "${!var_name_source}" ]]; then
-            val_source="${!var_name_source}"
-        else
-            val_source=$(GET_FF_VAL "main" "$tag")
-        fi
-
-        if [[ -z "$val_source" ]]; then
-            ERROR_EXIT "Floating Feature '${tag}' missing in source firmware. Please add variable: ${var_name_source}=\"value\" to objectives/$CODENAME/$CODENAME.sh. Use blank "" as value if unavailable."
+        if [[ -z "${!var_device}" ]]; then
+            val_device=$(GET_FF_VAL "stock" "$key")
+            # Convert Booleans
+            [[ "$val_device" == "TRUE" ]] && val_device="true"
+            [[ "$val_device" == "FALSE" ]] && val_device="false"
+            declare -g "$var_device"="$val_device"
         fi
 
 
-        if [[ -n "${!var_name_device}" ]]; then
-            val_device="${!var_name_device}"
-        else
-            val_device=$(GET_FF_VAL "stock" "$tag")
-        fi
-
-        if [[ -z "$val_device" ]]; then
-            ERROR_EXIT "Floating Feature '${tag}' missing in target firmware. Please add variable: ${var_name_device}=\"value\" to objectives/$CODENAME/$CODENAME.sh. Use blank "" as value if unavailable."
-        fi
-
-
-        if [[ "$val_source" == "TRUE" ]]; then val_source="true"; fi
-        if [[ "$val_source" == "FALSE" ]]; then val_source="false"; fi
-
-        if [[ "$val_device" == "TRUE" ]]; then val_device="true"; fi
-        if [[ "$val_device" == "FALSE" ]]; then val_device="false"; fi
-
-
-        declare -g "$var_name_source"="$val_source"
-        declare -g "$var_name_device"="$val_device"
-
-        LOG "Mapped $tag -> $var_name_source = $val_source"
     done
 
-        if [[ -n "$DEVICE_ACTUAL_MODEL" ]]; then
-    STOCK_MODEL="$DEVICE_ACTUAL_MODEL"
+
+    for entry in "${CONFIG_PROPS[@]}"; do
+        part=$(echo "$entry" | cut -d':' -f1)
+        key=$(echo "$entry" | cut -d':' -f2)
+        suffix=$(echo "$entry" | cut -d':' -f3)
+
+        var_source="SOURCE_${suffix}"
+        var_device="DEVICE_${suffix}"
+
+        if [[ -z "${!var_source}" ]]; then
+            val_source=$(GET_PROP "$part" "$key")
+            declare -g "$var_source"="$val_source"
+        fi
+
+        if [[ -z "${!var_device}" ]]; then
+            val_device=$(GET_PROP "$part" "$key" "stock")
+            declare -g "$var_device"="$val_device"
+        fi
+
+    done
+
+
+    local main_fw_dir=$(GET_FW_DIR "main")
+    local stock_fw_dir="$WORKSPACE"
+
+for entry in "${CONFIG_FILES[@]}"; do
+    part="${entry%%:*}"
+    key="${entry#*:}"
+    key="${key%%:*}"
+    suffix="${entry##*:}"
+
+    [[ "$entry" != *":"* ]] && suffix="$key"
+
+    var_source="SOURCE_${suffix}"
+    var_device="DEVICE_${suffix}"
+
+    if [[ -z "${!var_source}" ]]; then
+        if EXISTS "main" "$part" "$key"; then
+            declare -g "$var_source"="true"
+        else
+            declare -g "$var_source"="false"
+        fi
+    fi
+
+
+    if [[ -z "${!var_device}" ]]; then
+        if EXISTS "stock" "$part" "$key"; then
+            declare -g "$var_device"="true"
+        else
+            declare -g "$var_device"="false"
+        fi
+    fi
+
+done
+
+
+
+    if [[ -n "$DEVICE_ACTUAL_MODEL" ]]; then
+        STOCK_MODEL="$DEVICE_ACTUAL_MODEL"
+    fi
 }

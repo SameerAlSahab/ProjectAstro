@@ -23,12 +23,6 @@
 FF "SETTINGS_CONFIG_BRAND_NAME" "$MODEL_NAME"
 FF "SYSTEM_CONFIG_SIOP_POLICY_FILENAME" "$SIOP_POLICY_NAME"
 
-# Set source model as new prop
-BPROP "system" "ro.product.astro.model" "$STOCK_MODEL"
-
-# Edge lighting target corner radius
-BPROP "system" "ro.factory.model" "$STOCK_MODEL"
-
 
 ASTRO_CODENAME="$(GET_PROP "system" "ro.product.system.name" "stock")"
 
@@ -43,9 +37,16 @@ if [[ "$MODEL" == "$STOCK_MODEL" ]] || [[ "${DEVICE_HAVE_DONOR_SOURCE,,}" == "tr
     LOG_INFO "Ignoring device feature patching..."
 else
     for f in */*.sh; do [ -f "$f" ] && source "$f"; done
+    # Set source model as new prop
+    BPROP "system" "ro.product.astro.model" "$STOCK_MODEL"
+
+    # Edge lighting target corner radius
+    BPROP "system" "ro.factory.model" "$STOCK_MODEL"
 fi
 
-
+# Overlay rro
+[ -f "$WORKSPACE/product/overlay/product_overlay.apk" ] || \
+(mv "$WORKSPACE/product/overlay"/framework-res*.apk "$WORKSPACE/product/overlay/product_overlay.apk" || ABORT "Cannot process rro product overlay.")
 
 
 

@@ -19,21 +19,6 @@ FF "SUPPORT_COLOR_LENS" "TRUE"
 ADD_FROM_FW "pa3q" "system" "etc/mfcontents"
 ADD_FROM_FW "pa3q" "system" "priv-app/MFContents"
 
-# Enable AI support
-FF "COMMON_SUPPORT_AI_AGENT" "TRUE"
-FF "COMMON_CONFIG_AI_VERSION" "20253"
-FF "COMMON_CONFIG_AWESOME_INTELLIGENCE" "202501"
-BPROP "system" "ro.product.system.model" "SM-S938B"
-BPROP "system" "ro.product.system.model" "pa3q"
-BPROP "product" "ro.product.product.model" "SM-S938B"
-BPROP "product" "ro.product.product.model" "pa3q"
-BPROP "system_ext" "ro.product.system_ext.model" "SM-S938B"
-BPROP "system_ext" "ro.product.system_ext.model" "pa3q"
-BPROP "system_dlkm" "ro.product.system_dlkm.model" "SM-S938B"
-BPROP "system_dlkm" "ro.product.system_dlkm.model" "pa3q"
-
-BPROP_IF_DIFF "stock" "system" "ro.build.flavor" "system"
-
 
 # Audio Eraser
 FF "AUDIO_CONFIG_MULTISOURCE_SEPARATOR" "{FastScanning_6, SourceSeparator_4, Version_1.3.0}"
@@ -169,9 +154,6 @@ ADD_FROM_FW "pa3q" "system" "etc/mediasearch"
 ADD_FROM_FW "pa3q" "system" "priv-app/MediaSearch/MediaSearch.apk"
 ADD_FROM_FW "pa3q" "system" "priv-app/SemanticSearchCore/SemanticSearchCore.apk"
 
-# PhotoHDR (Will not work without 64bit only surfaceflinger)
-# FF "MMFW_SUPPORT_PHOTOHDR" "TRUE"
-# and other HDR* related lines
 
 # S23 Ultra have same HFR modes and features S25U have
 if [ "$CODENAME" = "dm3q" ]; then

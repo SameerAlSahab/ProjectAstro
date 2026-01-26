@@ -18,9 +18,6 @@ if [ "$SOURCE_DISPLAY_HFR_MODE" != "$DEVICE_DISPLAY_HFR_MODE" ]; then
 
 fi
 
-
-
-
 if [ "$SOURCE_DISPLAY_REFRESH_RATE_VALUES_HZ" != "$DEVICE_DISPLAY_REFRESH_RATE_VALUES_HZ" ]; then
 
     sed -i "/getMainInstance/,/createRefreshRateConfig/ {
