@@ -1,33 +1,43 @@
-name: Build AstroROM
+name: Build AstroROM from beta firmware
 
 on:
   workflow_dispatch:
     inputs:
       device:
-        description: 'Device Codename'
+        description: 'Objective'
         required: true
         default: 'Enter codename here'
+
+      ota_url:
+        description: >
+          Samsung Beta OTA ZIP URL.
+          ⚠️ IMPORTANT: OTA MUST match the PREVIOUS STABLE Samsung firmware
+          used as the base from samsung servers.
+        required: true
+        default: ''
+
       upload_cloud:
-        description: 'Upload ROM to cloud (PixelDrain)'
+        description: 'Upload ROM to PixelDrain'
         required: false
-        default: false
         type: boolean
+        default: false
 
 jobs:
   build:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Free disk space (1/4) - System Junk
+
+      - name: Free disk space (1/4) – system junk
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
           sudo docker image prune --all --force
           sudo docker builder prune -a
 
-      - name: Free disk space (2/4) - Tool Cache
+      - name: Free disk space (2/4) – tool cache
         uses: jlumbroso/free-disk-space@main
         with:
           tool-cache: true
@@ -51,34 +61,43 @@ jobs:
           sudo rm -rf /usr/share/sbt
           sudo apt-get clean
 
-      - name: Disk Space Check
+      - name: Disk space check
         run: df -h /
 
-      - name: Run AstroROM Build
+
+      - name: Run AstroROM build
         run: |
-          sudo bash build.sh --build ${{ inputs.device }}
+          set -e
+
+          CMD="sudo bash build.sh --build ${{ inputs.device }}"
+
+          if [[ -n "${{ inputs.ota_url }}" ]]; then
+            echo "OTA URL: ${{ inputs.ota_url }}"
+            CMD="$CMD --ota-url ${{ inputs.ota_url }}"
+          fi
+
+          echo "Running: $CMD"
+          eval "$CMD"
 
 
-      - name: Download PixelDrain CLI (pd)
+      - name: Download PixelDrain CLI
         if: ${{ inputs.upload_cloud }}
         run: |
           curl -L https://github.com/jkawamoto/go-pixeldrain/releases/download/v0.7.6/pd_0.7.6_linux_amd64.tar.gz -o pd.tar.gz
           tar -xvf pd.tar.gz
           chmod +x pd
           sudo mv pd /usr/local/bin/pd
-          
+
       - name: Upload ROM to PixelDrain
         if: ${{ inputs.upload_cloud }}
         env:
           PIXELDRAIN_API_KEY: ${{ secrets.PIXELDRAIN_API_KEY }}
         run: |
           cd out
-          ROM_FILE=$(ls *.zip | head -n 1)
 
-          if [ -z "$ROM_FILE" ]; then
-            echo "No ROM zip found!"
-            exit 1
-          fi
+          ROM_FILE=$(ls *.zip 2>/dev/null | head -n 1)
+          [[ -z "$ROM_FILE" ]] && { echo "No ROM zip found"; exit 1; }
 
           echo "Uploading $ROM_FILE to PixelDrain..."
-          pd --api-key "$PIXELDRAIN_API_KEY" upload "$ROM_FILE" | sed 's|api/file|u|g'
+          pd --api-key "$PIXELDRAIN_API_KEY" upload "$ROM_FILE" \
+            | sed 's|api/file|u|g'
