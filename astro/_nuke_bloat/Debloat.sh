@@ -33,6 +33,13 @@ BLOAT_TARGETS+=(
 )
 
 
+# KNOX APPS
+BLOAT_TARGETS+=(
+    "KnoxFrameBufferProvider"
+    "KnoxGuard"
+    "Rampart" # Auto Blocker
+)
+
 #  SYSTEM SERVICES & AGENTS
 BLOAT_TARGETS+=(
     "IntelligentDynamicFpsService"  #Adaptive refresh rate service
@@ -71,6 +78,7 @@ BLOAT_TARGETS+=(
     "Maps"
     "PlayAutoInstallConfig" # PAI
     "YouTube"
+    "Messages"
 )
 
 REMOVE "product" "overlay/GmsConfigOverlaySearchSelector.apk"
@@ -159,12 +167,11 @@ REMOVE "system" "etc/permissions/privapp-permissions-com.sec.android.mimage.avat
 REMOVE "system" "etc/permissions/signature-permissions-com.sec.android.mimage.avatarstickers.xml"
 
 
-#  SAMSUNG APPS (Calendar, Clock, Free, Messages, Reminder)
+#  SAMSUNG APPS (Calendar, Clock, Free, Notes, Browser & Reminder)
 BLOAT_TARGETS+=(
     "SamsungCalendar"
     "ClockPackage"
     "MinusOnePage"            # Samsung Free
-    "SamsungMessages"
     "SmartReminder"
     "OfflineLanguageModel_stub"
     "Notes40"
