@@ -19,8 +19,11 @@
 # Nuke odex files
 find $WORKSPACE/system/system/ -type f \( -name "*.odex" -o -name "*.vdex" -o -name "*.art" -o -name "*.oat" \) -delete
 
-declare -a BLOAT_TARGETS=()
+# Remove folders
+REMOVE "system" "hidden"
+REMOVE "system" "preload"
 
+declare -a BLOAT_TARGETS=()
 
 # TTS VOICE PACKS
 BLOAT_TARGETS+=(
@@ -243,7 +246,6 @@ REMOVE "system" "etc/permissions/privapp-permissions-com.samsung.android.setting
 REMOVE "system" "etc/sysconfig/settingshelper.xml"
 REMOVE "system" "etc/default-permissions/default-permissions-com.samsung.android.visualars.xml"
 REMOVE "system" "etc/permissions/privapp-permissions-com.samsung.android.visualars.xml"
-REMOVE "system" "hidden/SmartTutor"
 REMOVE "system" "etc/permissions/privapp-permissions-com.wssyncmldm.xml"
 REMOVE "system" "etc/permissions/privapp-permissions-com.samsung.android.svcagent.xml"
 

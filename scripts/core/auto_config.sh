@@ -14,21 +14,22 @@ GENERATE_CONFIG() {
     # Format: "XML_TAG_NAME" or "XML_TAG_NAME:CUSTOM_VAR_SUFFIX"
     local CONFIG_FEATURES=(
         "LCD_CONFIG_HFR_MODE:DISPLAY_HFR_MODE"
-        "COMMON_CONFIG_EMBEDDED_SIM_SLOTSWITCH"
         "COMMON_CONFIG_MDNIE_MODE:MDNIE_MODE"
         "LCD_SUPPORT_AMOLED_DISPLAY:HAVE_AMOLED_DISPLAY"
         "AUDIO_SUPPORT_DUAL_SPEAKER:HAVE_DUAL_SPEAKER"
         "LCD_CONFIG_HFR_SUPPORTED_REFRESH_RATE:DISPLAY_REFRESH_RATE_VALUES_HZ"
         "LCD_CONFIG_CONTROL_AUTO_BRIGHTNESS:AUTO_BRIGHTNESS_LEVEL"
         "LCD_CONFIG_HFR_DEFAULT_REFRESH_RATE:DEFAULT_REFRESH_RATE"
+        "BIOAUTH_CONFIG_FINGERPRINT_FEATURES:FINGERPRINT_SENSOR_TYPE"
     )
 
 
     # Format: "partition:property_name:CUSTOM_VAR_SUFFIX"
     local CONFIG_PROPS=(
-        "vendor:ro.vendor.build.version.release:ANDROID_VERSION"
-        "vendor:ro.vendor.build.version.sdk:SDK_VERSION"
+        "vendor:ro.vendor.build.version.release:FIRST_API_VERSION"
+        "vendor:ro.vendor.build.version.sdk:FIRST_SDK_VERSION"
         "vendor:ro.vndk.version:VNDK_VERSION"
+        "system:ro.product.system.device:SINGLE_SYSTEM_IMAGE"
     )
 
    # Format: "partition:path/to/file:CUSTOM_VAR_SUFFIX"

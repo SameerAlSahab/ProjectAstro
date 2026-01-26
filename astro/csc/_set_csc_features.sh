@@ -109,7 +109,7 @@ CSC_PROP() {
     LOG_INFO "Patching CSC features..."
 
 find "$WORKSPACE/optics" -type f -exec \
-    sed -i -E "s/SAOMC_SM-[A-Z0-9_-]+/SAOMC_${STOCK_MODEL}/g" {} +
+  sed -i -E "s/SM-[A-Z0-9_-]+/${STOCK_MODEL}/g" {} +
 
 
     ADD_FROM_FW "pa3q" "optics" "configs/carriers"

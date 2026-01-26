@@ -34,7 +34,11 @@ fi
 
 
 if [[ "$MODEL" == "$STOCK_MODEL" ]]; then
-    LOG_INFO "Ignoring device feature patching..."
+    if GET_FEATURE DEVICE_HAVE_QHD_PANEL; then
+     ADD_PATCH "framework.jar" "$SCRPATH/resolution/patches/Add-Dynamic-Resolution-Control.sh"
+     ADD_FROM_FW "pa3q" "system" "framework/gamemanager.jar"
+    fi
+
 else
     for f in */*.sh; do [ -f "$f" ] && source "$f"; done
     # Set source model as new prop

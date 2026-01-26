@@ -1,16 +1,13 @@
 #https://github.com/ExtremeXT/ExtremeROM/blob/fifteen/unica/patches/_desixtification/customize.sh
 
-SOURCE_DEVICE="$(GET_PROP system ro.product.system.device)"
-SYSTEM_DEVICE="$(GET_PROP system ro.product.system.device stock)"
-
-if [[ "$SOURCE_DEVICE" == "$SYSTEM_DEVICE" ]]; then
+if [[ "$SOURCE_SINGLE_SYSTEM_IMAGE" == "$DEVICE_SINGLE_SYSTEM_IMAGE" ]]; then
     return 0
 fi
 
 
-if [[ "$SOURCE_DEVICE" == *64* ]]; then
-    if [[ "$SYSTEM_DEVICE" == qssi* || "$SYSTEM_DEVICE" == essi* ]] && [[ "$SYSTEM_DEVICE" != *64* ]]; then
-        LOG_INFO "32/64-bit firmware detected ($SYSTEM_DEVICE), Applying 64 bit patches.."
+if [[ "$SOURCE_SINGLE_SYSTEM_IMAGE" == *64* ]]; then
+    if [[ "$DEVICE_SINGLE_SYSTEM_IMAGE" == qssi* || "$DEVICE_SINGLE_SYSTEM_IMAGE" == essi* ]] && [[ "$DEVICE_SINGLE_SYSTEM_IMAGE" != *64* ]]; then
+        LOG_INFO "Applying 64 bit patches.."
 
         # Set 64-bit only props
         BPROP "vendor" "ro.vendor.product.cpu.abilist" "arm64-v8a"
@@ -50,7 +47,7 @@ if [[ "$SOURCE_DEVICE" == *64* ]]; then
 
             LOG_INFO "Using 32 bit prebuilts libraries.."
 
-    if [[ "$SYSTEM_DEVICE" == qssi* ]]; then
+    if [[ "$DEVICE_SINGLE_SYSTEM_IMAGE" == qssi* ]]; then
         ADD_FROM_FW "dm3q" "system" "lib"
         ADD_FROM_FW "dm3q" "system" "lib64/lib.engmode.samsung.so"
         ADD_FROM_FW "dm3q" "system" "lib64/lib.engmodejni.samsung.so"
@@ -113,6 +110,6 @@ ADD_CONTEXT system "lib/bootstrap/libm.so" "system_bootstrap_lib_file"
 
         LOG_END "64-bit desixtification applied"
     else
-        LOG_INFO "64-bit firmware detected ($SYSTEM_DEVICE), nothing to do!"
+        LOG_INFO "64-bit firmware detected ($DEVICE_SINGLE_SYSTEM_IMAGE), nothing to do!"
     fi
 fi

@@ -231,3 +231,31 @@ IS_WSL() {
     [ -e "/proc/sys/fs/binfmt_misc/WSLInterop" ] || [ -e "/run/WSL" ]
 }
 
+
+REPLACE_LINE() {
+    local OLD="$1"
+    local NEW="$2"
+    local FILE="$3"
+
+    if [ ! -f "$FILE" ]; then
+        ERROR_EXIT "File not found: $FILE"
+    fi
+
+    if grep -Fq "$NEW" "$FILE"; then
+        LOG_WARN "Already patched in $FILE"
+        return 0
+    fi
+
+    if grep -Fq "$OLD" "$FILE"; then
+        LOG_INFO "Replacing old line with new line in $FILE"
+
+        sed -i "s|$OLD|$NEW|g" "$FILE" \
+            || ERROR_EXIT "Failed to patch $FILE"
+
+        LOG_INFO "Replaced $OLD with $NEW successfully to $FILE"
+        return 0
+    fi
+
+    ERROR_EXIT "Line not found in $FILE: '$OLD'"
+}
+
