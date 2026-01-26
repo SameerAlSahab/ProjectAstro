@@ -1,5 +1,0 @@
-<permissions>
-    <privapp-permissions package="com.samsung.android.knox.kfbp">
-        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
-    </privapp-permissions>
-</permissions>

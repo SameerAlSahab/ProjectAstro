@@ -1,5 +1,0 @@
-<config>
-    <install-in-user-type package="com.samsung.android.dkey">
-        <install-in user-type="SYSTEM" />
-    </install-in-user-type>
-</config>

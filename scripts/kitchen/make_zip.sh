@@ -185,7 +185,7 @@ REPACK_ROM() {
     done
 
     # Check if we should create a full zip or just the unpacked images for debugging. For instance , fastboot or recovery flash.
-    if GET_FEAT_STATUS DEBUG_BUILD; then
+    if GET_FEATURE DEBUG_BUILD; then
         LOG_INFO "ROM debug build enabled. Repacked images are available at $DIROUT"
     else
         # For a release build, create the final flashable ZIP

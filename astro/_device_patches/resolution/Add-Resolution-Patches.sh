@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#
+#  Copyright (c) 2025 Sameer Al Sahab
+#  Licensed under the MIT License. See LICENSE file for details.
+#
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+#
+
+
+# TODO: Modify HFR mode on SecSettings and framework otherwise refresh rate control will be broken
+# TODO: Add framework and surfaceflinger patches too in future
+
+if [[ "$DEVICE_HAVE_QHD_PANEL" == "true" ]]; then
+
+    if grep -q "QHD" "$FF_FILE"; then
+        LOG_INFO "Device and source both have QHD res. Ignoring..."
+    else
+        LOG_INFO "Enabling QHD resolution support ..."
+        FF "SEC_FLOATING_FEATURE_COMMON_CONFIG_DYN_RESOLUTION_CONTROL" "WQHD,FHD,HD"
+        ADD_PATCH "SecSettings.apk" "$SCRPATH/patches/Enable-QHD-Resolution-Settings.smalipatch"
+    fi
+
+else
+
+    if ! grep -q "QHD" "$FF_FILE"; then
+        LOG_INFO "Device and source both do not support QHD res. Ignoring..."
+    else
+        LOG_INFO "Source has QHD but device does not. Removing QHD features..."
+
+        FF "SEC_FLOATING_FEATURE_COMMON_CONFIG_DYN_RESOLUTION_CONTROL" ""
+        ADD_PATCH "SecSettings.apk" "$SCRPATH/patches/Disable-QHD-Resolution-Settings.smalipatch"
+    fi
+fi

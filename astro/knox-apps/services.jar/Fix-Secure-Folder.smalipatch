@@ -1,5 +1,3 @@
-
-
 FILE smali/com/android/server/knox/dar/DarManagerService.smali
 REPLACE .method public final checkDeviceIntegrity([Ljava/security/cert/Certificate;)Z
     .locals 0

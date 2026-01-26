@@ -106,7 +106,7 @@ EXEC_SCRIPT() {
 }
 
 
-_BUILD_WORKFLOW() {
+_BUILD_ROM() {
 
     rm -rf "$ASTROROM/out" && mkdir -p "$ASTROROM/out"
 
@@ -142,7 +142,7 @@ if  IS_GITHUB_ACTIONS; then
 	unset EXTRA_IMEI
 fi
 
-    local meta_tag="LAST_OBJ"
+    local meta_tag="last_objective"
     local last_device=""
     local script_count=0
     local marker_exists=false
@@ -157,7 +157,8 @@ fi
     if ! $marker_exists || [[ "$last_device" != "$device" ]] || [[ "$script_count" -eq 0 ]]; then
         LOG_INFO "Initializing device environment for $device"
 
-        SETUP_DEVICE_ENV || ERROR_EXIT "Env setup failed"
+        SETUP_DEVICE_ENV || ERROR_EXIT "environment setup failed"
+        GENERATE_CONFIG
 
         mkdir -p "$(dirname "$MARKER_FILE")"
         sed -i "/^$meta_tag /d" "$MARKER_FILE" 2>/dev/null || true
@@ -182,30 +183,56 @@ layers+=(
         [[ ! -d "$layer" ]] && continue
 
         # Execute scripts
-        while IFS= read -r -d '' sh; do
-            [[ "$sh" == *"$device.sh" ]] && continue
-            EXEC_SCRIPT "$sh" "$MARKER_FILE"
-        done < <(find "$layer" -type f -name "*.sh" \
-            ! -path "*.apk/*" \
-            ! -path "*.jar/*" \
-            -print0 | sort -z)
+while IFS= read -r -d '' sh; do
+    [[ "$sh" == *"$device.sh" ]] && continue
+    EXEC_SCRIPT "$sh" "$MARKER_FILE"
+done < <(
+    find "$layer" -type f -name "*.sh" \
+        ! -path "*.apk/*" \
+        ! -path "*.jar/*" \
+        -print0 | sort -z | while IFS= read -r -d '' file; do
+            dir="$(dirname "$file")"
 
 
-        while IFS= read -r -d '' cfg; do
-            name="$(basename "$cfg")"
-            target="$CONFIG_DIR/$name"
-
-            if [[ ! -f "$target" ]]; then
-                cp "$cfg" "$target"
-            else
-                grep -Fvx -f "$target" "$cfg" >> "$target" || true
+            if [[ -f "$dir/.no" ]]; then
+                [[ "$(dirname "$file")" == "$dir" ]] || continue
             fi
-        done < <(
-            find "$layer" -type f \( \
-                -name "*_file_contexts" -o \
-                -name "*_fs_config" \
-            \) -print0
-        )
+
+            parent="$dir"
+            skip=false
+            while [[ "$parent" != "$layer" && "$parent" != "/" ]]; do
+                if [[ -f "$parent/.no" ]]; then
+                    skip=true
+                    break
+                fi
+                parent="$(dirname "$parent")"
+            done
+
+            $skip && continue
+
+            printf '%s\0' "$file"
+        done
+)
+
+
+        # Append configs
+while IFS= read -r -d '' cfg; do
+    name="$(basename "$cfg")"
+    target="$CONFIG_DIR/$name"
+
+    if [[ ! -f "$target" ]]; then
+        cp "$cfg" "$target"
+    else
+        while IFS= read -r line; do
+
+            path=$(echo "$line" | awk '{print $1}')
+            if [[ -n "$path" ]]; then
+                sed -i "\|^$path |d" "$target"
+            fi
+            echo "$line" >> "$target"
+        done < "$cfg"
+    fi
+done < <(find "$layer" -type f \( -name "*_file_contexts" -o -name "*_fs_config" \) -print0)
 
         # Sync partitions
         while IFS= read -r -d '' img; do
@@ -215,7 +242,7 @@ layers+=(
                 rsync -a --no-links "$img/" "$target/" \
                     || ERROR_EXIT "Adding files failed for $part"
             else
-                LOG_WARN "Unknown partition. Ignoring.. $part"
+                ERROR_EXIT "Unknown partition. $part"
             fi
         done < <(find "$layer" -type d -name "*.img" -print0)
     done
@@ -359,7 +386,7 @@ done
 [[ $EUID -ne 0 ]] && ERROR_EXIT "Root required"
 
 
-_BUILD_WORKFLOW
+_BUILD_ROM
 
 LOG_END "Completed everything" "Build finished for $device"
 

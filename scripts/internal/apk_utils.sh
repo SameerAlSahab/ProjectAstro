@@ -216,7 +216,7 @@ DECOMPILE()
 		done
 
 
-if ! GET_FEAT_STATUS "DECOMPILE_RES" || [[ "$IN_LIST" != "true" ]]; then
+if ! GET_FEATURE "DECOMPILE_RES" || [[ "$IN_LIST" != "true" ]]; then
     FLAGS+=("-r")
 fi
 

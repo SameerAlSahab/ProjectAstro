@@ -22,7 +22,7 @@ _SANITIZE_PATH() {
 }
 
 
-GET_FEAT_STATUS() {
+GET_FEATURE() {
     local var_name="$1"
     local default="${2:-false}"
 

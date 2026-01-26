@@ -1,5 +1,0 @@
-<permissions>
-    <privapp-permissions package="com.samsung.android.knox.sandbox">
-        <permission name="android.permission.INTERNET" />
-    </privapp-permissions>
-</permissions>

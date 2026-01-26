@@ -23,7 +23,6 @@ ADD_FROM_FW "pa3q" "system" "priv-app/MFContents"
 FF "COMMON_SUPPORT_AI_AGENT" "TRUE"
 FF "COMMON_CONFIG_AI_VERSION" "20253"
 FF "COMMON_CONFIG_AWESOME_INTELLIGENCE" "202501"
-
 BPROP "system" "ro.product.system.model" "SM-S938B"
 BPROP "system" "ro.product.system.model" "pa3q"
 BPROP "product" "ro.product.product.model" "SM-S938B"
@@ -66,7 +65,7 @@ ADD_FROM_FW "pa3q" "system" "app/SketchBook"
 ADD_FROM_FW "pa3q" "product" "priv-app/AICore" 
 ADD_FROM_FW "pa3q" "product" "priv-app/AiWallpaper" 
 ADD_FROM_FW "pa3q" "system" "priv-app/SpriteWallpaper"  #Used to animate Infinity wallpapers
-ADD_FROM_FW "pa3q" "system" "priv-app/wallpaper-res"
+
 
 # Photo Editor & Gallery
 SILENT NUKE_BLOAT "PhotoEditor_Full"
@@ -119,13 +118,11 @@ ADD_FROM_FW "pa3q" "system" "priv-app/SamsungInCallUI"
 ADD_FROM_FW "pa3q" "system" "priv-app/SamsungIntelliVoiceServices" 
 ADD_FROM_FW "pa3q" "system" "priv-app/SamsungDialer" 
 
-# Screenshot and Keyboard etc
-#ADD_FROM_FW "pa3q" "system" "app/HoneyBoard"
+# etc
 ADD_FROM_FW "pa3q" "system" "app/SmartCapture" 
 ADD_FROM_FW "pa3q" "system" "app/VisualCloudCore" 
 
-# Ringtones ACH and bootanimation
-# TODO : determine a way to check device has ACH (Audio Coupled Haptics) support or not.
+# Ringtones and bootanimation
 ADD_FROM_FW "pa3q" "system" "media" 
 ADD_FROM_FW "pa3q" "system" "etc/ringtones_count_list.txt"
 

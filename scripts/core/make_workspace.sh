@@ -211,7 +211,6 @@ EOF
         fi
     fi
 
-    PROCESS_OMC_PARTITION
 
     LOG_END "Build environment ready at $BUILD_DIRECTORY"
 }

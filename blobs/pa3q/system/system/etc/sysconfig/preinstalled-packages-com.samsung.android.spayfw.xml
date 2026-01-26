@@ -1,5 +1,0 @@
-<config>
-    <install-in-user-type package="com.samsung.android.spayfw">
-        <install-in user-type="SYSTEM" />
-    </install-in-user-type>
-</config>
