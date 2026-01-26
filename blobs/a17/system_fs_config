@@ -1,0 +1,7 @@
+system 0 0 755 capabilities=0x0
+system/lib 0 0 755 capabilities=0x0
+system/lib/libnfc_vendor_extn_st.so 0 0 644 capabilities=0x0
+system/lib/libstnfc_nci_jni.so 0 0 644 capabilities=0x0
+system/lib64 0 0 755 capabilities=0x0
+system/lib64/libnfc_vendor_extn_st.so 0 0 644 capabilities=0x0
+system/lib64/libstnfc_nci_jni.so 0 0 644 capabilities=0x0
