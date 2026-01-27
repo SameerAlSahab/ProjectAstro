@@ -130,7 +130,7 @@ FIND_TARGET()
             [[ -z "$PART_DIR" || ! -d "$PART_DIR" ]] && continue
 
                 # For now we take app and priv-app cause preload and hidden apps are useless.
-            local SUBDIRS=("app" "priv-app")
+            local SUBDIRS=("app" "priv-app" "overlay")
             for SUBDIR in "${SUBDIRS[@]}"; do
                 [[ ! -d "$PART_DIR/$SUBDIR" ]] && continue
                 local FOUND=$(find "$PART_DIR/$SUBDIR" -maxdepth 3 -name "$FILE_NAME" -print -quit 2>/dev/null)
