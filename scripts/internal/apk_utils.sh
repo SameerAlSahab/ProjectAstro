@@ -423,7 +423,7 @@ _APKTOOL_PATCH() {
     _LOAD_MARKERS
 
     local SEARCH_PATHS=(
-    "$OBJECTIVES_DIR/$CODENAME"
+    "$OBJECTIVE"
     "$PROJECT_DIR"
     "$WORKSPACE/patches"
 )
