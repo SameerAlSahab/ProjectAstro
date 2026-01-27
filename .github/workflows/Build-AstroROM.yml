@@ -1,12 +1,12 @@
 name: Build AstroROM
-
+run-name: Building AstroROM for ${{ inputs.device }}
 on:
   workflow_dispatch:
     inputs:
       device:
-        description: 'Device Codename'
+        description: 'Choose objective'
         required: true
-        default: 'Enter codename here'
+        default: ''
       upload_cloud:
         description: 'Upload ROM to cloud (PixelDrain)'
         required: false
