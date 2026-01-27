@@ -38,4 +38,4 @@ BPROP "system" "ro.build.display.id" "$ASTROROM_PROP"
 FF "CONTEXTSERVICE_ENABLE_SURVEY_MODE" ""
 
 # Netflix props
-BPROP_IF_DIFF "system" "ro.netflix.bsp_rev"
+BPROP_IF_DIFF "stock" "system" "ro.netflix.bsp_rev"
