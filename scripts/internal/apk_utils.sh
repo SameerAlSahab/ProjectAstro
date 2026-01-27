@@ -562,42 +562,20 @@ _APKTOOL_PATCH() {
 }
 
 
-ADD_PATCH()
-{
+ADD_PATCH() {
     local TARGET="$1"
     local SOURCE="$2"
 
     [[ -z "$TARGET" || -z "$SOURCE" ]] && \
-        ERROR_EXIT "Usage: ADD_PATCH <apk|jar> <patch_dir_or_file>"
+        ERROR_EXIT "Usage: ADD_PATCH <target> <file or folder>"
 
-    [[ ! -e "$SOURCE" ]] && \
+    [[ -e "$SOURCE" ]] || \
         ERROR_EXIT "Source not found: $SOURCE"
 
     local DEST="$WORKSPACE/patches/$TARGET"
-    mkdir -p "$DEST"
 
-    if [[ -f "$SOURCE" ]]; then
+    mkdir -p "$DEST" || ERROR_EXIT "Failed to create $DEST"
 
-        case "$SOURCE" in
-            *.patch|*.smalipatch)
-                cp -f "$SOURCE" "$DEST/"
-                ;;
-        esac
-    else
-
-        rsync -a \
-            --include="*/" \
-            --include="*.patch" \
-            --include="*.smalipatch" \
-            --include="res/**" \
-            --include="smali/**" \
-            --include="smali_classes*/**" \
-            --include="assets/**" \
-            --include="lib/**" \
-            --exclude="*" \
-            "$SOURCE/" "$DEST/"
-
-
-        find "$DEST" -type d -empty -delete
-    fi
+    cp -a "$SOURCE" "$DEST/" || \
+        ERROR_EXIT "Failed to add patch $SOURCE to $DEST"
 }

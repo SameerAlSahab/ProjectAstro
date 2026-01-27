@@ -98,9 +98,6 @@
         <item>20000</item>
     </integer-array>
     <integer-array name="config_aodBrightnessValues">
-        <item>0</item>
-        <item>12</item>
-        <item>29</item>
         <item>49</item>
     </integer-array>
     <integer-array name="config_autoBrightnessDisplayValuesNits">
