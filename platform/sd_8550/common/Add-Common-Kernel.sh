@@ -1,5 +1,5 @@
 #https://github.com/samsung-sm8550/kernel_samsung_sm8550-common
-    KERNEL_ZIP="$SCRPATH/common_kernel.zip"
+    KERNEL_ZIP="$SCRPATH/common.zip"
 
     [[ -f "$KERNEL_ZIP" ]] || ERROR_EXIT "Kernel zip not found"
 
