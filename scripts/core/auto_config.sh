@@ -36,6 +36,7 @@ GENERATE_CONFIG() {
     local CONFIG_FILES=(
         "system:priv-app/AirCommand:HAVE_SPEN_SUPPORT"
         "system:priv-app/EsimKeyString:HAVE_ESIM_SUPPORT"
+        "vendor:bin/hw/vendor.samsung.hardware.biometrics.face@2.0-service:HAVE_LEGACY_FACE_HAL"
     )
 
 

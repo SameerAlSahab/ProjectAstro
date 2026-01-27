@@ -140,30 +140,78 @@ EXTRACT_FROM_APEX_PAYLOAD() {
 }
 
 
-# REMOVE_SELINUX_ENTRY <filename> <entry1> [entry2 ...]
-REMOVE_SELINUX_ENTRY() {
-    local filename="$1"
-    shift
+# Author: ShaDisNX255, Fede2782
+# REMOVE_SELINUX_ENTRIES <entry1> [entry2 ...]
+# Removes SELinux entries from all relevant policy files
+# - Removes from mapping CIL files (including API versioned variants)
+# - Removes from system_ext_sepolicy.cil
+# - Removes from plat_sepolicy.cil
+# - Only removes entries not supported by the target device
+REMOVE_SELINUX_ENTRIES() {
+    [ $# -eq 0 ] && ERROR_EXIT "Usage: REMOVE_SELINUX_ENTRIES <entry1> [entry2 ...]"
 
-    [ -z "$filename" ] && ERROR_EXIT "Usage: REMOVE_SELINUX_ENTRY <filename>"
 
-    local file=""
-    local base
-
-
-    if base="$(GET_PARTITION_PATH system_ext 2>/dev/null)"; then
-        file="$(find "$base" -type f -name "$filename" 2>/dev/null | head -n1)"
+    local SYSTEM_EXT_PATH
+    if ! SYSTEM_EXT_PATH="$(GET_PARTITION_PATH system_ext 2>/dev/null)"; then
+        ERROR_EXIT "Failed to get system_ext partition path"
     fi
 
 
-    if [ -z "$file" ]; then
-        ERROR_EXIT "SELinux file '$filename' not found in system_ext"
-    fi
+    local CIL_NAME
+    CIL_NAME="$(head -n 1 "$WORK_DIR/vendor/etc/selinux/plat_sepolicy_vers.txt" 2>/dev/null)"
+    [ -z "$CIL_NAME" ] && ERROR_EXIT "Failed to read plat_sepolicy_vers.txt"
 
-    local e
-    for e in "$@"; do
-        sed -i "/($e)/d" "$file"
-        sed -i "/genfscon.*$e/d" "$file"
-        sed -i "/$e/d" "$file"
+
+    local VENDOR_API_LIST
+    VENDOR_API_LIST="$(find "$WORK_DIR/$SYSTEM_EXT_PATH/etc/selinux/mapping" -type f -printf "%f\n" 2>/dev/null | \
+                       sed '/.compat./d' | \
+                       sed 's/.cil//' | \
+                       sed 's/\./_/' | \
+                       sort)"
+
+
+    local MAPPING_CIL="$WORK_DIR/$SYSTEM_EXT_PATH/etc/selinux/mapping/$CIL_NAME.cil"
+    local SYSTEM_EXT_POLICY="$WORK_DIR/$SYSTEM_EXT_PATH/etc/selinux/system_ext_sepolicy.cil"
+    local PLAT_POLICY="$WORK_DIR/system/system/etc/selinux/plat_sepolicy.cil"
+    local VENDOR_VERSIONED="$WORK_DIR/vendor/etc/selinux/plat_pub_versioned.cil"
+
+
+    [ ! -f "$MAPPING_CIL" ]      && ERROR_EXIT "Mapping CIL file not found: $MAPPING_CIL"
+    [ ! -f "$VENDOR_VERSIONED" ] && ERROR_EXIT "Vendor versioned CIL not found: $VENDOR_VERSIONED"
+
+
+    local ENTRY API CIL_NAME_NORMALIZED
+    CIL_NAME_NORMALIZED="${CIL_NAME//./_}"
+
+    for ENTRY in "$@"; do
+        # Check if entry exists in mapping file
+        if grep -q -F "($ENTRY)" "$MAPPING_CIL" || \
+           grep -q -F "${ENTRY}_${CIL_NAME_NORMALIZED}" "$MAPPING_CIL"; then
+
+            # Verify if entry is supported by target device vendor policy
+            if ! grep -q -F "(type $ENTRY)" "$VENDOR_VERSIONED"; then
+                LOG "- \"$ENTRY\" SELinux entry not supported. Removing"
+
+                # Remove base pattern from mapping CIL
+                sed -i "/($ENTRY)/d" "$MAPPING_CIL"
+
+                # Remove all API versioned variants from mapping CIL
+                for API in $VENDOR_API_LIST; do
+                    sed -i "/${ENTRY}_${API}/d" "$MAPPING_CIL"
+                done
+
+                # Remove genfscon entries from system_ext_sepolicy.cil
+                if [ -f "$SYSTEM_EXT_POLICY" ] && grep -q "genfscon.*$ENTRY" "$SYSTEM_EXT_POLICY"; then
+                    sed -i "/genfscon.*$ENTRY/d" "$SYSTEM_EXT_POLICY"
+                fi
+
+                # Remove genfscon entries from plat_sepolicy.cil
+                if [ -f "$PLAT_POLICY" ] && grep -q "genfscon.*$ENTRY" "$PLAT_POLICY"; then
+                    sed -i "/genfscon.*$ENTRY/d" "$PLAT_POLICY"
+                fi
+            else
+                LOG "- \"$ENTRY\" SELinux entry is supported by device. Skipping"
+            fi
+        fi
     done
 }
