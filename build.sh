@@ -23,7 +23,7 @@ export BASH_WARN_ON_NULL=0
 ASTROROM="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export ASTROROM
 
-ROM_VERSION="2.0.7"
+ROM_VERSION="2.0.8"
 
 BETA_ASSERT=0
 BETA_OTA_URL=""
