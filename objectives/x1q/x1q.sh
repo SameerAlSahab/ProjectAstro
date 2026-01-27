@@ -24,13 +24,6 @@ IMEI="353718681151510"
 # Need flash erofs supported kernel
 FILESYSTEM="erofs"
 
-
-# Specs
-DEVICE_HAVE_SPEN_SUPPORT=false
-DEVICE_HAVE_QHD_PANEL=true
-DEVICE_HAVE_HIGH_REFRESH_RATE=true
-DEVICE_HAVE_ESIM_SUPPORT=true
-
 # Custom props (If not used , it will use values from stock rom)
 DEVICE_DISPLAY_HFR_MODE=3 # S20 5G supports adaptive refresh rate
 DEVICE_DISPLAY_REFRESH_RATE_VALUES_HZ="30,48,60,96,120"

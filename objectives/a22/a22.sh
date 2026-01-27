@@ -18,14 +18,8 @@ EXTRA_CSC=""
 EXTRA_IMEI=""
 
 # External
-FILESYSTEM=ext4
+FILESYSTEM=erofs
 
-# Specs
-DEVICE_HAVE_SPEN_SUPPORT=false
-DEVICE_HAVE_QHD_PANEL=false
-DEVICE_HAVE_HIGH_REFRESH_RATE=true
-SUPPORT_HAPTIC_AUDIO_VIBRATOR=false
-DEVICE_HAVE_ESIM_SUPPORT=false
 
 # Custom props (If not used , it will use values from stock rom)
 DEVICE_DISPLAY_HFR_MODE="2" # Supports adaptive refresh rate mode (60-90)

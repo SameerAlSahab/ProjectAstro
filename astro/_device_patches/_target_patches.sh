@@ -40,7 +40,11 @@ if [[ "$MODEL" == "$STOCK_MODEL" ]]; then
     fi
 
 else
-    for f in */*.sh; do [ -f "$f" ] && source "$f"; done
+    for patches in "$SCRPATH"/*/*.sh; do
+    if [[ -f "$patches" ]]; then
+        EXEC_SCRIPT "$patches" "$MARKER_FILE"
+    fi
+done
     # Set source model as new prop
     BPROP "system" "ro.product.astro.model" "$STOCK_MODEL"
 
