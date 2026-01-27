@@ -9,9 +9,9 @@ STOCK_CSC="KOO"
 STOCK_IMEI="355995110205095"
 
 # The firmware to be used as source
-MODEL="SM-S908U1"
-CSC="ATT"
-IMEI="359185441860000"
+MODEL="SM-G990B"
+CSC="EUX"
+IMEI="353718681151510"
 
 # Extra firmware which is optional
 #EXTRA_MODEL=""
