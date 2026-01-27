@@ -130,7 +130,9 @@ done
 
 
     if [[ -n "$DEVICE_ACTUAL_MODEL" ]]; then
-        STOCK_MODEL="$DEVICE_ACTUAL_MODEL"
+        DEVICE_MODEL="$DEVICE_ACTUAL_MODEL"
+      else
+        DEVICE_MODEL="$STOCK_MODEL"
     fi
 
 export SEC_FLOATING_FEATURE_FILE="$WORKSPACE/system/system/etc/floating_feature.xml"
