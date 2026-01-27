@@ -158,22 +158,22 @@ REMOVE_SELINUX_ENTRIES() {
 
 
     local CIL_NAME
-    CIL_NAME="$(head -n 1 "$WORK_DIR/vendor/etc/selinux/plat_sepolicy_vers.txt" 2>/dev/null)"
+    CIL_NAME="$(head -n 1 "$WORKSPACE/vendor/etc/selinux/plat_sepolicy_vers.txt" 2>/dev/null)"
     [ -z "$CIL_NAME" ] && ERROR_EXIT "Failed to read plat_sepolicy_vers.txt"
 
 
     local VENDOR_API_LIST
-    VENDOR_API_LIST="$(find "$WORK_DIR/$SYSTEM_EXT_PATH/etc/selinux/mapping" -type f -printf "%f\n" 2>/dev/null | \
+    VENDOR_API_LIST="$(find "$SYSTEM_EXT_PATH/etc/selinux/mapping" -type f -printf "%f\n" 2>/dev/null | \
                        sed '/.compat./d' | \
                        sed 's/.cil//' | \
                        sed 's/\./_/' | \
                        sort)"
 
 
-    local MAPPING_CIL="$WORK_DIR/$SYSTEM_EXT_PATH/etc/selinux/mapping/$CIL_NAME.cil"
-    local SYSTEM_EXT_POLICY="$WORK_DIR/$SYSTEM_EXT_PATH/etc/selinux/system_ext_sepolicy.cil"
-    local PLAT_POLICY="$WORK_DIR/system/system/etc/selinux/plat_sepolicy.cil"
-    local VENDOR_VERSIONED="$WORK_DIR/vendor/etc/selinux/plat_pub_versioned.cil"
+    local MAPPING_CIL="$SYSTEM_EXT_PATH/etc/selinux/mapping/$CIL_NAME.cil"
+    local SYSTEM_EXT_POLICY="$SYSTEM_EXT_PATH/etc/selinux/system_ext_sepolicy.cil"
+    local PLAT_POLICY="$WORKSPACE/system/system/etc/selinux/plat_sepolicy.cil"
+    local VENDOR_VERSIONED="$WORKSPACE/vendor/etc/selinux/plat_pub_versioned.cil"
 
 
     [ ! -f "$MAPPING_CIL" ]      && ERROR_EXIT "Mapping CIL file not found: $MAPPING_CIL"

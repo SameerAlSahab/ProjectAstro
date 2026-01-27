@@ -52,50 +52,33 @@ ADD_CONTEXT() {
     local PARTITION="$1"
     local FILE_PATH="$2"
     local TYPE="$3"
-
     (( $# < 3 )) && ERROR_EXIT "USAGE: ADD_CONTEXT <PARTITION> <FILE_PATH> <TYPE>"
-
     local CONTEXT_FILE="${CONFIG_DIR}/${PARTITION}_file_contexts"
-
     FILE_PATH="${FILE_PATH#/}"
-
     local FULL_PATH="/${PARTITION}/${FILE_PATH}"
-
     TYPE="${TYPE%%:s0}"
     local CONTEXT="u:object_r:${TYPE}:s0"
 
     # Escape dots for file_contexts regex
     local ESCAPED_PATH
     ESCAPED_PATH="$(printf '%s\n' "$FULL_PATH" | sed 's/\./\\./g')"
-
     local EXACT_ENTRY="${ESCAPED_PATH} ${CONTEXT}"
-
     mkdir -p -- "$(dirname -- "$CONTEXT_FILE")"
     touch -- "$CONTEXT_FILE"
+
 
     grep -qxF -- "$EXACT_ENTRY" "$CONTEXT_FILE" && return 0
 
     local TMP_FILE
     TMP_FILE="$(mktemp)"
 
-    local REPLACED=0
-    local LINE
 
-    while IFS= read -r LINE || [[ -n "$LINE" ]]; do
-        if [[ "$LINE" =~ ^${ESCAPED_PATH}[[:space:]] ]]; then
-            if (( ! REPLACED )); then
-                printf '%s\n' "$EXACT_ENTRY" >> "$TMP_FILE"
-                REPLACED=1
-            fi
-            continue
-        fi
+    grep -vxF -e "^${ESCAPED_PATH}[[:space:]]" "$CONTEXT_FILE" > "$TMP_FILE" 2>/dev/null || true
+    printf '%s\n' "$EXACT_ENTRY" >> "$TMP_FILE"
 
-        printf '%s\n' "$LINE" >> "$TMP_FILE"
-    done < "$CONTEXT_FILE"
 
-    (( ! REPLACED )) && printf '%s\n' "$EXACT_ENTRY" >> "$TMP_FILE"
-
-    mv -- "$TMP_FILE" "$CONTEXT_FILE"
+    LC_ALL=C sort -u "$TMP_FILE" -o "$CONTEXT_FILE"
+    rm -f -- "$TMP_FILE"
 }
 
 
