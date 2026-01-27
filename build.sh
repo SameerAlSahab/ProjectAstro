@@ -190,27 +190,23 @@ done < <(
         ! -path "*.apk/*" \
         ! -path "*.jar/*" \
         -print0 | sort -z | while IFS= read -r -d '' file; do
-            dir="$(dirname "$file")"
 
+dir="$(dirname "$file")"
 
-            if [[ -f "$dir/.no" ]]; then
-                [[ "$(dirname "$file")" == "$dir" ]] || continue
-            fi
+parent="$dir"
+while [[ "$parent" != "$layer" && "$parent" != "/" ]]; do
+    if [[ -f "$parent/.no" ]]; then
+        if [[ "$dir" != "$parent" ]]; then
+            continue 2
+        fi
+        break
+    fi
+    parent="$(dirname "$parent")"
+done
 
-            parent="$dir"
-            skip=false
-            while [[ "$parent" != "$layer" && "$parent" != "/" ]]; do
-                if [[ -f "$parent/.no" ]]; then
-                    skip=true
-                    break
-                fi
-                parent="$(dirname "$parent")"
-            done
+printf '%s\0' "$file"
 
-            $skip && continue
-
-            printf '%s\0' "$file"
-        done
+done
 )
 
 
@@ -249,8 +245,6 @@ done < <(find "$layer" -type f \( -name "*_file_contexts" -o -name "*_fs_config"
 
     _APKTOOL_PATCH || ERROR_EXIT "APK/JAR patching failed"
     REPACK_ROM "$FILESYSTEM" || ERROR_EXIT "Repack failed"
-
-    rm -rf "$WORKSPACE"
 
     LOG_END "Build completed for $device"
 }
