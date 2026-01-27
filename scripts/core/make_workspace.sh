@@ -92,7 +92,8 @@ EOF
     WORKSPACE="$BUILD_DIRECTORY"
     CONFIG_DIR="$CONFIG_DIRECTORY"
 
-    LOG_INFO "Checking VNDK version..."
+
+LOG_INFO "Checking VNDK version..."
 
     [[ -z "$DEVICE_VNDK_VERSION" ]] && ERROR_EXIT "VNDK version not defined."
 
@@ -101,20 +102,22 @@ EOF
 
     local VINTF_MANIFEST="$SYSTEM_EXT_PATH/etc/vintf/manifest.xml"
     local CURRENT_VNDK=""
-    local VNDK_NEEDS_PATCH=true
+    local VNDK_NEEDS_PATCH=false
+
 
     if [[ -f "$VINTF_MANIFEST" ]]; then
         CURRENT_VNDK=$(grep -A2 -i "<vendor-ndk>" "$VINTF_MANIFEST" \
             | grep -oP '<version>\K[0-9]+' | head -1)
-
-        if [[ "$CURRENT_VNDK" == "$DEVICE_VNDK_VERSION" ]]; then
-            LOG_INFO "VNDK matches ($CURRENT_VNDK). Skipping VNDK patch."
-            VNDK_NEEDS_PATCH=false
-        fi
     fi
 
-    if [[ "$VNDK_NEEDS_PATCH" == "true" ]]; then
-        LOG_WARN "VNDK mismatch (Current: ${CURRENT_VNDK:-None}, Target: $DEVICE_VNDK_VERSION). Patching..."
+    if [[ "$CURRENT_VNDK" != "$DEVICE_VNDK_VERSION" ]]; then
+        VNDK_NEEDS_PATCH=true
+    else
+        LOG_INFO "VNDK matches ($CURRENT_VNDK). Skipping VNDK patch."
+    fi
+
+    if $VNDK_NEEDS_PATCH; then
+        LOG_WARN "VNDK mismatch or missing (Current: ${CURRENT_VNDK:-None}, Target: $DEVICE_VNDK_VERSION). Patching..."
 
         local APEX_PREFIX="com.android.vndk.v${DEVICE_VNDK_VERSION}.apex"
         local SOURCE_FILE="$BLOBS_DIR/vndk/v${DEVICE_VNDK_VERSION}/${APEX_PREFIX}"
@@ -124,6 +127,26 @@ EOF
 
         ADD "system_ext" "$SOURCE_FILE" "$TARGET_APEX_PATH" "VNDK v${DEVICE_VNDK_VERSION} APEX" \
             || ERROR_EXIT "Failed to set correct vndk version"
+
+
+        if [[ ! -f "$VINTF_MANIFEST" ]]; then
+            LOG_WARN "Manifest file not found at $VINTF_MANIFEST. Cannot patch XML."
+        else
+            if [[ -z "$CURRENT_VNDK" ]]; then
+
+                LOG_INFO "Manifest missing ndk tag. Adding it..."
+
+                sed -i "/<\/manifest>/i \\
+    <vendor-ndk>\\
+        <version>$DEVICE_VNDK_VERSION</version>\\
+    </vendor-ndk>" "$VINTF_MANIFEST"
+
+            else
+                LOG_INFO "Updating existing manifest version from $CURRENT_VNDK to $DEVICE_VNDK_VERSION..."
+
+                sed -i "s|<version>$CURRENT_VNDK</version>|<version>$DEVICE_VNDK_VERSION</version>|g" "$VINTF_MANIFEST"
+            fi
+        fi
 
         LOG_END "VNDK patching completed."
     fi
