@@ -136,6 +136,101 @@ GET_FF_VAL() {
 }
 
 
+# Usage: CF "TAG_NAME" "ATTRIBUTE=VALUE" ["ATTRIBUTE=VALUE" ...]
+CF() {
+    local TAG="$1"
+    shift
+    local CF_XML_FILE="${WORKSPACE}/system/system/cameradata/camera-feature.xml"
+
+
+    local tag_exists
+    tag_exists=$(xmlstarlet sel -t -c "//local[@name='$TAG']" "$CF_XML_FILE" 2>/dev/null || true)
+
+    if [[ $# -eq 0 ]] || [[ -z "$1" ]]; then
+        if [[ -n "$tag_exists" ]]; then
+            xmlstarlet ed -L -d "//local[@name='$TAG']" "$CF_XML_FILE"
+            LOG "Deleted camera feature tag: $TAG"
+        else
+            LOG_INFO "Tag $TAG doesn't exist, nothing to delete"
+        fi
+        return
+    fi
+
+    declare -A ATTRS
+    local delete_mode=false
+
+    for arg in "$@"; do
+        if [[ "$arg" == *"="* ]]; then
+            local attr_name="${arg%%=*}"
+            local attr_value="${arg#*=}"
+
+
+            if [[ -z "$attr_value" ]]; then
+                ATTRS["$attr_name"]="__DELETE__"
+            else
+                ATTRS["$attr_name"]="$attr_value"
+            fi
+        fi
+    done
+
+
+    if [[ -z "$tag_exists" ]]; then
+        local attr_string=""
+        for attr in "${!ATTRS[@]}"; do
+            if [[ "${ATTRS[$attr]}" != "__DELETE__" ]]; then
+                attr_string+=" $attr=\"${ATTRS[$attr]}\""
+            fi
+        done
+
+        xmlstarlet ed -L \
+            -s '/resources' -t elem -n "local" \
+            -i '//local[not(@name)]' -t attr -n "name" -v "$TAG" \
+            "$CF_XML_FILE"
+
+
+        for attr in "${!ATTRS[@]}"; do
+            if [[ "${ATTRS[$attr]}" != "__DELETE__" ]]; then
+                xmlstarlet ed -L \
+                    -i "//local[@name='$TAG']" -t attr -n "$attr" -v "${ATTRS[$attr]}" \
+                    "$CF_XML_FILE"
+            fi
+        done
+
+        LOG "Created camera feature: $TAG with attributes"
+    else
+
+        for attr in "${!ATTRS[@]}"; do
+            local current_value
+            current_value=$(xmlstarlet sel -t -v "//local[@name='$TAG']/@$attr" "$CF_XML_FILE" 2>/dev/null || true)
+
+            if [[ "${ATTRS[$attr]}" == "__DELETE__" ]]; then
+
+                if [[ -n "$current_value" ]]; then
+                    xmlstarlet ed -L -d "//local[@name='$TAG']/@$attr" "$CF_XML_FILE"
+                    LOG "Deleted attribute $attr from $TAG"
+                fi
+            else
+
+                if [[ -n "$current_value" ]]; then
+                    if [[ "$current_value" != "${ATTRS[$attr]}" ]]; then
+                        xmlstarlet ed -L -u "//local[@name='$TAG']/@$attr" -v "${ATTRS[$attr]}" "$CF_XML_FILE"
+                        LOG "Updated $TAG: $attr=${ATTRS[$attr]}"
+                    else
+                        LOG_INFO "Unchanged: $TAG $attr already set to ${ATTRS[$attr]}"
+                    fi
+                else
+                    xmlstarlet ed -L -i "//local[@name='$TAG']" -t attr -n "$attr" -v "${ATTRS[$attr]}" "$CF_XML_FILE"
+                    LOG "Added attribute to $TAG: $attr=${ATTRS[$attr]}"
+                fi
+            fi
+        done
+    fi
+}
+
+alias CAMERA_FEATURE=CF
+
+
+
 
 #
 # Usage: _GET_PROP_PATHS <DIRECTORY> <partition>
