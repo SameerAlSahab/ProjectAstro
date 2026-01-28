@@ -62,15 +62,23 @@
 
 # virtual methods
 .method public final resetBrightnessToDefault()V
-    .locals 1
+    .locals 3
 
-    iget-object p0, p0, Lcom/android/systemui/doze/DozeScreenBrightness;->mDozeHost:Lcom/android/systemui/doze/DozeHost;
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeScreenBrightness;->mDozeHost:Lcom/android/systemui/doze/DozeHost;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    check-cast p0, Lcom/android/systemui/statusbar/phone/DozeServiceHost;
+    check-cast v0, Lcom/android/systemui/statusbar/phone/DozeServiceHost;
 
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/DozeServiceHost;->setAodDimmingScrim(F)V
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/DozeServiceHost;->setAodDimmingScrim(F)V
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeScreenBrightness;->mDozeService:Lcom/android/systemui/doze/DozeMachine$Service;
+
+    iget v1, p0, Lcom/android/systemui/doze/AODScreenBrightness;->mDozeMode:I
+
+    const/4 v2, -0x1
+
+    invoke-interface {v0, v1, v2}, Lcom/android/systemui/doze/DozeMachine$Service;->semSetDozeScreenBrightness(II)V
 
     return-void
 .end method
@@ -120,7 +128,7 @@
 
     iget-object p0, p0, Lcom/android/systemui/doze/DozeScreenBrightness;->mDozeHost:Lcom/android/systemui/doze/DozeHost;
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    const/4 p1, 0x0    # 0.0f
 
     check-cast p0, Lcom/android/systemui/statusbar/phone/DozeServiceHost;
 
@@ -209,11 +217,32 @@
 
     :cond_6
     :goto_3
-    iget-object p0, p0, Lcom/android/systemui/doze/DozeScreenBrightness;->mDozeService:Lcom/android/systemui/doze/DozeMachine$Service;
 
-    const/16 p3, 0xFF
+    const/4 v4, 0x0
+
+    if-ge p3, v4, :cond_boost
+
+    const/16 p3, 0xA
+
+    :cond_boost
+
+    mul-int/lit8 p3, p3, 0x6
+
+    const/16 v4, 0x19
+    if-ge p3, v4, :cond_max
+    move p3, v4
+
+    :cond_max
+
+    const/16 v4, 0xFF
+    if-le p3, v4, :cond_clamp
+    move p3, v4
+
+    :cond_clamp
+
+    iget-object p0, p0, Lcom/android/systemui/doze/DozeScreenBrightness;->mDozeService:Lcom/android/systemui/doze/DozeMachine$Service;
 
     invoke-interface {p0, p1, p3}, Lcom/android/systemui/doze/DozeMachine$Service;->semSetDozeScreenBrightness(II)V
 
-return-void
+    return-void
 .end method
