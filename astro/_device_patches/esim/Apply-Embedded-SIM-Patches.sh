@@ -30,7 +30,6 @@ if GET_FEATURE SOURCE_HAVE_ESIM_SUPPORT; then
             REMOVE "system" "etc/sysconfig/preinstalled-packages-com.samsung.euicc.xml"
 
             FF "COMMON_CONFIG_EMBEDDED_SIM_SLOTSWITCH" ""
-
         LOG_END "eSIM blobs removed"
     fi
 else
