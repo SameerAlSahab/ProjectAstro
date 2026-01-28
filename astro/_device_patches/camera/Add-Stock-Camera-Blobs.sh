@@ -16,7 +16,7 @@
 #
 
 
-if ! find "$OBJECTIVE" -type f -name "camera-feature.xml" | grep -q .; then
+
 
 
 # Other Device based camera fixes can be found on objectives and platform folder
@@ -24,15 +24,17 @@ REMOVE "system" "cameradata/portrait_data"
 REMOVE "system" "cameradata/singletake"
 
 LOG_INFO "Adding stock camera properties.."
-ADD_FROM_FW "stock" "system" "cameradata"
+ADD_FROM_FW "stock" "system" "cameradata/portrait_data"
+ADD_FROM_FW "stock" "system" "cameradata/singletake"
 
-
+if ! find "$OBJECTIVE" -type f -name "camera-feature.xml" | grep -q .; then
+ADD_FROM_FW "stock" "system" "cameradata/camera-feature.xml"
 fi
 
 # Remove source camera props and add stock only
 if ! find "$OBJECTIVE" -type f -name "floating_feature.xml" | grep -q .; then
-xmlstarlet ed -L -d '//*[starts-with(name(), "SEC_FLOATING_FEATURE_CAMERA")]' "$SEC_FLOATING_FEATURE_FILE"
 
+xmlstarlet ed -L -d '//*[starts-with(name(), "SEC_FLOATING_FEATURE_CAMERA")]' "$SEC_FLOATING_FEATURE_FILE"
 
 xmlstarlet sel -t \
     -m '//*[starts-with(name(), "SEC_FLOATING_FEATURE_CAMERA")]' \

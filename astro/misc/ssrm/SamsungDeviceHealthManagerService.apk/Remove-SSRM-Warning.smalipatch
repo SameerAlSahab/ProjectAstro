@@ -1,0 +1,13 @@
+# Hints: I got it & SSRM Warning string
+# https://github.com/ShaDisNX255/NcX_Stock/commit/20e007bd742f25d4a2cac204deec575f16d3a012
+# This warning also appears when there are a few edits to the GPU freq table in the kernel
+
+FILE smali/LU1/T.smali
+REPLACE .method public static D(Landroid/content/Context;Ljava/lang/String;)V
+.locals 1
+
+const/4 v0, 0x0
+
+return-void
+
+END
