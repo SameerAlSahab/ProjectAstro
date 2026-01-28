@@ -20,8 +20,8 @@
 # NOTE This is not completed yet.
 
 # Set target model name
-FF "SETTINGS_CONFIG_BRAND_NAME" "$MODEL_NAME"
-FF "SYSTEM_CONFIG_SIOP_POLICY_FILENAME" "$SIOP_POLICY_NAME"
+FF_IF_DIFF "stock" "SETTINGS_CONFIG_BRAND_NAME"
+FF_IF_DIFF "stock" "SYSTEM_CONFIG_SIOP_POLICY_FILENAME"
 
 
 ASTRO_CODENAME="$(GET_PROP "system" "ro.product.system.name" "stock")"
@@ -33,26 +33,16 @@ if [[ -n "$ASTRO_CODENAME" ]]; then
 fi
 
 
-if [[ "$MODEL" == "$STOCK_MODEL" ]]; then
-    if GET_FEATURE DEVICE_HAVE_QHD_PANEL; then
-     ADD_PATCH "framework.jar" "$SCRPATH/resolution/patches/Add-Dynamic-Resolution-Control.sh"
-     ADD_FROM_FW "pa3q" "system" "framework/gamemanager.jar"
-    fi
-
-else
-    for patches in "$SCRPATH"/*/*.sh; do
-    if [[ -f "$patches" ]]; then
-        EXEC_SCRIPT "$patches" "$MARKER_FILE"
-    fi
-done
     # Set source model as new prop
     BPROP "system" "ro.product.astro.model" "$STOCK_MODEL"
 
     # Edge lighting target corner radius
     BPROP "system" "ro.factory.model" "$STOCK_MODEL"
-fi
 
 
+# Display
+FF_IF_DIFF "stock" "COMMON_CONFIG_MDNIE_MODE"
+FF_IF_DIFF "stock" "LCD_SUPPORT_AMOLED_DISPLAY"
 
 
 

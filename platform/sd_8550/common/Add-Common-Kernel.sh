@@ -1,4 +1,5 @@
 #https://github.com/samsung-sm8550/kernel_samsung_sm8550-common
+if [[ "$CODENAME" != "b5q" ]]; then
     KERNEL_ZIP="$SCRPATH/common.zip"
 
     [[ -f "$KERNEL_ZIP" ]] || ERROR_EXIT "Kernel zip not found"
@@ -11,3 +12,4 @@
     [[ -f "$DIROUT/boot.img" ]] || ERROR_EXIT "boot.img extraction failed"
 
     LOG_INFO "Added common kernel."
+fi

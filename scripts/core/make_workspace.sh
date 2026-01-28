@@ -134,7 +134,7 @@ LOG_INFO "Checking VNDK version..."
         else
             if [[ -z "$CURRENT_VNDK" ]]; then
 
-                LOG_INFO "Manifest missing ndk tag. Adding it..."
+                LOG_INFO "Manifest missing <vendor-ndk> tag. Injecting it..."
 
                 sed -i "/<\/manifest>/i \\
     <vendor-ndk>\\
@@ -171,44 +171,18 @@ LOG_INFO "Checking VNDK version..."
     local SYSTEM_EXT_CONTEXTS="$CONFIG_DIR/system_file_contexts"
 
     if [[ "$CURRENT_LAYOUT" == "$STOCK_LAYOUT" ]]; then
-    LOG_INFO "System_ext layout matches target ($CURRENT_LAYOUT). Skipping layout patches."
-else
-    if [[ "$STOCK_LAYOUT" == "merged" ]]; then
-        LOG_INFO "Merging system_ext into system..."
+        LOG_INFO "System_ext layout matches target ($CURRENT_LAYOUT). Skipping layout patches."
+    else
+        if [[ "$STOCK_LAYOUT" == "merged" ]]; then
+            LOG_INFO "Merging system_ext into system..."
 
-        if [[ ! -d "$WORKSPACE/system/system/system_ext" ]]; then
-            rm -rf "$WORKSPACE/system/system_ext"
-            rm -f  "$WORKSPACE/system/system/system_ext"
+            if [[ ! -d "$WORKSPACE/system/system/system_ext" ]]; then
+                rm -rf "$WORKSPACE/system/system_ext"
+                rm -f  "$WORKSPACE/system/system/system_ext"
 
-            sed -i "/system_ext/d" "$SYSTEM_EXT_CONTEXTS"
-            sed -i "/system_ext/d" "$SYSTEM_EXT_CONFIG"
+                sed -i "/system_ext/d" "$SYSTEM_EXT_CONTEXTS"
+                sed -i "/system_ext/d" "$SYSTEM_EXT_CONFIG"
 
-            if [[ "${DEVICE_SINGLE_SYSTEM_IMAGE:-}" == "mssi" ]]; then
-                cp -a --preserve=all "$WORKSPACE/system_ext" "$WORKSPACE/system"
-
-                local TEMP_EXT_CONTEXTS="${CONFIG_DIR}/system_ext_file_contexts.tmp"
-                local TEMP_EXT_CONFIG="${CONFIG_DIR}/system_ext_fs_config.tmp"
-
-                grep -v '^/ u:object_r:system_file:s0$' "$CONFIG_DIR/system_ext_file_contexts" \
-                    | grep -v '^/system_ext u:object_r:system_file:s0$' \
-                    | grep -v '^/system_ext(.*)? u:object_r:system_file:s0$' \
-                    | grep -v '^/system_ext/ u:object_r:system_file:s0$' > "$TEMP_EXT_CONTEXTS"
-
-                grep -v '^/ 0 0 0755$' "$CONFIG_DIR/system_ext_fs_config" \
-                    | grep -v '^system_ext/ 0 0 0755$' \
-                    | grep -v '^system_ext/lost+found 0 0 0755$' > "$TEMP_EXT_CONFIG"
-
-                awk '{print "/system" $0}' "$TEMP_EXT_CONTEXTS" > "${TEMP_EXT_CONTEXTS}.fixed"
-                mv "${TEMP_EXT_CONTEXTS}.fixed" "$TEMP_EXT_CONTEXTS"
-
-                awk '{print "system/" $0}' "$TEMP_EXT_CONFIG" > "${TEMP_EXT_CONFIG}.fixed"
-                mv "${TEMP_EXT_CONFIG}.fixed" "$TEMP_EXT_CONFIG"
-
-                cat "$TEMP_EXT_CONTEXTS" >> "$SYSTEM_EXT_CONTEXTS"
-                cat "$TEMP_EXT_CONFIG" >> "$SYSTEM_EXT_CONFIG"
-                rm -f "$TEMP_EXT_CONTEXTS" "$TEMP_EXT_CONFIG"
-
-            else
                 cp -a --preserve=all "$WORKSPACE/system_ext" "$WORKSPACE/system/system"
                 ln -sf "/system/system_ext" "$WORKSPACE/system/system_ext"
 
@@ -223,8 +197,7 @@ else
 
                 rm -rf "$WORKSPACE/system_ext"
             fi
-        fi
-    else
+        else
             LOG_INFO "Separating system_ext from system..."
 
             local SYSTEM_EXT_FS_CONFIG="$CONFIG_DIR/system_ext_fs_config"
@@ -261,6 +234,7 @@ else
         fi
     fi
 
+
     # Overlay rro
     [ -f "$WORKSPACE/product/overlay/product_overlay.apk" ] || \
     (mv "$WORKSPACE/product/overlay"/framework-res*.apk "$WORKSPACE/product/overlay/product_overlay.apk" || ERROR_EXIT "Cannot process rro product overlay.")
@@ -273,6 +247,7 @@ else
 
     LOG_END "Build environment ready at $BUILD_DIRECTORY"
 }
+
 
 
 
