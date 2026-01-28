@@ -1,67 +1,7 @@
-.class public Lcom/android/systemui/doze/AODScreenBrightness;
-.super Lcom/android/systemui/doze/DozeScreenBrightness;
-.source "qb/103929649 889f5446dfb1e73ddc15396de8f8b7460e4df1dbb344aa7683906a5a3f982682"
+AUTHOR Sameer Al Sahab 
 
-
-# instance fields
-.field public mBrightnessValues:[I
-
-.field public mDozeMode:I
-
-
-# direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/doze/DozeMachine$Service;Lcom/android/systemui/util/sensors/AsyncSensorManager;[Ljava/util/Optional;Lcom/android/systemui/doze/DozeHost;Landroid/os/Handler;Lcom/android/systemui/doze/AlwaysOnDisplayPolicy;Lcom/android/systemui/keyguard/WakefulnessLifecycle;Lcom/android/systemui/statusbar/phone/DozeParameters;Lcom/android/systemui/statusbar/policy/DevicePostureController;Lcom/android/systemui/doze/DozeLog;Lcom/android/systemui/util/settings/SystemSettings;Landroid/hardware/display/DisplayManager;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Lcom/android/systemui/doze/DozeMachine$Service;",
-            "Lcom/android/systemui/util/sensors/AsyncSensorManager;",
-            "[",
-            "Ljava/util/Optional<",
-            "Landroid/hardware/Sensor;",
-            ">;",
-            "Lcom/android/systemui/doze/DozeHost;",
-            "Landroid/os/Handler;",
-            "Lcom/android/systemui/doze/AlwaysOnDisplayPolicy;",
-            "Lcom/android/systemui/keyguard/WakefulnessLifecycle;",
-            "Lcom/android/systemui/statusbar/phone/DozeParameters;",
-            "Lcom/android/systemui/statusbar/policy/DevicePostureController;",
-            "Lcom/android/systemui/doze/DozeLog;",
-            "Lcom/android/systemui/util/settings/SystemSettings;",
-            "Landroid/hardware/display/DisplayManager;",
-            ")V"
-        }
-    .end annotation
-
-    invoke-direct/range {p0 .. p13}, Lcom/android/systemui/doze/DozeScreenBrightness;-><init>(Landroid/content/Context;Lcom/android/systemui/doze/DozeMachine$Service;Lcom/android/systemui/util/sensors/AsyncSensorManager;[Ljava/util/Optional;Lcom/android/systemui/doze/DozeHost;Landroid/os/Handler;Lcom/android/systemui/doze/AlwaysOnDisplayPolicy;Lcom/android/systemui/keyguard/WakefulnessLifecycle;Lcom/android/systemui/statusbar/phone/DozeParameters;Lcom/android/systemui/statusbar/policy/DevicePostureController;Lcom/android/systemui/doze/DozeLog;Lcom/android/systemui/util/settings/SystemSettings;Landroid/hardware/display/DisplayManager;)V
-
-    const/4 p1, 0x1
-
-    const/16 p2, 0x61
-
-    filled-new-array {p1, p2}, [I
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/android/systemui/doze/AODScreenBrightness;->mBrightnessValues:[I
-
-    sget-boolean p1, Lcom/android/systemui/LsRune;->AOD_BRIGHTNESS_CONTROL:Z
-
-    if-eqz p1, :cond_0
-
-    const p1, 0x10002
-
-    iput p1, p0, Lcom/android/systemui/doze/AODScreenBrightness;->mDozeMode:I
-
-    :cond_0
-    return-void
-.end method
-
-
-# virtual methods
-.method public final resetBrightnessToDefault()V
+FILE smali_classes2/com/android/systemui/doze/AODScreenBrightness.smali
+REPLACE .method public final resetBrightnessToDefault()V
     .locals 3
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeScreenBrightness;->mDozeHost:Lcom/android/systemui/doze/DozeHost;
@@ -81,9 +21,8 @@
     invoke-interface {v0, v1, v2}, Lcom/android/systemui/doze/DozeMachine$Service;->semSetDozeScreenBrightness(II)V
 
     return-void
-.end method
-
-.method public final transitionTo(Lcom/android/systemui/doze/DozeMachine$State;Lcom/android/systemui/doze/DozeMachine$State;)V
+    
+REPLACE .method public final transitionTo(Lcom/android/systemui/doze/DozeMachine$State;Lcom/android/systemui/doze/DozeMachine$State;)V
     .locals 1
 
     sget-object p1, Lcom/android/systemui/doze/AODScreenBrightness$1;->$SwitchMap$com$android$systemui$doze$DozeMachine$State:[I
@@ -151,9 +90,8 @@
     invoke-virtual {p0}, Lcom/android/systemui/doze/AODScreenBrightness;->resetBrightnessToDefault()V
 
     return-void
-.end method
-
-.method public final updateDozeBrightness(III)V
+    
+REPLACE .method public final updateDozeBrightness(III)V
     .locals 5
 
     iget v0, p0, Lcom/android/systemui/doze/AODScreenBrightness;->mDozeMode:I
@@ -245,4 +183,5 @@
     invoke-interface {p0, p1, p3}, Lcom/android/systemui/doze/DozeMachine$Service;->semSetDozeScreenBrightness(II)V
 
     return-void
-.end method
+    
+END
