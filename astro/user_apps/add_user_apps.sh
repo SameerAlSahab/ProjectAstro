@@ -1,5 +1,5 @@
 # Via Browser
-LOG_BEGIN "Adding Via Browser"
+LOG_BEGIN "Downloading Via Browser"
 
 VIA_DIR="$WORKSPACE/system/system/preload/ViaBrowser"
 VIA_APK_URL="https://res.viayoo.com/v1/via-release.apk"

@@ -39,3 +39,37 @@ FF "CONTEXTSERVICE_ENABLE_SURVEY_MODE" ""
 
 # Netflix props
 BPROP_IF_DIFF "stock" "system" "ro.netflix.bsp_rev"
+
+# Nuke encryption
+LOG_BEGIN "Removing Samsung Encryption"
+
+    find "$WORKSPACE/vendor/etc" -type f -name "fstab*" | while read -r fstab; do
+
+        sed -i \
+            's/^\([^#].*\)fileencryption=[^,]*\(.*\)$/# &\n\1encryptable\2/' \
+            "$fstab"
+
+
+        sed -i \
+            's/^\([^#].*\)forceencrypt=[^,]*\(.*\)$/# &\n\1encryptable\2/' \
+            "$fstab"
+    done
+
+LOG_END
+
+LOG_BEGIN "Disabling stock recovery replacement..."
+
+BPROP "vendor" "ro.frp.pst" ""
+BPROP "product" "ro.frp.pst" ""
+
+FILES=(
+    "recovery-from-boot.p"
+    "bin/install-recovery.sh"
+    "etc/init/vendor_flash_recovery.rc"
+    "etc/recovery-resource.dat"
+)
+
+for f in "${FILES[@]}"; do
+    rm -f "$WORKSPACE/vendor/$f" 2>/dev/null
+done
+

@@ -92,6 +92,9 @@ EOF
     WORKSPACE="$BUILD_DIRECTORY"
     CONFIG_DIR="$CONFIG_DIRECTORY"
 
+    if ! GET_FEATURE DEVICE_HAVE_DONOR_SOURCE; then
+        GENERATE_CONFIG
+    fi
 
 LOG_INFO "Checking VNDK version..."
 
@@ -134,7 +137,7 @@ LOG_INFO "Checking VNDK version..."
         else
             if [[ -z "$CURRENT_VNDK" ]]; then
 
-                LOG_INFO "Manifest missing <vendor-ndk> tag. Injecting it..."
+                LOG_INFO "Manifest missing <vendor-ndk> tag. Adding it..."
 
                 sed -i "/<\/manifest>/i \\
     <vendor-ndk>\\
@@ -241,9 +244,6 @@ LOG_INFO "Checking VNDK version..."
 
     DEVICE_HAVE_DONOR_SOURCE=${DEVICE_HAVE_DONOR_SOURCE:-false}
 
-    if ! GET_FEATURE DEVICE_HAVE_DONOR_SOURCE; then
-        GENERATE_CONFIG
-    fi
 
     LOG_END "Build environment ready at $BUILD_DIRECTORY"
 }

@@ -164,7 +164,7 @@ REPLACE .method public final updateDozeBrightness(III)V
 
     :cond_boost
 
-    mul-int/lit8 p3, p3, 0x6
+    mul-int/lit8 p3, p3, 0x9
 
     const/16 v4, 0x19
     if-ge p3, v4, :cond_max
