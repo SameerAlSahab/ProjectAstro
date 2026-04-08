@@ -63,17 +63,17 @@ FILESYSTEM=ext4
 # DEVICE_MDNIE_MODE=""                          # Samsung mDnie color profile
 
 ### Audio
-# DEVICE_HAVE_DUAL_SPEAKER=""                   # true for Stereo, false for Mono
+DEVICE_HAVE_DUAL_SPEAKER="true"                   # true for Stereo, false for Mono
 
 ### Extra features
-# DEVICE_HAVE_SPEN_SUPPORT=""                   # Device have SPen support
-# DEVICE_HAVE_ESIM_SUPPORT=""                   # Device have esim support
+DEVICE_HAVE_SPEN_SUPPORT="true"                   # Device have SPen support
+DEVICE_HAVE_ESIM_SUPPORT="true"                   # Device have esim support
 # DEVICE_HAVE_NPU=""                            # Device have NPU
 
 ### Build Properties
 # DEVICE_FIRST_API_VERSION=""                   # ro.vendor.build.version.release
 # DEVICE_FIRST_SDK_VERSION=""                   # ro.vendor.build.version.sdk
-# DEVICE_VNDK_VERSION=""                        # VNDK version
+DEVICE_VNDK_VERSION="30"                        # VNDK version
 # DEVICE_SINGLE_SYSTEM_IMAGE=""                 # ro.product.system.device
 
 ### External
