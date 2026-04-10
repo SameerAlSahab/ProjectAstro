@@ -30,9 +30,9 @@ STOCK_CSC="XSG"
 STOCK_IMEI="353249141751335"
 
 # Source firmware details for download
-MODEL="SM-F936B"
+MODEL="SM-F946B"
 CSC="XSG"
-IMEI="351843261422552"
+IMEI="357509153259931"
 
 # Extra firmware (Optional) details for download
 EXTRA_MODEL=""
