@@ -19,7 +19,7 @@
 PARTITION_HEADROOM_PERCENT=9
 MINIMUM_RESIZE_THRESHOLD_KB=2048
 # Optics is very tiny and need much extra space to repack fine.
-OPTICS_PARTITION_EXTRA_SIZE_KB=5120
+OPTICS_PARTITION_EXTRA_SIZE_KB=51200
 
 REPACK_PARTITION()
 {
@@ -93,7 +93,13 @@ REPACK_PARTITION()
 
             # Build ext4 image using mke2fs, populate with e2fsdroid, and then make size minimum as possible
             # https://android.googlesource.com/platform/prebuilts/fullsdk-linux/platform-tools/+/83a183b4bced4377eb5817074db82885cfcae393/e2fsdroid
-            local BUILD_COMMAND="$PREBUILTS/android-tools/mke2fs.android -t ext4 -b $EXT4_BLOCK_SIZE -L '$PARTITION_MOUNT_POINT' -O ^has_journal '$OUTPUT_DIR/$PARTITION_NAME.img' $EXT4_BLOCK_COUNT"
+local BUILD_COMMAND="MKE2FS_CONFIG=/tmp/mke2fs.conf $PREBUILTS/android-tools/mke2fs.android \
+-t ext4 \
+-b $EXT4_BLOCK_SIZE \
+-L '$PARTITION_MOUNT_POINT' \
+-O sparse_super,filetype,resize_inode,dir_index,ext_attr,^has_journal \
+'$OUTPUT_DIR/$PARTITION_NAME.img' \
+$EXT4_BLOCK_COUNT"
 
             BUILD_COMMAND+=" && $PREBUILTS/android-tools/e2fsdroid -e -T 1230735600 -C '$FS_CONFIG_FILE' -S '$FILE_CONTEXTS_FILE' -a '$PARTITION_MOUNT_POINT' -f '$FIRMWARE_WORK_DIR/$PARTITION_NAME' '$OUTPUT_DIR/$PARTITION_NAME.img'"
 

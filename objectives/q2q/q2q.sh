@@ -26,13 +26,13 @@ PLATFORM="sm8350"
 
 # Stock firmware details for download
 STOCK_MODEL="SM-F926B"
-STOCK_CSC="EUX"
+STOCK_CSC="XSG"
 STOCK_IMEI="353249141751335"
 
 # Source firmware details for download
-MODEL="SM-F926B"
-CSC="EUX"
-IMEI="353249141751335"
+MODEL="SM-F946B"
+CSC="XSG"
+IMEI="357509153259931"
 
 # Extra firmware (Optional) details for download
 EXTRA_MODEL=""
@@ -53,9 +53,9 @@ FILESYSTEM=ext4
 # DEVICE_SIOP_POLICY_FILENAME=""                # Thermal/SIOP policy filename
 
 ### Display
-  DEVICE_DISPLAY_HFR_MODE="2"                   # High Frame Rate Mode (0=60Hz)
+# DEVICE_DISPLAY_HFR_MODE="2"                   # High Frame Rate Mode (0=60Hz)
 # DEVICE_HAVE_HIGH_REFRESH_RATE=""              # Device have high refresh rate or not
-  DEVICE_DISPLAY_REFRESH_RATE_VALUES_HZ="60,120" # Supported rates by display (e.g., 60,120)
+# DEVICE_DISPLAY_REFRESH_RATE_VALUES_HZ="60,120" # Supported rates by display (e.g., 60,120)
 # DEVICE_DEFAULT_REFRESH_RATE=""                # Initial boot refresh rate
 # DEVICE_HAVE_QHD_PANEL=""                      # True if QHD display device
 # DEVICE_HAVE_AMOLED_DISPLAY=""                 # True if amoled display device
@@ -63,17 +63,17 @@ FILESYSTEM=ext4
 # DEVICE_MDNIE_MODE=""                          # Samsung mDnie color profile
 
 ### Audio
-# DEVICE_HAVE_DUAL_SPEAKER=""                   # true for Stereo, false for Mono
+# DEVICE_HAVE_DUAL_SPEAKER="true"                   # true for Stereo, false for Mono
 
 ### Extra features
-# DEVICE_HAVE_SPEN_SUPPORT=""                   # Device have SPen support
-# DEVICE_HAVE_ESIM_SUPPORT=""                   # Device have esim support
+# DEVICE_HAVE_SPEN_SUPPORT="true"                   # Device have SPen support
+# DEVICE_HAVE_ESIM_SUPPORT="true"                   # Device have esim support
 # DEVICE_HAVE_NPU=""                            # Device have NPU
 
 ### Build Properties
 # DEVICE_FIRST_API_VERSION=""                   # ro.vendor.build.version.release
 # DEVICE_FIRST_SDK_VERSION=""                   # ro.vendor.build.version.sdk
-# DEVICE_VNDK_VERSION=""                        # VNDK version
+# DEVICE_VNDK_VERSION="30"                        # VNDK version
 # DEVICE_SINGLE_SYSTEM_IMAGE=""                 # ro.product.system.device
 
 ### External
