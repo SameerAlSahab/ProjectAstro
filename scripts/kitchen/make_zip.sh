@@ -160,7 +160,7 @@ REPACK_ROM()
 {
     local TARGET_FILESYSTEM="$1"
 
-    mkdir -p "$ASTROROM/out"
+    mkdir -p "$ARCADEROM/out"
 
     for PART_DIR in "$WORKSPACE"/*/; do
         local NAME=$(basename "$PART_DIR")

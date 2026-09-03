@@ -271,7 +271,7 @@ BPROP()
     local PROPERTY_TAG="$2"
     local PROPERTY_VALUE="$3"
 
-    local ASTROROM_MARKER="# Added by AstroROM [scripts/Internal/props.sh]"
+    local ARCADEROM_MARKER="# Added by AstroROM [scripts/Internal/props.sh]"
     local END_OF_FILE_MARKER="# end of file"
     local RESOLVED_PROP_FILE
 
@@ -308,8 +308,8 @@ BPROP()
     else
         local INSERT_CONTENT=""
 
-        if ! grep -Fq "$ASTROROM_MARKER" "$TEMP_PROP_FILE"; then
-            INSERT_CONTENT="${ASTROROM_MARKER}\n"
+        if ! grep -Fq "$ARCADEROM_MARKER" "$TEMP_PROP_FILE"; then
+            INSERT_CONTENT="${ARCADEROM_MARKER}\n"
         fi
 
         INSERT_CONTENT="${INSERT_CONTENT}${PROPERTY_TAG}=${PROPERTY_VALUE}"

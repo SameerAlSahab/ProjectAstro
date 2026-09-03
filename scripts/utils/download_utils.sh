@@ -17,7 +17,7 @@
 
 
 # [
-FW_DIR="${ASTROROM}/firmware"
+FW_DIR="${ARCADEROM}/firmware"
 FW_BASE="${FW_DIR}/downloaded"
 
 

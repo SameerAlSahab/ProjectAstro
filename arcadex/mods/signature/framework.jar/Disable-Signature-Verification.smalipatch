@@ -1,0 +1,14 @@
+# https://github.com/ShaDisNX255/NcX_Stock/commit/e9fca1cedf2405c9f84dc2ee4aafa018e59de464
+# https://forum.xda-developers.com/t/mods-samsung-not-android-mods-collection-exynos.3772017/post-87773529
+# https://forum.xda-developers.com/t/mods-samsung-not-android-mods-collection-exynos.3772017/post-87773543
+
+
+FILE android/util/apk/ApkSignatureVerifier.smali
+REPLACE .method public static blacklist getMinimumSignatureSchemeVersionForTargetSdk(I)I
+    .locals 1
+
+     const/4 v0, 0x1
+ 
+     return v0
+
+END

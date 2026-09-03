@@ -22,9 +22,9 @@ INIT_BUILD_ENV()
     STOCK_FW="${WORKDIR}/${STOCK_MODEL}"
     EXTRA_FW="${WORKDIR}/${EXTRA_MODEL}"
 
-    setfacl -R -m u:"${SUDO_USER:-$(whoami)}":rwx "$ASTROROM"
+    setfacl -R -m u:"${SUDO_USER:-$(whoami)}":rwx "$ARCADEROM"
 
-    setfacl -R -d -m u:"${SUDO_USER:-$(whoami)}":rwx "$ASTROROM"
+    setfacl -R -d -m u:"${SUDO_USER:-$(whoami)}":rwx "$ARCADEROM"
 
     EXTRACT_ROM || ERROR_EXIT "Firmware extraction failed."
 
@@ -34,7 +34,7 @@ INIT_BUILD_ENV()
 
 CREATE_WORKSPACE()
 {
-    local WORKSPACE="$ASTROROM/workspace"
+    local WORKSPACE="$ARCADEROM/workspace"
     local CONFIG_DIR="$WORKSPACE/config"
     local WORKSPACE_MARKER="$WORKSPACE/.workspace"
 

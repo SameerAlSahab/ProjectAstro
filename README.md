@@ -1,24 +1,24 @@
 
-## About AstroROM
+## About ProjectArcadeX
 
-AstroROM is an independent ROM project designed with a unique approach to firmware modification. Unlike traditional ROM projects, AstroROM automatically adapts and patches any Samsung ROM, regardless of device model or firmware version. Simply match the GitHub branch to your ui version, and AstroROM handles the rest.
+ProjectArcadeXX is an independent ROM project designed with a unique approach to firmware modification. Unlike traditional ROM projects, AstroROM automatically adapts and patches any Samsung ROM, regardless of device model or firmware version. Simply match the GitHub branch to your ui version, and AstroROM handles the rest.
 
 ### Project Aim
 
 To create a universal, hassle-free ROM modification solution that will auto patch any samsung firmware and create a flashable zip.
 
-![Logo](readme/astro_banner.png)
+
 
 <p align="center">
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SameerAlSahab/ProjectAstro?style=for-the-badge&logo=github"/></a>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/commits/ui-8.0"><img src="https://img.shields.io/github/last-commit/SameerAlSahab/ProjectAstro/ui-8.0?style=for-the-badge"/></a>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/stargazers"><img src="https://img.shields.io/github/stars/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/network/members"><img src="https://img.shields.io/github/forks/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectArcadeX/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SameerAlSahab/ProjectArcadeX?style=for-the-badge&logo=github"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectArcadeX/commits/ui-8.0"><img src="https://img.shields.io/github/last-commit/SameerAlSahab/ProjectArcadeX/ui-8.0?style=for-the-badge"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectArcadeX/stargazers"><img src="https://img.shields.io/github/stars/SameerAlSahab/ProjectArcadeX?style=for-the-badge"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectArcadeX/network/members"><img src="https://img.shields.io/github/forks/SameerAlSahab/ProjectArcadeX?style=for-the-badge"/></a>
   <br>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/actions"><img src="https://img.shields.io/github/actions/workflow/status/SameerAlSahab/ProjectAstro/build-rom.yml?style=for-the-badge"/></a>
-  <img src="https://img.shields.io/github/contributors/SameerAlSahab/ProjectAstro?style=for-the-badge"/>
-  <img src="https://img.shields.io/github/issues/SameerAlSahab/ProjectAstro?style=for-the-badge"/>
-  <a href="https://github.com/SameerAlSahab/ProjectAstro/watchers"><img src="https://img.shields.io/github/watchers/SameerAlSahab/ProjectAstro?style=for-the-badge"/></a>
+  <a href="https://github.com/SameerAlSahab/ProjectArcadeX/actions"><img src="https://img.shields.io/github/actions/workflow/status/SameerAlSahab/ProjectArcadeX/build-rom.yml?style=for-the-badge"/></a>
+  <img src="https://img.shields.io/github/contributors/SameerAlSahab/ProjectArcadeX?style=for-the-badge"/>
+  <img src="https://img.shields.io/github/issues/SameerAlSahab/ProjectArcadeX?style=for-the-badge"/>
+  <a href="https://github.com/SameerAlSahab/ProjectArcadeX/watchers"><img src="https://img.shields.io/github/watchers/SameerAlSahab/ProjectArcadeX?style=for-the-badge"/></a>
 </p>
 
 ---
@@ -26,7 +26,7 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 ## ✨ Features
 
 ###  AI
-- All AI features from Galaxy S25 Ultra
+- All AI features from Galaxy S26 Ultra
 
 ### Misc
 - All flagship features 

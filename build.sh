@@ -17,8 +17,8 @@
 
 set -o pipefail
 
-ASTROROM="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export ASTROROM
+ARCADEROM="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export ARCADEROM
 
 ROM_VERSION="2.1.Spring"
 
@@ -28,11 +28,11 @@ export BETA_ASSERT BETA_OTA_URL
 
 DEBUG_BUILD=false
 
-PREBUILTS=$ASTROROM/prebuilts
+PREBUILTS=$ARCADEROM/prebuilts
 
-PROJECT_DIR="$ASTROROM/astro"
-OBJECTIVES_DIR="$ASTROROM/objectives"
-BLOBS_DIR="$ASTROROM/blobs"
+PROJECT_DIR="$ARCADEROM/arcadex"
+OBJECTIVES_DIR="$ARCADEROM/objectives"
+BLOBS_DIR="$ARCADEROM/blobs"
 
 AVAILABLE_DEVICES=()
 
@@ -43,9 +43,9 @@ if [[ -d "$OBJECTIVES_DIR" ]]; then
     done
 fi
 
-WORKDIR="$ASTROROM/firmware/unpacked"
-WORKSPACE="$ASTROROM/workspace"
-DIROUT="$ASTROROM/out"
+WORKDIR="$ARCADEROM/firmware/unpacked"
+WORKSPACE="$ARCADEROM/workspace"
+DIROUT="$ARCADEROM/out"
 
 SOURCE_FW="${WORKDIR}/${MODEL}"
 STOCK_FW="${WORKDIR}/${STOCK_MODEL}"
@@ -58,7 +58,7 @@ CODENAME=""
 
 shopt -s globstar
 
-for UTIL in "$ASTROROM"/scripts/**/*.sh; do
+for UTIL in "$ARCADEROM"/scripts/**/*.sh; do
     if [[ -f "$UTIL" ]]; then
         source "$UTIL"
     fi
@@ -100,7 +100,7 @@ EXEC_SCRIPT()
     export SCRPATH
     SCRPATH=$(cd "$(dirname "$SCRIPT_FILE")" && pwd)
 
-    local SCRIPT_PATHS="${SCRIPT_FILE#$ASTROROM/}"
+    local SCRIPT_PATHS="${SCRIPT_FILE#$ARCADEROM/}"
 
     local CURRENT_HASH CACHED_HASH
     CURRENT_HASH=$(md5sum "$SCRIPT_FILE" 2>/dev/null | awk '{print $1}')
@@ -127,7 +127,7 @@ EXEC_SCRIPT()
 
 _BUILD_ROM()
 {
-    rm -rf "$ASTROROM/out" && mkdir -p "$ASTROROM/out"
+    rm -rf "$ARCADEROM/out" && mkdir -p "$ARCADEROM/out"
 
     CHECK_ALL_DEPENDENCIES
     chmod +x -R "$PREBUILTS"
@@ -185,7 +185,7 @@ _BUILD_ROM()
     local LAYERS=()
 
     if [[ -n "$PLATFORM" ]]; then
-        PLATFORM_DIR="$ASTROROM/platform/$PLATFORM"
+        PLATFORM_DIR="$ARCADEROM/platform/$PLATFORM"
         LAYERS+=("$PLATFORM_DIR")
     fi
 
@@ -299,7 +299,7 @@ COMMANDS:
                             If [device] is not given, a selection menu will appear.
   -c, --clean [option]      Cleanup build artifacts.
   -h, --help                Show usage.
-      --ota-url [link]      Build astrorom from a beta firmware source.
+      --ota-url [link]      Build arcaderom from a beta firmware source.
 
 CLEAN OPTIONS:
   -f, --firmware            Remove downloaded firmware files.
@@ -352,7 +352,7 @@ cleanup_workspace()
 
     for PATH in "${TARGETS[@]}"; do
         [[ -d "$PATH" ]] || continue
-        LOG_INFO "Removing ${PATH#$ASTROROM/}"
+        LOG_INFO "Removing ${PATH#$ARCADEROM/}"
         rm -rf "$PATH" || ERROR_EXIT "Failed to remove $PATH"
     done
 

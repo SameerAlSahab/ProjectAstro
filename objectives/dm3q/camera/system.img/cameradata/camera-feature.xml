@@ -196,7 +196,7 @@
     <local name="SUPPORT_HYPER_LAPSE_NIGHT_AUTO" value="true"/>
     <local name="SUPPORT_HYPER_LAPSE_SEAMLESS_ZOOM" value="true"/>
     <local name="SUPPORT_FRONT_HYPER_LAPSE_NIGHT" value="true"/>
-    <local name="SUPPORT_HYPER_LAPSE_ASTROGRAPHY" value="true"/>
+    <local name="SUPPORT_HYPER_LAPSE_ARCADEGRAPHY" value="true"/>
 
     <!-- VDIS+Tracking AF -->
     <local name="SUPPORT_VIDEO_STABILIZATION_WITH_TRACKING_AF" value="true"/>
