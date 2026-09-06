@@ -1,1 +1,0 @@
-libaudiomirroring_jni.audiomirroring.samsung.so

@@ -1,5 +1,0 @@
-service vendor.fkeymaster-default /vendor/bin/vendor.samsung.hardware.security.fkeymaster-service
-    interface aidl vendor.samsung.hardware.security.fkeymaster.ISehFkeymaster/default
-    class early_hal
-    user system
-    group system

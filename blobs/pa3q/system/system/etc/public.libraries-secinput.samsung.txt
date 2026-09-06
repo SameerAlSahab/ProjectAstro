@@ -1,2 +1,0 @@
-libtensorflowlite_jni.secinput.samsung.so
-
